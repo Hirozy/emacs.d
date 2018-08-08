@@ -29,5 +29,7 @@
 ;;----------------------------------------------------------------------------
 (require 'init-helm)
 (require 'init-helm-swoop)
+(require 'init-company)
+(require 'init-python)
 
 (provide 'init)
