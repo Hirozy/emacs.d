@@ -8,7 +8,7 @@
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(package-selected-packages
    (quote
-    (which-key helm-descbinds smartparens ein company-anaconda company org-plus-contrib helm-swoop helm use-package color-theme-solarized))))
+    (golden-ratio neotree which-key helm-descbinds smartparens ein company-anaconda company org-plus-contrib helm-swoop helm use-package color-theme-solarized))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
