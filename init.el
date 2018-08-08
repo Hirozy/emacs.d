@@ -28,8 +28,8 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-helm)
-(require 'init-helm-swoop)
 (require 'init-company)
 (require 'init-python)
+(require 'init-which-key)
 
 (provide 'init)
