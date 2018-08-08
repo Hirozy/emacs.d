@@ -1,7 +1,6 @@
 (require 'init-company)
 (require 'anaconda-mode)
 (require 'company-anaconda)
-(require 'xcscope)
 (require 'rx)
 
 ;; anaconda-mode, company-anacona, ein, smartparens

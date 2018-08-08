@@ -31,5 +31,6 @@
 (require 'init-company)
 (require 'init-python)
 (require 'init-which-key)
+(require 'init-visual)
 
 (provide 'init)
