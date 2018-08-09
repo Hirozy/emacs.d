@@ -8,4 +8,7 @@
 ;; stop creating #autosave# files
 (setq auto-save-default nil)
 
+;; change all prompts to y or n
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (provide 'init-configs)
