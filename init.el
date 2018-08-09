@@ -17,7 +17,7 @@
 ;;----------------------------------------------------------------------------
 (require 'init-elpa)
 ;; Keep emacs custom in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
     (load custom-file))
 (require 'init-packages)
@@ -28,7 +28,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-helm)
-(require 'init-company)
+(require 'init-completion)
 (require 'init-python)
 (require 'init-which-key)
 (require 'init-visual)
