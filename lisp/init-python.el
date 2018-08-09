@@ -3,7 +3,8 @@
 
 ;; Use ipython instead of Python
 (setq python-shell-interpreter "ipython"
-    python-shell-interpreter-args "-i --simple-prompt")
+    python-shell-interpreter-args "-i --simple-prompt"
+    python-shell-completion-native-enable nil)
 
 (use-package smartparens-config
     :init
