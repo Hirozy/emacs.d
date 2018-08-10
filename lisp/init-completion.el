@@ -2,6 +2,10 @@
                     yasnippet
                     yasnippet-snippets))
 
+(setq tab-always-indent 'complete)
+(setq-default indent-tabs-mode nil)
+(setq tab-width 4)
+
 ;; Setup company
 (use-package company
     :init
@@ -11,9 +15,9 @@
               company-require-match nil
               company-dabbrev-ignore-case nil
               company-dabbrev-downcase nil)
-        (add-hook 'after-init-hook 'global-company-mode))
-    :bind
-        (([tab] . company-complete-selection)))
+        (add-hook 'after-init-hook 'global-company-mode)))
+    ;; :bind
+    ;;     (([tab] . company-complete-selection)))
 
 ;; Setup yasnippet
 (use-package yasnippet
