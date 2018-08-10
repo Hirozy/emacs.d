@@ -1,3 +1,5 @@
+(require-packages '(color-theme-solarized))
+
 (use-package color-theme-solarized
     :init
     ;; Set background to dark for color-theme-solarized

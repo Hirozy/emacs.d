@@ -11,4 +11,7 @@
 ;; change all prompts to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(setq url-proxy-services
+   '(("no_proxy" . "^\\(localhost\\|127.*\\)")))
+
 (provide 'init-configs)

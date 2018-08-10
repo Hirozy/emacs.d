@@ -1,3 +1,5 @@
+(require-packages '(which-key))
+
 (use-package which-key
     :init
     ;; Set the time delay (in seconds) for the which-key popup to appear. A value of

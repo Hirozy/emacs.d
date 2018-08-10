@@ -1,3 +1,7 @@
+(require-packages '(neotree
+                    golden-ratio
+                    highlight-indent-guides))
+
 (use-package neotree
     :init
     (bind-key "<f8>" 'neotree-toggle))
