@@ -34,6 +34,6 @@
 (require 'init-which-key)
 (require 'init-visual)
 (require 'init-markdown)
+(require 'init-c-cpp)
 
 (provide 'init)
-(put 'scroll-left 'disabled nil)
