@@ -27,6 +27,7 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
+(require 'init-org)
 (require 'init-helm)
 (require 'init-completion)
 (require 'init-python)

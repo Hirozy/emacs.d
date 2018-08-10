@@ -1,7 +1,8 @@
 ;; Emacs incremental completion and selection narrowing framework
-;; helm, helm-swoop, helm-descbinds
+(require-packages '(helm
+                    helm-swoop
+                    helm-descbinds))
 
-;; (use-package helm)
 (use-package helm
     :init
     (setq helm-autoresize-max-height 60

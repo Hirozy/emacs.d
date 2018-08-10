@@ -1,3 +1,7 @@
+(require-packages '(company
+                    yasnippet
+                    yasnippet-snippets))
+
 ;; Setup company
 (use-package company
     :init
