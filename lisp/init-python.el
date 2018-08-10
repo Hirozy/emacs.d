@@ -45,6 +45,7 @@
 
     (use-package lsp-mode
         :config
+        (setq lsp-message-project-root-warning t)
         (add-hook 'python-mode-hook
             (lambda ()
               (lsp-python-enable)))
