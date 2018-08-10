@@ -33,5 +33,7 @@
 (require 'init-python)
 (require 'init-which-key)
 (require 'init-visual)
+(require 'init-markdown)
 
 (provide 'init)
+(put 'scroll-left 'disabled nil)
