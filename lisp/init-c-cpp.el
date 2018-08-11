@@ -1,14 +1,8 @@
-(require-packages '(smartparens))
+;; (require-packages '())
 
 (setq c-cpp-completion-mode-value "cquery")
 
 (setq c-basic-offset 4)
-
-(use-package smartparens-config
-    :init
-    ;; Always start smartparens mode in python-mode.
-    (add-hook 'c-mode-hook #'smartparens-mode)
-    (add-hook 'c++-mode-hook #'smartparens-mode))
 
 (defun c-cpp-completion-mode/cquery ()
     (require-packages '(lsp-mode

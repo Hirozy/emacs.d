@@ -1,12 +1,12 @@
 (require-packages '(company
                     yasnippet
-                    yasnippet-snippets))
+                    yasnippet-snippets
+                    smartparens))
 
 (setq tab-always-indent 'complete)
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
 
-;; Setup company
 (use-package company
     :init
     (progn
@@ -19,12 +19,16 @@
     ;; :bind
     ;;     (([tab] . company-complete-selection)))
 
-;; Setup yasnippet
 (use-package yasnippet
     :commands (yas-global-mode yas-minor-mode)
     :init
     (add-hook 'prog-mode-hook #'yas-minor-mode)
     (add-hook 'org-mode-hook #'yas-minor-mode)
     (add-hook 'markdown-mode-hook #'yas-minor-mode))
+
+(use-package smartparens-config
+    :init
+    ;; Always start smartparens mode in python-mode.
+    (add-hook 'prog-mode-hook #'smartparens-mode))
 
 (provide 'init-completion)
