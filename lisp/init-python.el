@@ -1,5 +1,4 @@
-(require-packages '(smartparens
-                    ein))
+(require-packages '(ein))
 
 (use-package rx)
 (use-package init-completion)
@@ -10,11 +9,6 @@
 (setq python-shell-interpreter "ipython"
     python-shell-interpreter-args "-i --simple-prompt"
     python-shell-completion-native-enable nil)
-
-(use-package smartparens-config
-    :init
-    ;; Always start smartparens mode in python-mode.
-    (add-hook 'python-mode-hook #'smartparens-mode))
 
 (defun python-completion-mode/anaconda ()
     (require-packages '(anaconda-mode
@@ -63,8 +57,9 @@
     
     (use-package lsp-ui
         :init
-        (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-        (add-hook 'python-mode-hook 'flycheck-mode))
+        (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+        ;; disable flycheck
+        ;; (add-hook 'python-mode-hook 'flycheck-mode))
         
     (use-package company-lsp
         :config
