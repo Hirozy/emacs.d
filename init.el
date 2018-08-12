@@ -31,7 +31,7 @@
 (require 'init-helm)
 (require 'init-completion)
 (require 'init-python)
-(require 'init-which-key)
+(require 'init-utils)
 (require 'init-visual)
 (require 'init-markdown)
 (require 'init-c-cpp)
