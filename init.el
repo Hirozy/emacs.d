@@ -23,6 +23,7 @@
 (require 'init-packages)
 (require 'init-configs)
 (require 'init-theme)
+(require 'init-keymap)
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
