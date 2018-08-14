@@ -12,8 +12,8 @@
     (which-key-mode 1))
 
 (use-package avy
-    :bind (("M-;" . avy-goto-char)
-           ("M-'" . avy-goto-char-2)))
+    :bind (("C-; a l" . avy-goto-line)
+           ("C-; a w" . avy-goto-word-1)))
 
 (use-package undo-tree
     :config
