@@ -32,11 +32,8 @@
           'append)
 
 (use-package yasnippet
-  :commands (yas-global-mode yas-minor-mode)
-  :init
-  (add-hook 'prog-mode-hook #'yas-minor-mode)
-  (add-hook 'org-mode-hook #'yas-minor-mode)
-  (add-hook 'markdown-mode-hook #'yas-minor-mode))
+  :config
+  (yas-global-mode 1))
 
 (use-package smartparens-config
   :init
