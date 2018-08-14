@@ -68,32 +68,32 @@ shiftmap["/"] = '?'
 # "Keyboard Map" : {
 mapfmt = r'''
                 "0x{ucode:x}-0x{ameta:x}" : {{
-                    "Text" : "[27;{meta:d};{ascii:d}~",
-                    "Action" : 10
+                    "Text" : "\\e[27;{meta:d};{ascii:d}~",
+                    "Action" : 12
                 }}{comma} '''
 elfmt = '    (define-key function-key-map "\e[27;{meta:d};{ascii:d}~" (kbd "{emesc}{emkey}"))'
 elfmt2 = '    (define-key function-key-map "\e[27;{meta:d};{ascii:d}~" [{emesc}{emkey}])'
 
 mapfuncfmt = r'''
                 "0x{ucode:x}-0x{ameta:x}" : {{
-                    "Text" : "[1;{meta:d}{echar}",
-                    "Action" : 10
+                    "Text" : "\\e[1;{meta:d}{echar}",
+                    "Action" : 12
                 }}{comma} '''
 
 elfuncfmt = '    (define-key function-key-map "\e[1;{meta:d}{echar}" [{emesc}{emkey}])'
 
 mapfunc2fmt = r'''
                 "0x{ucode:x}-0x{ameta:x}" : {{
-                    "Text" : "[{echar};{meta:d}~",
-                    "Action" : 10
+                    "Text" : "\\e[{echar};{meta:d}~",
+                    "Action" : 12
                 }}{comma} '''
 
 elfunc2fmt = '    (define-key function-key-map "\e[{echar};{meta:d}~" [{emesc}{emkey}])'
 
 mapfunckeyfmt = r'''
                 "0x{ucode:x}-0x{ameta:x}" : {{
-                    "Text" : "O{meta:d}{echar}",
-                    "Action" : 10
+                    "Text" : "\\eO{meta:d}{echar}",
+                    "Action" : 12
                 }}{comma} '''
 
 elfunckeyfmt = '    (define-key function-key-map "\eO{meta:d}{echar}" [{emesc}{emkey}])'
