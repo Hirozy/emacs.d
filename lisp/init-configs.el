@@ -16,6 +16,6 @@
 (put 'scroll-left 'disabled nil)
 
 (setq url-proxy-services
-   '(("no_proxy" . "^\\(localhost\\|127.*\\)")))
+      '(("no_proxy" . "^\\(localhost\\|127.*\\)")))
 
 (provide 'init-configs)
