@@ -49,4 +49,5 @@ site-lisp/package/
 /rake.cache
 /plantuml.jar
 /magithub
+*.vscode
 *.DS_Store
