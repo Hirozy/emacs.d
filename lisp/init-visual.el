@@ -1,6 +1,7 @@
 (require-packages '(neotree
                     golden-ratio
-                    highlight-indent-guides))
+                    highlight-indent-guides
+                    linum-relative))
 
 (use-package neotree
   :init
@@ -20,5 +21,10 @@
   (setq highlight-indent-guides-method 'character
         ;; https://github.com/DarthFennec/highlight-indent-guides/issues/32#issuecomment-376587172
         highlight-indent-guides-auto-enabled nil))
+
+(use-package linum-relative
+  :init
+  (setq linum-relative-backend 'display-line-numbers-mode)
+  (linum-relative-global-mode 1))
 
 (provide 'init-visual)
