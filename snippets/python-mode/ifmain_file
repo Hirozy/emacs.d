@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: ifmain_file
+# key: ifmf
+# --
+if __name__ == '__main__' and '__file__' in globals():
+    ${1:main()}

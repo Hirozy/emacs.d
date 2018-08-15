@@ -24,6 +24,7 @@
 (require 'init-configs)
 (require 'init-theme)
 (require 'init-keymap)
+(require 'init-user-defined)
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
