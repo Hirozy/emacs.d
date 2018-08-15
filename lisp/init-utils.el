@@ -1,7 +1,8 @@
 (require-packages '(which-key
                     avy
                     undo-tree
-                    magit))
+                    magit
+                    crux))
 
 (use-package which-key
   :init
@@ -11,12 +12,12 @@
   :config
   (which-key-mode 1))
 
-(use-package avy
-  :bind (("C-; a l" . avy-goto-line)
-         ("C-; a w" . avy-goto-word-1)))
+(use-package avy)
 
 (use-package undo-tree
   :config
   (global-undo-tree-mode 1))
+
+(use-package crux)
 
 (provide 'init-utils)

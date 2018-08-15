@@ -2,7 +2,7 @@
 
 (global-set-key
  (kbd "C-d")
- (defhydra hydra-edit ()
+ (defhydra hydra-edit (:timeout 3)
    "Editer keys"
    ("x" delete-char)
    ("dd" kill-whole-line)
@@ -18,24 +18,40 @@
    ("B" backward-word)
    ("a" beginning-of-line)
    ("e" move-end-of-line)
+   ("i" defined/indent-buffer :exit t)
+   ("o" crux-smart-open-line :exit t)
+   ("O" crux-smart-open-line-above :exit t)
    ("v" scroll-up-command)
-   ;; Converting M-v to V here by analogy.
    ("V" scroll-down-command)
-   ("l" recenter-top-bottom)
+   ("l" recenter-top-bottom :exit t)
+   ("gl" avy-goto-line :exit t)
+   ("gw" avy-goto-word-1 :exit t)
+   ("gc" avy-goto-char-2 :exit t)
+   (";" comment-line)
    ("SPC" nil)))
+
+(global-set-key
+ (kbd "C-;")
+ (defhydra hydra-defined ()
+   "
+_r_: Reload emacs.d      _eb_: Eval buffer      _er_: Eval region
+"
+   ("r" defined/reload-init-file :exit t)
+   ("eb" eval-buffer :exit t)
+   ("er" eval-region :exit t)))
 
 (global-set-key
  (kbd "C-\\")
  (defhydra hydra-window ()
    "
-Movement^^        ^Split^         ^Switch^		^Resize^
+Movement^^        ^Split^           ^Switch^		^Resize^
 ----------------------------------------------------------------
-_h_ ←       	_v_ertical    	_b_uffer		_q_ X←
-_j_ ↓        	_x_ horizontal	_f_ind files	_w_ X↓
-_k_ ↑        	_z_ undo      	_a_ce 1		_e_ X↑
-_l_ →        	_Z_ reset      	_s_wap		_r_ X→
+_h_: ←       	_v_ertical    	_b_uffer		_q_: X←
+_j_: ↓        	_x_:horizontal	_f_ind files	_w_: X↓
+_k_: ↑        	_z_:undo      	_a_ce 1		_e_: X↑
+_l_: →        	_Z_:reset      	_s_wap		_r_: X→
 _F_ollow		_D_lt Other   	_S_ave		max_i_mize
-_SPC_ cancel	_o_nly this   	_d_elete	
+_SPC_: cancel	_o_nly this   	_d_elete	
 "
    ("h" windmove-left )
    ("j" windmove-down )
