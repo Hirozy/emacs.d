@@ -37,4 +37,6 @@
 (require 'init-markdown)
 (require 'init-c-cpp)
 
+(require 'init-hydra)
+
 (provide 'init)
