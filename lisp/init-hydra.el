@@ -44,6 +44,14 @@ _kt_: Kill this buffer
    ("kb" kill-buffer :exit t)))
 
 (global-set-key
+ (kbd "C-;")
+ (defhydra hydra-high-frequency ()
+   "
+_f_: Projectile find file
+"
+   ("f" projectile-find-file :exit t)))
+
+(global-set-key
  (kbd "C-\\")
  (defhydra hydra-window ()
    "

@@ -51,3 +51,4 @@ site-lisp/package/
 /magithub
 *.vscode
 *.DS_Store
+*projectile*
