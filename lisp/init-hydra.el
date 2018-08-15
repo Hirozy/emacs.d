@@ -31,14 +31,17 @@
    ("SPC" nil)))
 
 (global-set-key
- (kbd "C-;")
- (defhydra hydra-defined ()
+ (kbd "C-'")
+ (defhydra hydra-system-function ()
    "
 _r_: Reload emacs.d      _eb_: Eval buffer      _er_: Eval region
+_kt_: Kill this buffer
 "
    ("r" defined/reload-init-file :exit t)
    ("eb" eval-buffer :exit t)
-   ("er" eval-region :exit t)))
+   ("er" eval-region :exit t)
+   ("kt" kill-this-buffer :exit t)
+   ("kb" kill-buffer :exit t)))
 
 (global-set-key
  (kbd "C-\\")
