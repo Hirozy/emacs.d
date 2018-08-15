@@ -13,12 +13,12 @@
         ;; Set matching limit
         helm-candidate-number-limit 50)
   :bind
-  ("M-x" . helm-M-x)
-  ("C-x C-f" . helm-find-files)
-  ([f10] . helm-buffers-list)
+  ;; ("M-x" . helm-M-x)
+  ;; ("C-x C-f" . helm-find-files)
+  ;; ([f10] . helm-buffers-list)
   :config
   (helm-autoresize-mode 1)
-  (helm-mode 1))
+  (helm-mode nil))
 
 (use-package helm-config)
 
