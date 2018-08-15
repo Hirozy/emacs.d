@@ -31,6 +31,7 @@
 ;;----------------------------------------------------------------------------
 (require 'init-org)
 (require 'init-helm)
+(require 'init-ivy)
 (require 'init-completion)
 (require 'init-python)
 (require 'init-utils)
