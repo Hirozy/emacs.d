@@ -38,6 +38,7 @@
 (require 'init-visual)
 (require 'init-markdown)
 (require 'init-c-cpp)
+(require 'init-tags)
 
 (require 'init-hydra)
 (require 'init-end)
