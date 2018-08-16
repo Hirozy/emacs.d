@@ -17,7 +17,7 @@
 ;;----------------------------------------------------------------------------
 (require 'init-elpa)
 ;; Keep emacs custom in separate file
-(setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
 (require 'init-packages)
@@ -40,5 +40,6 @@
 (require 'init-c-cpp)
 
 (require 'init-hydra)
+(require 'init-end)
 
 (provide 'init)

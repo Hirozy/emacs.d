@@ -52,3 +52,4 @@ site-lisp/package/
 *.vscode
 *.DS_Store
 *projectile*
+*custom.el
