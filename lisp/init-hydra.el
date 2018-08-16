@@ -35,7 +35,7 @@
  (defhydra hydra-system-function ()
    "
 _r_: Reload emacs.d      _eb_: Eval buffer      _er_: Eval region
-_kt_: Kill this buffer
+_kt_: Kill this buffer   _kb_: Kill buffer
 "
    ("r" defined/reload-init-file :exit t)
    ("eb" eval-buffer :exit t)
