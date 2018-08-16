@@ -1,5 +1,3 @@
-;; (require-packages '())
-
 (setq c-cpp-completion-mode-value "cquery")
 
 (setq c-basic-offset 4)
