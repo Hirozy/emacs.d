@@ -16,6 +16,9 @@
 
 (put 'scroll-left 'disabled nil)
 
+;; disabled word wrap
+(setq-default truncate-lines 1)
+
 (setq url-proxy-services
       '(("no_proxy" . "^\\(localhost\\|127.*\\)")))
 
