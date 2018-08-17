@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: cpbase1
+# key: cpbase1
+# --
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    $1
+}
