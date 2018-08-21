@@ -19,4 +19,13 @@ Position the cursor at it's beginning, according to the current mode."
   (forward-line -1)
   (indent-according-to-mode))
 
+(defun defined/file-path ()
+  (setq file-name-with-path (buffer-file-name))
+  (setq file-name-without-path (file-name-nondirectory
+                                file-name-with-path))
+  (setq file-name-without-extension (file-name-sans-extension
+                                     file-name-without-path))
+  (setq file-path-without-file-name (file-name-directory
+                                     file-name-with-path)))
+
 (provide 'init-user-defined)
