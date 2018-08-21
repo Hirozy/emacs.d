@@ -24,13 +24,7 @@
 
 
 (defun defined/c-cpp-file-path ()
-  (setq file-name-with-path (buffer-file-name))
-  (setq file-name-without-path (file-name-nondirectory
-                                file-name-with-path))
-  (setq file-name-without-extension (file-name-sans-extension
-                                     file-name-without-path))
-  (setq file-path-without-file-name (file-name-directory
-                                     file-name-with-path))
+  (defined/file-path)
   (setq defined/build-path (concat
                             "/tmp/build/"
                             file-name-without-extension))
@@ -66,9 +60,11 @@
   (interactive)
   (save-buffer)
   (defined/c-cpp-file-path)
+  (when (get-buffer "*Async Shell Command*")
+    (kill-buffer "*Async Shell Command*"))
   (let ((default-directory defined/build-path))
     (shell-command "make")
-    (shell-command "make run")))
+    (async-shell-command "make run &")))
 
 (defun defined/c-run ()
   (interactive)
