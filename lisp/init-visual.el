@@ -1,7 +1,8 @@
 (require-packages '(neotree
                     golden-ratio
                     highlight-indent-guides
-                    linum-relative))
+                    linum-relative
+                    fill-column-indicator))
 
 (use-package neotree
   :init
@@ -26,5 +27,18 @@
   :init
   (setq linum-relative-backend 'display-line-numbers-mode)
   (linum-relative-global-mode 1))
+
+(define-globalized-minor-mode 
+  global-fci-mode fci-mode 
+  (lambda () 
+    (fci-mode 1)))
+
+(use-package fill-column-indicator
+  :init
+  (setq fci-rule-width 1)
+  (setq fci-rule-color "dimgray")
+  (setq fci-rule-column 80)
+  :config
+  (global-fci-mode 1))
 
 (provide 'init-visual)
