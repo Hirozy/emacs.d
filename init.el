@@ -39,6 +39,7 @@
 (require 'init-markdown)
 (require 'init-c-cpp)
 (require 'init-tags)
+(require 'init-tex)
 
 (require 'init-hydra)
 (require 'init-end)
