@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: src iPython
+# key: ipy_
+# --
+#+BEGIN_SRC ipython :session $1:export ${2:$$(yas-choose-value '("both" "results" "code" "none"))} :results raw drawer
+$0
+#+END_SRC
