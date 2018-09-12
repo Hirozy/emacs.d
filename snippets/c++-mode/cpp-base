@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: cpbase1
-# key: cpbase1
+# name: cpbase_
+# key: cpbase_
 # --
 #include <iostream>
 
