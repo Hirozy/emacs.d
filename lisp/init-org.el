@@ -1,4 +1,6 @@
-(require-packages '(org-plus-contrib))
+(require-packages '(org-plus-contrib
+                    ob-ipython
+                    htmlize))
 
 (setq org-support-shift-select t)
 
@@ -28,5 +30,37 @@
         '("xelatex -interaction nonstopmode -output-directory %o %f"
           "xelatex -interaction nonstopmode -output-directory %o %f"
           "xelatex -interaction nonstopmode -output-directory %o %f")))
+
+(setq org-babel-python-command "python3")
+
+(add-to-list 'org-latex-minted-langs
+             '(ipython "ipython3"))
+
+;; always display inline images
+;; https://orgmode.org/manual/In_002dbuffer-settings.html
+(setq org-startup-with-inline-images t)
+
+(add-hook 'org-babel-after-execute-hook
+          'org-redisplay-inline-images)
+
+(use-package ob-ipython)
+
+;; https://orgmode.org/worg/org-contrib/babel/languages.html
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)
+   (ipython . t)
+   (C . t)
+   (calc . t)
+   (emacs-lisp . t)
+   (octave . t)
+   (sed . t)
+   (awk . t)
+   (matlab . t)
+   (R . t)
+   (shell . t)))
+
+;; fontify code in code blocks
+(setq org-src-fontify-natively t)
 
 (provide 'init-org)
