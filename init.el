@@ -40,6 +40,7 @@
 (require 'init-c-cpp)
 (require 'init-tags)
 (require 'init-tex)
+(require 'init-plot)
 
 (require 'init-hydra)
 (require 'init-end)
