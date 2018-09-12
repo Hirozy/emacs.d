@@ -33,12 +33,12 @@
   (lambda () 
     (fci-mode 1)))
 
-(use-package fill-column-indicator
-  :init
-  (setq fci-rule-width 1)
-  (setq fci-rule-color "dimgray")
-  (setq fci-rule-column 80)
-  :config
-  (global-fci-mode 1))
+;; (use-package fill-column-indicator
+;;   :init
+;;   (setq fci-rule-width 1)
+;;   (setq fci-rule-color "dimgray")
+;;   (setq fci-rule-column 80)
+;;   :config
+;;   (global-fci-mode 1))
 
 (provide 'init-visual)
