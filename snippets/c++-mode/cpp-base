@@ -3,9 +3,9 @@
 # key: cpbase_
 # --
 #include <iostream>
-
+${1:#include <string>}
 using namespace std;
 
 int main() {
-    $1
+    $0
 }

@@ -12,8 +12,9 @@
 \begin{figure}[hbt]
   \centering
   \begin{tikzpicture}
-    \node[startstop](start){\small ${1: 开始}};
+    \node[startstop](start){\small ${1:开始}};
     \node[process, below of = start](pr1){\small $2};
+    $0
 
     \draw[arrow](start) -- (pr1);
   \end{tikzpicture}
