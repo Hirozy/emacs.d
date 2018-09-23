@@ -8,6 +8,9 @@
 -I/usr/local/include
 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
--I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include
+-I/Library/Developer/CommandLineTools/usr/include/c++/v1
+-I/Library/Developer/CommandLineTools/usr/include/
+-I/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include
 
 # -I space_is_not_allowed
