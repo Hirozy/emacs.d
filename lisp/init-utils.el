@@ -1,8 +1,7 @@
 (require-packages '(which-key
                     avy
-                    undo-tree
                     magit
-                    crux))
+                    exec-path-from-shell))
 
 (use-package which-key
   :init
@@ -13,12 +12,6 @@
   (which-key-mode 1))
 
 (use-package avy)
-
-(use-package undo-tree
-  :config
-  (global-undo-tree-mode 1))
-
-(use-package crux)
 
 (use-package projectile
   :config
