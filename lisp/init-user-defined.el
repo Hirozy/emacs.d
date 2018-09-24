@@ -28,4 +28,15 @@ Position the cursor at it's beginning, according to the current mode."
   (setq file-path-without-file-name (file-name-directory
                                      file-name-with-path)))
 
+(defun defined/compile-run-file ()
+  (interactive)
+  (when (get-buffer "*Async Shell Command*")
+    (kill-buffer "*Async Shell Command*"))
+  (cond
+   ((derived-mode-p 'python-mode) (defined/python-file-run))
+   ((derived-mode-p 'c++-mode) (defined/cpp-run))
+   ((derived-mode-p 'c-mode) (defined/c-run))))
+
+(global-set-key (kbd "S-<f10>") 'defined/compile-run-file)
+
 (provide 'init-user-defined)
