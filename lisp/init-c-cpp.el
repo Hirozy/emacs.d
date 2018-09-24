@@ -60,8 +60,6 @@
   (interactive)
   (save-buffer)
   (defined/c-cpp-file-path)
-  (when (get-buffer "*Async Shell Command*")
-    (kill-buffer "*Async Shell Command*"))
   (let ((default-directory defined/build-path))
     (shell-command "make")
     (async-shell-command "make run &")))
@@ -72,11 +70,9 @@
 
 (add-hook 'c++-mode-hook
           (lambda()
-            (define-key c++-mode-map [f5] 'defined/cpp-run)
             (defvar c-cpp-generate-compiler "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb -std=c++14")))
 (add-hook 'c-mode-hook
           (lambda()
-            (define-key c-mode-map [f5] 'defined/c-run)
             (defvar c-cpp-generate-compiler "$ENV{CFLAGS} -O2 -g -std=c99")))
 
 (setq compilation-ask-about-save nil)
