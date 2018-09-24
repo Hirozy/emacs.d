@@ -1,9 +1,13 @@
 (require-packages '(hydra))
 
 (global-set-key
- (kbd "C-d")
- (defhydra hydra-edit (:timeout 3)
-   "Editer keys"
+ (kbd "C-S-d")
+ (defhydra hydra-edit ()
+   "
+_;_: comment line    _l_: recent top bottom
+_gl_: goto line    _gw_: goto word-1    _gc_: goto char-2
+_mf_: format code    _mi_: indent buffer
+"
    ("x" delete-char)
    ("dd" kill-whole-line)
    ("d$" kill-line)
@@ -18,7 +22,7 @@
    ("B" backward-word)
    ("a" beginning-of-line)
    ("e" move-end-of-line)
-   ("i" defined/indent-buffer :exit t)
+   ("i" nil)
    ("o" crux-smart-open-line :exit t)
    ("O" crux-smart-open-line-above :exit t)
    ("v" scroll-up-command)
@@ -28,15 +32,16 @@
    ("gw" avy-goto-word-1 :exit t)
    ("gc" avy-goto-char-2 :exit t)
    (";" comment-line)
+   ("mf" format-all-buffer :exit t)
+   ("mi" defined/indent-buffer :exit t)
    ("SPC" nil)))
 
 (global-set-key
- (kbd "C-'")
+ (kbd "C-\"")
  (defhydra hydra-system-function ()
    "
 _r_: Reload emacs.d      _eb_: Eval buffer      _er_: Eval region
-_kt_: Kill this buffer   _kb_: Kill buffer
-"
+_kt_: Kill this buffer   _kb_: Kill buffer"
    ("r" defined/reload-init-file :exit t)
    ("eb" eval-buffer :exit t)
    ("er" eval-region :exit t)
@@ -44,7 +49,7 @@ _kt_: Kill this buffer   _kb_: Kill buffer
    ("kb" kill-buffer :exit t)))
 
 (global-set-key
- (kbd "C-;")
+ (kbd "C-'")
  (defhydra hydra-high-frequency ()
    "
 _f_: Projectile find file
@@ -62,7 +67,7 @@ _j_: ↓        	_x_:horizontal	_f_ind files	_w_: X↓
 _k_: ↑        	_z_:undo      	_a_ce 1		_e_: X↑
 _l_: →        	_Z_:reset      	_s_wap		_r_: X→
 _F_ollow		_D_lt Other   	_S_ave		max_i_mize
-_SPC_: cancel	_o_nly this   	_d_elete	
+_SPC_: cancel	_o_nly this   	_d_elete
 "
    ("h" windmove-left )
    ("j" windmove-down )
