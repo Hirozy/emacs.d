@@ -52,9 +52,10 @@ _kt_: Kill this buffer   _kb_: Kill buffer"
  (kbd "C-'")
  (defhydra hydra-high-frequency ()
    "
-_f_: Projectile find file
+_f_: Projectile find file    _p_: Pyvenv workon
 "
-   ("f" projectile-find-file :exit t)))
+   ("f" projectile-find-file :exit t)
+   ("p" pyvenv-workon :exit t)))
 
 (global-set-key
  (kbd "C-\\")
