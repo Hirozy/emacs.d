@@ -2,5 +2,5 @@
 # name: ifmain_file
 # key: ifmf
 # --
-if __name__ == '__main__' and '__file__' in globals():
+if (__name__ == '__main__'):
     ${1:main()}

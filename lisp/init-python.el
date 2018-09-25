@@ -1,4 +1,5 @@
-(require-packages '(ein))
+(require-packages '(ein
+                    pyvenv))
 
 (use-package rx)
 (use-package init-completion)
