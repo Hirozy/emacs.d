@@ -7,7 +7,9 @@
                       lsp-ui
                       cquery))
 
-  (setq cquery-path (concat dotfiles-dir "site-lisp/package/cquery/build/cquery"))
+  (setq cquery-path (concat
+                     dotfiles-dir
+                     "site-lisp/package/cquery/build/cquery"))
 
   (use-package cquery
     :commands lsp-cquery-enable
@@ -27,7 +29,7 @@
   (defined/file-path)
   (setq defined/build-path (concat
                             "/tmp/build/"
-                            file-name-without-extension))
+                            defined/file-name-without-extension-path))
   (setq defined/n-cmakefile (concat
                              defined/build-path
                              "/CMakeLists.txt")))
@@ -44,42 +46,79 @@
     (insert
      (concat "cmake_minimum_required (VERSION 3.10)"
              (format "\n\nproject(%s)"
-                     file-name-without-extension)
+                     defined/file-name-without-extension-path)
              (format "\n\nSET(CMAKE_CXX_FLAGS \"%s\")"
-                     c-cpp-generate-compiler)
+                     c-cpp-cmake-compiler)
              (format "\n\nadd_executable(%s %s)"
-                     file-name-without-extension
-                     file-name-with-path)
+                     defined/file-name-without-extension-path
+                     defined/file-name-with-path)
              (format "\n\nadd_custom_target(run\n\tCOMMAND ${CMAKE_CURRENT_BINARY_DIR}/%s\n)"
-                     file-name-without-extension)))
+                     defined/file-name-without-extension-path)))
     (save-buffer))
   (let ((default-directory defined/build-path))
     (shell-command "cmake .")))
 
-(defun defined/cpp-run ()
+(setq compilation-finish-functions 'defined/compile-finished)
+(defun defined/compile-finished (buffer string)
+  (cond ((string-match "finished" string)
+         (setq defined/build-successful-flag t)
+         (message "Build maybe successful: start run."))
+        (t
+         (setq defined/build-successful-flag nil)
+         (message "Compilation exited abnormally: %s" string))))
+
+(defun defined/c-cpp-cmake-run ()
   (interactive)
   (save-buffer)
   (defined/c-cpp-file-path)
+  (defined/kill-async-shell)
+  (setq defined/build-successful-flag nil)
   (let ((default-directory defined/build-path))
-    (shell-command "make")
-    (async-shell-command "make run &")))
+    (compile "make")
+    (run-with-timer 1 nil
+                    (lambda()
+                      (if defined/build-successful-flag
+                          (let ((default-directory defined/build-path))
+                            (async-shell-command "make run &")))))))
 
-(defun defined/c-run ()
+(defun defined/c-cpp-compile-run ()
   (interactive)
-  (defined/cpp-run))
+  (save-buffer)
+  (defined/c-cpp-file-path)
+  (defined/kill-async-shell)
+  (compile (concat
+            c-cpp-generate-compiler
+            " "
+            defined/file-name-with-path
+            " -o /tmp/"
+            defined/file-name-without-extension-path
+            ".out"))
+  (run-with-timer 1 nil
+                  (lambda()
+                    (if defined/build-successful-flag
+                        (async-shell-command (concat
+                                              "/tmp/"
+                                              defined/file-name-without-extension-path
+                                              ".out"))))))
 
 (add-hook 'c++-mode-hook
           (lambda()
-            (defvar c-cpp-generate-compiler "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb -std=c++14")))
+            (setq defined/g++-args "-O2 -Wall -g -ggdb -std=c++14")
+            (setq c-cpp-generate-compiler (concat 
+                                           "g++ "
+                                           defined/g++-args))
+            (setq c-cpp-cmake-compiler (concat 
+                                        "$ENV{CXXFLAGS} "
+                                        defined/g++-args))))
+
 (add-hook 'c-mode-hook
           (lambda()
-            (defvar c-cpp-generate-compiler "$ENV{CFLAGS} -O2 -g -std=c99")))
-
-(setq compilation-ask-about-save nil)
-(setq compilation-finish-functions
-      (list (lambda(buffer str)
-              (unless (string= str "Finished\n")
-                (push-mark)
-                (next-error)))))
+            (setq defined/g++-args "-O2 -g -std=c11")
+            (setq c-cpp-generate-compiler (concat 
+                                           "gcc "
+                                           defined/g++-args))
+            (setq c-cpp-cmake-compiler (concat 
+                                        "$ENV{CFLAGS} "
+                                        defined/g++-args))))
 
 (provide 'init-c-cpp)
