@@ -65,13 +65,19 @@
     :config
     (push 'company-lsp company-backends)))
 
-(defun defined/python-file-run ()
+(defun defined/python-file-run-in-shell ()
   (interactive)
   (save-buffer)
   (defined/file-path)
+  (defined/kill-async-shell)
   (async-shell-command
    (format "python %s"
-           file-name-with-path)))
+           defined/file-name-with-path)))
+
+(defun defined/python-file-run ()
+  (interactive)
+  (save-buffer)
+  (python-shell-send-file buffer-file-name))
 
 (cond ((string= python-completion-mode-value "anaconda")
        (funcall 'python-completion-mode/anaconda))
