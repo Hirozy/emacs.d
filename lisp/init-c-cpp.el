@@ -75,7 +75,7 @@
   (setq defined/build-successful-flag nil)
   (let ((default-directory defined/build-path))
     (compile "make")
-    (run-with-timer 1 nil
+    (run-with-timer 3 nil
                     (lambda()
                       (if defined/build-successful-flag
                           (let ((default-directory defined/build-path))
@@ -93,7 +93,7 @@
             " -o /tmp/"
             defined/file-name-without-extension-path
             ".out"))
-  (run-with-timer 1 nil
+  (run-with-timer 3 nil
                   (lambda()
                     (if defined/build-successful-flag
                         (async-shell-command (concat
