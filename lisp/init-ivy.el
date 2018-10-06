@@ -1,4 +1,4 @@
- (require-packages '(ivy
+(require-packages '(ivy
                     swiper
                     counsel
                     ivy-yasnippet
