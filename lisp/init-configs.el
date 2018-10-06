@@ -19,6 +19,9 @@
 ;; disabled word wrap
 (setq-default truncate-lines 1)
 
+;; display the current column number
+(setq column-number-mode t)
+
 (setq url-proxy-services
       '(("no_proxy" . "^\\(localhost\\|127.*\\)")
         ("http" . "127.0.0.1:6152")

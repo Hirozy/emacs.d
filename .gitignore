@@ -54,3 +54,4 @@ site-lisp/package/
 *projectile*
 *custom.el
 /request/*
+/bookmarks
