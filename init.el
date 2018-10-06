@@ -30,7 +30,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-org)
-(require 'init-helm)
+;; (require 'init-helm)
 (require 'init-ivy)
 (require 'init-completion)
 (require 'init-editing)

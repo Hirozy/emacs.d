@@ -44,6 +44,17 @@
   ;; (helm-migemo-mode 1)
   )
 
+;; backspace to quit helm
+(defun helm-backspace ()
+  "Forward to `backward-delete-char'.
+On error (read-only), quit without selecting."
+  (interactive)
+  (condition-case nil
+      (backward-delete-char 1)
+    (error
+     (helm-keyboard-quit))))
+(define-key helm-map (kbd "DEL") 'helm-backspace)
+
 (use-package helm-descbinds
   :config
   (helm-descbinds-mode 1))
