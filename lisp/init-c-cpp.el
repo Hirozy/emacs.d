@@ -104,20 +104,20 @@
 (add-hook 'c++-mode-hook
           (lambda()
             (setq defined/g++-args "-O2 -Wall -g -ggdb -std=c++14")
-            (setq c-cpp-generate-compiler (concat 
+            (setq c-cpp-generate-compiler (concat
                                            "g++ "
                                            defined/g++-args))
-            (setq c-cpp-cmake-compiler (concat 
+            (setq c-cpp-cmake-compiler (concat
                                         "$ENV{CXXFLAGS} "
                                         defined/g++-args))))
 
 (add-hook 'c-mode-hook
           (lambda()
             (setq defined/g++-args "-O2 -g -std=c11")
-            (setq c-cpp-generate-compiler (concat 
+            (setq c-cpp-generate-compiler (concat
                                            "gcc "
                                            defined/g++-args))
-            (setq c-cpp-cmake-compiler (concat 
+            (setq c-cpp-cmake-compiler (concat
                                         "$ENV{CFLAGS} "
                                         defined/g++-args))))
 
