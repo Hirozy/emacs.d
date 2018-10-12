@@ -40,22 +40,24 @@ _mf_: format code    _mi_: indent buffer
  (kbd "C-\"")
  (defhydra hydra-system-function ()
    "
-_r_: Reload emacs.d      _eb_: Eval buffer      _er_: Eval region
-_kt_: Kill this buffer   _kb_: Kill buffer"
-   ("r" defined/reload-init-file :exit t)
-   ("eb" eval-buffer :exit t)
-   ("er" eval-region :exit t)
-   ("kt" kill-this-buffer :exit t)
-   ("kb" kill-buffer :exit t)))
+"
+   ("r" defined/reload-init-file "reload-emacs" :exit t)
+   ("eb" eval-buffer "eval-buffer" :exit t)
+   ("er" eval-region "eval-region":exit t)
+   ("kt" kill-this-buffer "kill-this-buffer" :exit t)
+   ("kb" kill-buffer "kill-bufer" :exit t)
+   ("SPC" nil)))
 
 (global-set-key
  (kbd "C-'")
- (defhydra hydra-high-frequency ()
+ (defhydra hf ()
    "
-_f_: Projectile find file    _p_: Pyvenv workon
 "
-   ("f" projectile-find-file :exit t)
-   ("p" pyvenv-workon :exit t)))
+   ("ff" counsel-projectile-find-file "projectile-find-file" :exit t)
+   ("fp" counsel-projectile-switch-project "projectile-switch-project" :exit t)
+   ("fs" counsel-projectile-rg "projectile-rg" :exit t)
+   ("v" pyvenv-workon "Python env" :exit t)
+   ("SPC" nil)))
 
 (global-set-key
  (kbd "C-\\")
