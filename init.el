@@ -34,6 +34,7 @@
 (require 'init-ivy)
 (require 'init-completion)
 (require 'init-editing)
+(require 'init-pair)
 (require 'init-utils)
 (require 'init-visual)
 (require 'init-python)

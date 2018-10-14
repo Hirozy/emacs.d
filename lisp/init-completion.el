@@ -1,7 +1,6 @@
 (require-packages '(company
                     yasnippet
-                    yasnippet-snippets
-                    smartparens))
+                    yasnippet-snippets))
 
 (setq-default indent-tabs-mode nil)
 (setq tab-width 4)
@@ -34,10 +33,5 @@
 (use-package yasnippet
   :config
   (yas-global-mode 1))
-
-(use-package smartparens-config
-  :init
-  ;; Always start smartparens mode in python-mode.
-  (add-hook 'prog-mode-hook #'smartparens-mode))
 
 (provide 'init-completion)
