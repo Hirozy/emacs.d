@@ -1,29 +1,41 @@
-(setq c-cpp-completion-mode-value "cquery")
+(require-packages '(company-c-headers))
 
-(setq c-basic-offset 4)
+(use-package company-c-headers
+  :config
+  (add-to-list 'company-backends 'company-c-headers)
+  (setq company-c-headers-path-system '("/usr/include/"
+                                        "/usr/local/include/"))
+  (when (equal system-type 'darwin)
+    (setq company-c-headers-path-system
+          (append company-c-headers-path-system '("/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/"
+                                                  "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/"
+                                                  "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/"
+                                                  "/Library/Developer/CommandLineTools/usr/include/c++/v1/"
+                                                  "/Library/Developer/CommandLineTools/usr/include/"
+                                                  "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include/")))))
+
+(setq c-cpp-completion-mode-value "cquery"
+      c-basic-offset 4)
 
 (defun c-cpp-completion-mode/cquery ()
-  (require-packages '(lsp-mode
-                      lsp-ui
-                      cquery))
+  (require-packages '(cquery))
+  (require 'init-lsp)
 
   (setq cquery-path (concat
                      dotfiles-dir
-                     "site-lisp/package/cquery/build/cquery"))
+                     "site-lisp/package/cquery/build/release/bin/cquery"))
 
   (use-package cquery
     :commands lsp-cquery-enable
     :init
     (setq cquery-executable cquery-path)
     (setq cquery-cache-dir "/tmp/")
-    (add-hook 'c-mode-hook 'lsp-cquery-enable)
-    (add-hook 'c++-mode-hook 'lsp-cquery-enable)
-    ;; https://github.com/cquery-project/emacs-cquery/issues/45#issuecomment-406813724
-    (add-hook 'lsp-after-open-hook 'lsp-ui-mode)))
+    :hook
+    (c-mode . lsp-cquery-enable)
+    (c++-mode . lsp-cquery-enable)))
 
 (cond ((string= c-cpp-completion-mode-value "cquery")
        (funcall 'c-cpp-completion-mode/cquery)))
-
 
 (defun defined/c-cpp-file-path ()
   (defined/file-path)
