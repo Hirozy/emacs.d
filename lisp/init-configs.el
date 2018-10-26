@@ -17,7 +17,7 @@
 (put 'scroll-left 'disabled nil)
 
 ;; disabled word wrap
-(setq-default truncate-lines 1)
+(setq-default truncate-lines nil)
 
 ;; display the current column number
 (setq column-number-mode t)

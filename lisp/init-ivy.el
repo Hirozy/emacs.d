@@ -7,6 +7,7 @@
 (use-package ivy
   :bind
   ("M-x" . counsel-M-x)
+  ("C-x b" . ivy-switch-buffer)
   :init
   (setq ivy-height 25
         ivy-use-virtual-buffers 1)
