@@ -4,7 +4,7 @@
 (use-package rx)
 (use-package init-completion)
 
-(setq python-completion-mode-value "lsp")
+(setq python-completion-mode-value "anaconda")
 
 ;; Use ipython instead of Python
 (setq python-shell-interpreter "ipython"
@@ -34,13 +34,10 @@
     (elpy-enable 1)))
 
 (defun python-completion-mode/lsp ()
-  (require-packages '(lsp-mode
-                      lsp-ui
-                      company-lsp))
+  (require-packages '(lsp-mode))
 
   (use-package lsp-mode
     :config
-    (setq lsp-message-project-root-warning t)
     (add-hook 'python-mode-hook
               (lambda ()
                 (lsp-python-enable)))
@@ -52,19 +49,9 @@
 						      "\\(__init__\\|setup\\)\\.py\\|Pipfile")))
 			     '("pyls")))
 
-  (use-package lsp-imenu
-    :init
-    (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
-  
   (use-package lsp-ui
     :init
-    (add-hook 'lsp-mode-hook 'lsp-ui-mode))
-  ;; disable flycheck
-  ;; (add-hook 'python-mode-hook 'flycheck-mode))
-  
-  (use-package company-lsp
-    :config
-    (push 'company-lsp company-backends)))
+    (add-hook 'python-mode-hook 'flycheck-mode)))
 
 (defun defined/python-file-run-in-shell ()
   (interactive)
