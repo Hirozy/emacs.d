@@ -1,3 +1,15 @@
+;;; init-mark.el --- markdown mode configuration
+
+;;; Commentary:
+;;
+;; markdown mode configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(markdown-mode))
 
 (use-package markdown-mode
@@ -9,3 +21,5 @@
   (setq markdown-command "multimarkdown"))
 
 (provide 'init-markdown)
+
+;;; init-markdown.el ends here

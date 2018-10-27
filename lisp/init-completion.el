@@ -1,3 +1,15 @@
+;;; init-completion.el --- Completion configuration
+
+;;; Commentary:
+;;
+;; Completion configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(company
                     flycheck
                     yasnippet
@@ -39,6 +51,10 @@
 
 (use-package flycheck
   :hook
-  (after-init . global-flycheck-mode))
+  (after-init . global-flycheck-mode)
+  :config
+  (setq flycheck-emacs-lisp-load-path 'inherit))
 
 (provide 'init-completion)
+
+;;; init-completion.el ends here

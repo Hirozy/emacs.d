@@ -1,3 +1,15 @@
+;;; init-visual.el --- visual configuration
+
+;;; Commentary:
+;;
+;; visual configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(neotree
                     golden-ratio
                     highlight-indent-guides
@@ -11,7 +23,7 @@
 (use-package golden-ratio
   :init
   ;; https://github.com/emacs-helm/helm/issues/238#issuecomment-16490626
-  (setq golden-ratio-exclude-buffer-names '("*helm M-x*" "*helm for files*"))
+  ;; (setq golden-ratio-exclude-buffer-names '("*helm M-x*" "*helm for files*"))
   ;; (setq golden-ratio-auto-scale t)
   :config
   (golden-ratio-mode 1))
@@ -42,3 +54,5 @@
 ;;   (global-fci-mode 1))
 
 (provide 'init-visual)
+
+;;; init-visual.el ends here

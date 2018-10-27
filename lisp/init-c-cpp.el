@@ -1,3 +1,16 @@
+;;; init-c-cpp.el --- c-mode/c++-mode configuratione
+
+;;; Commentary:
+;;
+;; c-mode/c++-mode configuration
+;;
+
+;;; Require
+(require 'init-packages)
+(require 'init-user-defined)
+
+;;; Code:
+
 (require-packages '(company-c-headers))
 
 (use-package company-c-headers
@@ -14,10 +27,12 @@
                                                   "/Library/Developer/CommandLineTools/usr/include/"
                                                   "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include/")))))
 
-(setq c-cpp-completion-mode-value "cquery"
-      c-basic-offset 4)
+(defvar c-cpp-completion-mode-value "cquery")
+
+(set-default c-basic-offset 4)
 
 (defun c-cpp-completion-mode/cquery ()
+  "C/C++ completion with cquery."
   (require-packages '(cquery))
   (require 'init-lsp)
 
@@ -34,6 +49,7 @@
        (funcall 'c-cpp-completion-mode/cquery)))
 
 (defun defined/c-cpp-file-path ()
+  "Get C/C++ file's build path and Cmakefile path."
   (defined/file-path)
   (setq defined/build-path (concat
                             "/tmp/build/"
@@ -42,8 +58,8 @@
                              defined/build-path
                              "/CMakeLists.txt")))
 
-;; Generate Makefile for single C/CPP file
 (defun defined/c-cpp-generate-cmakelists ()
+  "Generate Makefile for single C/CPP file."
   (interactive)
   (defined/c-cpp-file-path)
   (unless (file-exists-p defined/build-path)
@@ -76,6 +92,7 @@
          (message "Compilation exited abnormally: %s" string))))
 
 (defun defined/c-cpp-cmake-run ()
+  "C/C++ run through cmake."
   (interactive)
   (save-buffer)
   (defined/c-cpp-file-path)
@@ -90,6 +107,7 @@
                             (async-shell-command "make run &")))))))
 
 (defun defined/c-cpp-compile-run ()
+  "C/C++ run directly."
   (interactive)
   (save-buffer)
   (defined/c-cpp-file-path)
@@ -130,3 +148,5 @@
                                         defined/g++-args))))
 
 (provide 'init-c-cpp)
+
+;;; init-c-cpp.el ends here

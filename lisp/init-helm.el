@@ -1,4 +1,16 @@
+;;; init-helm.el --- helm configuration
+
+;;; Commentary:
+;;
+;; helm configuration
 ;; Emacs incremental completion and selection narrowing framework
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(helm
                     helm-swoop
                     helm-descbinds))
@@ -60,3 +72,5 @@ On error (read-only), quit without selecting."
   (helm-descbinds-mode 1))
 
 (provide 'init-helm)
+
+;;; init-helm.el ends here

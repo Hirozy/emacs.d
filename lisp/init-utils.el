@@ -1,3 +1,15 @@
+;;; init-utils.el --- Utils configuration
+
+;;; Commentary:
+;;
+;; Utils configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(which-key
                     avy
                     magit
@@ -26,3 +38,5 @@
     (exec-path-from-shell-copy-env "PYTHONPATH")))
 
 (provide 'init-utils)
+
+;;; init-utils.el ends here

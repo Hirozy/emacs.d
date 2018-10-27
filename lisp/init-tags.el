@@ -1,3 +1,15 @@
+;;; init-tags.el --- Tags configuration
+
+;;; Commentary:
+;;
+;; Tags configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(ggtags
                     counsel-gtags))
 
@@ -19,3 +31,5 @@
   ("C-c C-g r" . counsel-gtags-go-forward))
 
 (provide 'init-tags)
+
+;;; init-tags.el ends here

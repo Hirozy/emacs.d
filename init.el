@@ -6,8 +6,8 @@
 
 ;; Figure out the path to our .emacs.d by getting the path part of the
 ;; current file (`init.el`).
-(setq dotfiles-dir (file-name-directory
-                    (or (buffer-file-name) (file-chase-links load-file-name))))
+(defvar dotfiles-dir (file-name-directory
+                      (or (buffer-file-name) (file-chase-links load-file-name))))
 
 (add-to-list 'load-path (concat dotfiles-dir "lisp"))
 (add-to-list 'load-path (concat dotfiles-dir "site-lisp"))
@@ -30,7 +30,6 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-org)
-;; (require 'init-helm)
 (require 'init-ivy)
 (require 'init-completion)
 (require 'init-editing)
@@ -48,3 +47,5 @@
 (require 'init-end)
 
 (provide 'init)
+
+;;; init.el ends here
