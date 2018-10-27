@@ -44,8 +44,6 @@ _mf_: format code    _mi_: indent buffer
    ("r" defined/reload-init-file "reload-emacs" :exit t)
    ("eb" eval-buffer "eval-buffer" :exit t)
    ("er" eval-region "eval-region":exit t)
-   ("kt" kill-this-buffer "kill-this-buffer" :exit t)
-   ("kb" kill-buffer "kill-bufer" :exit t)
    ("SPC" nil)))
 
 (global-set-key
@@ -56,7 +54,12 @@ _mf_: format code    _mi_: indent buffer
    ("ff" counsel-projectile-find-file "projectile-find-file" :exit t)
    ("fp" counsel-projectile-switch-project "projectile-switch-project" :exit t)
    ("fs" counsel-projectile-rg "projectile-rg" :exit t)
+   ("cr" counsel-recentf "counsel-recentf" :exit t)
+   ("cb" counsel-bookmark "counsel-bookmark" :exit t)
+   ("kt" kill-this-buffer "kill-this-buffer" :exit t)
+   ("kb" kill-buffer "kill-bufer" :exit t)
    ("v" pyvenv-workon "Python env" :exit t)
+   ("e" evil-local-mode "evil" :exit t)
    ("SPC" nil)))
 
 (global-set-key
