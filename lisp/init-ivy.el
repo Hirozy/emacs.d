@@ -2,7 +2,8 @@
                     swiper
                     counsel
                     ivy-yasnippet
-                    counsel-projectile))
+                    counsel-projectile
+                    ivy-rich))
 
 (use-package ivy
   :bind
@@ -25,5 +26,9 @@
 (use-package counsel
   :bind
   ("C-x C-f" . counsel-find-file))
+
+(use-package ivy-rich
+  :config
+  (ivy-rich-mode 1))
 
 (provide 'init-ivy)
