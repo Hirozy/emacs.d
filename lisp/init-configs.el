@@ -3,24 +3,25 @@
 ;; (when (version<= "26.0.50" emacs-version )
 ;;   (global-display-line-numbers-mode))
 
-;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
-;; stop creating backup~ files
-(setq make-backup-files nil)
-;; stop creating #autosave# files
-(setq auto-save-default nil)
+(setq-default
+ ;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
+ ;; stop creating backup~ files
+ make-backup-files nil
+ ;; stop creating #autosave# files
+ auto-save-default nil
+ create-lockfiles nil
+ ;; enabled word wrap
+ truncate-lines nil)
 
-(setq create-lockfiles nil)
+;; enabled mouse support in terminal
+(xterm-mouse-mode 1)
+(global-set-key (kbd "<mouse-4>") 'scroll-down-3-lines)
+(global-set-key (kbd "<mouse-5>") 'scroll-up-3-lines)
 
 ;; change all prompts to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (put 'scroll-left 'disabled nil)
-
-;; disabled word wrap
-(setq-default truncate-lines nil)
-
-;; display the current column number
-(setq column-number-mode t)
 
 (setq url-proxy-services
       '(("no_proxy" . "^\\(localhost\\|127.*\\)")
