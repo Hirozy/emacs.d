@@ -1,3 +1,15 @@
+;;; init-hydra.el --- hydra configuration
+
+;;; Commentary:
+;;
+;; hydra configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(hydra))
 
 (global-set-key
@@ -41,7 +53,6 @@ _mf_: format code    _mi_: indent buffer
  (defhydra hydra-system-function ()
    "
 "
-   ("r" defined/reload-init-file "reload-emacs" :exit t)
    ("eb" eval-buffer "eval-buffer" :exit t)
    ("er" eval-region "eval-region":exit t)
    ("SPC" nil)))
@@ -83,8 +94,8 @@ _SPC_: cancel	_o_nly this   	_d_elete
    ("w" hydra-move-splitter-down)
    ("e" hydra-move-splitter-up)
    ("r" hydra-move-splitter-right)
-   ("b" helm-mini)
-   ("f" helm-find-files)
+   ("b" ivy-switch-buffer)
+   ("f" counsel-find-file)
    ("F" follow-mode)
    ("a" (lambda ()
           (interactive)
@@ -126,3 +137,5 @@ _SPC_: cancel	_o_nly this   	_d_elete
    ))
 
 (provide 'init-hydra)
+
+;;; init-hydra.el ends here

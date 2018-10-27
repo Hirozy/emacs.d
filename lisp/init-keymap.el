@@ -1,4 +1,13 @@
+;;; init-keymap.el --- keymap for iTerm2
+
+;;; Commentary:
+;;
+;; keymap for iTerm2
 ;; https://github.com/choppsv1/dot.spacemacs.d/blob/master/local-lisp/iterm-xterm-extra.el
+;;
+
+;;; Code:
+
 (define-key function-key-map "\e[27;5;39~" (kbd "C-'"))
 (define-key function-key-map "\e[27;6;34~" (kbd "C-\""))
 (define-key function-key-map "\e[27;3;39~" (kbd "M-'"))
@@ -369,3 +378,5 @@
 (define-key function-key-map "\e[3;8~" [C-M-S-delete])
 
 (provide 'init-keymap)
+
+;;; init-keymap.el ends here

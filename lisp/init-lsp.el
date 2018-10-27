@@ -1,3 +1,15 @@
+;;; init-lsp.el --- lsp mode configuration
+
+;;; Commentary:
+;;
+;; lsp mode configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(lsp-mode
                     lsp-ui
                     company-lsp))
@@ -21,3 +33,5 @@
   (push 'company-lsp company-backends))
 
 (provide 'init-lsp)
+
+;;; init-lsp.el ends here

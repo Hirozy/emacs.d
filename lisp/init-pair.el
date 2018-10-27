@@ -1,3 +1,15 @@
+;;; init-pair.el --- Pair configuration
+
+;;; Commentary:
+;;
+;; Pair configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(rainbow-delimiters))
 
 (use-package rainbow-delimiters
@@ -21,3 +33,5 @@
   (show-paren-mode 1))
 
 (provide 'init-pair)
+
+;;; init-pair.el ends here

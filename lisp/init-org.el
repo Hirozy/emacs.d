@@ -1,3 +1,15 @@
+;;; init-org.el --- org mode configuration
+
+;;; Commentary:
+;;
+;; org mode configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(org-plus-contrib
                     ob-ipython
                     htmlize))
@@ -64,3 +76,5 @@
 (setq org-src-fontify-natively t)
 
 (provide 'init-org)
+
+;;; init-org.el ends here

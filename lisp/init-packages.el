@@ -1,9 +1,18 @@
+;;; init-packages.el --- Packages manager configuration
+
+;;; Commentary:
+;;
+;; Packages manager configuration
+;;
+
+;;; Code:
+
 (require 'package)
 
-(setq require-package-list '())
+(defvar require-package-list '())
 
 (defun require-packages (package-list)
-  ;; fetch the list of packages available 
+  "Fetch the list of packages available, PACKAGE-LIST is the list you want to install."
   (unless package-archive-contents
     (package-refresh-contents))
 
@@ -19,3 +28,5 @@
 (require-packages '(use-package))
 
 (provide 'init-packages)
+
+;;; init-packages.el ends here

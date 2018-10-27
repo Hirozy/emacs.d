@@ -1,3 +1,15 @@
+;;; init-tex.el --- tex-mode configuration
+
+;;; Commentary:
+;;
+;; tex-mode configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(auctex
                     company-auctex
                     auctex-latexmk
@@ -16,3 +28,5 @@
   (company-auctex-init))
 
 (provide 'init-tex)
+
+;;; init-tex.el ends here

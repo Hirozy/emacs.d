@@ -1,3 +1,12 @@
+;;; init-configs.el --- Misc configuration
+
+;;; Commentary:
+;;
+;; Misc configuration
+;;
+
+;;; Code:
+
 ;; Show Line Numbers
 ;; Use linum instead
 ;; (when (version<= "26.0.50" emacs-version )
@@ -30,3 +39,5 @@
         ("ftp" . "127.0.0.1:6152")))
 
 (provide 'init-configs)
+
+;;; init-configs.el ends here

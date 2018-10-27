@@ -1,21 +1,25 @@
+;;; init-user-defined.el --- Defined function by myself
+
+;;; Commentary:
+;;
+;; Defined function by myself
+;;
+
+;;; Code:
+
 (defun defined/indent-buffer ()
-  "Format current buffer"
+  "Format current buffer."
   (interactive)
   (save-excursion
     (indent-region (point-min) (point-max) nil)))
 
-(defun defined/reload-init-file ()
-  "Reload Emacs config"
-  (interactive)
-  (load-file (concat dotfiles-dir "init.el")))
-
 (defun scroll-up-3-lines ()
-  "Scroll up 3 lines"
+  "Scroll up 3 lines."
   (interactive)
   (scroll-up 3))
 
 (defun scroll-down-3-lines ()
-  "Scroll down 3 lines"
+  "Scroll down 3 lines."
   (interactive)
   (scroll-down 3))
 
@@ -43,6 +47,7 @@ Position the cursor at it's beginning, according to the current mode."
     (kill-buffer "*Async Shell Command*")))
 
 (defun defined/compile-run-file ()
+  "Different behavior for modes when run file."
   (interactive)
   (defined/kill-async-shell)
   (cond
@@ -53,6 +58,7 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key (kbd "S-<f10>") 'defined/compile-run-file)
 
 (defun defined/compile-run-file-other-way ()
+    "Different behavior for modes when run file."
   (interactive)
   (defined/kill-async-shell)
   (cond
@@ -63,3 +69,5 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key (kbd "C-S-<f10>") 'defined/compile-run-file-other-way)
 
 (provide 'init-user-defined)
+
+;;; init-user-defined.el ends here

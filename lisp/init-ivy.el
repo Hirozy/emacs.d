@@ -1,3 +1,15 @@
+;;; init-ivy.el --- ivy configuration
+
+;;; Commentary:
+;;
+;; ivy configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
+
 (require-packages '(ivy
                     swiper
                     counsel
@@ -32,3 +44,5 @@
   (ivy-rich-mode 1))
 
 (provide 'init-ivy)
+
+;;; init-ivy.el ends here
