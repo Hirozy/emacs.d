@@ -21,14 +21,10 @@
   (require-packages '(cquery))
   (require 'init-lsp)
 
-  (setq cquery-path (concat
-                     dotfiles-dir
-                     "site-lisp/package/cquery/build/release/bin/cquery"))
-
   (use-package cquery
     :commands lsp-cquery-enable
     :init
-    (setq cquery-executable cquery-path
+    (setq cquery-executable "cquery"
           cquery-cache-dir "/tmp/")
     :hook
     (c-mode . lsp-cquery-enable)
