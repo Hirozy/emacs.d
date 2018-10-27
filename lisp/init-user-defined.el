@@ -1,13 +1,23 @@
-;; Format the current buffer
 (defun defined/indent-buffer ()
+  "Format current buffer"
   (interactive)
   (save-excursion
     (indent-region (point-min) (point-max) nil)))
 
-;; Reload Emacs config
 (defun defined/reload-init-file ()
+  "Reload Emacs config"
   (interactive)
   (load-file (concat dotfiles-dir "init.el")))
+
+(defun scroll-up-3-lines ()
+  "Scroll up 3 lines"
+  (interactive)
+  (scroll-up 3))
+
+(defun scroll-down-3-lines ()
+  "Scroll down 3 lines"
+  (interactive)
+  (scroll-down 3))
 
 ;; http://emacsredux.com/blog/2013/06/15/open-line-above/
 (defun defined/smart-open-line-above ()
