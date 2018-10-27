@@ -14,6 +14,7 @@
                     golden-ratio
                     highlight-indent-guides
                     linum-relative
+                    diminish
                     fill-column-indicator))
 
 (use-package neotree
@@ -21,6 +22,7 @@
   (bind-key "<f8>" 'neotree-toggle))
 
 (use-package golden-ratio
+  :diminish golden-ratio-mode
   :init
   ;; https://github.com/emacs-helm/helm/issues/238#issuecomment-16490626
   ;; (setq golden-ratio-exclude-buffer-names '("*helm M-x*" "*helm for files*"))
@@ -29,6 +31,7 @@
   (golden-ratio-mode 1))
 
 (use-package highlight-indent-guides
+  :diminish highlight-indent-guides-mode
   :init
   (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
   (setq highlight-indent-guides-method 'character
@@ -36,14 +39,20 @@
         highlight-indent-guides-auto-enabled nil))
 
 (use-package linum-relative
+  :diminish linum-relative-mode
   :init
   (setq linum-relative-backend 'display-line-numbers-mode)
   (linum-relative-global-mode 1))
 
-(define-globalized-minor-mode 
-  global-fci-mode fci-mode 
-  (lambda () 
-    (fci-mode 1)))
+(use-package diminish
+  :config
+  (diminish 'eldoc-mode)
+  (diminish 'abbrev-mode))
+
+;; (define-globalized-minor-mode
+;;   global-fci-mode fci-mode
+;;   (lambda ()
+;;     (fci-mode 1)))
 
 ;; (use-package fill-column-indicator
 ;;   :init

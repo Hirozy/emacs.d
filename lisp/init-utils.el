@@ -16,6 +16,7 @@
                     exec-path-from-shell))
 
 (use-package which-key
+  :diminish which-key-mode
   :init
   ;; Set the time delay (in seconds) for the which-key popup to appear. A value of
   ;; zero might cause issues so a non-zero value is recommended.
@@ -36,6 +37,10 @@
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)
     (exec-path-from-shell-copy-env "PYTHONPATH")))
+
+(use-package winner
+  :hook
+  (after-init . winner-mode))
 
 (provide 'init-utils)
 

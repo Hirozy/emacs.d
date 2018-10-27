@@ -1,4 +1,14 @@
+;;; init-configs.el --- editing tools configuration
 
+;;; Commentary:
+;;
+;; editing tools configuration
+;;
+
+;;; Require
+(require 'init-packages)
+
+;;; Code:
 
 (require-packages '(format-all
                     iedit
@@ -6,6 +16,7 @@
                     undo-tree))
 
 (use-package undo-tree
+  :diminish undo-tree-mode
   :config
   (global-undo-tree-mode 1))
 

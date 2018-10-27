@@ -18,6 +18,7 @@
                     ivy-rich))
 
 (use-package ivy
+  :diminish ivy-mode
   :bind
   ("M-x" . counsel-M-x)
   ("C-x b" . ivy-switch-buffer)
