@@ -28,8 +28,8 @@
   (use-package cquery
     :commands lsp-cquery-enable
     :init
-    (setq cquery-executable cquery-path)
-    (setq cquery-cache-dir "/tmp/")
+    (setq cquery-executable cquery-path
+          cquery-cache-dir "/tmp/")
     :hook
     (c-mode . lsp-cquery-enable)
     (c++-mode . lsp-cquery-enable)))
