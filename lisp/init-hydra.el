@@ -70,7 +70,7 @@ _mf_: format code    _mi_: indent buffer
    ("kt" kill-this-buffer "kill-this-buffer" :exit t)
    ("kb" kill-buffer "kill-bufer" :exit t)
    ("v" pyvenv-workon "Python env" :exit t)
-   ("e" evil-local-mode "evil" :exit t)
+   ("e" evil-mode "evil" :exit t)
    ("SPC" nil)))
 
 (global-set-key
