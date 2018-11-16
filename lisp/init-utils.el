@@ -12,8 +12,7 @@
 
 (require-packages '(which-key
                     avy
-                    magit
-                    exec-path-from-shell))
+                    magit))
 
 (use-package which-key
   :diminish which-key-mode
@@ -31,12 +30,6 @@
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode 1))
-
-(use-package exec-path-from-shell
-  :init
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize)
-    (exec-path-from-shell-copy-env "PYTHONPATH")))
 
 (use-package winner
   :hook
