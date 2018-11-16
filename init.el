@@ -24,6 +24,7 @@
 (require 'init-configs)
 (require 'init-theme)
 (require 'init-keymap)
+(require 'init-exec-path)
 (require 'init-user-defined)
 
 ;;----------------------------------------------------------------------------
@@ -42,6 +43,7 @@
 (require 'init-tags)
 (require 'init-tex)
 (require 'init-plot)
+(require 'init-evil)
 
 (require 'init-hydra)
 (require 'init-end)
