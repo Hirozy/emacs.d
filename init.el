@@ -43,6 +43,8 @@
 (require 'init-tags)
 (require 'init-tex)
 (require 'init-plot)
+(require 'init-lua)
+(require 'init-golang)
 (require 'init-evil)
 
 (require 'init-hydra)
