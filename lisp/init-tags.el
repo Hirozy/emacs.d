@@ -17,7 +17,7 @@
   :config
   (add-hook 'c-mode-hook 'ggtags-mode)
   (add-hook 'c++mode-hook 'ggtags-mdoe)
-  (add-hook 'python-mode-hook ' ggtags-mode)
+  (add-hook 'python-mode-hook 'ggtags-mode)
   :bind
   ("C-c C-g s" . ggtags-find-other-symbol)
   ("C-c C-g h" . ggtags-view-tag-history)
