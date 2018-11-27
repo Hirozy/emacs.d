@@ -13,7 +13,8 @@
 (require-packages '(format-all
                     iedit
                     crux
-                    undo-tree))
+                    undo-tree
+                    whitespace-cleanup-mode))
 
 (use-package undo-tree
   :diminish undo-tree-mode
@@ -28,6 +29,10 @@
 (use-package format-all)
 
 (use-package iedit)
+
+(use-package whitespace-cleanup-mode
+  :hook
+  (prog-mode . whitespace-cleanup-mode))
 
 (provide 'init-editing)
 

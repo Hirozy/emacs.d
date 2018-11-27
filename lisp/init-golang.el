@@ -10,7 +10,10 @@
 
 ;;; Code:
 
-(require-packages '(company-go))
+(require-packages '(company-go
+                    go-mode
+                    go-rename
+                    go-guru))
 
 (use-package company-go
   :hook
