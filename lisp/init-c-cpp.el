@@ -27,27 +27,6 @@
                                                   "/Library/Developer/CommandLineTools/usr/include/"
                                                   "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include/")))))
 
-(defvar c-cpp-completion-mode-value "cquery")
-
-(set-default c-basic-offset 4)
-
-(defun c-cpp-completion-mode/cquery ()
-  "C/C++ completion with cquery."
-  (require-packages '(cquery))
-  (require 'init-lsp)
-
-  (use-package cquery
-    :commands lsp-cquery-enable
-    :init
-    (setq cquery-executable "cquery"
-          cquery-cache-dir "/tmp/")
-    :hook
-    (c-mode . lsp-cquery-enable)
-    (c++-mode . lsp-cquery-enable)))
-
-(cond ((string= c-cpp-completion-mode-value "cquery")
-       (funcall 'c-cpp-completion-mode/cquery)))
-
 (defun defined/c-cpp-file-path ()
   "Get C/C++ file's build path and Cmakefile path."
   (defined/file-path)
