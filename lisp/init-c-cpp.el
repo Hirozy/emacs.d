@@ -27,104 +27,42 @@
                                                   "/Library/Developer/CommandLineTools/usr/include/"
                                                   "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include/")))))
 
-(defun defined/c-cpp-file-path ()
-  "Get C/C++ file's build path and Cmakefile path."
-  (defined/file-path)
-  (setq defined/build-path (concat
-                            "/tmp/build/"
-                            defined/file-name-without-extension-path))
-  (setq defined/n-cmakefile (concat
-                             defined/build-path
-                             "/CMakeLists.txt")))
-
-(defun defined/c-cpp-generate-cmakelists ()
-  "Generate Makefile for single C/CPP file."
-  (interactive)
-  (defined/c-cpp-file-path)
-  (unless (file-exists-p defined/build-path)
-    (make-directory defined/build-path
-                    'parents))
-  (with-current-buffer (find-file-noselect defined/n-cmakefile)
-    (erase-buffer)
-    (insert
-     (concat "cmake_minimum_required (VERSION 3.10)"
-             (format "\n\nproject(%s)"
-                     defined/file-name-without-extension-path)
-             (format "\n\nSET(CMAKE_CXX_FLAGS \"%s\")"
-                     c-cpp-cmake-compiler)
-             (format "\n\nadd_executable(%s %s)"
-                     defined/file-name-without-extension-path
-                     defined/file-name-with-path)
-             (format "\n\nadd_custom_target(run\n\tCOMMAND ${CMAKE_CURRENT_BINARY_DIR}/%s\n)"
-                     defined/file-name-without-extension-path)))
-    (save-buffer))
-  (let ((default-directory defined/build-path))
-    (shell-command "cmake .")))
-
 (setq compilation-finish-functions 'defined/compile-finished)
-(defun defined/compile-finished (buffer string)
-  (cond ((string-match "finished" string)
-         (setq defined/build-successful-flag t)
-         (message "Build maybe successful: start run."))
-        (t
-         (setq defined/build-successful-flag nil)
-         (message "Compilation exited abnormally: %s" string))))
+(defvar defined/build-successful-flag nil)
+(defvar defined/current-buffer-file-name)
 
-(defun defined/c-cpp-cmake-run ()
-  "C/C++ run through cmake."
-  (interactive)
-  (save-buffer)
-  (defined/c-cpp-file-path)
-  (defined/kill-async-shell)
-  (setq defined/build-successful-flag nil)
-  (let ((default-directory defined/build-path))
-    (compile "make")
-    (run-with-timer 3 nil
-                    (lambda()
-                      (if defined/build-successful-flag
-                          (let ((default-directory defined/build-path))
-                            (async-shell-command "make run &")))))))
+(defun defined/compile-finished (buffer string)
+  (if (string-match "finished" string)
+      (progn
+        (async-shell-command (concat
+                              "/tmp/build/"
+                              (file-name-base defined/current-buffer-file-name)
+                              ".out")))))
+
+(defvar defined/gcc-g++-args)
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (setq defined/gcc-g++-args "g++ -O2 -Wall -g -ggdb -std=c++14")))
+
+(add-hook 'c-mode-hook
+          (lambda ()
+            (setq defined/gcc-g++-args "gcc -O2 -g -std=c11")))
+
+(shell-command "mkdir -p /tmp/build")
 
 (defun defined/c-cpp-compile-run ()
   "C/C++ run directly."
   (interactive)
   (save-buffer)
-  (defined/c-cpp-file-path)
   (defined/kill-async-shell)
+  (setq defined/current-buffer-file-name (buffer-file-name))
   (compile (concat
-            c-cpp-generate-compiler
+            defined/gcc-g++-args
             " "
-            defined/file-name-with-path
-            " -o /tmp/"
-            defined/file-name-without-extension-path
-            ".out"))
-  (run-with-timer 3 nil
-                  (lambda()
-                    (if defined/build-successful-flag
-                        (async-shell-command (concat
-                                              "/tmp/"
-                                              defined/file-name-without-extension-path
-                                              ".out"))))))
-
-(add-hook 'c++-mode-hook
-          (lambda()
-            (setq defined/g++-args "-O2 -Wall -g -ggdb -std=c++14")
-            (setq c-cpp-generate-compiler (concat
-                                           "g++ "
-                                           defined/g++-args))
-            (setq c-cpp-cmake-compiler (concat
-                                        "$ENV{CXXFLAGS} "
-                                        defined/g++-args))))
-
-(add-hook 'c-mode-hook
-          (lambda()
-            (setq defined/g++-args "-O2 -g -std=c11")
-            (setq c-cpp-generate-compiler (concat
-                                           "gcc "
-                                           defined/g++-args))
-            (setq c-cpp-cmake-compiler (concat
-                                        "$ENV{CFLAGS} "
-                                        defined/g++-args))))
+            defined/current-buffer-file-name
+            " -o /tmp/build/"
+            (file-name-base defined/current-buffer-file-name)
+            ".out")))
 
 (provide 'init-c-cpp)
 
