@@ -18,9 +18,9 @@
 (defvar python-completion-mode-value "anaconda")
 
 ;; Use ipython instead of Python
-(setq python-shell-interpreter "ipython"
-      python-shell-interpreter-args "-i --simple-prompt"
-      python-shell-completion-native-enable nil)
+(setq-default python-shell-interpreter "ipython"
+              python-shell-interpreter-args "-i --simple-prompt"
+              python-shell-completion-native-enable nil)
 
 (defun python-completion-mode/anaconda ()
   "Completion Python with anaconda-mode."
@@ -71,17 +71,9 @@
   "Run python file in async shell."
   (interactive)
   (save-buffer)
-  (defined/file-path)
   (defined/kill-async-shell)
   (async-shell-command
-   (format "python %s"
-           defined/file-name-with-path)))
-
-(defun defined/python-file-run ()
-  "Run python file in python shell."
-  (interactive)
-  (save-buffer)
-  (python-shell-send-file buffer-file-name))
+   (format "python %s" buffer-file-name)))
 
 (cond ((string= python-completion-mode-value "anaconda")
        (funcall 'python-completion-mode/anaconda))
