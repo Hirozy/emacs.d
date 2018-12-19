@@ -58,6 +58,7 @@
 (use-package ob-ipython)
 
 ;; https://orgmode.org/worg/org-contrib/babel/languages.html
+;; https://orgmode.org/manual/Languages.html#Languages
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)
@@ -74,6 +75,7 @@
 
 ;; fontify code in code blocks
 (setq org-src-fontify-natively t)
+(setq org-html-htmlize-output-type 'css)
 
 (provide 'init-org)
 
