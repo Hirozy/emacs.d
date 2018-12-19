@@ -12,6 +12,8 @@
 
 (require-packages '(which-key
                     avy
+                    ztree
+                    projectile
                     magit))
 
 (use-package which-key
@@ -29,7 +31,10 @@
   :config
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-  (projectile-mode 1))
+  (projectile-mode 1)
+  :init
+  (setq projectile-enable-caching t)
+  (setq projectile-indexing-method 'alien))
 
 (use-package winner
   :hook
