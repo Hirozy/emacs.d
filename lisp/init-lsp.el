@@ -15,21 +15,16 @@
                     company-lsp))
 
 (use-package lsp-mode
+  :commands lsp
   :config
   (setq lsp-message-project-root-warning t))
 
 (use-package lsp-ui
-  :init
-  ;; https://github.com/cquery-project/emacs-cquery/issues/45#issuecomment-406813724
-  (add-hook 'lsp-after-open-hook 'lsp-ui-mode))
-
-(use-package lsp-imenu
-  :init
-  (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
-
+;; https://github.com/cquery-project/emacs-cquery/issues/45
+  :hook (lsp-after-open . lsp-ui-mode))
+  
 (use-package company-lsp
-  :config
-  (push 'company-lsp company-backends))
+  :commands company-lsp)
 
 (provide 'init-lsp)
 

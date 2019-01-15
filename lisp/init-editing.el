@@ -32,8 +32,7 @@
 
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode
-  :hook
-  (prog-mode . whitespace-cleanup-mode))
+  :hook (prog-mode . whitespace-cleanup-mode))
 
 (provide 'init-editing)
 

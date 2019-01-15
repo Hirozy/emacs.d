@@ -56,3 +56,4 @@ site-lisp/package/
 /request/*
 /bookmarks
 /snippets/*/*___
+/.cache

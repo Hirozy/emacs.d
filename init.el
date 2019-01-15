@@ -32,6 +32,7 @@
 ;;----------------------------------------------------------------------------
 (require 'init-org)
 (require 'init-ivy)
+(require 'init-projectile)
 (require 'init-completion)
 (require 'init-editing)
 (require 'init-pair)

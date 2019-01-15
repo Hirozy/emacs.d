@@ -33,11 +33,10 @@
 
 (defun defined/compile-finished (buffer string)
   (if (string-match "finished" string)
-      (progn
-        (async-shell-command (concat
-                              "/tmp/build/"
-                              (file-name-base defined/current-buffer-file-name)
-                              ".out")))))
+      (async-shell-command (concat
+                            "/tmp/build/"
+                            (file-name-base defined/current-buffer-file-name)
+                            ".out"))))
 
 (defvar defined/gcc-g++-args)
 (add-hook 'c++-mode-hook

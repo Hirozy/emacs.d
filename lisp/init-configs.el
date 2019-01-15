@@ -7,11 +7,6 @@
 
 ;;; Code:
 
-;; Show Line Numbers
-;; Use linum instead
-;; (when (version<= "26.0.50" emacs-version )
-;;   (global-display-line-numbers-mode))
-
 (setq-default
  ;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
  ;; stop creating backup~ files
@@ -19,13 +14,20 @@
  ;; stop creating #autosave# files
  auto-save-default nil
  create-lockfiles nil
+ visible-bell 1
  ;; enabled word wrap
  truncate-lines nil)
 
 ;; enabled mouse support in terminal
 (xterm-mouse-mode 1)
-(global-set-key (kbd "<mouse-4>") 'scroll-down-3-lines)
-(global-set-key (kbd "<mouse-5>") 'scroll-up-3-lines)
+
+(global-set-key (kbd "<mouse-4>") (lambda ()
+                                    (interactive)
+                                    (scroll-down 3)))
+
+(global-set-key (kbd "<mouse-5>") (lambda ()
+                                    (interactive)
+                                    (scroll-up 3)))
 
 ;; change all prompts to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
