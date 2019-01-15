@@ -13,20 +13,10 @@
   (save-excursion
     (indent-region (point-min) (point-max) nil)))
 
-(defun scroll-up-3-lines ()
-  "Scroll up 3 lines."
-  (interactive)
-  (scroll-up 3))
-
-(defun scroll-down-3-lines ()
-  "Scroll down 3 lines."
-  (interactive)
-  (scroll-down 3))
-
-;; http://emacsredux.com/blog/2013/06/15/open-line-above/
 (defun defined/smart-open-line-above ()
   "Insert an empty line above the current line.
-Position the cursor at it's beginning, according to the current mode."
+Position the cursor at it's beginning, according to the current mode.
+http://emacsredux.com/blog/2013/06/15/open-line-above/"
   (interactive)
   (move-beginning-of-line nil)
   (newline-and-indent)
@@ -34,6 +24,7 @@ Position the cursor at it's beginning, according to the current mode."
   (indent-according-to-mode))
 
 (defun defined/kill-async-shell ()
+  "Kill async shell."
   (when (get-buffer "*Async Shell Command*")
     (kill-buffer "*Async Shell Command*")))
 

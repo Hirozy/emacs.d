@@ -13,8 +13,7 @@
 (require-packages '(rainbow-delimiters))
 
 (use-package rainbow-delimiters
-  :config
-  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package elec-pair
   :init
@@ -23,6 +22,7 @@
                               (?\( . ?\))
                               (?\{ . ?\})
                               (?\` . ?\`)
+                              (?\$ . ?\$)
                               ))
   :config
   (electric-indent-mode 1)

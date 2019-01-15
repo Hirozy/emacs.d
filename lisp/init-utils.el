@@ -28,17 +28,17 @@
 (use-package avy)
 
 (use-package projectile
-  :config
-  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-  (projectile-mode 1)
+  :bind-keymap
+  (("s-p" . projectile-command-map)
+   ("C-c p" . projectile-command-map))
   :init
   (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'alien))
+  (setq projectile-indexing-method 'hybrid)
+  :config
+  (projectile-mode 1))
 
 (use-package winner
-  :hook
-  (after-init . winner-mode))
+  :hook (after-init . winner-mode))
 
 (provide 'init-utils)
 

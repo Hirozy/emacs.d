@@ -7,6 +7,7 @@
 
 ;;; Require
 (require 'init-packages)
+(require 'init-user-defined)
 
 ;;; Code:
 
@@ -17,13 +18,11 @@
                     gotest))
 
 (use-package company-go
-  :hook
-  (go-mode . (lambda ()
-               (set (make-local-variable 'company-backends) '(company-go))
-               (company-mode))))
+  :hook (go-mode . (lambda ()
+                     (set (make-local-variable 'company-backends) '(company-go)))))
 
 (defun defined/go-file-run-in-shell ()
-  "Run python file in async shell."
+  "Run Golang file in async shell."
   (interactive)
   (save-buffer)
   (defined/kill-async-shell)

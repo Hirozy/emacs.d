@@ -28,9 +28,7 @@
                       company-anaconda))
 
   (use-package anaconda-mode
-    :init
-    ;; Enable anaconda-mode hook
-    (add-hook 'python-mode-hook 'anaconda-mode))
+    :hook (python-mode . anaconda-mode))
 
   (use-package company-anaconda
     :init
@@ -51,10 +49,9 @@
   (require-packages '(lsp-mode))
 
   (use-package lsp-mode
-    :config
-    (add-hook 'python-mode-hook
-              (lambda ()
+    :hook (python-mode . (lambda ()
                 (lsp-python-enable)))
+    :config
     (lsp-define-stdio-client lsp-python "python"
                              (lsp-make-traverser #'(lambda (dir)
                                                      (directory-files
@@ -64,11 +61,10 @@
                              '("pyls")))
 
   (use-package lsp-ui
-    :init
-    (add-hook 'python-mode-hook 'flycheck-mode)))
+    :hook (python-mode . flycheck-mode)))
 
 (defun defined/python-file-run-in-shell ()
-  "Run python file in async shell."
+  "Run Python file in async shell."
   (interactive)
   (save-buffer)
   (defined/kill-async-shell)
