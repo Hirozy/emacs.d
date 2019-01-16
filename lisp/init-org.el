@@ -40,7 +40,7 @@
 
   (use-package ob-core
     :hook (org-babel-after-execute . org-redisplay-inline-images))
- 
+  
   (use-package ob-python
     :config
     (setq org-babel-python-command "python3"))

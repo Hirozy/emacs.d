@@ -50,7 +50,7 @@
 
   (use-package lsp-mode
     :hook (python-mode . (lambda ()
-                (lsp-python-enable)))
+                           (lsp-python-enable)))
     :config
     (lsp-define-stdio-client lsp-python "python"
                              (lsp-make-traverser #'(lambda (dir)

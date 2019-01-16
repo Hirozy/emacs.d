@@ -13,7 +13,7 @@
 (require-packages '(exec-path-from-shell))
 
 (use-package exec-path-from-shell
-  :init
+  :config
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)
     (exec-path-from-shell-copy-env "PYTHONPATH")))
