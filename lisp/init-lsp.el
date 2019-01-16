@@ -20,9 +20,9 @@
   (setq lsp-message-project-root-warning t))
 
 (use-package lsp-ui
-;; https://github.com/cquery-project/emacs-cquery/issues/45
+  ;; https://github.com/cquery-project/emacs-cquery/issues/45
   :hook (lsp-after-open . lsp-ui-mode))
-  
+
 (use-package company-lsp
   :commands company-lsp)
 

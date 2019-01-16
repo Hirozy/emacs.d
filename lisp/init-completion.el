@@ -41,7 +41,7 @@
     :init
     (setq company-dabbrev-ignore-case nil
           company-dabbrev-downcase nil))
-          
+  
   :init
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 1

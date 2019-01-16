@@ -27,6 +27,6 @@
   :bind (("C-c C-g b" . counsel-gtags-go-backward)
          ("C-c C-g r" . counsel-gtags-go-forward)))
 
-  (provide 'init-tags)
+(provide 'init-tags)
 
 ;;; init-tags.el ends here

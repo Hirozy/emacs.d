@@ -50,7 +50,7 @@
 
 (use-package company-math
   :hook (LaTeX-mode . (lambda ()
-  (add-to-list 'company-backends 'company-math-symbols-unicode))))
+                        (add-to-list 'company-backends 'company-math-symbols-unicode))))
 
 (provide 'init-tex)
 
