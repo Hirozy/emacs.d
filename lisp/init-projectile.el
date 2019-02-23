@@ -17,10 +17,8 @@
   :bind-keymap
   (("s-p" . projectile-command-map)
    ("C-c p" . projectile-command-map))
-  :init
-  (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'hybrid)
   :config
+  (setq projectile-indexing-method 'native)
   (projectile-mode 1)
 
   (use-package counsel-projectile

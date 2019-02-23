@@ -15,6 +15,10 @@
 (require-packages '(ein
                     pyvenv))
 
+(use-package ein
+  :hook (ein:notebook-multilang-mode . (lambda ()
+                                         (company-mode -1))))
+
 (defvar python-completion-mode-value "anaconda")
 
 ;; Use ipython instead of Python
