@@ -15,15 +15,15 @@
                     auctex-latexmk
                     biblio-core
                     biblio
-                    latex-extra
                     cdlatex))
 
-(use-package LaTeX-mode
+(use-package tex
   :mode ("\\.tex\\'" . LaTeX-mode)
-  :hook (LaTeX-mode . (lambda ()
-                        (add-to-list 'TeX-command-list
-                                     '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
-                        (setq-local TeX-command-default "XeLaTeX")))
+  :hook ((LaTeX-mode . (lambda ()
+                         (add-to-list 'TeX-command-list
+                                      '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
+                         (setq-local TeX-command-default "XeLaTeX")))
+         (LaTeX-mode . turn-on-auto-fill))
 
   :config
   (use-package tex-buf
@@ -42,9 +42,6 @@
   (use-package company-auctex
     :config
     (company-auctex-init)))
-
-(use-package latex-extra
-  :hook (LaTeX-mode . latex-extra-mode))
 
 (provide 'init-tex)
 
