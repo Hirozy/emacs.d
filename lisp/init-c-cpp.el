@@ -47,11 +47,11 @@
           (lambda ()
             (setq defined/gcc-g++-args "gcc -O2 -g -std=c11")))
 
-(shell-command "mkdir -p /tmp/build")
-
 (defun defined/c-cpp-compile-run ()
   "C/C++ run directly."
   (interactive)
+  (unless (file-exists-p "/tmp/build")
+    (shell-command "mkdir -p /tmp/build"))
   (save-buffer)
   (defined/kill-async-shell)
   (setq defined/current-buffer-file-name (buffer-file-name))
