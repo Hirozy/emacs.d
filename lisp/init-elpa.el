@@ -14,7 +14,8 @@
                          ("org" . "https://orgmode.org/elpa/")
                          ("melpa" . "https://melpa.org/packages/")))
 
-(package-initialize)
+(when (version< emacs-version "27.0")
+  (package-initialize))
 
 (provide 'init-elpa)
 
