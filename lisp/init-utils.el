@@ -14,6 +14,7 @@
                     avy
                     ztree
                     projectile
+                    neotree
                     magit))
 
 (use-package which-key
@@ -39,6 +40,9 @@
 
 (use-package winner
   :hook (after-init . winner-mode))
+
+(use-package neotree
+  :bind ("<f8>" . neotree-toggle))
 
 (provide 'init-utils)
 

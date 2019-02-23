@@ -10,15 +10,11 @@
 
 ;;; Code:
 
-(require-packages '(neotree
-                    golden-ratio
-                    highlight-indent-guides
+(require-packages '(golden-ratio
+                    highlight-indentation
                     linum-relative
                     diminish
                     fill-column-indicator))
-
-(use-package neotree
-  :bind ("<f8>" . neotree-toggle))
 
 (use-package golden-ratio
   :diminish golden-ratio-mode
@@ -29,13 +25,18 @@
   :config
   (golden-ratio-mode 1))
 
-(use-package highlight-indent-guides
-  :diminish highlight-indent-guides-mode
-  :hook (prog-mode . highlight-indent-guides-mode)
-  :config
-  (setq highlight-indent-guides-method 'character
-        ;; https://github.com/DarthFennec/highlight-indent-guides/issues/32#issuecomment-376587172
-        highlight-indent-guides-auto-enabled nil))
+(use-package highlight-indentation
+  :diminish highlight-indentation-mode
+  :hook (prog-mode . highlight-indentation-mode))
+
+;; (USE-package highlight-indent-guides
+;; highlight-indent-guides conflict with ein
+;;   :diminish highlight-indent-guides-mode
+;;   ;; :hook ((prog-mode . highlight-indent-guides-mode))
+;;   :config
+;;   (setq highlight-indent-guides-method 'character
+;;         ;; https://github.com/DarthFennec/highlight-indent-guides/issues/32#issuecomment-376587172
+;;         highlight-indent-guides-auto-enabled nil))
 
 (use-package linum-relative
   :diminish linum-relative-mode
