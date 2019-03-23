@@ -51,10 +51,12 @@ site-lisp/package/
 /magithub
 *.vscode
 *.DS_Store
-*projectile*
+/projectile*
+/.projectile*
 *custom.el
 /request/*
 /bookmarks
 /snippets/*/*___
 /.cache
 transient/history.el
+.lsp-session*
