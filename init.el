@@ -49,6 +49,7 @@
 (require 'init-lua)
 (require 'init-golang)
 (require 'init-evil)
+(require 'init-git)
 
 (require 'init-hydra)
 (require 'init-end)
