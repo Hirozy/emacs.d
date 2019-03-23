@@ -19,20 +19,23 @@ A more detailed discussion of truecolor here [https://gist.github.com/XVilka/834
 #### Enable TrueColor Support
 
 ``` Bash
-$ cat terminfo-24bit.src
-
+cat > terminfo-24bit.src << \EOF
 # Use semicolon separators.
 xterm-24bits|xterm with 24-bit direct color mode,
     use=xterm-256color,
     setb24=\E[48;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm,
     setf24=\E[38;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm,
+EOF
     
-$ tic -x -o ~/.terminfo terminfo-24bit.src
-$ TERM=xterm-24bits emacs -nw
+tic -x -o ~/.terminfo terminfo-24bit.src
+```
+
+If you are using a Bash/Zsh shell
+``` Bash
+TERM=xterm-24bits emacs -nw
 ```
 
 If you are using a fish shell
 ``` Bash
-$ env TERM=xterm-24bits emacs -nw
+env TERM=xterm-24bits emacs -nw
 ```
-
