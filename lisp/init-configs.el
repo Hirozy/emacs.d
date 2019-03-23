@@ -16,7 +16,8 @@
  create-lockfiles nil
  visible-bell 1
  ;; enabled word wrap
- truncate-lines nil)
+ truncate-lines nil
+ tramp-default-method "ssh")
 
 ;; enabled mouse support in terminal
 (xterm-mouse-mode 1)

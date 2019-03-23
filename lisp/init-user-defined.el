@@ -7,12 +7,6 @@
 
 ;;; Code:
 
-(defun defined/indent-buffer ()
-  "Format current buffer."
-  (interactive)
-  (save-excursion
-    (indent-region (point-min) (point-max) nil)))
-
 (defun defined/smart-open-line-above ()
   "Insert an empty line above the current line.
 Position the cursor at it's beginning, according to the current mode.

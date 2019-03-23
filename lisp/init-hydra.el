@@ -44,8 +44,7 @@ _mf_: format code    _mi_: indent buffer
    ("gw" avy-goto-word-1 :exit t)
    ("gc" avy-goto-char-2 :exit t)
    (";" comment-line)
-   ("mf" format-all-buffer :exit t)
-   ("mi" defined/indent-buffer :exit t)
+   ("mi" format-all-buffer :exit t)
    ("SPC" nil)))
 
 (global-set-key
