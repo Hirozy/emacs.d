@@ -16,7 +16,8 @@
   :config
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)
-    (exec-path-from-shell-copy-env "PYTHONPATH")))
+    (exec-path-from-shell-copy-envs (list "WORKON_HOME"
+                                          "PYTHONPATH"))))
 
 (provide 'init-exec-path)
 

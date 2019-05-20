@@ -32,6 +32,7 @@
 (defvar defined/current-buffer-file-name)
 
 (defun defined/compile-finished (buffer string)
+  "Determine whether it is completed, BUFFER STRING."
   (if (string-match "finished" string)
       (async-shell-command (concat
                             "/tmp/build/"
