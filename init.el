@@ -22,11 +22,12 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
-(require 'init-packages)
 (require 'init-configs)
-(require 'init-theme)
-(require 'init-keymap)
+(require 'init-packages)
 (require 'init-exec-path)
+(require 'init-theme)
+(unless (window-system)
+  (require 'init-keymap))
 (require 'init-user-defined)
 
 ;;----------------------------------------------------------------------------
