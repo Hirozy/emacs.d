@@ -13,16 +13,19 @@
 (require-packages '(ivy
                     swiper
                     counsel
+                    counsel-tramp
                     ivy-yasnippet
                     ivy-rich))
 
 (use-package ivy
   :diminish ivy-mode
   :bind (("M-x" . counsel-M-x)
-         ("C-x b" . ivy-switch-buffer))
+         ("C-x b" . ivy-switch-buffer)
+         ("C-x C-b" . ivy-switch-buffer))
   :init
   (setq ivy-height 25
-        ivy-use-virtual-buffers 1
+        ivy-use-virtual-buffers t
+        enable-recursive-minibuffers t
         ivy-re-builders-alist '((t . ivy--regex-ignore-order))
         ;; disable ivy prefixes
         ivy-initial-inputs-alist nil)

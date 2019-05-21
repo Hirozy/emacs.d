@@ -13,9 +13,7 @@
 (require-packages '(which-key
                     avy
                     ztree
-                    projectile
-                    neotree
-                    magit))
+                    neotree))
 
 (use-package which-key
   :diminish which-key-mode
@@ -27,16 +25,6 @@
   (which-key-mode 1))
 
 (use-package avy)
-
-(use-package projectile
-  :bind-keymap
-  (("s-p" . projectile-command-map)
-   ("C-c p" . projectile-command-map))
-  :init
-  (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'hybrid)
-  :config
-  (projectile-mode 1))
 
 (use-package winner
   :hook (after-init . winner-mode))

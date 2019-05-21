@@ -45,27 +45,8 @@
   (require-packages '(elpy))
 
   (use-package elpy
-    :init
-    (elpy-enable 1)))
-
-(defun python-completion-mode/lsp ()
-  "Completion Python with lsp-mode (Language Server Protocol for Python)."
-  (require-packages '(lsp-mode))
-
-  (use-package lsp-mode
-    :hook (python-mode . (lambda ()
-                           (lsp-python-enable)))
     :config
-    (lsp-define-stdio-client lsp-python "python"
-                             (lsp-make-traverser #'(lambda (dir)
-                                                     (directory-files
-                                                      dir
-                                                      nil
-                                                      "\\(__init__\\|setup\\)\\.py\\|Pipfile")))
-                             '("pyls")))
-
-  (use-package lsp-ui
-    :hook (python-mode . flycheck-mode)))
+    (elpy-enable)))
 
 (defun defined/python-file-run-in-shell ()
   "Run Python file in async shell."
@@ -78,9 +59,7 @@
 (cond ((string= python-completion-mode-value "anaconda")
        (funcall 'python-completion-mode/anaconda))
       ((string= python-completion-mode-value "elpy")
-       (funcall 'python-completion-mode/elpy))
-      ((string= python-completion-mode-value "lsp")
-       (funcall 'python-completion-mode/lsp)))
+       (funcall 'python-completion-mode/elpy)))
 
 (provide 'init-python)
 
