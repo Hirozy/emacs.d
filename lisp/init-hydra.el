@@ -13,14 +13,13 @@
 (require-packages '(hydra))
 
 (global-set-key
- (kbd "C-S-d")
- (defhydra hydra-edit ()
+ (kbd "C-r")
+ (defhydra hydra-edit (:foreign-keys warn)
    "
 _;_: comment line    _l_: recent top bottom
 _gl_: goto line    _gw_: goto word-1    _gc_: goto char-2
-_mf_: format code    _mi_: indent buffer
+_mi_: format code
 "
-   ("x" delete-char)
    ("dd" kill-whole-line)
    ("d$" kill-line)
    ("dw" kill-word)
@@ -32,45 +31,38 @@ _mf_: format code    _mi_: indent buffer
    ("F" forward-word)
    ("b" backward-char)
    ("B" backward-word)
-   ("a" beginning-of-line)
-   ("e" move-end-of-line)
+   ("0" beginning-of-line)
+   ("$" move-end-of-line)
    ("i" nil)
    ("o" crux-smart-open-line :exit t)
    ("O" crux-smart-open-line-above :exit t)
-   ("v" scroll-up-command)
-   ("V" scroll-down-command)
    ("l" recenter-top-bottom :exit t)
    ("gl" avy-goto-line :exit t)
    ("gw" avy-goto-word-1 :exit t)
    ("gc" avy-goto-char-2 :exit t)
-   (";" comment-line)
+   (";" comment-line :exit t)
    ("mi" format-all-buffer :exit t)
-   ("SPC" nil)))
+   ("SPC" nil)
+   ("<ESC>" nil)
+   ("<tab>" nil)
+   ("C-c" nil)))
 
 (global-set-key
- (kbd "C-\"")
- (defhydra hydra-system-function ()
+ (kbd "C-q")
+ (defhydra hf (:foreign-keys warn :exit t)
    "
 "
-   ("eb" eval-buffer "eval-buffer" :exit t)
-   ("er" eval-region "eval-region":exit t)
-   ("SPC" nil)))
-
-(global-set-key
- (kbd "C-'")
- (defhydra hf ()
-   "
-"
-   ("ff" counsel-projectile-find-file "projectile-find-file" :exit t)
-   ("fp" counsel-projectile-switch-project "projectile-switch-project" :exit t)
-   ("fs" counsel-projectile-rg "projectile-rg" :exit t)
-   ("cr" counsel-recentf "counsel-recentf" :exit t)
-   ("cb" counsel-bookmark "counsel-bookmark" :exit t)
-   ("kt" kill-this-buffer "kill-this-buffer" :exit t)
-   ("kb" kill-buffer "kill-bufer" :exit t)
-   ("v" pyvenv-workon "Python env" :exit t)
-   ("e" evil-mode "evil" :exit t)
-   ("SPC" nil)))
+   ("cr" counsel-recentf "counsel-recentf")
+   ("cb" counsel-bookmark "counsel-bookmark")
+   ("kt" kill-this-buffer "kill-this-buffer")
+   ("kb" kill-buffer "kill-bufer")
+   ("p" pyvenv-workon "Python env")
+   ("v" evil-mode "evil")
+   ("eb" eval-buffer "eval-buffer")
+   ("SPC" nil)
+   ("<ESC>" nil)
+   ("<tab>" nil)
+   ("C-c" nil)))
 
 (global-set-key
  (kbd "C-\\")
