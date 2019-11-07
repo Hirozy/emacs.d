@@ -26,8 +26,6 @@
 (require 'init-packages)
 (require 'init-exec-path)
 (require 'init-theme)
-(unless (window-system)
-  (require 'init-keymap))
 (require 'init-user-defined)
 
 ;;----------------------------------------------------------------------------
@@ -47,7 +45,6 @@
 (require 'init-tags)
 (require 'init-tex)
 (require 'init-plot)
-(require 'init-lua)
 (require 'init-golang)
 (require 'init-evil)
 (require 'init-git)
