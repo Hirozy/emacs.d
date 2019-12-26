@@ -19,7 +19,8 @@
    ("C-c p" . projectile-command-map))
   :init
   (setq projectile-enable-caching t)
-  ;;  (setq projectile-indexing-method 'hybrid)
+  (setq projectile-indexing-method 'hybrid)
+  (setq projectile-completion-system 'ivy)
   (projectile-mode 1)
 
   (use-package counsel-projectile

@@ -11,21 +11,7 @@
 
 ;;; Code:
 
-(require-packages '(company-c-headers))
-
-(use-package company-c-headers
-  :config
-  (add-to-list 'company-backends 'company-c-headers)
-  (setq company-c-headers-path-system '("/usr/include/"
-                                        "/usr/local/include/"))
-  (when (equal system-type 'darwin)
-    (setq company-c-headers-path-system
-          (append company-c-headers-path-system '("/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/"
-                                                  "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/"
-                                                  "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/"
-                                                  "/Library/Developer/CommandLineTools/usr/include/c++/v1/"
-                                                  "/Library/Developer/CommandLineTools/usr/include/"
-                                                  "/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include/")))))
+(setq-default c-basic-offset 4)
 
 (setq compilation-finish-functions 'defined/compile-finished)
 (defvar defined/build-successful-flag nil)
