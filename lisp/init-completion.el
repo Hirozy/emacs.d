@@ -14,7 +14,7 @@
                     flycheck
                     avy-flycheck
                     yasnippet
-                    yasnippet-snippets))
+                    aggressive-indent))
 
 (setq-default indent-tabs-mode nil
               tab-width 4
@@ -22,16 +22,18 @@
 
 (use-package company
   :hook ((after-init . global-company-mode)
+         (after-init . (lambda ()
+                         (delete 'company-clang company-backends)))
          ;; disable company-mode for shell and eshell
          (shell-mode . (lambda ()
                          (company-mode -1)))
          (eshell-mode . (lambda ()
                           (company-mode -1))))
   :bind (:map company-active-map
-              ("TAB" . company-complete-common-or-cycle)
-              ("<tab>" . company-complete-common-or-cycle)
-              ("S-TAB" . company-select-previous)
-              ("<backtab>" . company-select-previous)
+              ("TAB" . company-complete-selection)
+              ("<tab>" . company-complete-selection)
+              ;; ("S-TAB" . company-select-previous)
+              ;; ("<backtab>" . company-select-previous)
               ("M-/" . company-other-backend)
               ("C-n" . company-select-next)
               ("C-p" . company-select-previous))
@@ -41,7 +43,7 @@
     :init
     (setq company-dabbrev-ignore-case nil
           company-dabbrev-downcase nil))
-  
+
   :init
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 1

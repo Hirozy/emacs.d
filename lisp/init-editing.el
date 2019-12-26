@@ -26,9 +26,6 @@
 ;; Such as crux-smart-kill-line, crux-smart-open-line.
 (use-package crux)
 
-(use-package format-all
-  :hook (prog-mode . format-all-mode))
-
 (use-package iedit)
 
 (use-package whitespace-cleanup-mode
