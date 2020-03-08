@@ -10,9 +10,10 @@
 
 ;;; Code:
 
-(require-packages '(solarized-theme))
+(require-packages '(solarized-theme
+                    spacemacs-theme))
 
-(load-theme 'solarized-dark t)
+(load-theme 'spacemacs-dark)
 
 (provide 'init-theme)
 
