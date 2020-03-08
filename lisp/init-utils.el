@@ -12,8 +12,7 @@
 
 (require-packages '(which-key
                     avy
-                    ztree
-                    neotree))
+                    ztree))
 
 (use-package which-key
   :diminish which-key-mode
@@ -28,9 +27,6 @@
 
 (use-package winner
   :hook (after-init . winner-mode))
-
-(use-package neotree
-  :bind ("<f8>" . neotree-toggle))
 
 (provide 'init-utils)
 
