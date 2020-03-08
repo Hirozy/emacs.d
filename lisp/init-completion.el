@@ -32,9 +32,9 @@
   :bind (:map company-active-map
               ("TAB" . company-complete-selection)
               ("<tab>" . company-complete-selection)
-              ;; ("S-TAB" . company-select-previous)
-              ;; ("<backtab>" . company-select-previous)
-              ("M-/" . company-other-backend)
+              ("S-TAB" . yas-expand)
+;;              ("[?\C-\t]" . yas-expand)
+              ("M-/" . yas-expand)
               ("C-n" . company-select-next)
               ("C-p" . company-select-previous))
 

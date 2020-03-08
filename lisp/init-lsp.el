@@ -13,32 +13,27 @@
 (require-packages '(lsp-mode
                     lsp-ui
                     company-lsp
-                    lsp-ivy
-                    ccls))
+                    lsp-ivy))
 
 (use-package lsp-mode
+  :hook (((c-mode c++-mode objc-mode go-mode) .
+          (lambda ()
+            (lsp)
+            (set (make-local-variable 'company-backends)
+                 '(company-lsp company-yasnippet))))
+         (lsp-mode . lsp-enable-which-key-integration))
+  :bind ("s-l" . lsp-keymap-prefix)
 
   :config
+  (setq-default company-lsp-enable-snippet t
+                lsp-enable-snippet t)
+
   (use-package lsp-ui
     ;; https://github.com/cquery-project/emacs-cquery/issues/45
     :hook (lsp-after-open . lsp-ui-mode))
 
-  (use-package company-lsp
-    :hook ((c-mode c++-mode objc-mode) .
-           (lambda ()
-             (lsp)
-             (set (make-local-variable 'company-backends)
-                  '(company-lsp company-yasnippet)))))
-
-  (use-package ccls
-    :config
-    (setq ccls-executable "ccls")
-    (setq lsp-prefer-flymake nil)
-    (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
-    :hook ((c-mode c++-mode objc-mode) .
-           (lambda ()
-             (require 'ccls)
-             (lsp)))))
+  (use-package lsp-ivy
+    :commands lsp-ivy-workspace-symbol))
 
 (provide 'init-lsp)
 
