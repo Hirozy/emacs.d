@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: matplot
-# key: plot_
-# --
-from matplotlib import pyplot as plt; plt.imshow(${1:img}); plt.show()

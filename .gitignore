@@ -56,7 +56,7 @@ site-lisp/package/
 *custom.el
 /request/*
 /bookmarks
-/snippets/*/*___
+/snippets/*
 /.cache
 transient/history.el
 .lsp-session*
