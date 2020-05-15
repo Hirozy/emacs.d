@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: Latex new paragraph
-# key: par_
-# --
-#+BEGIN_EXPORT latex
-\par
-#+END_EXPORT

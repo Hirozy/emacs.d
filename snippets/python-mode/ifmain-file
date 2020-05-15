@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: ifmain_file
-# key: ifmf
-# --
-if (__name__ == '__main__'):
-    ${1:main()}
