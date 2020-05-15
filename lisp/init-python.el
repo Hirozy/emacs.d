@@ -8,7 +8,7 @@
 ;;; Require
 (require 'init-packages)
 (require 'init-completion)
-(require 'init-user-defined)
+(require 'init-defined)
 
 ;;; Code:
 
@@ -47,14 +47,6 @@
   (use-package elpy
     :config
     (elpy-enable)))
-
-(defun defined/python-file-run-in-shell ()
-  "Run Python file in async shell."
-  (interactive)
-  (save-buffer)
-  (defined/kill-async-shell)
-  (async-shell-command
-   (format "python %s" buffer-file-name)))
 
 (cond ((string= python-completion-mode-value "anaconda")
        (funcall 'python-completion-mode/anaconda))
