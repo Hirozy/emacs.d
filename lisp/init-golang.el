@@ -7,7 +7,7 @@
 
 ;;; Require
 (require 'init-packages)
-(require 'init-user-defined)
+(require 'init-defined)
 
 ;;; Code:
 

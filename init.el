@@ -26,7 +26,7 @@
 (require 'init-packages)
 (require 'init-exec-path)
 (require 'init-theme)
-(require 'init-user-defined)
+(require 'init-defined)
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
@@ -50,6 +50,7 @@
 (require 'init-evil)
 (require 'init-git)
 
+(require 'init-runner)
 (require 'init-hydra)
 (require 'init-end)
 
