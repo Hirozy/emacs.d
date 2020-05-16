@@ -14,13 +14,22 @@
                     counsel-projectile))
 
 (use-package projectile
-  :bind-keymap
-  (("s-p" . projectile-command-map)
-   ("C-c p" . projectile-command-map))
+  :bind-keymap (("s-p" . projectile-command-map)
+                ("C-c p" . projectile-command-map))
+
   :init
-  (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'hybrid)
-  (setq projectile-completion-system 'ivy)
+  (defun defined/projectile-project-find-function (dir)
+    (let ((root (projectile-project-root dir)))
+      (and root (cons 'transient root))))
+
+  :config
+  (setq projectile-enable-caching t
+        projectile-indexing-method 'hybrid
+        projectile-completion-system 'ivy)
+
+  (with-eval-after-load 'project
+    (add-to-list 'project-find-functions 'defined/projectile-project-find-function))
+
   (projectile-mode 1)
 
   (use-package counsel-projectile
