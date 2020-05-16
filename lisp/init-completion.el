@@ -69,6 +69,9 @@
   (use-package avy-flycheck
     :hook (global-flycheck-mode . avy-flycheck-setup)))
 
+(use-package flymake
+  :diminish flymake-mode)
+
 (provide 'init-completion)
 
 ;;; init-completion.el ends here

@@ -19,7 +19,6 @@
           go-mode) . 'eglot-ensure)
 
   :config
-
   (setq eglot-server-programs
         '(((c++-mode c-mode objc-mode) . ("ccls"))
           (go-mode . ("go-langserver")))))
