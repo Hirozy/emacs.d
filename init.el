@@ -12,7 +12,6 @@
                       (or (buffer-file-name) (file-chase-links load-file-name))))
 
 (add-to-list 'load-path (concat dotfiles-dir "lisp"))
-(add-to-list 'load-path (concat dotfiles-dir "site-lisp"))
 
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
