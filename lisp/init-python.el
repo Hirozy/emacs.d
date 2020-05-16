@@ -8,7 +8,6 @@
 ;;; Require
 (require 'init-packages)
 (require 'init-completion)
-(require 'init-defined)
 
 ;;; Code:
 
