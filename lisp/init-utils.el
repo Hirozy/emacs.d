@@ -28,6 +28,9 @@
 (use-package winner
   :hook (after-init . winner-mode))
 
+(use-package open-newline
+  :load-path "site-lisp/open-newline")
+
 (provide 'init-utils)
 
 ;;; init-utils.el ends here

@@ -4,3 +4,6 @@
 [submodule "site-lisp/open-newline"]
 	path = site-lisp/open-newline
 	url = https://github.com/manateelazycat/open-newline.git
+[submodule "site-lisp/nox"]
+	path = site-lisp/nox
+	url = https://github.com/manateelazycat/nox.git
