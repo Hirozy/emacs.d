@@ -18,7 +18,8 @@
  ;; enabled word wrap
  truncate-lines 1
  tramp-default-method "ssh"
- inhibit-startup-screen t)
+ inhibit-startup-screen t
+ display-line-numbers 'relative)
 
 ;; disabled tool bar
 (tool-bar-mode -1)

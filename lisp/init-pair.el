@@ -48,6 +48,9 @@
 (use-package elec-pair
   :init
   (setq electric-pair-pairs '((?\' . ?\')))
+  (add-hook 'emacs-lisp-mode-hook
+            (lambda ()
+              (setq-local electric-pair-pairs nil)))
   :config
   (electric-indent-mode 1)
   (electric-pair-mode 1))

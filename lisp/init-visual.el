@@ -12,7 +12,6 @@
 
 (require-packages '(golden-ratio
                     highlight-indentation
-                    linum-relative
                     diminish
                     fill-column-indicator))
 
@@ -37,13 +36,6 @@
 ;;   (setq highlight-indent-guides-method 'character
 ;;         ;; https://github.com/DarthFennec/highlight-indent-guides/issues/32#issuecomment-376587172
 ;;         highlight-indent-guides-auto-enabled nil))
-
-(use-package linum-relative
-  :diminish linum-relative-mode
-  :init
-  (setq linum-relative-backend 'display-line-numbers-mode)
-  :config
-  (linum-relative-global-mode 1))
 
 (use-package diminish
   :config
