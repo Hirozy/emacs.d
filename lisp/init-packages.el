@@ -5,9 +5,10 @@
 ;; Packages manager configuration
 ;;
 
-;;; Code:
-
+;;; Require
 (require 'package)
+
+;;; Code:
 
 (defvar require-package-list '())
 (defvar defined/package-refresh-flag nil)

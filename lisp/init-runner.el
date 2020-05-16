@@ -7,6 +7,7 @@
 
 ;;; Require
 (require 'package)
+(require 'init-packages)
 
 ;;; Code:
 (require-packages '(quickrun))
