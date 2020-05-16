@@ -10,30 +10,19 @@
 
 ;;; Code:
 
-(require-packages '(lsp-mode
-                    lsp-ui
-                    company-lsp
-                    lsp-ivy))
+(require-packages '(eglot))
 
-(use-package lsp-mode
-  :hook (((c-mode c++-mode objc-mode go-mode) .
-          (lambda ()
-            (lsp)
-            (set (make-local-variable 'company-backends)
-                 '(company-lsp company-yasnippet))))
-         (lsp-mode . lsp-enable-which-key-integration))
-  :bind ("s-l" . lsp-keymap-prefix)
+(use-package eglot
+  :hook ((c-mode
+          c++-mode
+          objc-mode
+          go-mode) . 'eglot-ensure)
 
   :config
-  (setq-default company-lsp-enable-snippet t
-                lsp-enable-snippet t)
 
-  (use-package lsp-ui
-    ;; https://github.com/cquery-project/emacs-cquery/issues/45
-    :hook (lsp-after-open . lsp-ui-mode))
-
-  (use-package lsp-ivy
-    :commands lsp-ivy-workspace-symbol))
+  (setq eglot-server-programs
+        '(((c++-mode c-mode objc-mode) . ("ccls"))
+          (go-mode . ("go-langserver")))))
 
 (provide 'init-lsp)
 

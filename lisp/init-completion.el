@@ -11,6 +11,7 @@
 ;;; Code:
 
 (require-packages '(company
+                    company-box
                     flycheck
                     avy-flycheck
                     yasnippet
@@ -43,6 +44,10 @@
     :init
     (setq company-dabbrev-ignore-case nil
           company-dabbrev-downcase nil))
+
+  (use-package company-box
+    :diminish company-box-mode
+    :hook (company-mode . company-box-mode))
 
   :init
   (setq company-idle-delay 0.1
