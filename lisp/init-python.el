@@ -12,7 +12,7 @@
 ;;; Code:
 
 (require-packages '(ein
-                    pyvenv))
+                    poetry))
 
 (use-package ein
   :hook (ein:notebook-multilang-mode . (lambda ()
