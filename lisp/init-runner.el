@@ -23,7 +23,7 @@
       (:cmdopt . "-std=c++17")
       (:exec . ("%c -x c++ %o -o %e %s" "%e %a"))
       (:compile-only . "%c -Wall -Werror -x c++ %o %o -o %e %s")
-      (remove . ("%e"))
+      (:remove . ("%e"))
       (:description . "Compile C++ file with g++ and execute")))
 
   (quickrun-add-command "c/gcc11"

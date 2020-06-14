@@ -48,6 +48,7 @@
 (require 'init-golang)
 (require 'init-evil)
 (require 'init-git)
+(require 'init-admixture)
 
 (require 'init-runner)
 (require 'init-hydra)

@@ -11,9 +11,10 @@
 ;;; Code:
 
 (require-packages '(solarized-theme
-                    spacemacs-theme))
+                    spacemacs-theme
+                    nord-theme))
 
-(load-theme 'spacemacs-dark)
+(load-theme 'spacemacs-dark t)
 
 (provide 'init-theme)
 

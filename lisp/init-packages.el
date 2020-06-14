@@ -15,9 +15,6 @@
 
 (defun require-packages (package-list)
   "Fetch the list of packages available, PACKAGE-LIST is the list you want to install."
-  (unless package-archive-contents
-    (package-refresh-contents))
-
   (setq require-package-list
         (append require-package-list
                 package-list))
