@@ -16,12 +16,14 @@
   :hook ((c-mode
           c++-mode
           objc-mode
-          go-mode) . 'eglot-ensure)
+          go-mode
+          python-mode) . 'eglot-ensure)
 
   :config
   (setq eglot-server-programs
         '(((c++-mode c-mode objc-mode) . ("ccls"))
-          (go-mode . ("go-langserver")))))
+          (go-mode . ("go-langserver"))
+          (python-mode . ("pylance")))))
 
 (provide 'init-lsp)
 
