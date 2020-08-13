@@ -18,7 +18,7 @@
   :hook (ein:notebook-multilang-mode . (lambda ()
                                          (company-mode -1))))
 
-(defvar python-completion-mode-value "anaconda")
+(defvar python-completion-mode-value "none")
 
 ;; Use ipython instead of Python
 (setq-default python-shell-interpreter "ipython"
