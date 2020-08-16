@@ -31,8 +31,8 @@
          (eshell-mode . (lambda ()
                           (company-mode -1))))
   :bind (:map company-active-map
-              ("TAB" . company-complete-selection)
-              ("<tab>" . company-complete-selection)
+              ("TAB" . company-complete)
+              ("<tab>" . company-complete)
               ("S-TAB" . yas-expand)
 ;;              ("[?\C-\t]" . yas-expand)
               ("M-/" . yas-expand)
@@ -49,7 +49,6 @@
     :diminish company-box-mode
     :hook (company-mode . company-box-mode))
 
-  :init
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 1
         company-require-match nil))
