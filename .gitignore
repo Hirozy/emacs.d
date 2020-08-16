@@ -60,3 +60,4 @@ site-lisp/package/
 /.cache
 transient/history.el
 .lsp-session*
+flycheck_*

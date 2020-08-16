@@ -12,9 +12,10 @@
 
 (require-packages '(solarized-theme
                     spacemacs-theme
-                    nord-theme))
+                    nord-theme
+                    doom-themes))
 
-(load-theme 'spacemacs-dark t)
+(load-theme 'doom-one t)
 
 (provide 'init-theme)
 

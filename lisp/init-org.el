@@ -11,6 +11,8 @@
 ;;; Code:
 
 (require-packages '(org-plus-contrib
+                    org-roam
+                    company-org-roam
                     ob-ipython
                     htmlize))
 
@@ -44,8 +46,6 @@
   (use-package ob-python
     :config
     (setq org-babel-python-command "python3"))
-
-  (use-package ob-ipython)
 
   (use-package ox-latex
     :config
