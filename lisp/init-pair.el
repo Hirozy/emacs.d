@@ -17,16 +17,17 @@
 
 (use-package awesome-pair
   :load-path "site-lisp/awesome-pair"
-  :hook ((lisp-mode . awesome-pair-mode)
-         (c++-mode . awesome-pair-mode)
-         (c-mode . awesome-pair-mode)
-         (python-mode . awesome-pair-mode)
-         (go-mode . awesome-pair-mode)
-         (org-mode . awesome-pair-mode)
-         (markdown-mode . awesome-pair-mode)
-         (latex-mode . awesome-pair-mode)
-         (minibuffer-inactive-mode . awesome-pair-mode))
-  :bind (("(" . awesome-pair-open-round)
+  :hook ((lisp-mode
+          c++-mode
+          c-mode
+          python-mode
+          go-mode
+          org-mode
+          markdown-mode
+          latex-mode
+          emacs-lisp-mode) . awesome-pair-mode)
+  :bind (:map awesome-pair-mode-map
+         ("(" . awesome-pair-open-round)
          ("[" . awesome-pair-open-bracket)
          ("{" . awesome-pair-open-curly)
          (")" . awesome-pair-close-round)
@@ -46,11 +47,6 @@
          ("M-:" . awesome-pair-jump-out-pair-and-newline)))
 
 (use-package elec-pair
-  :init
-  (setq electric-pair-pairs '((?\' . ?\')))
-  (add-hook 'emacs-lisp-mode-hook
-            (lambda ()
-              (setq-local electric-pair-pairs nil)))
   :config
   (electric-indent-mode 1)
   (electric-pair-mode 1))
