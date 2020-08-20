@@ -19,9 +19,9 @@
          ("C-c C-g f" . ggtags-find-reference)
          ("C-c C-g c" . ggtags-create-tags)
          ("C-c C-g u" . ggtags-update-tags))
-  :hook (((c-mode
-           c++-mode
-           python-mode) . ggtags-mode)))
+  :hook ((c-mode
+          c++-mode
+          python-mode) . ggtags-mode))
 
 (use-package counsel-gatgs
   :bind (("C-c C-g b" . counsel-gtags-go-backward)
