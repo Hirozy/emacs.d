@@ -26,9 +26,8 @@
          (after-init . (lambda ()
                          (delete 'company-clang company-backends)))
          ;; disable company-mode for shell and eshell
-         (shell-mode . (lambda ()
-                         (company-mode -1)))
-         (eshell-mode . (lambda ()
+         ((shell-mode
+           eshell-mode) . (lambda ()
                           (company-mode -1))))
   :bind (:map company-active-map
               ("TAB" . company-complete)

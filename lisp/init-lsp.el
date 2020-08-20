@@ -12,24 +12,24 @@
 
 (require-packages '(eglot))
 
+(defun stay-out-of-mode-for-eglot ()
+  "Run eglot without flymake-mode and eldoc-mode."
+  (flymake-mode -1)
+  (eldoc-mode -1))
+
 (use-package eglot
   :hook ((c-mode
           c++-mode
           objc-mode
           go-mode
-          python-mode) . 'eglot-ensure)
-
-  :init
-  (defun stay-out-of-mode-for-eglot ()
-    (flymake-mode -1)
-    (eldoc-mode -1))
+          python-mode) . eglot-ensure)
 
   :config
   (setq eglot-server-programs
         '(((c++-mode c-mode objc-mode) . ("ccls"))
           (go-mode . ("go-langserver"))
           (python-mode . ("pylance"))))
-  (add-hook 'eglot-managed-mode-hook 'stay-out-of-mode-for-eglot))
+  (add-hook 'eglot-managed-mode-hook #'stay-out-of-mode-for-eglot))
 
 (provide 'init-lsp)
 
