@@ -13,6 +13,9 @@
 (require-packages '(magit
                     transient))
 
+(use-package magit
+  :bind ("C-x m" . magit-status))
+
 (provide 'init-git)
 
 ;;; init-git.el ends here
