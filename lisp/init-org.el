@@ -20,10 +20,15 @@
   :config
   (setq org-support-shift-select t
         ;; always display inline images
-        ;; https://orgmode.org/manual/In_002dbuffer-settings.html
         org-startup-with-inline-images t
         ;; fontify code in code blocks
-        org-src-fontify-natively t)
+        org-src-fontify-natively t
+        ;; disable indentation of text below headlines
+        org-adapt-indentation nil
+        ;; default is nil, when non-nil, source
+        ;; code is aligned with the leftmost column
+        org-src-preserve-indentation t
+        org-export-with-sub-superscripts nil)
   ;; https://orgmode.org/worg/org-contrib/babel/languages.html
   ;; https://orgmode.org/manual/Languages.html#Languages
   (org-babel-do-load-languages
@@ -51,6 +56,7 @@
     :config
     (add-to-list 'org-latex-minted-langs
                  '(ipython "ipython3")))
+  
   (use-package ox-html
     :config
     (setq org-html-htmlize-output-type 'css)))
