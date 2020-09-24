@@ -12,7 +12,8 @@
 
 (require-packages '(which-key
                     avy
-                    ztree))
+                    ztree
+                    vterm))
 
 (use-package which-key
   :diminish which-key-mode
@@ -30,6 +31,8 @@
 
 (use-package open-newline
   :load-path "site-lisp/open-newline")
+
+(use-package vterm)
 
 (provide 'init-utils)
 
