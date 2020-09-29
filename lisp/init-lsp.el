@@ -10,26 +10,39 @@
 
 ;;; Code:
 
-(require-packages '(eglot))
+(require-packages '(lsp-mode
+                    lsp-ivy
+                    lsp-pyright
+                    ccls
+                    xref))
 
-(defun stay-out-of-mode-for-eglot ()
-  "Run eglot without flymake-mode and eldoc-mode."
-  (flymake-mode -1)
-  (eldoc-mode -1))
-
-(use-package eglot
-  :hook ((c-mode
-          c++-mode
-          objc-mode
-          go-mode
-          python-mode) . eglot-ensure)
+(use-package lsp-mode
+  :hook (((c-mode
+           c++-mode
+           objc-mode
+           go-mode
+           python-mode) . lsp)
+         (lsp-mode . lsp-enable-which-key-integration))
+  :bind (("C-c l" . counsel-flycheck))
+  :commands lsp
 
   :config
-  (setq eglot-server-programs
-        '(((c++-mode c-mode objc-mode) . ("ccls"))
-          (go-mode . ("go-langserver"))
-          (python-mode . ("pylance"))))
-  (add-hook 'eglot-managed-mode-hook #'stay-out-of-mode-for-eglot))
+  (setq gc-cons-threshold (* 100 1024 1024)
+        read-process-output-max (* 1024 1024)
+        lsp-completion-provider :capf
+        lsp-idle-delay 0.1)
+  (use-package lsp-pyright
+    :hook (python-mode . (lambda ()
+                           (require 'lsp-pyright)
+                           (lsp))))
+
+  (use-package lsp-ivy
+    :commands lsp-ivy-workspace-symbol)
+
+  (use-package ccls
+    :config
+    (setq ccls-executable "ccls")))
+
 
 (provide 'init-lsp)
 
