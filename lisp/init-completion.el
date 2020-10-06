@@ -23,8 +23,6 @@
 
 (use-package company
   :hook ((after-init . global-company-mode)
-         (after-init . (lambda ()
-                         (delete 'company-clang company-backends)))
          ;; disable company-mode for shell and eshell
          ((shell-mode
            eshell-mode) . (lambda ()

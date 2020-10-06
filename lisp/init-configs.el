@@ -21,6 +21,9 @@
  inhibit-startup-screen t
  display-line-numbers 'relative)
 
+;; show cursor position within line
+(column-number-mode 1)
+
 ;; disabled tool bar
 (tool-bar-mode -1)
 
