@@ -15,7 +15,15 @@
                     nord-theme
                     doom-themes))
 
-(load-theme 'doom-one t)
+(load-theme 'doom-vibrant t)
+
+(use-package doom-themes
+  :after treemacs
+  :config
+  (when (display-graphic-p)
+    (progn
+      (setq doom-themes-treemacs-theme "doom-colors")
+      (doom-themes-treemacs-config))))
 
 (provide 'init-theme)
 
