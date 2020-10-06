@@ -16,7 +16,14 @@
                     vterm
                     golden-ratio
                     highlight-indent-guides
-                    diminish))
+                    diminish
+                    all-the-icons
+                    doom-modeline
+                    treemacs
+                    treemacs-projectile
+                    treemacs-magit
+                    treemacs-icons-dired
+                    treemacs-all-the-icons))
 
 (use-package which-key
   :diminish which-key-mode
@@ -50,6 +57,24 @@
   :config
   (diminish 'eldoc-mode)
   (diminish 'abbrev-mode))
+
+(use-package doom-modeline
+  :config
+  (setq doom-modeline-project-detection 'projectile
+        doom-modeline-major-mode-icon nil)
+  (doom-modeline-mode 1))
+
+(use-package treemacs
+  :config
+  (use-package treemacs-projectile
+    :after treemacs projectile)
+
+  (use-package treemacs-icons-dired
+    :config
+    (treemacs-icons-dired-mode))
+
+  (use-package treemacs-magit
+    :after treemacs magit))
 
 (use-package open-newline
   :load-path "site-lisp/open-newline")

@@ -16,9 +16,8 @@
  (kbd "C-r")
  (defhydra hydra-edit (:foreign-keys warn)
    "
-_;_: comment line    _l_: recent top bottom
-_gl_: goto line    _gw_: goto word-1    _gc_: goto char-2
-_mi_: format code
+_;_: Comment line    _mi_: Format code       _6_: Delete indentation
+_gl_: Goto line      _gw_: Goto word-1       _gc_: Goto char-2
 "
    ("dd" kill-whole-line)
    ("d$" kill-line)
@@ -36,12 +35,12 @@ _mi_: format code
    ("i" nil)
    ("o" crux-smart-open-line :exit t)
    ("O" crux-smart-open-line-above :exit t)
-   ("l" recenter-top-bottom :exit t)
    ("gl" avy-goto-line :exit t)
    ("gw" avy-goto-word-1 :exit t)
    ("gc" avy-goto-char-2 :exit t)
    (";" comment-line :exit t)
    ("mi" format-all-buffer :exit t)
+   ("6" delete-indentation :exit t)
    ("SPC" nil)
    ("<ESC>" nil)
    ("<tab>" nil)
@@ -51,14 +50,33 @@ _mi_: format code
  (kbd "C-q")
  (defhydra hf (:foreign-keys warn :exit t)
    "
+_ee_: Python venv      _v_: Evil mode          _p_: Counsel to project
+_ep_: Poetry           _m_: Magit status       _b_: Counsel to file (bufer)
+_ev_: Poetry venv      _t_: Vterm              _f_: Counsel to file (project)
+_lr_: lsp restart      _q_: Treemacs
+_kt_: Kill this buffer _ww_: Switch view
+_kb_: Kill buffer      _w1_: Push view
+_kr_: Eval buffer      _w2_: Pop view
 "
    ("cr" counsel-recentf "counsel-recentf")
    ("cb" counsel-bookmark "counsel-bookmark")
-   ("kt" kill-this-buffer "kill-this-buffer")
-   ("kb" kill-buffer "kill-bufer")
-   ("p" pyvenv-workon "Python env")
-   ("v" evil-mode "evil")
-   ("eb" eval-buffer "eval-buffer")
+   ("kt" kill-this-buffer)
+   ("kb" kill-buffer)
+   ("kr" eval-buffer)
+   ("ee" pyvenv-workon)
+   ("ep" poetry)
+   ("ev" poetry-venv-workon)
+   ("lr" lsp-workspace-restart)
+   ("v" evil-mode)
+   ("m" magit-status)
+   ("t" vterm)
+   ("b" counsel-projectile-switch-to-buffer)
+   ("p" projectile-switch-project)
+   ("f" projectile-find-file)
+   ("q" treemacs)
+   ("ww" ivy-switch-view)
+   ("w1" ivy-push-view)
+   ("w2" ivy-pop-view)
    ("SPC" nil)
    ("<ESC>" nil)
    ("<tab>" nil)
@@ -68,14 +86,14 @@ _mi_: format code
  (kbd "C-\\")
  (defhydra hydra-window ()
    "
-Movement^^        ^Split^           ^Switch^		^Resize^
-----------------------------------------------------------------
-_h_: ←       	_v_ertical    	_b_uffer		_q_: X←
-_j_: ↓        	_x_:horizontal	_f_ind files	_w_: X↓
-_k_: ↑        	_z_:undo      	_a_ce 1		_e_: X↑
-_l_: →        	_Z_:reset      	_s_wap		_r_: X→
-_F_ollow		_D_lt Other   	_S_ave		max_i_mize
-_SPC_: cancel	_o_nly this   	_d_elete
+  ^Movement^        ^Split^           ^Switch^      ^Resize^
+--^--------^--------^-----^-----------^------^------^------^--
+  _h_: ←         	_v_ertical        _b_uffer		_q_: X←
+  _j_: ↓        	_x_:horizontal    _f_ind files	_w_: X↓
+  _k_: ↑        	_z_:undo          _a_ce 1		_e_: X↑
+  _l_: →        	_Z_:reset         _s_wap		_r_: X→
+  _F_ollow          _D_lt Other   	  _S_ave		max_i_mize
+  _SPC_: cancel     _o_nly this   	  _d_elete
 "
    ("h" windmove-left )
    ("j" windmove-down )
