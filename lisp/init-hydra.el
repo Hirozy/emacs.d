@@ -48,18 +48,27 @@ _gl_: Goto line      _gw_: Goto word-1       _gc_: Goto char-2
 
 (global-set-key
  (kbd "C-q")
- (defhydra hf (:foreign-keys warn :exit t)
+ (defhydra hf (:foreign-keys warn :exit t :timeout 1)
    "
 _ee_: Python venv      _v_: Evil mode          _p_: Counsel to project
 _ep_: Poetry           _m_: Magit status       _b_: Counsel to file (bufer)
 _ev_: Poetry venv      _t_: Vterm              _f_: Counsel to file (project)
-_lr_: lsp restart      _q_: Treemacs
-_kt_: Kill this buffer _ww_: Switch view
-_kb_: Kill buffer      _w1_: Push view
-_kr_: Eval buffer      _w2_: Pop view
+_lr_: lsp restart      _q_: Treemacs           _aa_: Tab ace jump
+_kt_: Kill this buffer _ww_: Switch view       _as_: Tab switch group
+_kb_: Kill buffer      _w1_: Push view         _,_: Backward tab
+_kr_: Eval buffer      _w2_: Pop view          _._: Forward tab
 "
    ("cr" counsel-recentf "counsel-recentf")
    ("cb" counsel-bookmark "counsel-bookmark")
+   ("ah" awesome-tab-move-current-tab-to-left "Move tab to left" :exit nil)
+   ("al" awesome-tab-move-current-tab-to-right "Move tab to right" :exit nil)
+   ("a0" awesome-tab-select-beg-tab "Move to beg tab")
+   ("a$" awesome-tab-select-end-tab " Move to end tab")
+   ("ak" awesome-tab-kill-other-buffers-in-current-group "Kill other buffers")
+   ("aa" awesome-tab-ace-jump)
+   ("as" awesome-tab-counsel-switch-group)
+   ("," awesome-tab-backward-tab :exit nil)
+   ("." awesome-tab-forward-tab :exit nil)
    ("kt" kill-this-buffer)
    ("kb" kill-buffer)
    ("kr" eval-buffer)
@@ -86,14 +95,14 @@ _kr_: Eval buffer      _w2_: Pop view
  (kbd "C-\\")
  (defhydra hydra-window ()
    "
-  ^Movement^        ^Split^           ^Switch^      ^Resize^
---^--------^--------^-----^-----------^------^------^------^--
-  _h_: ←         	_v_ertical        _b_uffer		_q_: X←
-  _j_: ↓        	_x_:horizontal    _f_ind files	_w_: X↓
-  _k_: ↑        	_z_:undo          _a_ce 1		_e_: X↑
-  _l_: →        	_Z_:reset         _s_wap		_r_: X→
-  _F_ollow          _D_lt Other   	  _S_ave		max_i_mize
-  _SPC_: cancel     _o_nly this   	  _d_elete
+^Movement^      ^Split^           ^Switch^      ^Resize^
+^--------^------^-----^-----------^------^------^------^--
+_h_: ←         	_v_ertical        _b_uffer		_q_: X←
+_j_: ↓        	_x_:horizontal    _f_ind files	_w_: X↓
+_k_: ↑        	_z_:undo          _a_ce 1		_e_: X↑
+_l_: →        	_Z_:reset         _s_wap		_r_: X→
+_F_ollow        _D_lt Other   	  _S_ave		max_i_mize
+_SPC_: cancel   _o_nly this   	  _d_elete
 "
    ("h" windmove-left )
    ("j" windmove-down )
