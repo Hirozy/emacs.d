@@ -37,7 +37,6 @@
 (require 'init-editing)
 (require 'init-pair)
 (require 'init-utils)
-(require 'init-visual)
 (require 'init-lsp)
 (require 'init-python)
 (require 'init-markdown)
