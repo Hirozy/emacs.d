@@ -12,19 +12,18 @@
 
 (require-packages '(org-plus-contrib
                     org-roam
+                    org-roam-server
                     company-org-roam
-                    ob-ipython
                     htmlize))
 
 (use-package org
+  :hook (org-mode . visual-line-mode)
   :config
   (setq org-support-shift-select t
         ;; always display inline images
         org-startup-with-inline-images t
         ;; fontify code in code blocks
         org-src-fontify-natively t
-        ;; disable indentation of text below headlines
-        org-adapt-indentation nil
         ;; default is nil, when non-nil, source
         ;; code is aligned with the leftmost column
         org-src-preserve-indentation t
@@ -34,7 +33,6 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
-     (ipython . t)
      (C . t)
      (calc . t)
      (emacs-lisp . t)
@@ -47,16 +45,13 @@
 
   (use-package ob-core
     :hook (org-babel-after-execute . org-redisplay-inline-images))
-  
+
   (use-package ob-python
     :config
     (setq org-babel-python-command "python3"))
 
-  (use-package ox-latex
-    :config
-    (add-to-list 'org-latex-minted-langs
-                 '(ipython "ipython3")))
-  
+  (use-package ox-latex)
+
   (use-package ox-html
     :config
     (setq org-html-htmlize-output-type 'css)))
@@ -87,6 +82,10 @@
         '("xelatex -interaction nonstopmode -output-directory %o %f"
           "xelatex -interaction nonstopmode -output-directory %o %f"
           "xelatex -interaction nonstopmode -output-directory %o %f")))
+
+(use-package valign
+  :load-path "site-lisp/valign"
+  :hook (org-mode . valign-mode))
 
 (provide 'init-org)
 
