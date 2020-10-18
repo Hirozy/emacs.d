@@ -13,11 +13,13 @@
 (require-packages '(exec-path-from-shell))
 
 (use-package exec-path-from-shell
+  :if (memq window-system '(mac ns x))
   :config
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize)
-    (exec-path-from-shell-copy-envs (list "WORKON_HOME"
-                                          "PYTHONPATH"))))
+  ;; The shell name is defined by `exec-path-from-shell-shell-name'
+  ;; or `shell-file-name' (if set).
+  (exec-path-from-shell-copy-envs (list "WORKON_HOME"
+                                        "PYTHONPATH"))
+  (exec-path-from-shell-initialize))
 
 (provide 'init-exec-path)
 

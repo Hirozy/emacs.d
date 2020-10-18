@@ -14,7 +14,9 @@
                     iedit
                     crux
                     undo-tree
-                    whitespace-cleanup-mode))
+                    whitespace-cleanup-mode
+                    wgrep
+                    wgrep-ag))
 
 (use-package undo-tree
   :diminish undo-tree-mode
@@ -27,6 +29,10 @@
 (use-package crux)
 
 (use-package iedit)
+
+(use-package wgrep
+  :config
+  (use-package wgrep-ag))
 
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode

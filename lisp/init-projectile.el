@@ -24,7 +24,7 @@
 
   :config
   (setq projectile-enable-caching t
-        projectile-indexing-method 'hybrid
+        projectile-indexing-method 'alien
         projectile-completion-system 'ivy)
 
   (with-eval-after-load 'project

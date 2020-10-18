@@ -23,7 +23,8 @@
                     treemacs-projectile
                     treemacs-magit
                     treemacs-icons-dired
-                    treemacs-all-the-icons))
+                    treemacs-all-the-icons
+                    phi-search))
 
 (use-package which-key
   :diminish which-key-mode
@@ -40,6 +41,8 @@
 (use-package winner
   :hook (after-init . winner-mode))
 
+;; The shell name is defined by `vterm-shell'
+;; or `shell-file-name' (if set).
 (use-package vterm)
 
 (use-package golden-ratio
@@ -77,6 +80,9 @@
   (use-package treemacs-magit
     :after treemacs magit))
 
+(use-package phi-search
+  :bind (("C-M-s" . phi-search)))
+
 (use-package open-newline
   :load-path "site-lisp/open-newline")
 
@@ -84,7 +90,8 @@
   :load-path "site-lisp/awesome-tab"
   :config
   (setq awesome-tab-display-icon nil
-        awesome-tab-height 130)
+        awesome-tab-height 120
+        awesome-tab-show-tab-index t)
 
   (defun awesome-tab-hide-tab (x)
     "Hide tabs"
