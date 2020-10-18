@@ -1,12 +1,15 @@
-[submodule "site-lisp/awesome-pair"]
+[submodule "casouri/valign"]
+	path = site-lisp/valign
+	url = https://github.com/casouri/valign.git
+[submodule "manateelazycat/awesome-pair"]
 	path = site-lisp/awesome-pair
 	url = https://github.com/manateelazycat/awesome-pair.git
-[submodule "site-lisp/open-newline"]
+[submodule "manateelazycat/open-newline"]
 	path = site-lisp/open-newline
 	url = https://github.com/manateelazycat/open-newline.git
-[submodule "site-lisp/nox"]
+[submodule "manateelazycat/nox"]
 	path = site-lisp/nox
 	url = https://github.com/manateelazycat/nox.git
-[submodule "site-lisp/awesome-tab"]
+[submodule "manateelazycat/awesome-tab"]
 	path = site-lisp/awesome-tab
 	url = https://github.com/manateelazycat/awesome-tab.git
