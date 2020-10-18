@@ -14,8 +14,7 @@
                     company-box
                     flycheck
                     avy-flycheck
-                    yasnippet
-                    aggressive-indent))
+                    yasnippet))
 
 (setq-default indent-tabs-mode nil
               tab-width 4
@@ -26,12 +25,11 @@
          ;; disable company-mode for shell and eshell
          ((shell-mode
            eshell-mode) . (lambda ()
-                          (company-mode -1))))
+                            (company-mode -1))))
   :bind (:map company-active-map
               ("TAB" . company-complete)
               ("<tab>" . company-complete)
               ("S-TAB" . yas-expand)
-;;              ("[?\C-\t]" . yas-expand)
               ("M-/" . yas-expand)
               ("C-n" . company-select-next)
               ("C-p" . company-select-previous))
@@ -66,7 +64,9 @@
     :hook (global-flycheck-mode . avy-flycheck-setup)))
 
 (use-package flymake
-  :diminish flymake-mode)
+  :diminish flymake-mode
+  :config
+  (global-flycheck-mode -1))
 
 (provide 'init-completion)
 
