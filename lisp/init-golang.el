@@ -10,15 +10,10 @@
 
 ;;; Code:
 
-(require-packages '(company-go
-                    go-mode
+(require-packages '(go-mode
                     go-rename
                     go-guru
                     gotest))
-
-(use-package company-go
-  :hook (go-mode . (lambda ()
-                     (set (make-local-variable 'company-backends) '(company-go)))))
 
 (provide 'init-golang)
 
