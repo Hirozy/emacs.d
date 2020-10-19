@@ -16,12 +16,12 @@
  (kbd "C-r")
  (defhydra hydra-edit (:foreign-keys warn :exit t)
    "
-_;_: Comment line     _gg_: Goto line        _\"_: Wrap double quate
-_^_: Delete indent    _gl_: Goto line (avy)  _[_: Wrap bracket
-_mi_: Format code     _gw_: Goto word-1      _{_: Wrap curly
-_t_: Undo tree        _gc_: Goto char-2      _(_: Wrap round
-_u_: Undo             _s_: Replace string    _)_: Unwarp
-_r_: Redo             _C-s_: Replace regexp
+_;_: Comment line    _gg_: Goto line        _\"_: Wrap double quate
+_^_: Delete indent   _gl_: Goto line (avy)  _[_: Wrap bracket
+_mi_: Format code    _gw_: Goto word-1      _{_: Wrap curly
+_t_: Undo tree       _gc_: Goto char-2      _(_: Wrap round
+_u_: Undo            _s_: Replace string    _)_: Unwarp
+_r_: Redo            _C-s_: Replace regexp
 "
    ("dd" kill-whole-line :exit nil)
    ("d$" kill-line :exit nil)
@@ -66,12 +66,13 @@ _r_: Redo             _C-s_: Replace regexp
    "
 _ee_: Python venv       _v_: Evil mode        _p_: Counsel to project
 _ep_: Poetry            _m_: Magit status     _b_: Counsel to file (bufer)
-_ev_: Poetry venv       _t_: Vterm            _d_: Counsel to file (project)
-_kr_: Eval buffer       _q_: Treemacs         _aa_: Tab switch group
-_kt_: Kill this buffer  _ww_: Switch view     _,_: Backward tab
-_kb_: Kill buffer       _w1_: Push view       _._: Forward tab
-_ff_: FInd definitions  _w2_: Pop view        _oh_: Org to html
-_cr_: Recentf files     _cb_: Bookmark        _os_: Org template
+_ev_: Poetry venv       _t_: Vterm            _f_: Counsel to file (project)
+_kr_: Eval buffer        _q_: Treemacs       _aa_: Tab switch group
+_kt_: Kill this buffer   _ww_: Switch view   _,_: Backward tab
+_kb_: Kill buffer        _w1_: Push view     _._: Forward tab
+_dd_: Find definitions   _w2_: Pop view      _oh_: Org to html
+_cr_: Recentf files      _cb_: Bookmark      _os_: Org template
+_'_: Org insert subhead
 "
    ("cr" counsel-recentf)
    ("cb" counsel-bookmark)
@@ -100,19 +101,19 @@ _cr_: Recentf files     _cb_: Bookmark        _os_: Org template
    ("ev" poetry-venv-workon)
    ("ls" lsp-workspace-restart)
    ("le" eglot-reconnect)
-   ("ff" xref-find-definitions)
-   ("fw" xref-find-definitions-other-window)
-   ("fr" xref-find-references)
-   ("fd" lsp-find-definition)
-   ("fs" lsp-find-references)
-   ("fi" lsp-find-implementation)
-   ("ft" lsp-find-type-definition)
+   ("dd" xref-find-definitions)
+   ("dw" xref-find-definitions-other-window)
+   ("dr" xref-find-references)
+   ("df" lsp-find-definition)
+   ("ds" lsp-find-references)
+   ("di" lsp-find-implementation)
+   ("dt" lsp-find-type-definition)
    ("v" evil-mode)
    ("m" magit-status)
    ("t" vterm)
    ("b" counsel-projectile-switch-to-buffer)
    ("p" projectile-switch-project)
-   ("d" projectile-find-file)
+   ("f" projectile-find-file)
    ("q" treemacs)
    ("ww" ivy-switch-view)
    ("w1" ivy-push-view)
@@ -120,6 +121,8 @@ _cr_: Recentf files     _cb_: Bookmark        _os_: Org template
    ("oh" org-html-export-to-html)
    ("os" org-insert-structure-template)
    ("ot" org-table-create)
+   ("RET" org-insert-heading-respect-content)
+   ("'" org-insert-subheading)
    ("SPC" nil)
    ("<ESC>" nil)
    ("<tab>" nil)

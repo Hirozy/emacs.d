@@ -18,12 +18,12 @@
 (load-theme 'doom-vibrant t)
 
 (use-package doom-themes
+  :if (display-graphic-p)
   :after treemacs
   :config
-  (when (display-graphic-p)
-    (progn
-      (setq doom-themes-treemacs-theme "doom-colors")
-      (doom-themes-treemacs-config))))
+  (setq doom-themes-treemacs-theme "doom-colors")
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config))
 
 (provide 'init-theme)
 

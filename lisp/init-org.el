@@ -84,6 +84,7 @@
           "xelatex -interaction nonstopmode -output-directory %o %f")))
 
 (use-package valign
+  :if (display-graphic-p)
   :load-path "site-lisp/valign"
   :hook (org-mode . valign-mode))
 
