@@ -28,7 +28,8 @@
         projectile-completion-system 'ivy)
 
   (with-eval-after-load 'project
-    (add-to-list 'project-find-functions 'defined/projectile-project-find-function))
+    (add-to-list 'project-find-functions
+                 'defined/projectile-project-find-function))
 
   (projectile-mode 1)
 
