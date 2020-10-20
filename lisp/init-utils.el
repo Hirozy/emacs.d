@@ -93,20 +93,25 @@
         awesome-tab-height 120
         awesome-tab-show-tab-index t)
 
-  (defun awesome-tab-hide-tab (x)
+  (defun defined/awesome-tab-hide-tab (x)
     "Hide tabs"
     (let ((name (format "%s" x)))
       (or
+       ;; Current window is not dedicated window.
+       (window-dedicated-p (selected-window))
+
        (string-prefix-p "*ccls" name)
        (string-prefix-p "*Compile-Log*" name)
        (string-prefix-p "*lsp" name)
        (string-prefix-p "*pyright" name)
        (string-prefix-p "*which" name)
+       (string-prefix-p "*transient" name)
        (and (string-prefix-p "magit" name)
-            (not (file-name-extension name))))))
-  (setq awesome-tab-hide-tab-function 'awesome-tab-hide-tab)
+            (not (file-name-extension name)))
+       )))
+  (setq awesome-tab-hide-tab-function #'defined/awesome-tab-hide-tab)
 
-  (defun awesome-tab-buffer-groups ()
+  (defun defined/awesome-tab-buffer-groups ()
     "`awesome-tab-buffer-groups' control buffers' group rules.
 Group awesome-tab with mode if buffer is derived from `eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
 All buffer name start with * will group to \"Emacs\".
@@ -128,8 +133,7 @@ Other buffer group by `awesome-tab-get-group-name' with project name."
        "Dired")
       (t
        (awesome-tab-get-group-name (current-buffer))))))
-  (setq awesome-tab-buffer-groups-function 'awesome-tab-buffer-groups)
-
+  (setq awesome-tab-buffer-groups-function #'defined/awesome-tab-buffer-groups)
   (awesome-tab-mode t))
 
 (provide 'init-utils)

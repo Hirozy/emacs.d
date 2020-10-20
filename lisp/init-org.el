@@ -18,6 +18,10 @@
 
 (use-package org
   :hook (org-mode . visual-line-mode)
+  :init
+  (defun defined/org-without-confirm-babel-evaluate (lang body)
+    (not (or (string= lang "dot")
+             (string= lang "gnuplot"))))
   :config
   (setq org-support-shift-select t
         ;; always display inline images
@@ -27,20 +31,32 @@
         ;; default is nil, when non-nil, source
         ;; code is aligned with the leftmost column
         org-src-preserve-indentation t
-        org-export-with-sub-superscripts nil)
+        org-export-with-sub-superscripts nil
+        org-confirm-babel-evaluate #'defined/org-without-confirm-babel-evaluate)
+
   ;; https://orgmode.org/worg/org-contrib/babel/languages.html
   ;; https://orgmode.org/manual/Languages.html#Languages
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((python . t)
-     (C . t)
-     (calc . t)
-     (emacs-lisp . t)
-     (octave . t)
-     (sed . t)
-     (awk . t)
-     (matlab . t)
+   '((C . t)
      (R . t)
+     (awk . t)
+     (calc . t)
+     (dot . t)
+     (emacs-lisp . t)
+     (gnuplot . t)
+     (haskell . t)
+     (latex . t)
+     (lisp . t)
+     (lua . t)
+     (matlab . t)
+     (octave . t)
+     (org . t)
+     (perl . t)
+     (python . t)
+     (ruby . t)
+     (scheme . t)
+     (sed . t)
      (shell . t)))
 
   (use-package ob-core
