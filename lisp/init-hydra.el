@@ -64,17 +64,17 @@ _r_: Redo            _C-s_: Replace regexp
  (kbd "C-q")
  (defhydra hf (:foreign-keys warn :exit t :timeout 3)
    "
-_ee_: Python venv       _v_: Evil mode        _p_: Counsel to project
-_ep_: Poetry            _m_: Magit status     _b_: Counsel to file (bufer)
-_ev_: Poetry venv       _t_: Vterm            _f_: Counsel to file (project)
+_ee_: Python venv        _v_: Evil mode        _p_: Counsel to project
+_ep_: Poetry             _m_: Magit status     _b_: Counsel to file (bufer)
+_ev_: Poetry venv        _t_: Vterm            _f_: Counsel to file (project)
 _kr_: Eval buffer        _q_: Treemacs       _aa_: Tab switch group
 _kt_: Kill this buffer   _ww_: Switch view   _,_: Backward tab
 _kb_: Kill buffer        _w1_: Push view     _._: Forward tab
 _dd_: Find definitions   _w2_: Pop view      _oh_: Org to html
-_cr_: Recentf files      _cb_: Bookmark      _os_: Org template
+_cc_: Recentf files      _cb_: Bookmark      _os_: Org template
 _'_: Org insert subhead
 "
-   ("cr" counsel-recentf)
+   ("cc" counsel-recentf)
    ("cb" counsel-bookmark)
    ("ah" awesome-tab-move-current-tab-to-left :exit nil)
    ("al" awesome-tab-move-current-tab-to-right :exit nil)
@@ -121,6 +121,16 @@ _'_: Org insert subhead
    ("oh" org-html-export-to-html)
    ("os" org-insert-structure-template)
    ("ot" org-table-create)
+   ("<" org-metaleft :exit nil)
+   (">" org-metaright :exit nil)
+   ("ol" org-metaleft :exit nil)
+   ("or" org-metaright :exit nil)
+   ("ou" org-metaup :exit nil)
+   ("od" org-metadown :exit nil)
+   ("OL" org-shiftmetaleft :exit nil)
+   ("OR" org-shiftmetaright :exit nil)
+   ("OU" org-shiftmetaup :exit nil)
+   ("OD" org-shiftmetadown :exit nil)
    ("RET" org-insert-heading-respect-content)
    ("'" org-insert-subheading)
    ("SPC" nil)

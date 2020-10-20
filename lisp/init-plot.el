@@ -11,7 +11,11 @@
 ;;; Code:
 
 (require-packages '(gnuplot
-                    gnuplot-mode))
+                    graphviz-dot-mode))
+
+(use-package graphviz-dot-mode
+  :config
+  (setq graphviz-dot-indent-width 4))
 
 (provide 'init-plot)
 
