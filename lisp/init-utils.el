@@ -24,7 +24,8 @@
                     treemacs-magit
                     treemacs-icons-dired
                     treemacs-all-the-icons
-                    phi-search))
+                    phi-search
+                    uuidgen))
 
 (use-package which-key
   :diminish which-key-mode
@@ -82,6 +83,8 @@
 
 (use-package phi-search
   :bind (("C-M-s" . phi-search)))
+
+(use-package uuidgen)
 
 (use-package open-newline
   :load-path "site-lisp/open-newline")

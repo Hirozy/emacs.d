@@ -10,7 +10,8 @@
 
 ;;; Code:
 
-(require-packages '(hydra))
+(require-packages '(hydra
+                    ace-window))
 
 (global-set-key
  (kbd "C-r")
@@ -56,7 +57,7 @@ _r_: Redo            _C-s_: Replace regexp
    (")" awesome-pair-unwrap)
    ("SPC" nil)
    ("<ESC>" nil)
-   ("<tab>" nil)
+   ("TAB" nil)
    ("C-c" nil)
    ("C-r" nil)))
 
@@ -64,15 +65,15 @@ _r_: Redo            _C-s_: Replace regexp
  (kbd "C-q")
  (defhydra hf (:foreign-keys warn :exit t :timeout 3)
    "
-_ee_: Python venv        _v_: Evil mode        _p_: Counsel to project
-_ep_: Poetry             _m_: Magit status     _b_: Counsel to file (bufer)
-_ev_: Poetry venv        _t_: Vterm            _f_: Counsel to file (project)
-_kr_: Eval buffer        _q_: Treemacs       _aa_: Tab switch group
-_kt_: Kill this buffer   _ww_: Switch view   _,_: Backward tab
-_kb_: Kill buffer        _w1_: Push view     _._: Forward tab
-_dd_: Find definitions   _w2_: Pop view      _oh_: Org to html
-_cc_: Recentf files      _cb_: Bookmark      _os_: Org template
-_'_: Org insert subhead
+_ee_: Python venv        _v_: Evil mode       _p_: Counsel to project
+_ep_: Poetry             _m_: Magit status    _b_: Counsel to file (bufer)
+_ev_: Poetry venv        _t_: Vterm           _f_: Counsel to file (project)
+_kr_: Eval buffer        _q_: Treemacs        _aa_: Tab switch group
+_kt_: Kill this buffer   _ww_: Switch view    _,_: Backward tab
+_kb_: Kill buffer        _w1_: Push view      _._: Forward tab
+_dd_: Find definitions   _w2_: Pop view       _oh_: Org to html
+_cc_: Recentf files      _cb_: Bookmark       _os_: Org template
+_'_: Org insert subhead  _+_: Insert UUID     _oi_: Org indent
 "
    ("cc" counsel-recentf)
    ("cb" counsel-bookmark)
@@ -121,6 +122,7 @@ _'_: Org insert subhead
    ("oh" org-html-export-to-html)
    ("os" org-insert-structure-template)
    ("ot" org-table-create)
+   ("oi" org-indent-mode)
    ("<" org-metaleft :exit nil)
    (">" org-metaright :exit nil)
    ("ol" org-metaleft :exit nil)
@@ -133,74 +135,12 @@ _'_: Org insert subhead
    ("OD" org-shiftmetadown :exit nil)
    ("RET" org-insert-heading-respect-content)
    ("'" org-insert-subheading)
+   ("+" uuidgen)
    ("SPC" nil)
    ("<ESC>" nil)
-   ("<tab>" nil)
+   ("TAB" nil)
    ("C-c" nil)
    ("C-q" nil)))
-
-(global-set-key
- (kbd "C-\\")
- (defhydra hydra-window ()
-   "
-^Movement^      ^Split^           ^Switch^      ^Resize^
-^--------^------^-----^-----------^------^------^------^--
-_h_: ←         	_v_ertical        _b_uffer		_q_: X←
-_j_: ↓        	_x_:horizontal    _f_ind files	_w_: X↓
-_k_: ↑        	_z_:undo          _a_ce 1		_e_: X↑
-_l_: →        	_Z_:reset         _s_wap		_r_: X→
-_F_ollow        _D_lt Other   	  _S_ave		max_i_mize
-_SPC_: cancel   _o_nly this   	  _d_elete
-"
-   ("h" windmove-left )
-   ("j" windmove-down )
-   ("k" windmove-up )
-   ("l" windmove-right )
-   ("q" hydra-move-splitter-left)
-   ("w" hydra-move-splitter-down)
-   ("e" hydra-move-splitter-up)
-   ("r" hydra-move-splitter-right)
-   ("b" ivy-switch-buffer)
-   ("f" counsel-find-file)
-   ("F" follow-mode)
-   ("a" (lambda ()
-          (interactive)
-          (ace-window 1)
-          (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body))
-    )
-   ("v" (lambda ()
-          (interactive)
-          (split-window-right)
-          (windmove-right))
-    )
-   ("x" (lambda ()
-          (interactive)
-          (split-window-below)
-          (windmove-down))
-    )
-   ("s" (lambda ()
-          (interactive)
-          (ace-window 4)
-          (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body)))
-   ("S" save-buffer)
-   ("d" delete-window)
-   ("D" (lambda ()
-          (interactive)
-          (ace-window 16)
-          (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body))
-    )
-   ("o" delete-other-windows)
-   ("i" ace-maximize-window)
-   ("z" (progn
-          (winner-undo)
-          (setq this-command 'winner-undo))
-    )
-   ("Z" winner-redo)
-   ("SPC" nil)
-   ))
 
 (provide 'init-hydra)
 
