@@ -61,3 +61,4 @@ site-lisp/package/
 transient/history.el
 .lsp-session*
 flycheck_*
+projects

@@ -25,7 +25,8 @@
           org-mode
           markdown-mode
           latex-mode
-          emacs-lisp-mode) . awesome-pair-mode)
+          emacs-lisp-mode
+          graphviz-dot-mode) . awesome-pair-mode)
   :bind (:map awesome-pair-mode-map
               ("(" . awesome-pair-open-round)
               ("[" . awesome-pair-open-bracket)
@@ -49,6 +50,7 @@
 
 (use-package elec-pair
   :config
+  (electric-pair-mode 1)
   (electric-indent-mode 1))
 
 (use-package paren

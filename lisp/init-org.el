@@ -55,9 +55,10 @@
      (perl . t)
      (python . t)
      (ruby . t)
-     (scheme . t)
      (sed . t)
-     (shell . t)))
+     (shell . t)
+     (sql . t)
+     (table . t)))
 
   (use-package ob-core
     :hook (org-babel-after-execute . org-redisplay-inline-images))

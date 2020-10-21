@@ -13,9 +13,15 @@
 (require-packages '(gnuplot
                     graphviz-dot-mode))
 
+(use-package gnuplot
+  :mode (("\\.gp\\'" . gnuplot-mode)
+         ("\\.plt\\'" . gnuplot-mode)))
+
 (use-package graphviz-dot-mode
   :config
-  (setq graphviz-dot-indent-width 4))
+  (setq graphviz-dot-indent-width 4)
+
+  (use-package company-graphviz-dot))
 
 (provide 'init-plot)
 
