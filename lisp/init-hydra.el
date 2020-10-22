@@ -22,7 +22,7 @@ _^_: Delete indent   _gl_: Goto line (avy)  _[_: Wrap bracket
 _mi_: Format code    _gw_: Goto word-1      _{_: Wrap curly
 _t_: Undo tree       _gc_: Goto char-2      _(_: Wrap round
 _u_: Undo            _s_: Replace string    _)_: Unwarp
-_r_: Redo            _C-s_: Replace regexp
+_r_: Redo            _C-s_: Replace regexp  _~_: Reload file
 "
    ("dd" kill-whole-line :exit nil)
    ("d$" kill-line :exit nil)
@@ -50,6 +50,7 @@ _r_: Redo            _C-s_: Replace regexp
    (";" comment-line)
    ("mi" format-all-buffer)
    ("^" delete-indentation)
+   ("~" revert-buffer)
    ("\"" awesome-pair-wrap-double-quote)
    ("[" awesome-pair-wrap-bracket)
    ("{" awesome-pair-wrap-curly)
