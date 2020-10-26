@@ -35,21 +35,25 @@
 (require 'init-projectile)
 (require 'init-completion)
 (require 'init-editing)
+(require 'init-tags)
 (require 'init-pair)
 (require 'init-utils)
-(require 'init-lsp)
+
 (require 'init-python)
-(require 'init-markdown)
 (require 'init-c-cpp)
-(require 'init-tags)
-(require 'init-tex)
-(require 'init-plot)
 (require 'init-golang)
+(require 'init-haskell)
+(require 'init-lsp)
+
+(require 'init-tex)
+(require 'init-markdown)
+(require 'init-plot)
+
 (require 'init-evil)
 (require 'init-git)
 (require 'init-admixture)
-
 (require 'init-runner)
+
 (require 'init-hydra)
 (require 'init-end)
 
