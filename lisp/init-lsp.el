@@ -13,6 +13,7 @@
 (require-packages '(lsp-mode
                     lsp-ivy
                     lsp-treemacs
+                    lsp-haskell
                     ccls
                     eglot
                     xref))
@@ -21,7 +22,9 @@
   :hook (((c-mode
            c++-mode
            objc-mode
-           go-mode) . lsp)
+           go-mode
+           haskell-mode
+           haskell-literate-mode) . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :bind (("C-c l" . counsel-flycheck))
   :commands lsp
@@ -36,7 +39,10 @@
 
   (use-package ccls
     :config
-    (setq ccls-executable "ccls")))
+    (setq ccls-executable "ccls"))
+
+  (use-package lsp-haskell
+    :after haskell-mode))
 
 (defun stay-out-of-mode-for-eglot ()
   "Run eglot without 'flymake-mode'."

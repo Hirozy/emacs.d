@@ -11,7 +11,11 @@
 ;;; Code:
 
 (require-packages '(yaml-mode
-                    cmake-mode))
+                    cmake-mode
+                    lua-mode))
+
+(use-package lua-mode
+  :mode "\\.lua\\'")
 
 (provide 'init-admixture)
 

@@ -48,7 +48,7 @@
 (use-package elec-pair
   :hook (((org-mode
            markdown-mode
-           latex-mode) . electric-pair-mode)
+           LaTeX-mode) . electric-pair-mode)
          ((minibuffer-inactive-mode) . (lambda ()
                                          (electric-pair-mode -1))))
   :config

@@ -17,6 +17,20 @@ http://emacsredux.com/blog/2013/06/15/open-line-above/"
   (forward-line -1)
   (indent-according-to-mode))
 
+(defun defined/derived-from-prog-mode ()
+  "Detect if the current major mode is derived from `prog-mode'."
+  (interactive)
+  (if (derived-mode-p 'prog-mode)
+      (message "True")
+    (message "False")))
+
+(defun defined/derived-from-text-mode ()
+  "Detact if the current major mode is derived from `text-mode'."
+  (interactive)
+  (if (derived-mode-p 'text-mode)
+      (message "True")
+    (message "False")))
+
 (provide 'init-defined)
 
 ;;; init-defined.el ends here
