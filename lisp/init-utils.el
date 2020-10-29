@@ -37,7 +37,9 @@
   :config
   (which-key-mode 1))
 
-(use-package avy)
+(use-package avy
+  :bind (("C-x C-SPC" . avy-pop-mark)
+         ("C-:" . avy-goto-char)))
 
 (use-package winner
   :hook (after-init . winner-mode))

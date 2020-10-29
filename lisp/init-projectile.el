@@ -15,7 +15,8 @@
 
 (use-package projectile
   :bind-keymap (("s-p" . projectile-command-map)
-                ("C-c p" . projectile-command-map))
+                ("C-c p" . projectile-command-map)
+                ("C-x p" . projectile-command-map))
 
   :init
   (defun defined/projectile-project-find-function (dir)
