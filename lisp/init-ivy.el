@@ -32,9 +32,6 @@
   :config
   (ivy-mode 1))
 
-(use-package swiper
-  :bind ("C-s" . swiper))
-
 (use-package counsel
   :bind ("C-x C-f" . counsel-find-file))
 
