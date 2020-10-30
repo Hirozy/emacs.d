@@ -24,7 +24,6 @@
                     treemacs-magit
                     treemacs-icons-dired
                     treemacs-all-the-icons
-                    phi-search
                     uuidgen))
 
 (use-package which-key
@@ -82,9 +81,6 @@
 
   (use-package treemacs-magit
     :after treemacs magit))
-
-(use-package phi-search
-  :bind (("C-M-s" . phi-search)))
 
 (use-package uuidgen)
 
