@@ -15,8 +15,7 @@
                     lsp-treemacs
                     lsp-haskell
                     ccls
-                    eglot
-                    xref))
+                    eglot))
 
 (use-package lsp-mode
   :hook (((c-mode
@@ -44,7 +43,7 @@
   (use-package lsp-haskell
     :after haskell-mode))
 
-(defun stay-out-of-mode-for-eglot ()
+(defun defined/stay-out-of-mode-for-eglot ()
   "Run eglot without 'flymake-mode'."
   (flymake-mode -1))
 
@@ -54,7 +53,7 @@
   :config
   (setq eglot-server-programs
         '((python-mode . ("pylance"))))
-  (add-hook 'eglot-managed-mode-hook #'stay-out-of-mode-for-eglot))
+  (add-hook 'eglot-managed-mode-hook #'defined/stay-out-of-mode-for-eglot))
 
 (provide 'init-lsp)
 

@@ -10,17 +10,18 @@
 
 ;;; Code:
 
-(require-packages '(format-all
-                    iedit
+(require-packages '(anzu
                     crux
-                    undo-tree
-                    whitespace-cleanup-mode
-                    wgrep
-                    wgrep-ag
-                    anzu
                     ctrlf
                     expand-region
+                    format-all
+                    iedit
+                    multiple-cursors
                     symbol-overlay
+                    undo-tree
+                    wgrep
+                    wgrep-ag
+                    whitespace-cleanup-mode
                     zzz-to-char))
 
 (use-package undo-tree
@@ -62,7 +63,7 @@
 
 (use-package symbol-overlay
   :bind-keymap
-  ("C-c *" . symbol-overlay-map)
+  ("C-c i" . symbol-overlay-map)
   :hook (prog-mode . symbol-overlay-mode))
 
 (use-package zzz-to-char

@@ -10,21 +10,21 @@
 
 ;;; Code:
 
-(require-packages '(which-key
+(require-packages '(all-the-icons
                     avy
-                    ztree
-                    vterm
+                    diminish
+                    doom-modeline
                     golden-ratio
                     highlight-indent-guides
-                    diminish
-                    all-the-icons
-                    doom-modeline
                     treemacs
-                    treemacs-projectile
-                    treemacs-magit
-                    treemacs-icons-dired
                     treemacs-all-the-icons
-                    uuidgen))
+                    treemacs-icons-dired
+                    treemacs-magit
+                    treemacs-projectile
+                    uuidgen
+                    vterm
+                    ztree
+                    which-key))
 
 (use-package which-key
   :diminish which-key-mode
