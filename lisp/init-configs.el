@@ -9,36 +9,40 @@
 
 (setq-default
  ;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
- ;; stop creating backup~ files
+ ;; Stop creating backup~ files
  make-backup-files nil
- ;; stop creating #autosave# files
+ ;; Stop creating #autosave# files
  auto-save-default nil
  create-lockfiles nil
  visible-bell 1
- ;; enabled word wrap
+ ;; Enabled word wrap
  truncate-lines 1
  tramp-default-method "ssh"
- inhibit-startup-screen t
- display-line-numbers 'relative)
+ inhibit-startup-screen t)
 
-;; show cursor position within line
+(global-display-line-numbers-mode 1)
+
+;; Show cursor position within line
 (column-number-mode 1)
 
-;; disabled tool bar
+;; Disabled tool bar
 (tool-bar-mode -1)
 
-;; enabled mouse support in terminal
+;; Enabled mouse support in terminal
 (xterm-mouse-mode 1)
-
 (global-set-key (kbd "<mouse-4>") (lambda ()
                                     (interactive)
                                     (scroll-down 3)))
-
 (global-set-key (kbd "<mouse-5>") (lambda ()
                                     (interactive)
                                     (scroll-up 3)))
 
-;; change all prompts to y or n
+
+(require 'view)
+(global-set-key (kbd "C-v") 'View-scroll-half-page-forward)
+(global-set-key (kbd "M-v") 'View-scroll-half-page-backward)
+
+;; Change all prompts to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (put 'scroll-left 'disabled nil)
