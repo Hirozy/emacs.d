@@ -128,13 +128,13 @@ _V_: Scroll up
    ("C-c" nil)
    ("C-r" nil)))
 
-(defhydra hydra-low-frequency (:foreign-keys warn :exit t :timeout 5)
+(defhydra hydra-low-frequency (:foreign-keys warn :exit t)
   "
 _ah_: Move tab to left       _ww_: Switch view      _t_: Vterm
-_al_: Move tab to right      _w1_: Push view        _u_: UUID
-_a0_: Move tab to begin      _w2_: Pop view         ^ ^
-_a$_: Move tab to end        _p_: Awesome pair      ^ ^
-_aa_: Switch tab group       _l_: File path
+_al_: Move tab to right      _w1_: Push view        _T_: Projectile term
+_a0_: Move tab to begin      _w2_: Pop view         _c_: Projectile async run
+_a$_: Move tab to end        _p_: Awesome pair      _r_: Read only
+_aa_: Switch tab group       _u_: UUID              _f_: File path
 "
   ("ah" awesome-tab-move-current-tab-to-left :exit nil)
   ("al" awesome-tab-move-current-tab-to-right :exit nil)
@@ -147,7 +147,10 @@ _aa_: Switch tab group       _l_: File path
   ("t" vterm)
   ("u" uuidgen)
   ("p" awesome-pair-mode)
-  ("l" defined/get-buffer-file-name)
+  ("f" defined/get-buffer-file-name)
+  ("T" projectile-run-vterm)
+  ("c" projectile-run-async-shell-command-in-root)
+  ("r" projectile-toggle-project-read-only)
   ("C-c" nil)
   ("SPC" nil))
 
@@ -212,7 +215,6 @@ _kr_: Eval buffer
    ("kb" kill-buffer)
    ("kr" eval-buffer)
    ("v" evil-mode "Evil")
-   ("m" magit-status "Magit")
    ("b" counsel-projectile-switch-to-buffer)
    ("p" projectile-switch-project)
    ("f" projectile-find-file)

@@ -48,12 +48,12 @@
 (use-package elec-pair
   :hook (((org-mode
            markdown-mode
-           LaTeX-mode) . electric-pair-mode)
+           LaTeX-mode
+           prog-mode) . (lambda ()
+                          (electric-pair-mode)
+                          (electric-indent-mode)))
          ((minibuffer-inactive-mode) . (lambda ()
-                                         (electric-pair-mode -1))))
-  :config
-  (electric-pair-mode 1)
-  (electric-indent-mode 1))
+                                         (electric-pair-mode -1)))))
 
 (use-package paren
   :config
