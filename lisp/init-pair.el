@@ -53,7 +53,7 @@
                           (electric-pair-mode)
                           (electric-indent-mode)))
          ((minibuffer-inactive-mode) . (lambda ()
-                                         (electric-pair-mode -1)))))
+                                         (electric-pair-local-mode -1)))))
 
 (use-package paren
   :config

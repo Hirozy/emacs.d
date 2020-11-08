@@ -28,8 +28,6 @@
 ;; Disabled tool bar
 (tool-bar-mode -1)
 
-;; Enabled mouse support in terminal
-(xterm-mouse-mode 1)
 (global-set-key (kbd "<mouse-4>") (lambda ()
                                     (interactive)
                                     (scroll-down 3)))

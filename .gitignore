@@ -62,3 +62,5 @@ transient/history.el
 .lsp-session*
 flycheck_*
 projects
+.dir-locals.el
+semanticdb/

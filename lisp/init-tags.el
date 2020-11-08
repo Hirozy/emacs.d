@@ -45,6 +45,13 @@
     (setq xref-show-definitions-function #'ivy-xref-show-defs
           xref-show-xrefs-function #'ivy-xref-show-xrefs)))
 
+(use-package semantic
+  :config
+  (setq semantic-default-submodes
+        '(global-semantic-idle-scheduler-mode
+          global-sementic-minor-mode))
+  (semantic-mode 1))
+
 (provide 'init-tags)
 
 ;;; init-tags.el ends here
