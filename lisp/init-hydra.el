@@ -123,6 +123,7 @@ _V_: Scroll up
    (":" iedit-mode)
    ("v" View-scroll-half-page-forward :exit nil)
    ("V" View-scroll-half-page-backward :exit nil)
+   ("RET" nil)
    ("SPC" nil)
    ("<ESC>" nil)
    ("C-c" nil)
@@ -135,6 +136,7 @@ _al_: Move tab to right      _w1_: Push view        _T_: Projectile term
 _a0_: Move tab to begin      _w2_: Pop view         _c_: Projectile async run
 _a$_: Move tab to end        _p_: Awesome pair      _r_: Read only
 _aa_: Switch tab group       _u_: UUID              _f_: File path
+_o_: Xterm mouse
 "
   ("ah" awesome-tab-move-current-tab-to-left :exit nil)
   ("al" awesome-tab-move-current-tab-to-right :exit nil)
@@ -151,10 +153,10 @@ _aa_: Switch tab group       _u_: UUID              _f_: File path
   ("T" projectile-run-vterm)
   ("c" projectile-run-async-shell-command-in-root)
   ("r" projectile-toggle-project-read-only)
+  ("o" xterm-mouse-mode)
+  ("C-l" nil)
   ("C-c" nil)
   ("SPC" nil))
-
-(require 'multiple-cursors)
 
 (defhydra hydra-multiple-cursors (:hint nil)
   "
@@ -187,16 +189,16 @@ _aa_: Switch tab group       _u_: UUID              _f_: File path
  (kbd "C-q")
  (defhydra hydra-high-frequency (:foreign-keys warn :exit t :timeout 3)
    "
-_p_: Counsel to project           _,_: Backward tab
-_b_: Counsel to file (bufer)      _._: Format tab
-_f_: Counsel to file (project)    _d_: Xref definition
+_p_: Counsel to project           _,_: Backward tab        _i_: Semantic   _C-q_: Cond mode
+_b_: Counsel to file (bufer)      _._: Format tab          _I_: imenu      _C-l_: Low frequency
+_f_: Counsel to file (project)    _d_: Xref definition     ^ ^             _C-p_: Multiple cursors
 _c_: Counsel recentf              _r_: Xref references
 _C_: Counsel bookmark             _w_: Definition new
 _kr_: Eval buffer                 _a_: Xref apropos
 _kt_: Kill this buffer            _/_: Awesome pair
 _kr_: Eval buffer
 "
-   ("c" counsel-recentf)
+   ("c" counsel-buffer-or-recentf)
    ("C" counsel-bookmark)
    ("," awesome-tab-backward-tab :exit nil)
    ("." awesome-tab-forward-tab :exit nil)
@@ -223,7 +225,9 @@ _kr_: Eval buffer
    ("r" xref-find-references)
    ("w" xref-find-definitions-other-window)
    ("a" xref-find-apropos)
-   ("C-m" hydra-multiple-cursors/body)
+   ("i" counsel-semantic-or-imenu)
+   ("I" counsel-imenu)
+   ("C-p" hydra-multiple-cursors/body)
    ("C-l" hydra-low-frequency/body)
    ("C-q" cond-keymode-with-modes)
    ("SPC" cond-keymode-with-modes)

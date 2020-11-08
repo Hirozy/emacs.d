@@ -56,7 +56,9 @@
 
 (use-package ctrlf
   :bind (("C-s" . ctrlf-forward-literal)
-         ("C-M-s" . ctrlf-forward-regexp))
+         ("C-M-s" . ctrlf-forward-regexp)
+         ("M-s _" . ctrlf-forward-symbol)
+         ("M-s ." . ctrlf-forward-symbol-at-point))
   :custom-face
   (ctrlf-highlight-active ((t (:inherit isearch :background "peru"))))
   (ctrlf-highlight-line ((t (:inherit hl-line :background "gray20" :underline t)))))

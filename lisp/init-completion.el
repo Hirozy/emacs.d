@@ -12,8 +12,8 @@
 
 (require-packages '(company
                     company-box
+                    eldoc
                     flycheck
-                    avy-flycheck
                     yasnippet))
 
 (setq-default indent-tabs-mode nil
@@ -25,7 +25,7 @@
          ;; disable company-mode for shell and eshell
          ((shell-mode
            eshell-mode) . (lambda ()
-                            (company-mode -1))))
+           (company-mode -1))))
   :bind (:map company-active-map
               ("TAB" . company-complete)
               ("<tab>" . company-complete)
@@ -58,10 +58,7 @@
          (latex-mode . (lambda ()
                          (flycheck-mode -1))))
   :config
-  (setq flycheck-emacs-lisp-load-path 'inherit)
-
-  (use-package avy-flycheck
-    :hook (global-flycheck-mode . avy-flycheck-setup)))
+  (setq flycheck-emacs-lisp-load-path 'inherit))
 
 (use-package flymake
   :diminish flymake-mode
