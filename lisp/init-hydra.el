@@ -123,6 +123,7 @@ _V_: Scroll up
    (":" iedit-mode)
    ("v" View-scroll-half-page-forward :exit nil)
    ("V" View-scroll-half-page-backward :exit nil)
+   ("DEL" hungry-delete-backward)
    ("RET" nil)
    ("SPC" nil)
    ("<ESC>" nil)

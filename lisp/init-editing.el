@@ -15,6 +15,7 @@
                     ctrlf
                     expand-region
                     format-all
+                    hungry-delete
                     iedit
                     multiple-cursors
                     symbol-overlay
@@ -76,6 +77,10 @@
   (zzz-to-char-reach 4096)
   :bind (("M-z" . zzz-to-char)
          ("C-M-z" . zzz-up-to-char)))
+
+(use-package hungry-delete
+  :config
+  (setq hungry-delete-join-reluctantly t))
 
 (provide 'init-editing)
 
