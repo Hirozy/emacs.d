@@ -57,10 +57,11 @@
   :hook ((prog-mode . flycheck-mode)
          (latex-mode . (lambda ()
                          (flycheck-mode -1))))
-  :bind ("C-c l" . flycheck-list-errors)
-
   :config
-  (setq flycheck-emacs-lisp-load-path 'inherit))
+  (setq flycheck-emacs-lisp-load-path 'inherit)
+  (define-key flycheck-mode-map flycheck-keymap-prefix nil)
+  (setq flycheck-keymap-prefix (kbd "C-c l"))
+  (define-key flycheck-mode-map flycheck-keymap-prefix flycheck-command-map))
 
 (use-package flymake
   :diminish flymake-mode
