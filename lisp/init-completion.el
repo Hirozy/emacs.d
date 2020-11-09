@@ -57,6 +57,8 @@
   :hook ((prog-mode . flycheck-mode)
          (latex-mode . (lambda ()
                          (flycheck-mode -1))))
+  :bind ("C-c l" . flycheck-list-errors)
+
   :config
   (setq flycheck-emacs-lisp-load-path 'inherit))
 

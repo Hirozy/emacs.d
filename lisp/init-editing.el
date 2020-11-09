@@ -80,7 +80,7 @@
 
 (use-package hungry-delete
   :config
-  (setq hungry-delete-join-reluctantly t))
+  (setq hungry-delete-join-reluctantly nil))
 
 (provide 'init-editing)
 

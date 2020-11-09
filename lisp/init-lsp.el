@@ -10,49 +10,25 @@
 
 ;;; Code:
 
-(require-packages '(lsp-mode
-                    lsp-ivy
-                    lsp-treemacs
-                    lsp-haskell
-                    ccls
-                    eglot))
-
-(use-package lsp-mode
-  :hook (((c-mode
-           c++-mode
-           objc-mode
-           go-mode
-           haskell-mode
-           haskell-literate-mode) . lsp)
-         (lsp-mode . lsp-enable-which-key-integration))
-  :bind (("C-c l" . counsel-flycheck))
-  :commands lsp
-
-  :config
-  (setq gc-cons-threshold (* 100 1024 1024)
-        read-process-output-max (* 1024 1024)
-        lsp-idle-delay 0.1)
-
-  (use-package lsp-ivy
-    :commands lsp-ivy-workspace-symbol)
-
-  (use-package ccls
-    :config
-    (setq ccls-executable "ccls"))
-
-  (use-package lsp-haskell
-    :after haskell-mode))
+(require-packages '(eglot))
 
 (defun defined/stay-out-of-mode-for-eglot ()
-  "Run eglot without 'flymake-mode'."
+  "Run eglot without `flycheck-mode'."
   (flymake-mode -1))
 
 (use-package eglot
-  :hook ((python-mode) . eglot-ensure)
+  :hook ((c-mode
+          c++-mode
+          python-mode
+          objc-mode
+          go-mode
+          haskell-mode
+          haskell-literate-mode) . eglot-ensure)
 
   :config
   (setq eglot-server-programs
-        '((python-mode . ("pylance"))))
+        '((python-mode . ("pylance"))
+          ((c-mode c++-mode objc-mode) . ("ccls"))))
   (add-hook 'eglot-managed-mode-hook #'defined/stay-out-of-mode-for-eglot))
 
 (provide 'init-lsp)

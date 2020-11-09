@@ -10,12 +10,12 @@
 
 ;;; Code:
 
-(require-packages '(ivy
-                    swiper
-                    counsel
+(require-packages '(counsel
                     counsel-tramp
+                    ivy
+                    ivy-rich
                     ivy-yasnippet
-                    ivy-rich))
+                    swiper))
 
 (use-package ivy
   :diminish ivy-mode
