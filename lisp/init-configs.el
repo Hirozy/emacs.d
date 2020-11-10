@@ -40,6 +40,8 @@
 (global-set-key (kbd "C-v") 'View-scroll-half-page-forward)
 (global-set-key (kbd "M-v") 'View-scroll-half-page-backward)
 
+(global-set-key (kbd "s-l") 'goto-line)
+
 ;; Change all prompts to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 

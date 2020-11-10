@@ -16,6 +16,7 @@
                     ivy-xref))
 
 (use-package ggtags
+  :diminish ggtags-mode
   :bind (("C-c g r" . ggtags-find-reference)
          ("C-c g d" . ggtags-find-definition)
          ("C-c g c" . ggtags-find-tag-dwim)

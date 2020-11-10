@@ -35,7 +35,9 @@
 ;; Such as crux-smart-kill-line, crux-smart-open-line.
 (use-package crux)
 
-(use-package iedit)
+(use-package iedit
+  :custom-face
+  (iedit-occurrence ((t (:background "#C57BDB" :foreground "white" :inverse-video nil :weight bold)))))
 
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode
@@ -68,6 +70,7 @@
   :bind (("C-=" . er/expand-region)))
 
 (use-package symbol-overlay
+  :diminish symbol-overlay-mode
   :bind-keymap
   ("C-c i" . symbol-overlay-map)
   :hook (prog-mode . symbol-overlay-mode))

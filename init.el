@@ -25,13 +25,13 @@
 (require 'init-packages)
 (require 'init-exec-path)
 (require 'init-theme)
-(require 'init-defined)
+(require 'init-defun)
+(require 'init-ivy)
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-org)
-(require 'init-ivy)
 (require 'init-projectile)
 (require 'init-completion)
 (require 'init-editing)
@@ -49,13 +49,13 @@
 (require 'init-markdown)
 (require 'init-plot)
 
-(require 'init-evil)
 (require 'init-git)
 (require 'init-admixture)
 (require 'init-runner)
+(require 'init-evil)
 
 (require 'init-hydra)
-(require 'init-end)
+(require 'init-postconfig)
 
 (provide 'init)
 

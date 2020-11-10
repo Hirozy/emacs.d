@@ -12,8 +12,9 @@
 
 (require-packages '(eglot))
 
-(defun defined/stay-out-of-mode-for-eglot ()
-  "Run eglot without `flycheck-mode'."
+(defun defined/mode-hook-for-eglot ()
+  "Run eglot whit hooks."
+  (diminish 'eldoc-mode)
   (flymake-mode -1))
 
 (use-package eglot
@@ -29,7 +30,7 @@
   (setq eglot-server-programs
         '((python-mode . ("pylance"))
           ((c-mode c++-mode objc-mode) . ("ccls"))))
-  (add-hook 'eglot-managed-mode-hook #'defined/stay-out-of-mode-for-eglot))
+  (add-hook 'eglot-managed-mode-hook #'defined/mode-hook-for-eglot))
 
 (provide 'init-lsp)
 

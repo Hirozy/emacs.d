@@ -17,10 +17,12 @@
   :config
   ;; The shell name is defined by `exec-path-from-shell-shell-name'
   ;; or `shell-file-name' (if set).
-  (exec-path-from-shell-copy-envs (list "WORKON_HOME"
-                                        "PYTHONPATH"
-                                        "GTAGSCONF"
-                                        "GTAGSLABEL"))
+  (setq exec-path-from-shell-warn-duration-millis 1000)
+  (setq exec-path-from-shell-variables '("PATH"
+                                         "WORKON_HOME"
+                                         "PYTHONPATH"
+                                         "GTAGSCONF"
+                                         "GTAGSLABEL"))
   (exec-path-from-shell-initialize))
 
 (provide 'init-exec-path)

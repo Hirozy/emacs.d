@@ -10,7 +10,21 @@
 
 ;;; Code:
 
-(require-packages '(evil))
+(require-packages '(evil
+                    evil-anzu
+                    evil-escape
+                    evil-matchit))
+
+(use-package evil
+  :bind ("C-\\" . evil-mode)
+  :config
+  (use-package evil-escape
+    :hook (evil-mode . evil-escape-mode)
+    :config
+    (setq-default evil-escape-key-sequence "jk"
+                  evil-escape-delay 0.2))
+  (use-package evil-matchit)
+  (use-package evil-anzu))
 
 (provide 'init-evil)
 
