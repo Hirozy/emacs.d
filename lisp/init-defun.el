@@ -1,4 +1,4 @@
-;;; init-defined.el --- Defined function by myself
+;;; init-defun.el --- Defined function by myself
 
 ;;; Commentary:
 ;;
@@ -22,6 +22,6 @@
   (interactive)
   (message buffer-file-name))
 
-(provide 'init-defined)
+(provide 'init-defun)
 
-;;; init-defined.el ends here
+;;; init-defun.el ends here

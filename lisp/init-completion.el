@@ -27,12 +27,16 @@
            eshell-mode) . (lambda ()
            (company-mode -1))))
   :bind (:map company-active-map
-              ("TAB" . company-complete)
-              ("<tab>" . company-complete)
-              ("S-TAB" . yas-expand)
-              ("M-/" . yas-expand)
+              ("TAB" . company-complete-common)
+              ("<backtab>" . company-tabnine-call-other-backends)
+              ("M-i" . yas-expand)
               ("C-n" . company-select-next)
-              ("C-p" . company-select-previous))
+              ("C-p" . company-select-previous)
+              ("M-n" . company-next-page)
+              ("M-p" . company-previous-page)
+              ("M-w" . company-show-location)
+              ("M-s" . company-search-candidates)
+              ("M-S" . company-filter-candidates))
 
   :config
   (use-package company-dabbrev
@@ -46,7 +50,8 @@
 
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 1
-        company-require-match nil))
+        company-require-match nil
+        company-show-numbers t))
 
 (use-package yasnippet
   :diminish yas-minor-mode

@@ -33,6 +33,7 @@
   (ivy-mode 1))
 
 (use-package counsel
+  :diminish counsel-mode
   :bind (("C-x C-f" . counsel-find-file)
          ("C-." . counsel-imenu))
   :config

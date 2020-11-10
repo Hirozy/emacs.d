@@ -85,7 +85,7 @@ _U_: Undo tree         _gc_: Goto char-2        _(_: Wrap round
 _u_: Undo              _s_: Replace string      _)_: Unwarp
 _r_: Redo              _S_: Replace regexp      _~_: Reload file
 _v_: Scroll down       _:_: iedit-mode          _`_: Normal mode
-_V_: Scroll up
+_V_: Scroll up         _,_: Goto change          _._: Goto change (r)
 "
    ("dd" kill-whole-line :exit nil)
    ("d$" kill-line :exit nil)
@@ -123,6 +123,8 @@ _V_: Scroll up
    (":" iedit-mode)
    ("v" View-scroll-half-page-forward :exit nil)
    ("V" View-scroll-half-page-backward :exit nil)
+   ("," goto-last-change)
+   ("." goto-last-change-reverse :exit nil)
    ("DEL" hungry-delete-backward)
    ("RET" nil)
    ("SPC" nil)

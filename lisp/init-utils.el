@@ -15,6 +15,7 @@
                     diminish
                     doom-modeline
                     golden-ratio
+                    goto-chg
                     highlight-indent-guides
                     treemacs
                     treemacs-all-the-icons
@@ -62,15 +63,16 @@
 (use-package diminish
   :config
   (diminish 'eldoc-mode)
-  (diminish 'abbrev-mode))
+  (diminish 'abbrev-mode)
+  (diminish 'auto-revert-mode))
 
 (use-package doom-modeline
   :config
   (setq doom-modeline-project-detection 'projectile
-        doom-modeline-major-mode-icon nil)
-  (doom-modeline-mode 1))
+        doom-modeline-major-mode-icon nil))
 
 (use-package treemacs
+  :bind ("s-t" . treemacs)
   :config
   (use-package treemacs-projectile
     :after treemacs projectile)
@@ -81,6 +83,8 @@
 
   (use-package treemacs-magit
     :after treemacs magit))
+
+(use-package goto-chg)
 
 (use-package uuidgen)
 
