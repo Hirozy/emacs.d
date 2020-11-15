@@ -21,6 +21,7 @@
  inhibit-startup-screen t)
 
 (global-display-line-numbers-mode 1)
+(set-face-attribute 'line-number-current-line nil :weight 'normal)
 
 ;; Show cursor position within line
 (column-number-mode 1)

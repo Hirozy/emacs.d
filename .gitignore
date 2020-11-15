@@ -64,3 +64,4 @@ flycheck_*
 projects
 .dir-locals.el
 semanticdb/
+async-*

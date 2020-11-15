@@ -19,6 +19,9 @@
   :bind ("C-\\" . evil-mode)
   :config
   (use-package evil-escape
+    ;; Bind F16 aka <print> key to `evil-escape',
+    ;; Map Esc key to F16 when use terminal on Windows 10.
+    :bind ("<print>" . evil-escape)
     :hook (evil-mode . evil-escape-mode)
     :config
     (setq-default evil-escape-key-sequence "jk"

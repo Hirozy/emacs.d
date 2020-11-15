@@ -25,7 +25,8 @@
 (use-package company-tabnine
   :after company
   :config
-  (add-to-list 'company-backends #'company-tabnine))
+  (setq company-backends (append company-backends '(company-tabnine)))
+)
 
 (provide 'init-tabnine)
 

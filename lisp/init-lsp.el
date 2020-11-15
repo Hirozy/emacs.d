@@ -14,6 +14,7 @@
 
 (defun defined/mode-hook-for-eglot ()
   "Run eglot whit hooks."
+  ;; (setq company-backends (append company-backends '(company-tabnine)))
   (diminish 'eldoc-mode)
   (flymake-mode -1))
 
