@@ -72,7 +72,7 @@
         doom-modeline-major-mode-icon nil))
 
 (use-package treemacs
-  :bind ("s-t" . treemacs)
+  :bind ("s-t" . treemacs-select-window)
   :config
   (use-package treemacs-projectile
     :after treemacs projectile)
