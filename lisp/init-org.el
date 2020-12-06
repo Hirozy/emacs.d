@@ -17,7 +17,8 @@
                     htmlize))
 
 (use-package org
-  :hook (org-mode . visual-line-mode)
+  :hook ((org-mode . visual-line-mode)
+         (org-mode . eldoc-mode))
   :init
   (defun defined/org-without-confirm-babel-evaluate (lang body)
     (not (or (string= lang "dot")

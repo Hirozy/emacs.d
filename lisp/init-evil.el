@@ -16,9 +16,19 @@
                     evil-matchit))
 
 (use-package evil
-  :bind ("C-\\" . evil-mode)
+  :bind (("C-\\" . evil-mode)
+         :map evil-normal-state-map
+         ("U" . evil-redo)
+         ("C-e" . move-end-of-line)
+         ("C-r" . hydra-edit/body)
+         :map evil-insert-state-map
+         ("C-e" . move-end-of-line)
+         ("C-r" . hydra-edit/body))
   :config
+  (evil-set-undo-system 'undo-tree)
+
   (use-package evil-escape
+    :diminish evil-escape-mode
     ;; Bind F16 aka <print> key to `evil-escape',
     ;; Map Esc key to F16 when use terminal on Windows 10.
     :bind ("<print>" . evil-escape)
