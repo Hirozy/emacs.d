@@ -13,7 +13,6 @@
 (require-packages '(all-the-icons
                     avy
                     diminish
-                    doom-modeline
                     golden-ratio
                     goto-chg
                     highlight-indent-guides
@@ -23,18 +22,17 @@
                     treemacs-magit
                     treemacs-projectile
                     uuidgen
-                    vterm
                     ztree
                     which-key))
 
+(when (memq system-type '(darwin gnu/linux))
+  (require-packages '(vterm)))
+
 (use-package which-key
   :diminish which-key-mode
-  :init
-  ;; Set the time delay (in seconds) for the which-key popup to appear. A value of
-  ;; zero might cause issues so a non-zero value is recommended.
-  (setq which-key-idle-delay 0.1
-        which-key-popup-type 'minibuffer)
   :config
+  (setq which-key-idle-delay 0.05
+        which-key-popup-type 'minibuffer)
   (which-key-mode 1))
 
 (use-package avy
@@ -43,10 +41,6 @@
 
 (use-package winner
   :hook (after-init . winner-mode))
-
-;; The shell name is defined by `vterm-shell'
-;; or `shell-file-name' (if set).
-(use-package vterm)
 
 (use-package golden-ratio
   :diminish golden-ratio-mode
@@ -65,11 +59,6 @@
   (diminish 'eldoc-mode)
   (diminish 'abbrev-mode)
   (diminish 'auto-revert-mode))
-
-(use-package doom-modeline
-  :config
-  (setq doom-modeline-project-detection 'projectile
-        doom-modeline-major-mode-icon nil))
 
 (use-package treemacs
   :bind ("s-t" . treemacs-select-window)
