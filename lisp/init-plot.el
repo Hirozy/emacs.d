@@ -11,7 +11,8 @@
 ;;; Code:
 
 (require-packages '(gnuplot
-                    graphviz-dot-mode))
+                    graphviz-dot-mode
+                    plantuml-mode))
 
 (use-package gnuplot
   :mode (("\\.gp\\'" . gnuplot-mode)

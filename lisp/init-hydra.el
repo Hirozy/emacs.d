@@ -13,7 +13,7 @@
 (require-packages '(hydra
                     ace-window))
 
-(defhydra hydra-org-mode (:foreign-keys warn :exit t :timeout 3)
+(defhydra hydra-org-mode (:foreign-keys warn :exit t)
   "
 _<_: Meta left         _>_: Meta right          _s_: Insert template
 _l_: Meta left         _L_: Shift meta left     _t_: Export to html
@@ -43,7 +43,7 @@ _RET_: Respect heading
   ("C-c" nil)
   ("C-q" nil))
 
-(defhydra hydra-lsp-mode (:foreign-keys warn :exit t :timeout 3)
+(defhydra hydra-lsp-mode (:foreign-keys warn :exit t)
   "
 _d_: lsp definition         _s_: Restart lsp-mode
 _r_: lsp references         _S_: Restart eglot
@@ -190,7 +190,7 @@ _o_: Xterm mouse
 
 (global-set-key
  (kbd "C-q")
- (defhydra hydra-high-frequency (:foreign-keys warn :exit t :timeout 3)
+ (defhydra hydra-high-frequency (:foreign-keys warn :exit t)
    "
 _p_: Counsel to project           _,_: Backward tab        _i_: Semantic   _C-q_: Cond mode
 _b_: Counsel to file (bufer)      _._: Format tab          _I_: imenu      _C-l_: Low frequency
@@ -199,7 +199,6 @@ _c_: Counsel recentf              _r_: Xref references
 _C_: Counsel bookmark             _w_: Definition new
 _kr_: Eval buffer                 _a_: Xref apropos
 _kt_: Kill this buffer            _/_: Awesome pair
-_kr_: Eval buffer
 "
    ("c" counsel-buffer-or-recentf)
    ("C" counsel-bookmark)
