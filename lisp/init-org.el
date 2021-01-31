@@ -13,6 +13,7 @@
 (require-packages '(org-plus-contrib
                     org-roam
                     org-roam-server
+                    ox-gfm
                     company-org-roam
                     htmlize))
 

@@ -12,6 +12,7 @@
 
 (require-packages '(yaml-mode
                     cmake-mode
+                    dockerfile-mode
                     lua-mode))
 
 (use-package lua-mode

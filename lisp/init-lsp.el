@@ -10,28 +10,42 @@
 
 ;;; Code:
 
-(require-packages '(eglot))
+(require-packages '(lsp-mode
+                    lsp-ivy
+                    lsp-treemacs
+                    lsp-haskell
+                    lsp-pyright
+                    ccls))
 
-(defun defined/mode-hook-for-eglot ()
-  "Run eglot whit hooks."
-  ;; (setq company-backends (append company-backends '(company-tabnine)))
-  (eldoc-mode -1)
-  (flymake-mode -1))
-
-(use-package eglot
-  :hook ((c-mode
-          c++-mode
-          python-mode
-          objc-mode
-          go-mode
-          haskell-mode
-          haskell-literate-mode) . eglot-ensure)
+(use-package lsp-mode
+  :hook (((c-mode
+           c++-mode
+           python-mode
+           haskell-mode
+           haskell-literate-mode) . lsp)
+         (lsp-mode . lsp-enable-which-key-integration))
+  :bind (("C-c l" . counsel-flycheck))
 
   :config
-  (setq eglot-server-programs
-        '((python-mode . ("pylance"))
-          ((c-mode c++-mode objc-mode) . ("ccls"))))
-  (add-hook 'eglot-managed-mode-hook #'defined/mode-hook-for-eglot))
+  (setq gc-cons-threshold (* 100 1024 1024)
+        read-process-output-max (* 1024 1024)
+        lsp-idle-delay 0.1
+        lsp-headerline-breadcrumb-enable nil)
+
+  (use-package lsp-ivy
+    :commands lsp-ivy-workspace-symbol)
+
+  (use-package ccls
+    :config
+    (setq ccls-executable "ccls"))
+
+  (use-package lsp-pyright
+    :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))
+
+  (use-package lsp-haskell
+    :after haskell-mode))
 
 (provide 'init-lsp)
 
