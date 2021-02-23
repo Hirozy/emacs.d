@@ -36,6 +36,7 @@
 (use-package crux)
 
 (use-package iedit
+  :bind ("S-<f6>" . iedit-mode)
   :custom-face
   (iedit-occurrence ((t (:background "#C57BDB" :foreground "white" :inverse-video nil :weight bold)))))
 
@@ -84,6 +85,9 @@
 (use-package hungry-delete
   :config
   (setq hungry-delete-join-reluctantly nil))
+
+(global-set-key (kbd "C-x ;") 'comment-line)
+(global-set-key (kbd "C-x C-;") 'comment-set-column)
 
 (provide 'init-editing)
 

@@ -67,6 +67,7 @@
     :after treemacs projectile)
 
   (use-package treemacs-icons-dired
+    :if (memq window-system '(mac ns x))
     :config
     (treemacs-icons-dired-mode))
 
