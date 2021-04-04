@@ -21,11 +21,16 @@
          ("U" . evil-redo)
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
+         ("C-." . counsel-imenu)
          :map evil-insert-state-map
          ("C-e" . move-end-of-line)
-         ("C-r" . hydra-edit/body))
+         ("C-r" . hydra-edit/body)
+         ("C-." . counsel-imenu))
   :config
   (evil-set-undo-system 'undo-tree)
+  (setq evil-default-state 'emacs)
+  (evil-set-initial-state 'prog-mode 'normal)
+  (evil-mode)
 
   (use-package evil-escape
     :diminish evil-escape-mode

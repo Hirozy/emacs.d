@@ -71,7 +71,7 @@
   :config
   (setq flycheck-emacs-lisp-load-path 'inherit)
   (define-key flycheck-mode-map flycheck-keymap-prefix nil)
-  (setq flycheck-keymap-prefix (kbd "C-c l"))
+  (setq flycheck-keymap-prefix (kbd "C-c C-l"))
   (define-key flycheck-mode-map flycheck-keymap-prefix flycheck-command-map))
 
 (use-package flymake
