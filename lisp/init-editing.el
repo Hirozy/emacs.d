@@ -36,7 +36,7 @@
 (use-package crux)
 
 (use-package iedit
-  :bind ("S-<f6>" . iedit-mode)
+  :bind ("S-<f2>" . iedit-mode)
   :custom-face
   (iedit-occurrence ((t (:background "#C57BDB" :foreground "white" :inverse-video nil :weight bold)))))
 
