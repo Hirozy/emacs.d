@@ -34,8 +34,14 @@
       (:remove . ("%e"))
       (:description . "Compile C file with gcc and execute")))
 
+  (quickrun-add-command "python/python3"
+    '((:command . "python3")
+      (:exec . ("%c -u %s"))
+      (:description . "Run python file with python3")))
+
   (quickrun-set-default "c++" "c++/g++17")
-  (quickrun-set-default "c" "c/gcc11"))
+  (quickrun-set-default "c" "c/gcc11")
+  (quickrun-set-default "python" "python/python3"))
 
 (provide 'init-runner)
 
