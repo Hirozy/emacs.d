@@ -1,4 +1,4 @@
-;;; init-theme.el --- Theme configuration
+2;;; init-theme.el --- Theme configuration
 
 ;;; Commentary:
 ;;
@@ -15,7 +15,7 @@
                     nord-theme
                     doom-themes))
 
-(load-theme 'doom-vibrant t)
+(load-theme 'vscode-dark t)
 
 (use-package doom-themes
   :if (memq window-system '(mac ns x))
