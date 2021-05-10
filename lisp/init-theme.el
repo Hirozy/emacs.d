@@ -1,4 +1,4 @@
-2;;; init-theme.el --- Theme configuration
+;;; init-theme.el --- Theme configuration
 
 ;;; Commentary:
 ;;
