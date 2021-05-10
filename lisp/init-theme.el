@@ -13,7 +13,9 @@
 (require-packages '(solarized-theme
                     spacemacs-theme
                     nord-theme
-                    doom-themes))
+                    doom-themes
+                    vscode-dark-plus-theme
+                    zenburn-theme))
 
 (load-theme 'vscode-dark t)
 
