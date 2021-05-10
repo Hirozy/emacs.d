@@ -16,7 +16,7 @@
 (defhydra hydra-org-mode (:foreign-keys warn :exit t)
   "
 _<_: Meta left         _>_: Meta right          _s_: Insert template
-_l_: Meta left         _L_: Shift meta left     _t_: Export to html
+_l_: Meta left         _L_: Shift meta left     _h_: Export to html
 _r_: Meta right        _R_: Shift meta right    _t_: Insert table
 _u_: Meta up           _U_: Shift meta up       _i_: Indent mode
 _d_: Meta down         _D_: Shift meta down     _'_: Insert subhead
@@ -134,12 +134,12 @@ _V_: Scroll up         _,_: Goto change         _._: Goto change (r)
 
 (defhydra hydra-low-frequency (:foreign-keys warn :exit t)
   "
-_ah_: Move tab to left       _ww_: Switch view      _t_: Vterm
-_al_: Move tab to right      _w1_: Push view        _T_: Projectile term
-_a0_: Move tab to begin      _w2_: Pop view         _c_: Projectile async run
-_a$_: Move tab to end        _p_: Awesome pair      _r_: Read only
-_aa_: Switch tab group       _u_: UUID              _f_: File path
-_o_: Xterm mouse
+_ah_: Move tab to left       _ww_: Switch view      _f_: Show file path
+_al_: Move tab to right      _w1_: Push view        _c_: Projectile async run
+_a0_: Move tab to begin      _w2_: Pop view
+_a$_: Move tab to end        _p_: Awesome pair
+_aa_: Switch tab group       _u_: UUID
+_o_: Xterm mouse             _r_: Readonly
 "
   ("ah" awesome-tab-move-current-tab-to-left :exit nil)
   ("al" awesome-tab-move-current-tab-to-right :exit nil)
@@ -149,11 +149,9 @@ _o_: Xterm mouse
   ("ww" ivy-switch-view)
   ("w1" ivy-push-view)
   ("w2" ivy-pop-view)
-  ("t" vterm)
   ("u" uuidgen)
   ("p" awesome-pair-mode)
   ("f" defined/get-buffer-file-name)
-  ("T" projectile-run-vterm)
   ("c" projectile-run-async-shell-command-in-root)
   ("r" projectile-toggle-project-read-only)
   ("o" xterm-mouse-mode)
@@ -192,10 +190,10 @@ _o_: Xterm mouse
  (kbd "C-q")
  (defhydra hydra-high-frequency (:foreign-keys warn :exit t)
    "
-_p_: Counsel to project           _,_: Backward tab        _i_: Semantic   _C-q_: Cond mode
-_b_: Counsel to file (bufer)      _._: Format tab          _I_: imenu      _C-l_: Low frequency
-_f_: Counsel to file (project)    _d_: Xref definition     ^ ^             _C-p_: Multiple cursors
-_c_: Counsel recentf              _r_: Xref references
+_p_: Counsel to project           _,_: Backward tab        _i_: Semantic       _C-q_: Cond mode
+_b_: Counsel to file (bufer)      _._: Forward tab         _I_: imenu          _C-l_: Low frequency
+_f_: Counsel to file (project)    _d_: Xref definition     _t_: Vterm          _C-p_: Multiple cursors
+_c_: Counsel recentf              _r_: Xref references     _T_: Vterm Projectile
 _C_: Counsel bookmark             _w_: Definition new
 _kr_: Eval buffer                 _a_: Xref apropos
 _kt_: Kill this buffer            _/_: Awesome pair
@@ -229,6 +227,8 @@ _kt_: Kill this buffer            _/_: Awesome pair
    ("a" xref-find-apropos)
    ("i" counsel-semantic-or-imenu)
    ("I" counsel-imenu)
+   ("t" vterm)
+   ("T" projectile-run-vterm)
    ("C-p" hydra-multiple-cursors/body)
    ("C-l" hydra-low-frequency/body)
    ("C-q" cond-keymode-with-modes)

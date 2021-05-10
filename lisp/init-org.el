@@ -14,7 +14,6 @@
                     org-roam
                     org-roam-server
                     ox-gfm
-                    company-org-roam
                     htmlize))
 
 (use-package org

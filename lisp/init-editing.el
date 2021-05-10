@@ -38,7 +38,7 @@
 (use-package iedit
   :bind ("S-<f2>" . iedit-mode)
   :custom-face
-  (iedit-occurrence ((t (:background "#C57BDB" :foreground "white" :inverse-video nil :weight bold)))))
+  (iedit-occurrence ((t (:background "#CDB48B" :foreground "black" :inverse-video nil)))))
 
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode
@@ -62,10 +62,7 @@
   :bind (("C-s" . ctrlf-forward-literal)
          ("C-M-s" . ctrlf-forward-regexp)
          ("M-s _" . ctrlf-forward-symbol)
-         ("M-s ." . ctrlf-forward-symbol-at-point))
-  :custom-face
-  (ctrlf-highlight-active ((t (:inherit isearch :background "peru"))))
-  (ctrlf-highlight-line ((t (:inherit hl-line :background "gray20" :underline t)))))
+         ("M-s ." . ctrlf-forward-symbol-at-point)))
 
 (use-package expand-region
   :bind (("C-=" . er/expand-region)))
