@@ -20,7 +20,15 @@
   :config
   (quickrun-add-command "c++/g++17"
     '((:command . "g++")
-      (:cmdopt . "-std=c++17")
+      (:cmdopt . "-std=c++17 -g")
+      (:exec . ("%c -x c++ %o -o %e %s" "%e %a"))
+      (:compile-only . "%c -Wall -Werror -x c++ %o %o -o %e %s")
+      (:remove . ("%e"))
+      (:description . "Compile C++ file with g++ and execute")))
+
+  (quickrun-add-command "c++/g++20"
+    '((:command . "g++")
+      (:cmdopt . "-std=c++20 -g")
       (:exec . ("%c -x c++ %o -o %e %s" "%e %a"))
       (:compile-only . "%c -Wall -Werror -x c++ %o %o -o %e %s")
       (:remove . ("%e"))
@@ -28,7 +36,7 @@
 
   (quickrun-add-command "c/gcc11"
     '((:command . "gcc")
-      (:cmdopt . "-std=c11")
+      (:cmdopt . "-std=c11 -g")
       (:exec . ("%c -x c %o -o %e %s" "%e %a"))
       (:compile-only . "%c -Wall -Werror %o -o %e %s")
       (:remove . ("%e"))
