@@ -45,6 +45,7 @@
 (require 'init-haskell)
 (require 'init-lsp)
 
+(require 'init-javascript)
 (require 'init-tex)
 (require 'init-markdown)
 (require 'init-plot)
