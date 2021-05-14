@@ -35,7 +35,7 @@
 (use-package counsel
   :diminish counsel-mode
   :bind (("C-x C-f" . counsel-find-file)
-         ("C-." . counsel-imenu))
+         ("C-." . counsel-semantic-or-imenu))
   :config
   (counsel-mode 1))
 

@@ -56,8 +56,6 @@ _i_: lsp implementation
   ("t" lsp-find-type-definition)
   ("s" lsp-workspace-restart)
   ("S" eglot-reconnect)
-  ("v" pyvenv-workon)
-  ("p" poetry)
   ("SPC" nil)
   ("<ESC>" nil)
   ("C-c" nil)
@@ -136,8 +134,8 @@ _V_: Scroll up         _,_: Goto change         _._: Goto change (r)
   "
 _ah_: Move tab to left       _ww_: Switch view      _f_: Show file path
 _al_: Move tab to right      _w1_: Push view        _c_: Projectile async run
-_a0_: Move tab to begin      _w2_: Pop view
-_a$_: Move tab to end        _p_: Awesome pair
+_a0_: Move tab to begin      _w2_: Pop view         _p_: poetry
+_a$_: Move tab to end        _s_: Awesome pair      _P_: pyvenv workon
 _aa_: Switch tab group       _u_: UUID
 _o_: Xterm mouse             _r_: Readonly
 "
@@ -150,7 +148,9 @@ _o_: Xterm mouse             _r_: Readonly
   ("w1" ivy-push-view)
   ("w2" ivy-pop-view)
   ("u" uuidgen)
-  ("p" awesome-pair-mode)
+  ("s" awesome-pair-mode)
+  ("p" poetry)
+  ("P" pyvenv-workon)
   ("f" defined/get-buffer-file-name)
   ("c" projectile-run-async-shell-command-in-root)
   ("r" projectile-toggle-project-read-only)
@@ -191,7 +191,7 @@ _o_: Xterm mouse             _r_: Readonly
  (defhydra hydra-high-frequency (:foreign-keys warn :exit t)
    "
 _p_: Counsel to project           _,_: Backward tab        _i_: Semantic       _C-q_: Cond mode
-_b_: Counsel to file (bufer)      _._: Forward tab         _I_: imenu          _C-l_: Low frequency
+_b_: Counsel to file (bufer)      _._: Forward tab         _I_: imenu          _C-w_: Low frequency
 _f_: Counsel to file (project)    _d_: Xref definition     _t_: Vterm          _C-p_: Multiple cursors
 _c_: Counsel recentf              _r_: Xref references     _T_: Vterm Projectile
 _C_: Counsel bookmark             _w_: Definition new
@@ -230,9 +230,9 @@ _kt_: Kill this buffer            _/_: Awesome pair
    ("t" vterm)
    ("T" projectile-run-vterm)
    ("C-p" hydra-multiple-cursors/body)
-   ("C-l" hydra-low-frequency/body)
+   ("C-w" hydra-low-frequency/body)
    ("C-q" cond-keymode-with-modes)
-   ("SPC" cond-keymode-with-modes)
+   ("SPC" nil)
    ("<ESC>" nil)
    ("C-c" nil)))
 
