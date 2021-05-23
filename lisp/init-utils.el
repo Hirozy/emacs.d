@@ -15,6 +15,7 @@
                     diminish
                     golden-ratio
                     goto-chg
+                    highlight-indent-guides
                     treemacs
                     treemacs-all-the-icons
                     treemacs-icons-dired
@@ -65,6 +66,13 @@
 
   (use-package treemacs-magit
     :after treemacs magit))
+
+(use-package highlight-indent-guides
+  :diminish highlight-indent-guides-mode
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :config
+  (setq highlight-indent-guides-method 'character
+        highlight-indent-guides-responsive 'top))
 
 (use-package goto-chg)
 
