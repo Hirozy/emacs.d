@@ -7,6 +7,7 @@
 
 ;;; Require
 (require 'init-packages)
+(require 'lsp-diagnostics)
 
 ;;; Code:
 
@@ -16,13 +17,16 @@
                     ox-gfm
                     htmlize))
 
+(defun defined/org-without-confirm-babel-evaluate (lang body)
+  (not (or (string= lang "dot")
+           (string= lang "gnuplot")
+           (string= lang "python"))))
+
 (use-package org
   :hook ((org-mode . visual-line-mode)
-         (org-mode . eldoc-mode))
-  :init
-  (defun defined/org-without-confirm-babel-evaluate (lang body)
-    (not (or (string= lang "dot")
-             (string= lang "gnuplot"))))
+         (org-mode . eldoc-mode)
+         (org-mode . (lambda ()
+                       (setq-local lsp-diagnostics-provider :none))))
   :config
   (setq org-support-shift-select t
         ;; always display inline images

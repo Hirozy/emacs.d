@@ -15,7 +15,8 @@
                     ivy
                     ivy-rich
                     ivy-yasnippet
-                    swiper))
+                    swiper
+                    all-the-icons-ivy-rich))
 
 (use-package ivy
   :diminish ivy-mode
