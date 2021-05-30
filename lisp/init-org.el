@@ -11,7 +11,7 @@
 
 ;;; Code:
 
-(require-packages '(org-plus-contrib
+(require-packages '(org-contrib
                     org-roam
                     org-roam-server
                     ox-gfm

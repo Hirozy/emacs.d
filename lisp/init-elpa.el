@@ -11,7 +11,7 @@
 ;;; Code:
 
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("org" . "https://orgmode.org/elpa/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
                          ("melpa" . "https://melpa.org/packages/")))
 
 (when (version< emacs-version "27.0")
