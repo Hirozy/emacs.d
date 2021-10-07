@@ -18,14 +18,17 @@
   (setq require-package-list
         (append require-package-list
                 package-list))
-  
+
   ;; install the missing packages
   (dolist (package package-list)
-    (unless (package-installed-p package)
+    (unless (or (package-installed-p package) (package-built-in-p package))
       (unless defined/package-refresh-flag
         (package-refresh-contents)
         (setq defined/package-refresh-flag t))
       (package-install package))))
+
+(unless (version< emacs-version "28.0")
+  (setq package-native-compile t))
 
 (require-packages '(use-package))
 

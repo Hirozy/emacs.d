@@ -24,7 +24,8 @@
            haskell-mode
            haskell-literate-mode) . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
-  :bind (("C-c l" . counsel-flycheck))
+  :bind (("C-c l" . counsel-flycheck)
+         ("S-<f2>" . lsp-rename))
 
   :config
   (setq gc-cons-threshold (* 100 1024 1024)

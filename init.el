@@ -31,6 +31,7 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
+(require 'init-lsp)
 (require 'init-org)
 (require 'init-projectile)
 (require 'init-completion)
@@ -43,7 +44,6 @@
 (require 'init-c-cpp)
 (require 'init-golang)
 (require 'init-haskell)
-(require 'init-lsp)
 
 (require 'init-javascript)
 (require 'init-tex)
