@@ -29,12 +29,15 @@
 ;; Disabled tool bar
 (tool-bar-mode -1)
 
-(global-set-key (kbd "<mouse-4>") (lambda ()
-                                    (interactive)
-                                    (scroll-down 3)))
-(global-set-key (kbd "<mouse-5>") (lambda ()
-                                    (interactive)
-                                    (scroll-up 3)))
+(if (version< emacs-version "29.0")
+    (progn (global-set-key (kbd "<mouse-4>") (lambda ()
+                                               (interactive)
+                                               (scroll-down 3)))
+           (global-set-key (kbd "<mouse-5>") (lambda ()
+                                               (interactive)
+                                               (scroll-up 3))))
+  (progn (pixel-scroll-precision-mode 1)
+         (setq display-line-numbers-width-start t)))
 
 
 (require 'view)

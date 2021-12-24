@@ -7,14 +7,13 @@
 
 ;;; Require
 (require 'init-packages)
-(require 'lsp-diagnostics)
 
 ;;; Code:
 
-(require-packages '(org-contrib
+(require-packages '(org
                     org-roam
-                    org-roam-server
-                    ox-gfm
+                    org-roam-ui
+                    ob-ipython
                     htmlize))
 
 (defun defined/org-without-confirm-babel-evaluate (lang body)
