@@ -18,6 +18,8 @@
                 ("C-c p" . projectile-command-map)
                 ("C-x p" . projectile-command-map))
 
+  :custom
+  (projectile-show-menu nil)
   :init
   (defun defined/projectile-project-find-function (dir)
     (let ((root (projectile-project-root dir)))

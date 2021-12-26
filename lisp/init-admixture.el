@@ -13,7 +13,8 @@
 (require-packages '(yaml-mode
                     cmake-mode
                     dockerfile-mode
-                    lua-mode))
+                    lua-mode
+                    fish-mode))
 
 (use-package lua-mode
   :mode "\\.lua\\'")

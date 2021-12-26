@@ -31,7 +31,6 @@
   (setq evil-default-state 'emacs)
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'org-mode 'normal)
-  (evil-mode)
 
   (use-package evil-escape
     :diminish evil-escape-mode
@@ -44,6 +43,8 @@
                   evil-escape-delay 0.2))
   (use-package evil-matchit)
   (use-package evil-anzu))
+
+(evil-mode 1)
 
 (provide 'init-evil)
 

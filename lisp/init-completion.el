@@ -14,7 +14,8 @@
                     company-box
                     eldoc
                     flycheck
-                    yasnippet))
+                    yasnippet
+                    yasnippet-snippets))
 
 (setq-default indent-tabs-mode nil
               tab-width 4
@@ -61,6 +62,8 @@
 
 (use-package yasnippet
   :diminish yas-minor-mode
+  :custom
+  (yas-use-menu nil)
   :config
   (yas-global-mode 1))
 
