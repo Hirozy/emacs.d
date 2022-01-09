@@ -31,7 +31,7 @@
 (use-package which-key
   :diminish which-key-mode
   :config
-  (setq which-key-idle-delay 0.05
+  (setq which-key-idle-delay 1
         which-key-popup-type 'minibuffer)
   (which-key-mode 1))
 

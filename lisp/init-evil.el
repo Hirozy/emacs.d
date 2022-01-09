@@ -16,21 +16,35 @@
                     evil-matchit))
 
 (use-package evil
-  :bind (("C-\\" . evil-mode)
+  :bind (("C-\\" . evil-force-normal-state)
+
          :map evil-normal-state-map
          ("U" . evil-redo)
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
          ("C-." . counsel-semantic-or-imenu)
+         ("C-k" . awesome-pair-kill)
+         ("C-a" . move-beginning-of-line)
+         ("C-n" . next-line)
+         ("C-p" . previous-line)
+         ("C-\\" . evil-mode)
+
          :map evil-insert-state-map
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
-         ("C-." . counsel-semantic-or-imenu))
+         ("C-." . counsel-semantic-or-imenu)
+         ("C-k" . awesome-pair-kill)
+         ("C-a" . move-beginning-of-line)
+         ("C-n" . next-line)
+         ("C-p" . previous-line)
+         ("C-\\" . evil-mode)
+         ("C-q" . hydra-high-frequency/body))
+
   :config
   (evil-set-undo-system 'undo-tree)
   (setq evil-default-state 'emacs)
   (evil-set-initial-state 'prog-mode 'normal)
-  (evil-set-initial-state 'org-mode 'normal)
+  (evil-set-initial-state 'text-mode 'normal)
 
   (use-package evil-escape
     :diminish evil-escape-mode
