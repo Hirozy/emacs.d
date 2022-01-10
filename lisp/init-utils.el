@@ -37,7 +37,8 @@
 
 (use-package avy
   :bind (("C-x C-SPC" . avy-pop-mark)
-         ("C-:" . avy-goto-char)))
+         ("C-;" . avy-goto-word-1)
+         ("M-z" . avy-goto-word-1)))
 
 (use-package winner
   :hook (after-init . winner-mode))

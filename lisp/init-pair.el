@@ -21,6 +21,9 @@
           c++-mode
           c-mode
           python-mode
+          haskell-mode
+          ruby-mode
+          rust-mode
           go-mode
           emacs-lisp-mode
           graphviz-dot-mode) . awesome-pair-mode)
@@ -32,13 +35,12 @@
               ("]" . awesome-pair-close-bracket)
               ("}" . awesome-pair-close-curly)
               ("%" . awesome-pair-match-paren)
-              ("\"" . awesome-pair-double-quote)
               ("SPC" . awesome-pair-space)
+              ("RET" . awesome-pair-newline)
               ("M-o" . awesome-pair-backward-delete)
               ("C-k" . awesome-pair-kill)
-              ("M-\"" . awesome-pair-wrap-double-quote)
-              ("M-]" . awesome-pair-wrap-bracket)
-              ("M-}" . awesome-pair-wrap-curly)
+              ("M-[" . awesome-pair-wrap-bracket)
+              ("M-{" . awesome-pair-wrap-curly)
               ("M-(" . awesome-pair-wrap-round)
               ("M-)" . awesome-pair-unwrap)
               ("M-p" . awesome-pair-jump-right)

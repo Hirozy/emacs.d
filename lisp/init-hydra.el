@@ -82,12 +82,9 @@ _m_: Format code       _gw_: Goto word-1        _{_: Wrap curly
 _u_: Undo              _gc_: Goto char-2        _(_: Wrap round
 _u_: Redo              _s_: Replace string      _)_: Unwarp
 _S_: Replace regexp    _~_: Reload file         _:_: iedit-mode
-_v_: Scroll down       _V_: Scroll up
-_,_: Goto change       _._: Goto change (r)
+_v_: Scroll down       _V_: Scroll up           _z_: Zzz to char
+_,_: Goto change       _._: Goto change (r)     _Z_: Zzz up to char
 "
-   ("dd" kill-whole-line :exit nil)
-   ("d$" kill-line :exit nil)
-   ("dw" kill-word :exit nil)
    ("u" undo-fu-only-undo :exit nil)
    ("U" undo-fu-only-redo)
    ("n" next-line :exit nil)
@@ -98,6 +95,8 @@ _,_: Goto change       _._: Goto change (r)
    ("B" backward-word :exit nil)
    ("0" beginning-of-line :exit nil)
    ("$" move-end-of-line :exit nil)
+   ("z" zzz-to-char)
+   ("Z" zzz-up-to-char)
    ("i" nil)
    ("o" crux-smart-open-line)
    ("O" crux-smart-open-line-above)
@@ -123,11 +122,12 @@ _,_: Goto change       _._: Goto change (r)
    ("," goto-last-change)
    ("." goto-last-change-reverse :exit nil)
    ("DEL" hungry-delete-backward)
+   ("C-r" ctrlf-backward-default)
+   ("C-h" anzu-query-replace)
    ("RET" nil)
    ("SPC" nil)
    ("<ESC>" nil)
-   ("C-c" nil)
-   ("C-r" nil)))
+   ("C-c" nil)))
 
 (defhydra hydra-low-frequency (:foreign-keys warn :exit t)
   "
