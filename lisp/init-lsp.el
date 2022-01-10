@@ -12,7 +12,6 @@
 
 (require-packages '(lsp-mode
                     lsp-ivy
-                    lsp-treemacs
                     lsp-haskell
                     lsp-pyright))
 

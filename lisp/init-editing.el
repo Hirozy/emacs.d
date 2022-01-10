@@ -19,16 +19,20 @@
                     iedit
                     multiple-cursors
                     symbol-overlay
-                    undo-tree
+                    undo-fu
+                    undo-fu-session
                     wgrep
                     wgrep-ag
                     whitespace-cleanup-mode
                     zzz-to-char))
 
-(use-package undo-tree
-  :diminish undo-tree-mode
+
+(use-package undo-fu
   :config
-  (global-undo-tree-mode 1))
+  (use-package undo-fu-session
+    :config
+    (setq undo-fu-session-incompatible-files '("/COMMIT_EDITMSG\\'" "/git-rebase-todo\\'"))
+    (global-undo-fu-session-mode)))
 
 ;; A Collection of Ridiculously Useful eXtensions for Emacs.
 ;; crux bundles a few useful interactive commands to enhance your overall Emacs experience.

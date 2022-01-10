@@ -41,10 +41,11 @@
          ("C-q" . hydra-high-frequency/body))
 
   :config
-  (evil-set-undo-system 'undo-tree)
+  (evil-set-undo-system 'undo-fu)
   (setq evil-default-state 'emacs)
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
+  (evil-set-initial-state 'fundamental-mode 'normal)
 
   (use-package evil-escape
     :diminish evil-escape-mode

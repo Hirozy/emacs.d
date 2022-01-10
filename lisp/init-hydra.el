@@ -79,18 +79,17 @@ _i_: lsp implementation
 _;_: Comment line      _gg_: Goto line          _\"_: Wrap double quate
 _^_: Delete indent     _gl_: Goto avy line      _[_: Wrap bracket
 _m_: Format code       _gw_: Goto word-1        _{_: Wrap curly
-_U_: Undo tree         _gc_: Goto char-2        _(_: Wrap round
-_u_: Undo              _s_: Replace string      _)_: Unwarp
-_r_: Redo              _S_: Replace regexp      _~_: Reload file
-_v_: Scroll down       _:_: iedit-mode          _`_: Normal mode
-_V_: Scroll up         _,_: Goto change         _._: Goto change (r)
+_u_: Undo              _gc_: Goto char-2        _(_: Wrap round
+_u_: Redo              _s_: Replace string      _)_: Unwarp
+_S_: Replace regexp    _~_: Reload file         _:_: iedit-mode
+_v_: Scroll down       _V_: Scroll up
+_,_: Goto change       _._: Goto change (r)
 "
    ("dd" kill-whole-line :exit nil)
    ("d$" kill-line :exit nil)
    ("dw" kill-word :exit nil)
-   ("u" undo-tree-undo :exit nil)
-   ("r" undo-tree-redo :exit nil)
-   ("U" undo-tree-visualize)
+   ("u" undo-fu-only-undo :exit nil)
+   ("U" undo-fu-only-redo)
    ("n" next-line :exit nil)
    ("p" previous-line :exit nil)
    ("f" forward-char :exit nil)
