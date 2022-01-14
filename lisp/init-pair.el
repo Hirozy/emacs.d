@@ -39,13 +39,10 @@
               ("RET" . awesome-pair-newline)
               ("M-o" . awesome-pair-backward-delete)
               ("C-k" . awesome-pair-kill)
-              ("M-[" . awesome-pair-wrap-bracket)
-              ("M-{" . awesome-pair-wrap-curly)
-              ("M-(" . awesome-pair-wrap-round)
               ("M-)" . awesome-pair-unwrap)
               ("M-p" . awesome-pair-jump-right)
               ("M-n" . awesome-pair-jump-left)
-              ("M-:" . awesome-pair-jump-out-pair-and-newline)))
+              ("M-;" . awesome-pair-jump-out-pair-and-newline)))
 
 (use-package elec-pair
   :hook (((org-mode
