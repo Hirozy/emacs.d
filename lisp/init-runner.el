@@ -23,7 +23,7 @@
       (:cmdopt . "-std=c++17 -g")
       (:exec . ("%c -x c++ %o -o %e %s" "%e %a"))
       (:compile-only . "%c -Wall -Werror -x c++ %o %o -o %e %s")
-      (:remove . ("%e"))
+      (:remove . ("%e" "%e.dSYM"))
       (:description . "Compile C++ file with g++ and execute")))
 
   (quickrun-add-command "c++/g++20"
@@ -31,7 +31,7 @@
       (:cmdopt . "-std=c++20 -g")
       (:exec . ("%c -x c++ %o -o %e %s" "%e %a"))
       (:compile-only . "%c -Wall -Werror -x c++ %o %o -o %e %s")
-      (:remove . ("%e"))
+      (:remove . ("%e" "%e.dSYM"))
       (:description . "Compile C++ file with g++ and execute")))
 
   (quickrun-add-command "c/gcc11"
@@ -39,7 +39,7 @@
       (:cmdopt . "-std=c11 -g")
       (:exec . ("%c -x c %o -o %e %s" "%e %a"))
       (:compile-only . "%c -Wall -Werror %o -o %e %s")
-      (:remove . ("%e"))
+      (:remove . ("%e" "%e.dSYM"))
       (:description . "Compile C file with gcc and execute")))
 
   (quickrun-add-command "python/python3"

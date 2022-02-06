@@ -1,4 +1,4 @@
-;;; init-lsp.el --- lsp mode configuration
+;; init-lsp.el --- lsp mode configuration
 
 ;;; Commentary:
 ;;

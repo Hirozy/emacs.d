@@ -49,7 +49,7 @@
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 1
         company-require-match nil
-        company-show-numbers t)
+        company-show-quick-access t)
 
   (use-package company-dabbrev
     :config
