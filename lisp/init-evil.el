@@ -23,7 +23,7 @@
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
          ("C-." . counsel-semantic-or-imenu)
-         ("C-k" . awesome-pair-kill)
+         ("C-k" . grammatical-edit-kill)
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)
@@ -34,7 +34,7 @@
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
          ("C-." . counsel-semantic-or-imenu)
-         ("C-k" . awesome-pair-kill)
+         ("C-k" . grammatical-edit-kill)
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)
@@ -43,7 +43,9 @@
 
   :config
   (evil-set-undo-system 'undo-fu)
-  (setq evil-default-state 'emacs)
+  (setq evil-default-state 'emacs
+        evil-symbol-word-search t)
+  (modify-syntax-entry ?_ "w")
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
   (evil-set-initial-state 'fundamental-mode 'normal)

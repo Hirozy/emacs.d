@@ -15,8 +15,8 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package awesome-pair
-  :load-path "site-lisp/awesome-pair"
+(use-package grammatical-edit
+  :load-path "site-lisp/grammatical-edit"
   :hook ((lisp-mode
           c++-mode
           c-mode
@@ -26,23 +26,23 @@
           rust-mode
           go-mode
           emacs-lisp-mode
-          graphviz-dot-mode) . awesome-pair-mode)
-  :bind (:map awesome-pair-mode-map
-              ("(" . awesome-pair-open-round)
-              ("[" . awesome-pair-open-bracket)
-              ("{" . awesome-pair-open-curly)
-              (")" . awesome-pair-close-round)
-              ("]" . awesome-pair-close-bracket)
-              ("}" . awesome-pair-close-curly)
-              ("%" . awesome-pair-match-paren)
-              ("SPC" . awesome-pair-space)
-              ("RET" . awesome-pair-newline)
-              ("M-o" . awesome-pair-backward-delete)
-              ("C-k" . awesome-pair-kill)
-              ("M-)" . awesome-pair-unwrap)
-              ("M-p" . awesome-pair-jump-right)
-              ("M-n" . awesome-pair-jump-left)
-              ("M-;" . awesome-pair-jump-out-pair-and-newline)))
+          graphviz-dot-mode) . grammatical-edit-mode)
+  :bind (:map grammatical-edit-mode-map
+              ("(" . grammatical-edit-open-round)
+              ("[" . grammatical-edit-open-bracket)
+              ("{" . grammatical-edit-open-curly)
+              (")" . grammatical-edit-close-round)
+              ("]" . grammatical-edit-close-bracket)
+              ("}" . grammatical-edit-close-curly)
+              ("%" . grammatical-edit-match-paren)
+              ("SPC" . grammatical-edit-space)
+              ("RET" . grammatical-edit-newline)
+              ("M-o" . grammatical-edit-backward-delete)
+              ("C-k" . grammatical-edit-kill)
+              ("M-)" . grammatical-edit-unwrap)
+              ("M-p" . grammatical-edit-jump-right)
+              ("M-n" . grammatical-edit-jump-left)
+              ("M-;" . grammatical-edit-jump-out-pair-and-newline)))
 
 (use-package elec-pair
   :hook (((org-mode
