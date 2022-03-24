@@ -11,20 +11,15 @@
 ;;; Code:
 
 (require-packages '(anzu
-                    crux
                     ctrlf
                     expand-region
                     format-all
                     hungry-delete
                     iedit
-                    multiple-cursors
                     symbol-overlay
                     undo-fu
                     undo-fu-session
-                    wgrep
-                    wgrep-ag
-                    whitespace-cleanup-mode
-                    zzz-to-char))
+                    whitespace-cleanup-mode))
 
 
 (use-package undo-fu
@@ -34,10 +29,6 @@
     (setq undo-fu-session-incompatible-files '("/COMMIT_EDITMSG\\'" "/git-rebase-todo\\'"))
     (global-undo-fu-session-mode)))
 
-;; A Collection of Ridiculously Useful eXtensions for Emacs.
-;; crux bundles a few useful interactive commands to enhance your overall Emacs experience.
-;; Such as crux-smart-kill-line, crux-smart-open-line.
-(use-package crux)
 
 (use-package iedit
   :bind ("S-<f2>" . iedit-mode)
@@ -47,10 +38,6 @@
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode
   :hook (prog-mode . whitespace-cleanup-mode))
-
-(use-package wgrep
-  :config
-  (use-package wgrep-ag))
 
 (use-package anzu
   :bind (("M-%" . anzu-query-replace)
@@ -63,9 +50,8 @@
   (anzu-replace-to ((t (:background "orange" :foreground "snow" :weight normal)))))
 
 (use-package ctrlf
-  :bind (("C-s" . ctrlf-forward-literal)
+  :bind (("C-s" . ctrlf-forward-default)
          ("C-M-s" . ctrlf-forward-alternate)
-         ("C-M-r" . ctrlf-backward-alternate)
          ("M-s _" . ctrlf-forward-symbol)
          ("M-s ." . ctrlf-forward-symbol-at-point)))
 
@@ -77,10 +63,6 @@
   :bind-keymap
   ("C-c i" . symbol-overlay-map)
   :hook (prog-mode . symbol-overlay-mode))
-
-(use-package zzz-to-char
-  :custom
-  (zzz-to-char-reach 4096))
 
 (use-package hungry-delete
   :config
