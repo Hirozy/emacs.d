@@ -35,14 +35,15 @@
               ("]" . grammatical-edit-close-bracket)
               ("}" . grammatical-edit-close-curly)
               ("%" . grammatical-edit-match-paren)
+              ("=" . grammatical-edit-equal)
               ("SPC" . grammatical-edit-space)
               ("RET" . grammatical-edit-newline)
               ("M-o" . grammatical-edit-backward-delete)
+              ("C-d" . grammatical-edit-forward-delete)
               ("C-k" . grammatical-edit-kill)
               ("M-)" . grammatical-edit-unwrap)
               ("M-p" . grammatical-edit-jump-right)
-              ("M-n" . grammatical-edit-jump-left)
-              ("M-;" . grammatical-edit-jump-out-pair-and-newline)))
+              ("M-n" . grammatical-edit-jump-left)))
 
 (use-package elec-pair
   :hook (((org-mode

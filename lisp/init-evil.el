@@ -30,11 +30,13 @@
          ("C-\\" . evil-mode)
 
          :map evil-insert-state-map
-         ("<return>" . newline)
+         ("<return>" . grammatical-edit-newline)
+         ("SPC" . grammatical-edit-space)
+         ("C-k" . grammatical-edit-kill)
+         ("C-d" . grammatical-edit-forward-delete)
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
          ("C-." . counsel-semantic-or-imenu)
-         ("C-k" . grammatical-edit-kill)
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)
