@@ -18,8 +18,7 @@
                     yasnippet-snippets))
 
 (setq-default indent-tabs-mode nil
-              tab-width 4
-              tab-always-indent 'complete)
+              tab-width 4)
 
 (use-package company
   :hook ((after-init . global-company-mode)
@@ -50,11 +49,6 @@
         company-minimum-prefix-length 1
         company-require-match nil
         company-show-quick-access t)
-
-  (use-package company-dabbrev
-    :config
-    (setq company-dabbrev-ignore-case nil
-          company-dabbrev-downcase nil))
 
   (use-package company-box
     :diminish company-box-mode
