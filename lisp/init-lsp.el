@@ -11,13 +11,13 @@
 ;;; Code:
 
 (require-packages '(lsp-mode
-                    lsp-ivy
                     lsp-haskell
                     lsp-pyright))
 
 (use-package lsp-mode
   :hook (((c-mode
            c++-mode
+           objc-mode
            python-mode
            haskell-mode
            haskell-literate-mode) . lsp)
