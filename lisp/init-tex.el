@@ -11,7 +11,6 @@
 ;;; Code:
 
 (require-packages '(auctex
-                    company-auctex
                     auctex-latexmk
                     biblio-core
                     biblio
@@ -37,11 +36,7 @@
     (auctex-latexmk-setup))
 
   (use-package cdlatex
-    :hook (LaTeX-mode . turn-on-cdlatex))
-
-  (use-package company-auctex
-    :config
-    (company-auctex-init)))
+    :hook (LaTeX-mode . turn-on-cdlatex)))
 
 (provide 'init-tex)
 

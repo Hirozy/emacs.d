@@ -26,10 +26,7 @@
          ("C-c g p" . ggtags-query-replace)
          ("C-c g h" . ggtags-view-tag-history)
          ("C-c g c" . ggtags-create-tags)
-         ("C-c g u" . ggtags-update-tags))
-  :hook ((c-mode
-          c++-mode
-          python-mode) . ggtags-mode))
+         ("C-c g u" . ggtags-update-tags)))
 
 (use-package counsel-gatgs
   :bind (("C-c g b" . counsel-gtags-go-backward)

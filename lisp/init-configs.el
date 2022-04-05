@@ -14,17 +14,17 @@
  ;; Stop creating #autosave# files
  auto-save-default nil
  create-lockfiles nil
- visible-bell 1
+ visible-bell t
  ;; Enabled word wrap
- truncate-lines 1
+ truncate-lines t
  tramp-default-method "ssh"
  inhibit-startup-screen t)
 
-(global-display-line-numbers-mode 1)
-(set-face-attribute 'line-number-current-line nil :weight 'normal)
+(global-display-line-numbers-mode)
+;; (set-face-attribute 'line-number-current-line nil :weight 'normal)
 
 ;; Show cursor position within line
-(column-number-mode 1)
+(column-number-mode)
 
 ;; Disabled tool bar
 (tool-bar-mode -1)
@@ -37,14 +37,14 @@
                                                (interactive)
                                                (scroll-up 3))))
   (progn (pixel-scroll-precision-mode 1)
-         (setq display-line-numbers-width-start t)))
+         (setq-default display-line-numbers-width 3)))
 
 
 (require 'view)
 (global-set-key (kbd "C-v") 'View-scroll-half-page-forward)
 (global-set-key (kbd "M-v") 'View-scroll-half-page-backward)
-
-(global-set-key (kbd "s-l") 'goto-line)
+(global-unset-key (kbd "C-<wheel-up>"))
+(global-unset-key (kbd "C-<wheel-down>"))
 
 ;; Change all prompts to y or n
 (fset 'yes-or-no-p 'y-or-n-p)

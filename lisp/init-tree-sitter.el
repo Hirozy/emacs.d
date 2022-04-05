@@ -14,6 +14,7 @@
                     tree-sitter-langs))
 
 (use-package tree-sitter
+  :diminish tree-sitter-mode
   :init
   (global-tree-sitter-mode))
 

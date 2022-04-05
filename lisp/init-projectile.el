@@ -7,11 +7,17 @@
 
 ;;; Require
 (require 'init-packages)
+(require 'projectile)
 
 ;;; Code:
 
 (require-packages '(projectile
                     counsel-projectile))
+
+(defun defined/projectile-project-find-function (dir)
+  "Projectile find DIR function."
+  (let ((root (projectile-project-root dir)))
+    (and root (cons 'transient root))))
 
 (use-package projectile
   :bind-keymap (("s-p" . projectile-command-map)
@@ -20,10 +26,6 @@
 
   :custom
   (projectile-show-menu nil)
-  :init
-  (defun defined/projectile-project-find-function (dir)
-    (let ((root (projectile-project-root dir)))
-      (and root (cons 'transient root))))
 
   :config
   (setq projectile-enable-caching t
