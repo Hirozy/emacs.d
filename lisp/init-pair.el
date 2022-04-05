@@ -36,7 +36,7 @@
               ("}" . grammatical-edit-close-curly)
               ("%" . grammatical-edit-match-paren)
               ("=" . grammatical-edit-equal)
-              ("SPC" . grammatical-edit-space)
+              ;; ("SPC" . grammatical-edit-space)
               ("RET" . grammatical-edit-newline)
               ("M-o" . grammatical-edit-backward-delete)
               ("C-d" . grammatical-edit-forward-delete)

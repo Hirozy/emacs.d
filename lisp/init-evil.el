@@ -7,6 +7,7 @@
 
 ;;; Require
 (require 'init-packages)
+(require 'evil)
 
 ;;; Code:
 
@@ -30,8 +31,6 @@
          ("C-\\" . evil-mode)
 
          :map evil-insert-state-map
-         ("<return>" . grammatical-edit-newline)
-         ("SPC" . grammatical-edit-space)
          ("C-k" . grammatical-edit-kill)
          ("C-d" . grammatical-edit-forward-delete)
          ("C-e" . move-end-of-line)

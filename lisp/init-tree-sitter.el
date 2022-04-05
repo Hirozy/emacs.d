@@ -13,6 +13,10 @@
 (require-packages '(tree-sitter
                     tree-sitter-langs))
 
+(use-package tree-sitter
+  :init
+  (global-tree-sitter-mode))
+
 (provide 'init-tree-sitter)
 
 ;;; init-tree-sitter.el ends here

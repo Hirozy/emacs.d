@@ -13,3 +13,6 @@
 [submodule "manateelazycat/grammatical-edit"]
 	path = site-lisp/grammatical-edit
 	url = https://github.com/manateelazycat/grammatical-edit.git
+[submodule "Hirozy/golden-ratio.el"]
+	path = site-lisp/golden-ratio.el
+	url = https://github.com/Hirozy/golden-ratio.el.git

@@ -13,7 +13,6 @@
 (require-packages '(all-the-icons
                     avy
                     diminish
-                    golden-ratio
                     goto-chg
                     highlight-indent-guides
                     treemacs
@@ -44,6 +43,7 @@
   :hook (after-init . winner-mode))
 
 (use-package golden-ratio
+  :load-path "site-lisp/golden-ratio.el"
   :diminish golden-ratio-mode
   :config
   (golden-ratio-mode 1))
