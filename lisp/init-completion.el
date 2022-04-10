@@ -14,45 +14,54 @@
                     company-box
                     eldoc
                     flycheck
-                    yasnippet
-                    yasnippet-snippets))
+                    yasnippet))
 
 (setq-default indent-tabs-mode nil
               tab-width 4)
 
+
 (use-package company
-  :hook ((after-init . global-company-mode)
-         ((shell-mode
-           eshell-mode) . (lambda ()
-           (company-mode -1))))
-  :bind (:map company-active-map
-              ("<tab>" . company-complete-common-or-cycle)
-              ("<backtab>" . company-other-backend)
-              ("M-i" . yas-expand)
-              ("C-n" . company-select-next)
-              ("C-p" . company-select-previous)
-              ("M-n" . company-next-page)
-              ("M-p" . company-previous-page)
-              ("M-w" . company-show-location)
-              ("C-s" . company-search-candidates)
-              ("M-s" . company-filter-candidates))
+  :diminish company-mode
+  :defines (company-files-exclusions company-dabbrev-ignore-case company-dabbrev-downcase)
+  :hook ((after-init . global-company-mode))
+  :bind (("M-/" . company-other-backend)
+         :map company-active-map
+         ("<tab>" . company-complete-common-or-cycle)
+         ("M-i" . yas-expand)
+         ("C-n" . company-select-next)
+         ("C-p" . company-select-previous)
+         ("M-n" . company-next-page)
+         ("M-p" . company-previous-page)
+         ("M-w" . company-show-location)
+         ("C-s" . company-filter-candidates)
+         :map company-search-map
+         ("C-p" . company-select-previous)
+         ("C-n" . company-select-next))
 
   :init
-  (setq company-backends '(company-capf
-                           company-cmake
-                           company-dabbrev
-                           company-dabbrev-code
-                           company-keywords
-                           company-files))
-  :config
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 1
         company-require-match nil
-        company-show-quick-access t)
+        company-show-quick-access t
+        company-dabbrev-ignore-case nil
+        company-dabbrev-downcase nil
+        company-files-exclusions '(".git/" ".DS_Store")
+        company-global-modes '(not erc-mode
+                                   message-mode
+                                   help-mode
+                                   eshell-mode
+                                   shell-mode)
+        company-backends '((company-capf :with company-dabbrev-code)
+                           (company-cmake
+                            company-dabbrev-code
+                            company-keywords
+                            company-files)
+                           company-dabbrev-code)))
 
-  (use-package company-box
-    :diminish company-box-mode
-    :hook (company-mode . company-box-mode)))
+(use-package company-box
+  :after lsp-mode
+  :diminish company-box-mode
+  :hook (company-mode . company-box-mode))
 
 (use-package yasnippet
   :diminish yas-minor-mode

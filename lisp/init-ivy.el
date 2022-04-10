@@ -14,7 +14,6 @@
                     counsel-tramp
                     ivy
                     ivy-rich
-                    ivy-yasnippet
                     swiper
                     all-the-icons-ivy-rich))
 
