@@ -38,16 +38,19 @@
   ("r" lsp-find-references "find references")
   ("i" lsp-find-implementation "find implementation")
   ("t" lsp-find-type-definition "find type definition")
-  ("s" lsp-workspace-restart "lsp restart")
+  ("o" lsp-describe-thing-at-point "documentation")
+  ("R" lsp-workspace-restart "lsp restart")
+  ("b" lsp-rename "lsp rename")
+  ("f" lsp-format-buffer "lsp format")
   ("SPC" nil "quit")
   ("C-q" nil "quit"))
 
 (defun cond-keymode-with-modes ()
   "Select the keymap of hydara according to current mode."
   (interactive)
-  (if (eq major-mode 'org-mode)
+  (when (eq major-mode 'org-mode)
       (hydra-org-mode/body))
-  (if (bound-and-true-p lsp-mode)
+  (when lsp-mode
       (hydra-lsp-mode/body)))
 
 (global-set-key
@@ -100,12 +103,14 @@
   ("w1" ivy-push-view "push view")
   ("w2" ivy-pop-view "pop view")
   ("u" uuidgen "uuidgen" :column "Fun")
-  ("p" poetry "poetry")
-  ("P" pyvenv-workon "poetry workon")
   ("f" defined/get-buffer-file-name "get file name")
   ("c" projectile-run-async-shell-command-in-root "async run command")
   ("r" projectile-toggle-project-read-only "project readonly")
-  ("o" xterm-mouse-mode "xterm mouse")
+  ("m" xterm-mouse-mode "xterm mouse")
+  ("p" poetry "poetry" :column "Langs")
+  ("P" pyvenv-workon "pyvenv workon")
+  ("oo" conda-env-activate "conda activate")
+  ("od" conda-env-deactivate "conda deactivate")
   ("SPC" nil "exit"))
 
 (global-set-key

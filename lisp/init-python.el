@@ -13,13 +13,16 @@
 
 (require-packages '(ein
                     pyvenv
-                    poetry))
+                    poetry
+                    conda))
 
 (setq python-shell-completion-native-enable nil)
 
 (use-package ein
   :hook (ein:notebook-multilang-mode . (lambda ()
                                          (company-mode -1))))
+
+(use-package conda)
 
 (provide 'init-python)
 

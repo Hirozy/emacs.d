@@ -14,6 +14,8 @@
                     counsel-tramp
                     ivy
                     ivy-rich
+                    ivy-yasnippet
+                    ivy-prescient
                     swiper
                     all-the-icons-ivy-rich))
 
@@ -23,7 +25,7 @@
          ("C-x b" . ivy-switch-buffer)
          ("C-x C-b" . ivy-switch-buffer))
   :init
-  (setq ivy-height 25
+  (setq ivy-height 15
         ivy-use-virtual-buffers t
         enable-recursive-minibuffers t
         ivy-re-builders-alist '((t . ivy--regex-ignore-order))
@@ -42,6 +44,12 @@
 (use-package ivy-rich
   :config
   (ivy-rich-mode 1))
+
+(use-package ivy-prescient
+  :after (counsel ivy)
+  :config
+  (setq ivy-prescient-enable-sorting nil)
+  (ivy-prescient-mode))
 
 (provide 'init-ivy)
 

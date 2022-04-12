@@ -11,10 +11,14 @@
 ;;; Code:
 
 (require-packages '(magit
-                    transient))
+                    transient
+                    magit-lfs))
 
 (use-package magit
   :bind ("C-x m" . magit-status))
+
+(use-package magit-lfs
+  :after magit)
 
 (provide 'init-git)
 

@@ -12,13 +12,13 @@
 
 (require-packages '(company
                     company-box
+                    company-prescient
                     eldoc
                     flycheck
                     yasnippet))
 
 (setq-default indent-tabs-mode nil
               tab-width 4)
-
 
 (use-package company
   :diminish company-mode
@@ -56,12 +56,17 @@
                             company-dabbrev-code
                             company-keywords
                             company-files)
-                           company-dabbrev-code)))
+                           company-dabbrev)))
 
 (use-package company-box
   :after lsp-mode
   :diminish company-box-mode
   :hook (company-mode . company-box-mode))
+
+(use-package company-prescient
+  :after company
+  :config
+  (company-prescient-mode))
 
 (use-package yasnippet
   :diminish yas-minor-mode
