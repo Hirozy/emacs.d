@@ -17,18 +17,7 @@
                     hungry-delete
                     iedit
                     symbol-overlay
-                    undo-fu
-                    undo-fu-session
                     whitespace-cleanup-mode))
-
-
-(use-package undo-fu
-  :config
-  (use-package undo-fu-session
-    :config
-    (setq undo-fu-session-incompatible-files '("/COMMIT_EDITMSG\\'" "/git-rebase-todo\\'"))
-    (global-undo-fu-session-mode)))
-
 
 (use-package iedit
   :bind ("S-<f2>" . iedit-mode)
@@ -67,6 +56,9 @@
 (use-package hungry-delete
   :config
   (setq hungry-delete-join-reluctantly nil))
+
+(use-package vundo
+  :load-path "site-lisp/vundo")
 
 (global-set-key (kbd "C-x ;") 'comment-line)
 (global-set-key (kbd "C-x C-;") 'comment-set-column)

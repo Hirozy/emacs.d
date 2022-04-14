@@ -43,7 +43,7 @@
          ("C-q" . hydra-high-frequency/body))
 
   :config
-  (evil-set-undo-system 'undo-fu)
+  (evil-set-undo-system 'undo-redo)
   (setq evil-default-state 'emacs
         evil-symbol-word-search t)
   (modify-syntax-entry ?_ "w")

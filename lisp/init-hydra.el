@@ -56,8 +56,8 @@
 (global-set-key
  (kbd "C-r")
  (defhydra hydra-edit (:foreign-keys warn :exit t)
-   ("u" undo-fu-only-undo "undo" :column "Edit" :exit nil)
-   ("U" undo-fu-only-redo "redo" :exit nil)
+   ("u" undo "undo" :column "Edit" :exit nil)
+   ("U" undo-redo "redo" :exit nil)
    ("h" anzu-query-replace "replace")
    ("H" anzu-query-replace-regexp "replace regexp")
    (";" comment-line "comment line")
@@ -103,6 +103,7 @@
   ("w1" ivy-push-view "push view")
   ("w2" ivy-pop-view "pop view")
   ("u" uuidgen "uuidgen" :column "Fun")
+  ("v" vundo "vundo")
   ("f" defined/get-buffer-file-name "get file name")
   ("c" projectile-run-async-shell-command-in-root "async run command")
   ("r" projectile-toggle-project-read-only "project readonly")

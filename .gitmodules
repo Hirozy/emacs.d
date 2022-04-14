@@ -16,3 +16,6 @@
 [submodule "Hirozy/golden-ratio.el"]
 	path = site-lisp/golden-ratio.el
 	url = https://github.com/Hirozy/golden-ratio.el.git
+[submodule "casouri/vundo"]
+	path = site-lisp/vundo
+	url = https://github.com/casouri/vundo.git
