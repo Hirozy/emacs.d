@@ -1,8 +1,8 @@
-;;; init-ivy.el --- ivy configuration
+;;; init-minibuffer.el --- minibuffer configuration
 
 ;;; Commentary:
 ;;
-;; ivy configuration
+;; minibuffer configuration
 ;;
 
 ;;; Require
@@ -15,9 +15,14 @@
                     ivy
                     ivy-rich
                     ivy-yasnippet
-                    ivy-prescient
                     swiper
+                    orderless
                     all-the-icons-ivy-rich))
+
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package ivy
   :diminish ivy-mode
@@ -28,10 +33,12 @@
   (setq ivy-height 15
         ivy-use-virtual-buffers t
         enable-recursive-minibuffers t
-        ivy-re-builders-alist '((t . ivy--regex-ignore-order))
+        ivy-re-builders-alist '((t . orderless-ivy-re-builder))
         ;; disable ivy prefixes
         ivy-initial-inputs-alist nil)
   :config
+  (add-to-list 'ivy-highlight-functions-alist
+               '(orderless-ivy-re-builder . orderless-ivy-highlight))
   (ivy-mode 1))
 
 (use-package counsel
@@ -45,12 +52,6 @@
   :config
   (ivy-rich-mode 1))
 
-(use-package ivy-prescient
-  :after (counsel ivy)
-  :config
-  (setq ivy-prescient-enable-sorting nil)
-  (ivy-prescient-mode))
+(provide 'init-minibuffer)
 
-(provide 'init-ivy)
-
-;;; init-ivy.el ends here
+;;; init-minibuffer.el ends here

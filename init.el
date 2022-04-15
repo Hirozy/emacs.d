@@ -26,7 +26,7 @@
 (require 'init-exec-path)
 (require 'init-theme)
 (require 'init-defun)
-(require 'init-ivy)
+(require 'init-minibuffer)
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
