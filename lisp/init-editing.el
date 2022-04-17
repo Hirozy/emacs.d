@@ -20,6 +20,7 @@
                     whitespace-cleanup-mode))
 
 (use-package iedit
+  :defer t
   :bind ("S-<f2>" . iedit-mode)
   :custom-face
   (iedit-occurrence ((t (:background "#CDB48B" :foreground "black" :inverse-video nil)))))

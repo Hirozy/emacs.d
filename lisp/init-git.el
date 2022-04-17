@@ -15,6 +15,7 @@
                     magit-lfs))
 
 (use-package magit
+  :defer t
   :bind ("C-x m" . magit-status))
 
 (use-package magit-lfs

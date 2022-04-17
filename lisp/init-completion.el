@@ -70,6 +70,7 @@
 
 (use-package yasnippet
   :diminish yas-minor-mode
+  :defer t
   :custom
   (yas-use-menu nil)
   :config

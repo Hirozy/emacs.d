@@ -22,6 +22,7 @@
            (string= lang "python"))))
 
 (use-package org
+  :defer t
   :hook ((org-mode . visual-line-mode)
          (org-mode . eldoc-mode)
          (org-mode . (lambda ()
@@ -80,6 +81,7 @@
     (setq org-html-htmlize-output-type 'css)))
 
 (use-package ox-latex
+  :after org-mode
   :config
   (add-to-list 'org-latex-classes
                '("article"
@@ -107,6 +109,7 @@
           "xelatex -interaction nonstopmode -output-directory %o %f")))
 
 (use-package valign
+  :after org-mode
   :if (display-graphic-p)
   :load-path "site-lisp/valign"
   :hook (org-mode . valign-mode))
