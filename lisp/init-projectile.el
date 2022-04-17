@@ -12,11 +12,6 @@
 
 (require-packages '(projectile))
 
-(defun defined/projectile-project-find-function (dir)
-  "Projectile find DIR function."
-  (let ((root (projectile-project-root dir)))
-    (and root (cons 'transient root))))
-
 (use-package projectile
   :bind-keymap (("s-p" . projectile-command-map)
                 ("C-c p" . projectile-command-map)
@@ -30,11 +25,6 @@
   (setq projectile-enable-caching t
         projectile-indexing-method 'alien
         projectile-completion-system 'ivy)
-
-  (with-eval-after-load 'project
-    (add-to-list 'project-find-functions
-                 #'defined/projectile-project-find-function))
-
   (projectile-mode 1))
 
 (provide 'init-projectile)

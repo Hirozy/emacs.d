@@ -62,6 +62,12 @@
   (ivy-prescient-enable-filtering nil)
   (ivy-prescient-enable-sorting t)
   :config
+  (setq ivy-prescient-sort-commands
+        '(:not swiper swiper-isearch ivy-switch-buffer
+               ivy-resume ivy--restore-session lsp-ivy-workspace-symbol
+               counsel-grep counsel-git-grep counsel-rg counsel-ag
+               counsel-ack counsel-fzf counsel-pt counsel-imenu
+               counsel-yank-pop counsel-recentf counsel-buffer-or-recentf))
   (ivy-prescient-mode))
 
 (use-package ivy-xref
