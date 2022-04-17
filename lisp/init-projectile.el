@@ -28,8 +28,7 @@
 
   :config
   (setq projectile-enable-caching t
-        projectile-indexing-method 'alien
-        projectile-completion-system 'ivy)
+        projectile-indexing-method 'alien)
 
   (with-eval-after-load 'project
     (add-to-list 'project-find-functions
