@@ -28,8 +28,7 @@
                                               '((company-capf :with company-dabbrev-code)
                                                 company-files
                                                 company-yasnippet)))))
-  :bind (("C-c l" . counsel-flycheck)
-         ("S-<f2>" . lsp-rename))
+  :bind (("S-<f2>" . lsp-rename))
 
   :custom
   ;; Prevent lsp from automatically adding company-capf
@@ -42,10 +41,6 @@
         read-process-output-max (* 1024 1024)
         lsp-idle-delay 0.1
         lsp-headerline-breadcrumb-enable nil))
-
-(use-package lsp-ivy
-  :after (lsp-mode ivy)
-  :commands lsp-ivy-workspace-symbol)
 
 (use-package lsp-pyright
   :after (lsp-mode python-mode))

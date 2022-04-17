@@ -17,7 +17,7 @@
         (t
          (message "Major mode is neither prog-mode or text-mode."))))
 
-(defun defined/get-buffer-file-name ()
+(defun defined/get-buffer-file-path ()
   "Echo current buffer file full path."
   (interactive)
   (message buffer-file-name))

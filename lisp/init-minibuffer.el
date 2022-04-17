@@ -12,9 +12,12 @@
 
 (require-packages '(counsel
                     counsel-tramp
+                    counsel-projectile
                     ivy
                     ivy-rich
                     ivy-yasnippet
+                    ivy-prescient
+                    ivy-xref
                     swiper
                     orderless
                     all-the-icons-ivy-rich))
@@ -44,6 +47,7 @@
 (use-package counsel
   :diminish counsel-mode
   :bind (("C-x C-f" . counsel-find-file)
+         ("C-c l" . counsel-flycheck)
          ("C-." . counsel-semantic-or-imenu))
   :config
   (counsel-mode 1))
@@ -51,6 +55,25 @@
 (use-package ivy-rich
   :config
   (ivy-rich-mode 1))
+
+(use-package ivy-prescient
+  :after ivy
+  :custom
+  (ivy-prescient-enable-filtering nil)
+  (ivy-prescient-enable-sorting t)
+  :config
+  (ivy-prescient-mode))
+
+(use-package ivy-xref
+  :after ivy
+  :init
+  (setq xref-show-definitions-function #'ivy-xref-show-defs
+        xref-show-xrefs-function #'ivy-xref-show-xrefs))
+
+(use-package counsel-projectile
+  :after (counsel projectile)
+  :config
+  (counsel-projectile-mode 1))
 
 (provide 'init-minibuffer)
 

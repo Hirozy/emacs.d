@@ -7,12 +7,10 @@
 
 ;;; Require
 (require 'init-packages)
-(require 'projectile)
 
 ;;; Code:
 
-(require-packages '(projectile
-                    counsel-projectile))
+(require-packages '(projectile))
 
 (defun defined/projectile-project-find-function (dir)
   "Projectile find DIR function."
@@ -24,6 +22,7 @@
                 ("C-c p" . projectile-command-map)
                 ("C-x p" . projectile-command-map))
 
+  :defines (project-find-functions)
   :custom
   (projectile-show-menu nil)
 
@@ -36,11 +35,7 @@
     (add-to-list 'project-find-functions
                  #'defined/projectile-project-find-function))
 
-  (projectile-mode 1)
-
-  (use-package counsel-projectile
-    :config
-    (counsel-projectile-mode 1)))
+  (projectile-mode 1))
 
 (provide 'init-projectile)
 
