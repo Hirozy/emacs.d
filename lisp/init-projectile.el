@@ -23,8 +23,7 @@
 
   :config
   (setq projectile-enable-caching t
-        projectile-indexing-method 'alien
-        projectile-completion-system 'ivy)
+        projectile-indexing-method 'alien)
   (projectile-mode 1))
 
 (provide 'init-projectile)
