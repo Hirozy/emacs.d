@@ -20,6 +20,7 @@
                     savehist
                     embark))
 
+
 (use-package vertico
   :hook ((after-init . vertico-mode))
   :bind (:map vertico-map
@@ -85,8 +86,10 @@
 
 (use-package orderless
   :after vertico
-  :init
-  (setq completion-styles '(substring orderless)))
+  :custom
+  (completion-styles '(flex))
+  (completion-category-defaults nil)
+  (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package embark
   :after vertico

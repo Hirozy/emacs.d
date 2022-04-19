@@ -20,10 +20,15 @@
 (setq-default indent-tabs-mode nil
               tab-width 4)
 
+(defun defined/use-orderless-in-minibuffer ()
+  "Use `orderless' in minibuffer."
+  (setq-local completion-styles '(orderless)))
+
 (use-package company
   :diminish company-mode
   :defines (company-files-exclusions company-dabbrev-ignore-case company-dabbrev-downcase)
-  :hook ((after-init . global-company-mode))
+  :hook ((after-init . global-company-mode)
+         (minibuffer-setup . defined/use-orderless-in-minibuffer))
   :bind (("M-/" . company-other-backend)
          :map company-active-map
          ("<tab>" . company-complete-common-or-cycle)
