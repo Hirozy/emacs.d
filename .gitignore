@@ -67,3 +67,4 @@ semanticdb/
 async-*
 eln-*
 /undo-fu-session
+/places

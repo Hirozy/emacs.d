@@ -13,8 +13,7 @@
 ;;; Code:
 
 (delete-dups require-package-list)
-(customize-save-variable 'package-selected-packages
-                         require-package-list)
+(setq package-selected-packages require-package-list)
 
 (provide 'init-postconfig)
 

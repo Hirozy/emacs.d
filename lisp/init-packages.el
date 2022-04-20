@@ -14,7 +14,8 @@
 (defvar defined/package-refresh-flag nil)
 
 (defun require-packages (package-list)
-  "Fetch the list of packages available, PACKAGE-LIST is the list you want to install."
+  "Fetch the list of packages available.
+PACKAGE-LIST is the list you want to install."
   (setq require-package-list
         (append require-package-list
                 package-list))
@@ -30,7 +31,7 @@
 (unless (version< emacs-version "28.0")
   (setq package-native-compile t))
 
-(require-packages '(use-package))
+(require-packages '(use-package diminish))
 
 (provide 'init-packages)
 

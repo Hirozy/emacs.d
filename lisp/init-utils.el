@@ -12,7 +12,6 @@
 
 (require-packages '(all-the-icons
                     avy
-                    diminish
                     goto-chg
                     highlight-indent-guides
                     treemacs
@@ -75,6 +74,13 @@
   (setq highlight-indent-guides-method 'character
         highlight-indent-guides-responsive 'top))
 
+;; Highlight the current line
+(use-package hl-line
+  :ensure nil
+  :hook ((after-init . global-hl-line-mode)
+         ((eshell-mode shell-mode term-mode vterm-mode) .
+          (lambda () (setq-local global-hl-line-mode nil)))))
+
 (use-package goto-chg)
 
 (use-package uuidgen)
@@ -105,11 +111,11 @@
        (and (string-prefix-p "magit" name)
             (not (file-name-extension name)))
        )))
-  (setq awesome-tab-hide-tab-function #'defined/awesome-tab-hide-tab)
 
   (defun defined/awesome-tab-buffer-groups ()
     "`awesome-tab-buffer-groups' control buffers' group rules.
-Group awesome-tab with mode if buffer is derived from `eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
+Group awesome-tab with mode if buffer is derived from
+`eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
 All buffer name start with * will group to \"Emacs\".
 Other buffer group by `awesome-tab-get-group-name' with project name."
     (list
@@ -129,6 +135,7 @@ Other buffer group by `awesome-tab-get-group-name' with project name."
        "Dired")
       (t
        (awesome-tab-get-group-name (current-buffer))))))
+  (setq awesome-tab-hide-tab-function #'defined/awesome-tab-hide-tab)
   (setq awesome-tab-buffer-groups-function #'defined/awesome-tab-buffer-groups)
   (awesome-tab-mode t))
 

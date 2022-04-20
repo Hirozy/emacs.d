@@ -17,7 +17,14 @@
                     hungry-delete
                     iedit
                     symbol-overlay
-                    whitespace-cleanup-mode))
+                    whitespace-cleanup-mode
+                    mwim))
+
+;; Automatically reload files was modified by external program
+(use-package autorevert
+  :ensure nil
+  :diminish
+  :hook (after-init . global-auto-revert-mode))
 
 (use-package iedit
   :defer t
@@ -61,8 +68,22 @@
 (use-package vundo
   :load-path "site-lisp/vundo")
 
-(global-set-key (kbd "C-x ;") 'comment-line)
-(global-set-key (kbd "C-x C-;") 'comment-set-column)
+;; Move to the beginning/end of line or code
+(use-package mwim
+  :bind (([remap move-beginning-of-line] . mwim-beginning-of-code-or-line)
+         ([remap move-end-of-line] . mwim-end-of-code-or-line)))
+
+(use-package newcomment
+  :ensure nil
+  :bind (("C-x ;" . comment-line)
+         ("C-x C-;" . comment-set-column)))
+
+;; Handling capitalized subwords in a nomenclature
+(use-package subword
+  :ensure nil
+  :diminish
+  :hook ((prog-mode . subword-mode)
+         (minibuffer-setup . subword-mode)))
 
 (provide 'init-editing)
 

@@ -17,12 +17,15 @@
                     consult-projectile
                     orderless
                     marginalia
-                    savehist
                     embark))
 
+(defun defined/use-orderless-in-minibuffer ()
+  "Use `orderless' in minibuffer."
+  (setq-local completion-styles '(orderless)))
 
 (use-package vertico
-  :hook ((after-init . vertico-mode))
+  :hook ((after-init . vertico-mode)
+         (minibuffer-setup . defined/use-orderless-in-minibuffer))
   :bind (:map vertico-map
               ("?" . minibuffer-completion-help)
               ("C-v" . vertico-scroll-up)
@@ -44,12 +47,8 @@
 
 (use-package marginalia
   :after vertico
-  :init
+  :config
   (marginalia-mode))
-
-(use-package savehist
-  :after vertico
-  :hook (after-init . savehist-mode))
 
 (use-package consult
   :defines (consult-project-root-function)
@@ -85,7 +84,6 @@
                      :preview-key nil))
 
 (use-package orderless
-  :after vertico
   :custom
   (completion-styles '(flex))
   (completion-category-defaults nil)

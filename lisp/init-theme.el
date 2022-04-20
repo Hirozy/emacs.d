@@ -20,6 +20,7 @@
 (load-theme 'vscode-dark t)
 
 (use-package doom-themes
+  :defines (doom-themes-treemacs-theme)
   :if (memq window-system '(mac ns x))
   :after treemacs
   :config

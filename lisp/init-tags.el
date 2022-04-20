@@ -14,6 +14,7 @@
                     xref))
 
 (use-package citre
+  :functions (projectile-project-root)
   :after projectile
   :defer t
   :bind (("C-x c j" . citre-jump)

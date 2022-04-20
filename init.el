@@ -23,6 +23,7 @@
   (load custom-file))
 (require 'init-configs)
 (require 'init-packages)
+(require 'init-basic)
 (require 'init-exec-path)
 (require 'init-theme)
 (require 'init-defun)

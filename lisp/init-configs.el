@@ -13,18 +13,20 @@
  make-backup-files nil
  ;; Stop creating #autosave# files
  auto-save-default nil
+ ;; Don’t compact font caches during GC
+ inhibit-compacting-font-caches t
  create-lockfiles nil
  visible-bell t
  ;; Enabled word wrap
  truncate-lines t
  tramp-default-method "ssh"
- inhibit-startup-screen t)
-
-(global-display-line-numbers-mode)
-;; (set-face-attribute 'line-number-current-line nil :weight 'normal)
+ inhibit-startup-screen t
+ ;; Increase how much is read from processes in a single chunk
+ ;; default is 4kb, now is 64kb
+ read-process-output-max #x10000)
 
 ;; Show cursor position within line
-(column-number-mode)
+(column-number-mode 1)
 
 ;; Disabled tool bar
 (tool-bar-mode -1)
