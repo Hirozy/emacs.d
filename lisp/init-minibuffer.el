@@ -52,7 +52,6 @@
 
 (use-package consult
   :defines (consult-project-root-function)
-  :hook ((after-init . recentf-mode))
   :bind (;; remap projectile
          ([remap projectile-ripgrep] . consult-ripgrep)
          ([remap projectile-grep] . consult-grep)

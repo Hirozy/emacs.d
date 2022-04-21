@@ -29,6 +29,7 @@
          ("C-n" . next-line)
          ("C-p" . previous-line)
          ("C-\\" . evil-mode)
+         ("M-y" . consult-yank-pop)
 
          :map evil-insert-state-map
          ("C-k" . grammatical-edit-kill)
@@ -61,9 +62,9 @@
     (setq-default evil-escape-key-sequence "jk"
                   evil-escape-delay 0.2))
   (use-package evil-matchit)
-  (use-package evil-anzu))
+  (use-package evil-anzu)
 
-(evil-mode 1)
+  (evil-mode 1))
 
 (provide 'init-evil)
 
