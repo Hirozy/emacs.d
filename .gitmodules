@@ -7,6 +7,9 @@
 [submodule "borg"]
 	path = lib/borg
 	url = git@github.com:emacscollective/borg.git
+[submodule "citre"]
+	path = lib/citre
+	url = git@github.com:universal-ctags/citre.git
 [submodule "closql"]
 	path = lib/closql
 	url = git@github.com:emacscollective/closql.git
@@ -27,6 +30,9 @@
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = git@github.com:dgutov/diff-hl.git
+[submodule "doom-themes"]
+	path = lib/doom-themes
+	url = git@github.com:doomemacs/themes.git
 [submodule "emacsql"]
 	no-byte-compile = emacsql-pg.el
 	path = lib/emacsql
@@ -34,6 +40,7 @@
 [submodule "embark"]
 	path = lib/embark
 	url = git@github.com:oantolin/embark.git
+	no-byte-compile = avy-embark-collect.el
 [submodule "epkg"]
 	path = lib/epkg
 	url = git@github.com:emacscollective/epkg.git
@@ -88,6 +95,9 @@
 [submodule "with-editor"]
 	path = lib/with-editor
 	url = git@github.com:magit/with-editor.git
+[submodule "xref"]
+	path = lib/xref
+	url = git@github.com:emacsmirror/xref.git
 [submodule "yasnippet"]
 	path = lib/yasnippet
 	url = git@github.com:joaotavora/yasnippet.git

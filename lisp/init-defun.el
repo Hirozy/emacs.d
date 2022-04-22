@@ -1,4 +1,4 @@
-;;; init-defun.el --- Defined function by myself
+;;; init-defun.el --- Defined function by myself -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -24,4 +24,8 @@
 
 (provide 'init-defun)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-defun.el ends here

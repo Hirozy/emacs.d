@@ -1,21 +1,11 @@
-;;; init-theme.el --- Theme configuration
+;;; init-theme.el --- Theme configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; Theme configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(solarized-theme
-                    spacemacs-theme
-                    nord-theme
-                    doom-themes
-                    vscode-dark-plus-theme
-                    zenburn-theme))
 
 (load-theme 'vscode-dark t)
 
@@ -31,4 +21,8 @@
 
 (provide 'init-theme)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-theme.el ends here

@@ -1,17 +1,11 @@
-;;; init-tags.el --- Tags configuration
+;;; init-tags.el --- Tags configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; Tags configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(citre
-                    xref))
 
 (use-package citre
   :functions (projectile-project-root)
@@ -46,4 +40,8 @@
 
 (provide 'init-tags)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-tags.el ends here
