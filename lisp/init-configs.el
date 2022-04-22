@@ -1,4 +1,4 @@
-;;; init-configs.el --- Misc configuration
+;;; init-configs.el --- Misc configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -61,4 +61,8 @@
 
 (provide 'init-configs)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-configs.el ends here

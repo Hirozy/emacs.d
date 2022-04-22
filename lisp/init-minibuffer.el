@@ -1,23 +1,11 @@
-;;; init-minibuffer.el --- minibuffer configuration
+;;; init-minibuffer.el --- minibuffer configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; minibuffer configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(vertico
-                    consult
-                    consult-flycheck
-                    consult-yasnippet
-                    consult-projectile
-                    orderless
-                    marginalia
-                    embark))
 
 (defun defined/use-orderless-in-minibuffer ()
   "Use `orderless' in minibuffer."
@@ -96,4 +84,8 @@
 
 (provide 'init-minibuffer)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-minibuffer.el ends here

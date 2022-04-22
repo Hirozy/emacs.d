@@ -1,16 +1,11 @@
-;;; init-projectile.el --- projectile configuration
+;;; init-projectile.el --- projectile configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; projectile configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(projectile))
 
 (use-package projectile
   :bind-keymap (("s-p" . projectile-command-map)
@@ -28,4 +23,8 @@
 
 (provide 'init-projectile)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-projectile.el ends here

@@ -1,4 +1,4 @@
-;;; early-init.el --- earliest birds               -*- lexical-binding: t -*-
+;;; early-init.el --- earliest birds -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -17,7 +17,7 @@
 (auto-compile-on-load-mode)
 (auto-compile-on-save-mode)
 
-(setq package-enable-at-startup t)
+(setq package-enable-at-startup nil)
 
 (with-eval-after-load 'package
                       (setq package-archives

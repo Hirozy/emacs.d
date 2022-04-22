@@ -10,6 +10,15 @@
 [submodule "closql"]
 	path = lib/closql
 	url = git@github.com:emacscollective/closql.git
+[submodule "consult"]
+	path = lib/consult
+	url = git@github.com:minad/consult.git
+[submodule "consult-projectile"]
+	path = lib/consult-projectile
+	url = git@gitlab.com:OlMon/consult-projectile.git
+[submodule "consult-yasnippet"]
+	path = lib/consult-yasnippet
+	url = git@github.com:mohkale/consult-yasnippet.git
 [submodule "dash"]
 	no-byte-compile = dash-functional.el
 	no-makeinfo = dash-template.texi
@@ -22,6 +31,9 @@
 	no-byte-compile = emacsql-pg.el
 	path = lib/emacsql
 	url = git@github.com:skeeto/emacsql.git
+[submodule "embark"]
+	path = lib/embark
+	url = git@github.com:oantolin/embark.git
 [submodule "epkg"]
 	path = lib/epkg
 	url = git@github.com:emacscollective/epkg.git
@@ -32,9 +44,21 @@
 	no-byte-compile = lisp/magit-libgit.el
 	path = lib/magit
 	url = git@github.com:magit/magit.git
+[submodule "magit-lfs"]
+	path = lib/magit-lfs
+	url = git@github.com:Ailrun/magit-lfs.git
+[submodule "marginalia"]
+	path = lib/marginalia
+	url = git@github.com:minad/marginalia.git
+[submodule "orderless"]
+	path = lib/orderless
+	url = git@github.com:oantolin/orderless.git
 [submodule "packed"]
 	path = lib/packed
 	url = git@github.com:emacscollective/packed.git
+[submodule "projectile"]
+	path = lib/projectile
+	url = git@github.com:bbatsov/projectile.git
 [submodule "transient"]
 	path = lib/transient
 	url = git@github.com:magit/transient.git
@@ -44,27 +68,17 @@
 [submodule "use-package"]
 	path = lib/use-package
 	url = git@github.com:jwiegley/use-package.git
+[submodule "vertico"]
+	path = lib/vertico
+	url = git@github.com:minad/vertico.git
+	load-path = .
+	load-path = extensions
+[submodule "which-key"]
+	path = lib/which-key
+	url = git@github.com:justbur/emacs-which-key.git
 [submodule "with-editor"]
 	path = lib/with-editor
 	url = git@github.com:magit/with-editor.git
-[submodule "casouri/valign"]
-	path = site-lisp/valign
-	url = https://github.com/casouri/valign.git
-[submodule "manateelazycat/open-newline"]
-	path = site-lisp/open-newline
-	url = https://github.com/manateelazycat/open-newline.git
-[submodule "manateelazycat/nox"]
-	path = site-lisp/nox
-	url = https://github.com/manateelazycat/nox.git
-[submodule "manateelazycat/awesome-tab"]
-	path = site-lisp/awesome-tab
-	url = https://github.com/manateelazycat/awesome-tab.git
-[submodule "manateelazycat/grammatical-edit"]
-	path = site-lisp/grammatical-edit
-	url = https://github.com/manateelazycat/grammatical-edit.git
-[submodule "Hirozy/golden-ratio.el"]
-	path = site-lisp/golden-ratio.el
-	url = https://github.com/Hirozy/golden-ratio.el.git
-[submodule "casouri/vundo"]
-	path = site-lisp/vundo
-	url = https://github.com/casouri/vundo.git
+[submodule "yasnippet"]
+	path = lib/yasnippet
+	url = git@github.com:joaotavora/yasnippet.git

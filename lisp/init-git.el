@@ -1,18 +1,11 @@
-;;; init-git.el --- Git tools configuration
+;;; init-git.el --- Git tools configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; Git tools configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(magit
-                    transient
-                    magit-lfs))
 
 (use-package magit
   :defer t
@@ -29,4 +22,8 @@
 
 (provide 'init-git)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-git.el ends here

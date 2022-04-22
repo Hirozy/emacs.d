@@ -1,4 +1,4 @@
-;;; init-packages.el --- Packages manager configuration
+;;; init-packages.el --- Packages manager configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -38,4 +38,8 @@
 
 (provide 'init-packages)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-packages.el ends here
