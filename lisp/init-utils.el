@@ -1,30 +1,11 @@
-;;; init-utils.el --- Utils configuration
+;;; init-utils.el --- Utils configuration  -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; Utils configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(all-the-icons
-                    avy
-                    goto-chg
-                    highlight-indent-guides
-                    treemacs
-                    treemacs-all-the-icons
-                    treemacs-icons-dired
-                    treemacs-magit
-                    treemacs-projectile
-                    uuidgen
-                    ztree
-                    which-key))
-
-(when (memq system-type '(darwin gnu/linux))
-  (require-packages '(vterm)))
 
 (use-package which-key
   :diminish which-key-mode
@@ -41,11 +22,10 @@
 (use-package winner
   :hook (after-init . winner-mode))
 
-(use-package golden-ratio
-  :load-path "site-lisp/golden-ratio.el"
-  :diminish golden-ratio-mode
-  :config
-  (golden-ratio-mode 1))
+(use-package zoom
+  :hook (after-init . zoom-mode)
+  :custom
+  (zoom-size '(0.618 . 0.618)))
 
 (use-package diminish
   :config
@@ -76,20 +56,11 @@
 
 ;; Highlight the current line
 (use-package hl-line
-  :ensure nil
   :hook ((after-init . global-hl-line-mode)
          ((eshell-mode shell-mode term-mode vterm-mode) .
           (lambda () (setq-local global-hl-line-mode nil)))))
 
-(use-package goto-chg)
-
-(use-package uuidgen)
-
-(use-package open-newline
-  :load-path "site-lisp/open-newline")
-
 (use-package awesome-tab
-  :load-path "site-lisp/awesome-tab"
   :config
   (setq awesome-tab-display-icon nil
         awesome-tab-height 120
@@ -139,6 +110,14 @@ Other buffer group by `awesome-tab-get-group-name' with project name."
   (setq awesome-tab-buffer-groups-function #'defined/awesome-tab-buffer-groups)
   (awesome-tab-mode t))
 
+(use-package goto-chg)
+(use-package uuidgen)
+(use-package open-newline)
+
 (provide 'init-utils)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-utils.el ends here

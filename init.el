@@ -33,7 +33,7 @@
 ;; (require 'init-editing)
 (require 'init-tags)
 ;; (require 'init-pair)
-;; (require 'init-utils)
+(require 'init-utils)
 
 ;; (require 'init-python)
 ;; (require 'init-c-cpp)
