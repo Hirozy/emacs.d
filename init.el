@@ -6,17 +6,10 @@
 
 ;;; Code:
 
-;; Figure out the path to our .emacs.d by getting the path part of the
-;; current file (`init.el`).
-(defvar dotfiles-dir (file-name-directory
-                      (or (buffer-file-name) (file-chase-links load-file-name))))
-
-(add-to-list 'load-path (concat dotfiles-dir "lisp"))
-
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
-(require 'init-elpa)
+(load-file (expand-file-name "early-init.el" user-emacs-directory))
 ;; Keep emacs custom in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
@@ -58,7 +51,6 @@
 (require 'init-evil)
 
 (require 'init-hydra)
-(require 'init-postconfig)
 
 (provide 'init)
 

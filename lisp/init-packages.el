@@ -10,28 +10,31 @@
 
 ;;; Code:
 
-(defvar require-package-list '())
-(defvar defined/package-refresh-flag nil)
+(eval-and-compile
+  (add-to-list 'load-path (expand-file-name "lib/borg" user-emacs-directory))
+  (require 'borg)
+  (borg-initialize))
 
-(defun require-packages (package-list)
-  "Fetch the list of packages available.
-PACKAGE-LIST is the list you want to install."
-  (setq require-package-list
-        (append require-package-list
-                package-list))
+(progn
+  (require 'use-package)
+  (setq use-package-verbose t))
 
-  ;; install the missing packages
-  (dolist (package package-list)
-    (unless (or (package-installed-p package) (package-built-in-p package))
-      (unless defined/package-refresh-flag
-        (package-refresh-contents)
-        (setq defined/package-refresh-flag t))
-      (package-install package))))
+(use-package dash)
+(use-package eieio)
 
-(unless (version< emacs-version "28.0")
-  (setq package-native-compile t))
+(use-package auto-compile
+  :config
+  (setq auto-compile-display-buffer nil
+        auto-compile-mode-line-counter t
+        auto-compile-source-recreate-deletes-dest t
+        auto-compile-toggle-deletes-nonlib-dest t
+        auto-compile-update-autoloads t))
 
-(require-packages '(use-package diminish))
+(use-package epkg
+  :defines (epkg-repository)
+  :defer t
+  :init (setq epkg-repository
+              (expand-file-name "var/epkgs/" user-emacs-directory)))
 
 (provide 'init-packages)
 
