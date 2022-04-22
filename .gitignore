@@ -68,3 +68,8 @@ async-*
 eln-*
 /undo-fu-session
 /places
+/.cask
+/.hive-maint
+/custom.el
+/eln-cache
+/var

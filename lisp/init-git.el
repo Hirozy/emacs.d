@@ -16,7 +16,13 @@
 
 (use-package magit
   :defer t
-  :bind ("C-x m" . magit-status))
+  :commands (magit-add-section-hook)
+  :bind ("C-x m" . magit-status)
+  :config
+  (magit-add-section-hook 'magit-status-sections-hook
+                          'magit-insert-modules
+                          'magit-insert-stashes
+                          'append))
 
 (use-package magit-lfs
   :after magit)
