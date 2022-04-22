@@ -1,17 +1,11 @@
-;;; init-tree-sitter.el --- Tree sitter configuration
+;;; init-tree-sitter.el --- Tree sitter configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; Tree sitter configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(tree-sitter
-                    tree-sitter-langs))
 
 (use-package tree-sitter
   :diminish tree-sitter-mode
@@ -20,4 +14,8 @@
 
 (provide 'init-tree-sitter)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-tree-sitter.el ends here

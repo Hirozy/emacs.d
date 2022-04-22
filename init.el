@@ -25,14 +25,14 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
-;; (require 'init-tree-sitter)
+(require 'init-tree-sitter)
 ;; (require 'init-lsp)
 ;; (require 'init-org)
 (require 'init-projectile)
 ;; (require 'init-completion)
 (require 'init-editing)
 (require 'init-tags)
-;; (require 'init-pair)
+(require 'init-pair)
 (require 'init-utils)
 
 (require 'init-python)

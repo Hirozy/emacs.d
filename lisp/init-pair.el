@@ -1,22 +1,16 @@
-;;; init-pair.el --- Pair configuration
+;;; init-pair.el --- Pair configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; Pair configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(rainbow-delimiters))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package grammatical-edit
-  :load-path "site-lisp/grammatical-edit"
   :hook ((lisp-mode
           c++-mode
           c-mode
@@ -61,4 +55,8 @@
 
 (provide 'init-pair)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-pair.el ends here
