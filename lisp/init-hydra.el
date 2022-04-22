@@ -1,17 +1,11 @@
-;;; init-hydra.el --- hydra configuration
+;;; init-hydra.el --- hydra configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; hydra configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(hydra
-                    ace-window))
 
 (defhydra hydra-org-mode (:foreign-keys warn :exit t)
   ("s" org-insert-structure-template "org template" :column "Edit")
@@ -151,4 +145,8 @@
 
 (provide 'init-hydra)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-hydra.el ends here

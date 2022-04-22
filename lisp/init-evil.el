@@ -1,22 +1,14 @@
-;;; init-evil.el --- evil-mode configuration
+;;; init-evil.el --- evil-mode configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; evil-mode configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-(require 'evil)
-
 ;;; Code:
 
-(require-packages '(evil
-                    evil-anzu
-                    evil-escape
-                    evil-matchit))
-
 (use-package evil
+  :hook (after-init . evil-mode)
   :bind (("C-\\" . evil-force-normal-state)
 
          :map evil-normal-state-map
@@ -62,10 +54,12 @@
     (setq-default evil-escape-key-sequence "jk"
                   evil-escape-delay 0.2))
   (use-package evil-matchit)
-  (use-package evil-anzu)
-
-  (evil-mode 1))
+  (use-package evil-anzu))
 
 (provide 'init-evil)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-evil.el ends here

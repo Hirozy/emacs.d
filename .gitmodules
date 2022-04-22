@@ -1,6 +1,9 @@
 [borg]
 	pushDefault = Hirozy
 	collective = emacsd
+[submodule "anzu"]
+	path = lib/anzu
+	url = git@github.com:emacsorphanage/anzu.git
 [submodule "auto-compile"]
 	path = lib/auto-compile
 	url = git@github.com:emacscollective/auto-compile.git
@@ -30,6 +33,9 @@
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = git@github.com:dgutov/diff-hl.git
+[submodule "diminish"]
+	path = lib/diminish
+	url = git@github.com:myrjola/diminish.el.git
 [submodule "doom-themes"]
 	path = lib/doom-themes
 	url = git@github.com:doomemacs/themes.git
@@ -47,6 +53,18 @@
 [submodule "epkg-marginalia"]
 	path = lib/epkg-marginalia
 	url = git@github.com:emacscollective/epkg-marginalia.git
+[submodule "evil"]
+	path = lib/evil
+	url = git@github.com:emacs-evil/evil.git
+[submodule "evil-anzu"]
+	path = lib/evil-anzu
+	url = git@github.com:emacsorphanage/evil-anzu.git
+[submodule "evil-escape"]
+	path = lib/evil-escape
+	url = git@github.com:syl20bnr/evil-escape.git
+[submodule "evil-matchit"]
+	path = lib/evil-matchit
+	url = git@github.com:redguardtoo/evil-matchit.git
 [submodule "exec-path-from-shell"]
 	path = lib/exec-path-from-shell
 	url = git@github.com:purcell/exec-path-from-shell.git
@@ -56,6 +74,9 @@
 [submodule "git-modes"]
 	path = lib/git-modes
 	url = git@github.com:magit/git-modes.git
+[submodule "hydra"]
+	path = lib/hydra
+	url = git@github.com:abo-abo/hydra.git
 [submodule "magit"]
 	no-byte-compile = lisp/magit-libgit.el
 	path = lib/magit
@@ -75,6 +96,9 @@
 [submodule "projectile"]
 	path = lib/projectile
 	url = git@github.com:bbatsov/projectile.git
+[submodule "quickrun"]
+	path = lib/quickrun
+	url = git@github.com:emacsorphanage/quickrun.git
 [submodule "transient"]
 	path = lib/transient
 	url = git@github.com:magit/transient.git

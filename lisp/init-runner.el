@@ -1,16 +1,11 @@
-;;; init-runner.el --- Execute current buffer.
+;;; init-runner.el --- Execute current buffer -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
-;; Execute current buffer.
+;; Execute current buffer
 ;;
 
-;;; Require
-(require 'package)
-(require 'init-packages)
-
 ;;; Code:
-(require-packages '(quickrun))
 
 (use-package quickrun
   :bind (("<f10>" . quickrun-shell)
@@ -53,4 +48,8 @@
 
 (provide 'init-runner)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-runner.el ends here

@@ -47,10 +47,10 @@
 
 (require 'init-git)
 ;; (require 'init-admixture)
-;; (require 'init-runner)
-;; (require 'init-evil)
+(require 'init-runner)
+(require 'init-evil)
 
-;; (require 'init-hydra)
+(require 'init-hydra)
 
 (provide 'init)
 
