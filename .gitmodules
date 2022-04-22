@@ -6,6 +6,9 @@
 	url = git@github.com:domtronn/all-the-icons.el.git
 	load-path = .
 	load-path = data
+[submodule "anaphora"]
+	path = lib/anaphora
+	url = git@github.com:rolandwalker/anaphora.git
 [submodule "anzu"]
 	path = lib/anzu
 	url = git@github.com:emacsorphanage/anzu.git
@@ -27,6 +30,9 @@
 [submodule "closql"]
 	path = lib/closql
 	url = git@github.com:emacscollective/closql.git
+[submodule "conda"]
+	path = lib/conda
+	url = git@github.com:necaris/conda.el.git
 [submodule "consult"]
 	path = lib/consult
 	url = git@github.com:minad/consult.git
@@ -44,6 +50,9 @@
 	no-makeinfo = dash-template.texi
 	path = lib/dash
 	url = git@github.com:magnars/dash.el.git
+[submodule "deferred"]
+	path = lib/deferred
+	url = git@github.com:kiwanami/emacs-deferred.git
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = git@github.com:dgutov/diff-hl.git
@@ -53,6 +62,9 @@
 [submodule "doom-themes"]
 	path = lib/doom-themes
 	url = git@github.com:doomemacs/themes.git
+[submodule "ein"]
+	path = lib/ein
+	url = git@github.com:millejoh/emacs-ipython-notebook.git
 [submodule "emacsql"]
 	no-byte-compile = emacsql-pg.el
 	path = lib/emacsql
@@ -85,6 +97,9 @@
 [submodule "expand-region"]
 	path = lib/expand-region
 	url = git@github.com:magnars/expand-region.el.git
+[submodule "f"]
+	path = lib/f
+	url = git@github.com:rejeep/f.el.git
 [submodule "format-all"]
 	path = lib/format-all
 	url = git@github.com:lassik/emacs-format-all-the-code.git
@@ -143,12 +158,27 @@
 [submodule "pfuture"]
 	path = lib/pfuture
 	url = git@github.com:Alexander-Miller/pfuture.git
+[submodule "poetry"]
+	path = lib/poetry
+	url = git@github.com:galaunay/poetry.el.git
+[submodule "polymode"]
+	path = lib/polymode
+	url = git@github.com:polymode/polymode.git
 [submodule "projectile"]
 	path = lib/projectile
 	url = git@github.com:bbatsov/projectile.git
+[submodule "pythonic"]
+	path = lib/pythonic
+	url = git@github.com:pythonic-emacs/pythonic.git
+[submodule "pyvenv"]
+	path = lib/pyvenv
+	url = git@github.com:jorgenschaefer/pyvenv.git
 [submodule "quickrun"]
 	path = lib/quickrun
 	url = git@github.com:emacsorphanage/quickrun.git
+[submodule "request"]
+	path = lib/request
+	url = git@github.com:tkf/emacs-request.git
 [submodule "s"]
 	path = lib/s
 	url = git@github.com:magnars/s.el.git
@@ -189,6 +219,9 @@
 [submodule "vundo"]
 	path = lib/vundo
 	url = git@github.com:casouri/vundo.git
+[submodule "websocket"]
+	path = lib/websocket
+	url = git@github.com:ahyatt/emacs-websocket.git
 [submodule "which-key"]
 	path = lib/which-key
 	url = git@github.com:justbur/emacs-which-key.git

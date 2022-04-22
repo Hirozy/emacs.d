@@ -35,7 +35,7 @@
 ;; (require 'init-pair)
 (require 'init-utils)
 
-;; (require 'init-python)
+(require 'init-python)
 ;; (require 'init-c-cpp)
 ;; (require 'init-golang)
 ;; (require 'init-haskell)
