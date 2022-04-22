@@ -36,6 +36,12 @@
   :init (setq epkg-repository
               (expand-file-name "var/epkgs/" user-emacs-directory)))
 
+(use-package marginalia
+  :config
+  (cl-pushnew 'epkg-marginalia-annotate-package
+		(alist-get 'package marginalia-annotator-registry))
+  (marginalia-mode))
+
 (provide 'init-packages)
 
 ;; Local Variables:

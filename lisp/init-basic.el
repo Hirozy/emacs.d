@@ -1,19 +1,13 @@
-;;; init-basic.el --- basic configuration
+;;; init-basic.el --- basic configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; basic configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
 
-(require-packages '(gcmh))
-
 (use-package recentf
-  :ensure nil
   :hook (after-init . recentf-mode)
   :init
   (setq recentf-max-saved-items 300
@@ -25,7 +19,6 @@
           (lambda (file) (file-in-directory-p file package-user-dir)))))
 
 (use-package savehist
-  :ensure nil
   :hook (after-init . savehist-mode)
   :init
   (setq enable-recursive-minibuffers t ; Allow commands in minibuffers
@@ -38,11 +31,9 @@
         savehist-autosave-interval 300))
 
 (use-package saveplace
-  :ensure nil
   :hook (after-init . save-place-mode))
 
 (use-package display-line-numbers
-  :ensure nil
   :hook (after-init . global-display-line-numbers-mode))
 
 (use-package gcmh
@@ -55,4 +46,8 @@
 
 (provide 'init-basic)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-basic.el ends here

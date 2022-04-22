@@ -33,11 +33,6 @@
   ;; Tidy shadowed file names
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
-(use-package marginalia
-  :after vertico
-  :config
-  (marginalia-mode))
-
 (use-package consult
   :defines (consult-project-root-function)
   :bind (;; remap projectile

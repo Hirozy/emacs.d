@@ -1,16 +1,11 @@
-;;; init-exec-path.el --- exec path from shell
+;;; init-exec-path.el --- exec path from shell -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; exec path from shell
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(exec-path-from-shell))
 
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns x))
@@ -27,4 +22,8 @@
 
 (provide 'init-exec-path)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-exec-path.el ends here
