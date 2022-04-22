@@ -36,6 +36,9 @@
 [submodule "consult-yasnippet"]
 	path = lib/consult-yasnippet
 	url = git@github.com:mohkale/consult-yasnippet.git
+[submodule "ctrlf"]
+	path = lib/ctrlf
+	url = git@github.com:raxod502/ctrlf.git
 [submodule "dash"]
 	no-byte-compile = dash-functional.el
 	no-makeinfo = dash-template.texi
@@ -79,6 +82,12 @@
 [submodule "exec-path-from-shell"]
 	path = lib/exec-path-from-shell
 	url = git@github.com:purcell/exec-path-from-shell.git
+[submodule "expand-region"]
+	path = lib/expand-region
+	url = git@github.com:magnars/expand-region.el.git
+[submodule "format-all"]
+	path = lib/format-all
+	url = git@github.com:lassik/emacs-format-all-the-code.git
 [submodule "gcmh"]
 	path = lib/gcmh
 	url = git@gitlab.com:koral/gcmh.git
@@ -94,9 +103,21 @@
 [submodule "ht"]
 	path = lib/ht
 	url = git@github.com:Wilfred/ht.el.git
+[submodule "hungry-delete"]
+	path = lib/hungry-delete
+	url = git@github.com:nflath/hungry-delete.git
 [submodule "hydra"]
 	path = lib/hydra
 	url = git@github.com:abo-abo/hydra.git
+[submodule "iedit"]
+	path = lib/iedit
+	url = git@github.com:victorhge/iedit.git
+[submodule "inheritenv"]
+	path = lib/inheritenv
+	url = git@github.com:purcell/inheritenv.git
+[submodule "language-id"]
+	path = lib/language-id
+	url = git@github.com:lassik/emacs-language-id.git
 [submodule "magit"]
 	no-byte-compile = lisp/magit-libgit.el
 	path = lib/magit
@@ -107,6 +128,9 @@
 [submodule "marginalia"]
 	path = lib/marginalia
 	url = git@github.com:minad/marginalia.git
+[submodule "mwim"]
+	path = lib/mwim
+	url = git@github.com:alezost/mwim.el.git
 [submodule "open-newline"]
 	path = lib/open-newline
 	url = git@github.com:manateelazycat/open-newline.git
@@ -128,6 +152,9 @@
 [submodule "s"]
 	path = lib/s
 	url = git@github.com:magnars/s.el.git
+[submodule "symbol-overlay"]
+	path = lib/symbol-overlay
+	url = git@github.com:wolray/symbol-overlay.git
 [submodule "transient"]
 	path = lib/transient
 	url = git@github.com:magit/transient.git
@@ -152,9 +179,22 @@
 	url = git@github.com:minad/vertico.git
 	load-path = .
 	load-path = extensions
+[submodule "vterm"]
+	path = lib/vterm
+	url = git@github.com:akermu/emacs-libvterm.git
+	build-step = mkdir -p build
+	build-step = cd build && cmake .. && make
+	build-step = borg-compile
+	build-step = borg-update-autoloads
+[submodule "vundo"]
+	path = lib/vundo
+	url = git@github.com:casouri/vundo.git
 [submodule "which-key"]
 	path = lib/which-key
 	url = git@github.com:justbur/emacs-which-key.git
+[submodule "whitespace-cleanup-mode"]
+	path = lib/whitespace-cleanup-mode
+	url = git@github.com:purcell/whitespace-cleanup-mode.git
 [submodule "with-editor"]
 	path = lib/with-editor
 	url = git@github.com:magit/with-editor.git

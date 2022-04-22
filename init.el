@@ -30,7 +30,7 @@
 ;; (require 'init-org)
 (require 'init-projectile)
 ;; (require 'init-completion)
-;; (require 'init-editing)
+(require 'init-editing)
 (require 'init-tags)
 ;; (require 'init-pair)
 (require 'init-utils)

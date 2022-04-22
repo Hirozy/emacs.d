@@ -1,28 +1,14 @@
-;;; init-configs.el --- editing tools configuration
+;;; init-configs.el --- editing tools configuration  -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; editing tools configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(anzu
-                    ctrlf
-                    expand-region
-                    format-all
-                    hungry-delete
-                    iedit
-                    symbol-overlay
-                    whitespace-cleanup-mode
-                    mwim))
 
 ;; Automatically reload files was modified by external program
 (use-package autorevert
-  :ensure nil
   :diminish
   :hook (after-init . global-auto-revert-mode))
 
@@ -65,26 +51,27 @@
   :config
   (setq hungry-delete-join-reluctantly nil))
 
-(use-package vundo
-  :load-path "site-lisp/vundo")
-
 ;; Move to the beginning/end of line or code
 (use-package mwim
   :bind (([remap move-beginning-of-line] . mwim-beginning-of-code-or-line)
          ([remap move-end-of-line] . mwim-end-of-code-or-line)))
 
 (use-package newcomment
-  :ensure nil
   :bind (("C-x ;" . comment-line)
          ("C-x C-;" . comment-set-column)))
 
 ;; Handling capitalized subwords in a nomenclature
 (use-package subword
-  :ensure nil
   :diminish
   :hook ((prog-mode . subword-mode)
          (minibuffer-setup . subword-mode)))
 
+(use-package vundo)
+
 (provide 'init-editing)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-editing.el ends here
