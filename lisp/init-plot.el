@@ -1,27 +1,26 @@
-;;; init-plot.el --- plot configuration
+;;; init-plot.el --- plot configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; plot configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
 
-(require-packages '(gnuplot
-                    graphviz-dot-mode
-                    plantuml-mode))
-
 (use-package gnuplot
+  :defer t
   :mode (("\\.gp\\'" . gnuplot-mode)
          ("\\.plt\\'" . gnuplot-mode)))
 
-(use-package graphviz-dot-mode
-  :config
-  (setq graphviz-dot-indent-width 4))
+(use-package plantuml-mode
+  :defer t
+  :mode (("\\.puml\\'" . plantuml-mode)
+         ("\\.plantuml\\'" . plantuml-mode)))
 
 (provide 'init-plot)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-plot.el ends here

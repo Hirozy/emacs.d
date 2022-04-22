@@ -1,19 +1,19 @@
-;;; init-haskell.el --- haskell-mode configuratione
+;;; init-haskell.el --- haskell-mode configuratione -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; haskell-mode configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
 
-(require-packages '(haskell-mode))
-
-(use-package haskell-mode)
+(use-package haskell-mode
+  :defer t)
 
 (provide 'init-haskell)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-haskell.el ends here

@@ -1,18 +1,14 @@
-;;; init-mark.el --- markdown mode configuration
+;;; init-mark.el --- markdown mode configuration  -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; markdown mode configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
 
-(require-packages '(markdown-mode))
-
 (use-package markdown-mode
+  :defer t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
@@ -22,4 +18,8 @@
 
 (provide 'init-markdown)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-markdown.el ends here

@@ -1,12 +1,9 @@
-;;; init-c-cpp.el --- c-mode/c++-mode configuratione
+;;; init-c-cpp.el --- c-mode/c++-mode configuratione -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; c-mode/c++-mode configuration
 ;;
-
-;;; Require
-(require 'init-packages)
 
 ;;; Code:
 
@@ -18,4 +15,8 @@
 
 (provide 'init-c-cpp)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-c-cpp.el ends here

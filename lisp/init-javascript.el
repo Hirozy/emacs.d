@@ -1,18 +1,18 @@
-;;; init-javascript.el --- javascript-mode configuratione
+;;; init-javascript.el --- javascript-mode configuratione -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; javascript-mode configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
 
-(require-packages '(js2-mode))
-
+(use-package js2-mode :defer t)
 
 (provide 'init-javascript)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-javascript.el ends here

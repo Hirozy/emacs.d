@@ -36,17 +36,17 @@
 (require 'init-utils)
 
 (require 'init-python)
-;; (require 'init-c-cpp)
+(require 'init-c-cpp)
 ;; (require 'init-golang)
-;; (require 'init-haskell)
+(require 'init-haskell)
 
-;; (require 'init-javascript)
+(require 'init-javascript)
 ;; (require 'init-tex)
-;; (require 'init-markdown)
-;; (require 'init-plot)
+(require 'init-markdown)
+(require 'init-plot)
 
 (require 'init-git)
-;; (require 'init-admixture)
+(require 'init-admixture)
 (require 'init-runner)
 (require 'init-evil)
 
