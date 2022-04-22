@@ -59,7 +59,7 @@
                            company-dabbrev)))
 
 (use-package company-box
-  :after lsp-mode
+  :after company
   :diminish company-box-mode
   :hook (company-mode . company-box-mode))
 
