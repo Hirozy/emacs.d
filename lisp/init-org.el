@@ -1,20 +1,11 @@
-;;; init-org.el --- org mode configuration
+;;; init-org.el --- org mode configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; org mode configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(org
-                    org-roam
-                    org-roam-ui
-                    ob-ipython
-                    htmlize))
 
 (defun defined/org-without-confirm-babel-evaluate (lang body)
   (not (or (string= lang "dot")
@@ -111,9 +102,12 @@
 (use-package valign
   :after org-mode
   :if (display-graphic-p)
-  :load-path "site-lisp/valign"
   :hook (org-mode . valign-mode))
 
 (provide 'init-org)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-org.el ends here

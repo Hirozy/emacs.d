@@ -136,6 +136,9 @@
 [submodule "ht"]
 	path = lib/ht
 	url = git@github.com:Wilfred/ht.el.git
+[submodule "htmlize"]
+	path = lib/htmlize
+	url = git@github.com:hniksic/emacs-htmlize.git
 [submodule "hungry-delete"]
 	path = lib/hungry-delete
 	url = git@github.com:nflath/hungry-delete.git
@@ -173,12 +176,29 @@
 [submodule "mwim"]
 	path = lib/mwim
 	url = git@github.com:alezost/mwim.el.git
+[submodule "ob-ipython"]
+	path = lib/ob-ipython
+	url = git@github.com:gregsexton/ob-ipython.git
 [submodule "open-newline"]
 	path = lib/open-newline
 	url = git@github.com:manateelazycat/open-newline.git
 [submodule "orderless"]
 	path = lib/orderless
 	url = git@github.com:oantolin/orderless.git
+[submodule "org"]
+	path = lib/org
+	url = git@github.com:emacsmirror/org.git
+[submodule "org-contrib"]
+	path = lib/org-contrib
+	url = git@github.com:emacsmirror/org-contrib.git
+[submodule "org-roam"]
+	path = lib/org-roam
+	url = git@github.com:org-roam/org-roam.git
+	load-path = .
+	load-path = extensions
+[submodule "org-roam-ui"]
+	path = lib/org-roam-ui
+	url = git@github.com:org-roam/org-roam-ui.git
 [submodule "packed"]
 	path = lib/packed
 	url = git@github.com:emacscollective/packed.git
@@ -215,6 +235,9 @@
 [submodule "s"]
 	path = lib/s
 	url = git@github.com:magnars/s.el.git
+[submodule "simple-httpd"]
+	path = lib/simple-httpd
+	url = git@github.com:skeeto/emacs-web-server.git
 [submodule "symbol-overlay"]
 	path = lib/symbol-overlay
 	url = git@github.com:wolray/symbol-overlay.git
@@ -246,6 +269,9 @@
 [submodule "uuidgen"]
 	path = lib/uuidgen
 	url = git@github.com:kanru/uuidgen-el.git
+[submodule "valign"]
+	path = lib/valign
+	url = git@github.com:casouri/valign.git
 [submodule "vertico"]
 	path = lib/vertico
 	url = git@github.com:minad/vertico.git

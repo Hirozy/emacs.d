@@ -1,4 +1,4 @@
-;;; init-golang.el -- golang support
+;;; init-golang.el -- golang support -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -17,4 +17,8 @@
 
 (provide 'init-golang)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-golang.el ends here
