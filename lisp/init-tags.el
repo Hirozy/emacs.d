@@ -8,9 +8,9 @@
 ;;; Code:
 
 (use-package citre
+  :defer t
   :functions (projectile-project-root)
   :after projectile
-  :defer t
   :bind (("C-x c j" . citre-jump)
          ("C-x c J" . citre-jump-back)
          ("C-x c p" . citre-peek)
@@ -28,10 +28,12 @@
         citre-auto-enable-citre-mode-modes '(prog-mode)))
 
 (use-package xref
+  :defer t
   :bind (("<f12>" . xref-find-definitions)
          ("S-<f12>" . xref-find-references)))
 
 (use-package semantic
+  :defer t
   :config
   (setq semantic-default-submodes
         '(global-semantic-idle-scheduler-mode

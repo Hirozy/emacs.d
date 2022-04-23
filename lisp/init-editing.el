@@ -48,6 +48,7 @@
   :hook (prog-mode . symbol-overlay-mode))
 
 (use-package hungry-delete
+  :defer t
   :config
   (setq hungry-delete-join-reluctantly nil))
 

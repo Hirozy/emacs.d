@@ -40,6 +40,7 @@
               ("M-n" . grammatical-edit-jump-left)))
 
 (use-package elec-pair
+  :defer t
   :hook (((org-mode
            markdown-mode
            LaTeX-mode
