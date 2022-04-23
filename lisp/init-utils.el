@@ -22,11 +22,6 @@
 (use-package winner
   :hook (after-init . winner-mode))
 
-(use-package zoom
-  :hook (after-init . zoom-mode)
-  :custom
-  (zoom-size '(0.618 . 0.618)))
-
 (use-package diminish
   :config
   (diminish 'eldoc-mode)
@@ -61,6 +56,9 @@
   :hook ((after-init . global-hl-line-mode)
          ((eshell-mode shell-mode term-mode vterm-mode) .
           (lambda () (setq-local global-hl-line-mode nil)))))
+(use-package sort-tab
+  :config
+  (sort-tab-mode))
 
 (use-package goto-chg :defer t)
 

@@ -74,6 +74,9 @@
 [submodule "doom-themes"]
 	path = lib/doom-themes
 	url = git@github.com:doomemacs/themes.git
+	load-path = .
+	load-path = extensions
+	no-byte-compile = extensions/oom-themes-ext-neotree.el
 [submodule "ein"]
 	path = lib/ein
 	url = git@github.com:millejoh/emacs-ipython-notebook.git
@@ -267,6 +270,9 @@
 [submodule "simple-httpd"]
 	path = lib/simple-httpd
 	url = git@github.com:skeeto/emacs-web-server.git
+[submodule "sort-tab"]
+	path = lib/sort-tab
+	url = git@github.com:manateelazycat/sort-tab.git
 [submodule "spinner"]
 	path = lib/spinner
 	url = git@github.com:Malabarba/spinner.el.git
@@ -340,9 +346,6 @@
 [submodule "yasnippet"]
 	path = lib/yasnippet
 	url = git@github.com:joaotavora/yasnippet.git
-[submodule "zoom"]
-	path = lib/zoom
-	url = git@github.com:cyrus-and/zoom.git
 [submodule "ztree"]
 	path = lib/ztree
 	url = git@github.com:fourier/ztree.git

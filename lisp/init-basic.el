@@ -34,7 +34,9 @@
   :hook (after-init . save-place-mode))
 
 (use-package display-line-numbers
-  :hook (after-init . global-display-line-numbers-mode))
+  :config
+  ;; Enable line number immediately
+  (global-display-line-numbers-mode))
 
 (use-package gcmh
   :diminish
