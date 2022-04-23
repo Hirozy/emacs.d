@@ -12,6 +12,11 @@
   :commands (magit-add-section-hook)
   :bind ("C-x m" . magit-status)
   :config
+  (setq magit-module-sections-hook
+        '(magit-insert-modules-unpulled-from-upstream
+          magit-insert-modules-unpulled-from-pushremote
+          magit-insert-modules-unpushed-to-upstream
+          magit-insert-modules-unpushed-to-pushremote))
   (magit-add-section-hook 'magit-status-sections-hook
                           'magit-insert-modules
                           'magit-insert-stashes
