@@ -8,11 +8,11 @@
 ;;; Code:
 
 (use-package which-key
+  :hook (after-init . which-key-mode)
   :diminish which-key-mode
-  :config
+  :init
   (setq which-key-idle-delay 1
-        which-key-popup-type 'minibuffer)
-  (which-key-mode 1))
+        which-key-popup-type 'minibuffer))
 
 (use-package avy
   :bind (("C-x C-SPC" . avy-pop-mark)
@@ -53,9 +53,11 @@
 (use-package hl-line
   :custom-face
   (hl-line ((t (:underline "dodger blue"))))
-  :hook ((after-init . global-hl-line-mode)
-         ((eshell-mode shell-mode term-mode vterm-mode) .
-          (lambda () (setq-local global-hl-line-mode nil)))))
+  :hook (((eshell-mode shell-mode term-mode vterm-mode) .
+          (lambda () (setq-local hl-line-mode nil))))
+  :config
+  (global-hl-line-mode))
+
 (use-package sort-tab
   :config
   (sort-tab-mode))

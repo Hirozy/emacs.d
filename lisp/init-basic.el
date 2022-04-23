@@ -44,7 +44,7 @@
   (setq gcmh-idle-delay 5
         gcmh-high-cons-threshold #x1000000) ; 16MB
   :config
-  (gcmh-mode 1))
+  (gcmh-mode))
 
 (provide 'init-basic)
 

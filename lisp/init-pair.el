@@ -52,7 +52,7 @@
 
 (use-package paren
   :config
-  (show-paren-mode 1))
+  (show-paren-mode))
 
 (provide 'init-pair)
 

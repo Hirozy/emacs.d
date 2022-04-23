@@ -26,7 +26,7 @@
  read-process-output-max #x10000)
 
 ;; Show cursor position within line
-(column-number-mode 1)
+(column-number-mode)
 
 ;; Disabled tool bar
 (tool-bar-mode -1)

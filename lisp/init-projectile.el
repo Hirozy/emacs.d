@@ -11,6 +11,8 @@
   :bind-keymap (("s-p" . projectile-command-map)
                 ("C-c p" . projectile-command-map)
                 ("C-x p" . projectile-command-map))
+  :bind (:map projectile-command-map
+              ("s" . projectile-ripgrep))
 
   :defines (project-find-functions)
   :custom
