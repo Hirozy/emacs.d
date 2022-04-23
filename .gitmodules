@@ -18,9 +18,6 @@
 [submodule "avy"]
 	path = lib/avy
 	url = git@github.com:abo-abo/avy.git
-[submodule "awesome-tab"]
-	path = lib/awesome-tab
-	url = git@github.com:manateelazycat/awesome-tab.git
 [submodule "borg"]
 	path = lib/borg
 	url = git@github.com:emacscollective/borg.git

@@ -6,6 +6,7 @@
 
 ;;; Code:
 
+;;; Early birds
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
@@ -51,8 +52,6 @@
 (require 'init-evil)
 
 (require 'init-hydra)
-
-(provide 'init)
 
 ;; Local Variables:
 ;; no-byte-compile: t
