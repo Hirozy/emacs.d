@@ -13,13 +13,14 @@
            objc-mode
            python-mode
            haskell-mode
-           haskell-literate-mode) . lsp)
+           haskell-literate-mode) . lsp-deferred)
          (lsp-mode . lsp-enable-which-key-integration))
 
   :bind (("S-<f2>" . lsp-rename))
 
   :custom
   ;; Prevent lsp from automatically adding company-capf
+  ;; or use corfu
   (lsp-completion-provider :none)
   (lsp-clients-clangd-args
    '("--header-insertion-decorators=0" "--header-insertion=never" "--clang-tidy"))

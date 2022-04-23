@@ -24,6 +24,9 @@
 [submodule "borg"]
 	path = lib/borg
 	url = git@github.com:emacscollective/borg.git
+[submodule "cape"]
+	path = lib/cape
+	url = git@github.com:minad/cape.git
 [submodule "citre"]
 	path = lib/citre
 	url = git@github.com:universal-ctags/citre.git
@@ -45,6 +48,12 @@
 [submodule "consult-yasnippet"]
 	path = lib/consult-yasnippet
 	url = git@github.com:mohkale/consult-yasnippet.git
+[submodule "corfu"]
+	path = lib/corfu
+	url = git@github.com:minad/corfu.git
+[submodule "corfu-popup"]
+	path = lib/corfu-popup
+	url = https://codeberg.org/akib/emacs-corfu-popup.git
 [submodule "ctrlf"]
 	path = lib/ctrlf
 	url = git@github.com:raxod502/ctrlf.git
@@ -160,6 +169,9 @@
 [submodule "js2-mode"]
 	path = lib/js2-mode
 	url = git@github.com:mooz/js2-mode.git
+[submodule "kind-icon"]
+	path = lib/kind-icon
+	url = https://github.com/jdtsmith/kind-icon
 [submodule "language-id"]
 	path = lib/language-id
 	url = git@github.com:lassik/emacs-language-id.git
@@ -231,6 +243,9 @@
 [submodule "polymode"]
 	path = lib/polymode
 	url = git@github.com:polymode/polymode.git
+[submodule "popon"]
+	path = lib/popon
+	url = https://codeberg.org/akib/emacs-popon.git
 [submodule "projectile"]
 	path = lib/projectile
 	url = git@github.com:bbatsov/projectile.git

@@ -110,9 +110,9 @@ Other buffer group by `awesome-tab-get-group-name' with project name."
   (setq awesome-tab-buffer-groups-function #'defined/awesome-tab-buffer-groups)
   (awesome-tab-mode t))
 
-(use-package goto-chg)
-(use-package uuidgen)
-(use-package open-newline)
+(use-package goto-chg :defer t)
+(use-package uuidgen :defer t)
+(use-package open-newline :defer t)
 
 (provide 'init-utils)
 
