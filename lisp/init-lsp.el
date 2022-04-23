@@ -1,19 +1,11 @@
-;; init-lsp.el --- lsp mode configuration
+;; init-lsp.el --- lsp mode configuration -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
 ;; lsp mode configuration
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
-
-(require-packages '(lsp-mode
-                    lsp-haskell
-                    lsp-pyright))
-
 
 (use-package lsp-mode
   :hook (((c-mode
@@ -22,12 +14,8 @@
            python-mode
            haskell-mode
            haskell-literate-mode) . lsp)
-         (lsp-mode . lsp-enable-which-key-integration)
-         (lsp-completion-mode . (lambda ()
-                                  (setq-local company-backends
-                                              '((company-capf :with company-dabbrev-code)
-                                                company-files
-                                                company-yasnippet)))))
+         (lsp-mode . lsp-enable-which-key-integration))
+
   :bind (("S-<f2>" . lsp-rename))
 
   :custom
@@ -50,4 +38,8 @@
 
 (provide 'init-lsp)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-lsp.el ends here

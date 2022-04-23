@@ -26,7 +26,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-tree-sitter)
-;; (require 'init-lsp)
+(require 'init-lsp)
 (require 'init-org)
 (require 'init-projectile)
 ;; (require 'init-completion)

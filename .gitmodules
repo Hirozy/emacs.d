@@ -163,6 +163,17 @@
 [submodule "language-id"]
 	path = lib/language-id
 	url = git@github.com:lassik/emacs-language-id.git
+[submodule "lsp-haskell"]
+	path = lib/lsp-haskell
+	url = git@github.com:emacs-lsp/lsp-haskell.git
+[submodule "lsp-mode"]
+	path = lib/lsp-mode
+	url = git@github.com:emacs-lsp/lsp-mode.git
+	load-path = .
+	load-path = clients
+[submodule "lsp-pyright"]
+	path = lib/lsp-pyright
+	url = git@github.com:emacs-lsp/lsp-pyright.git
 [submodule "lua-mode"]
 	path = lib/lua-mode
 	url = git@github.com:immerrr/lua-mode.git
@@ -244,6 +255,9 @@
 [submodule "simple-httpd"]
 	path = lib/simple-httpd
 	url = git@github.com:skeeto/emacs-web-server.git
+[submodule "spinner"]
+	path = lib/spinner
+	url = git@github.com:Malabarba/spinner.el.git
 [submodule "symbol-overlay"]
 	path = lib/symbol-overlay
 	url = git@github.com:wolray/symbol-overlay.git
