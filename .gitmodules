@@ -71,6 +71,9 @@
 [submodule "ein"]
 	path = lib/ein
 	url = git@github.com:millejoh/emacs-ipython-notebook.git
+[submodule "eldoc"]
+	path = lib/eldoc
+	url = git@github.com:emacsmirror/eldoc.git
 [submodule "emacsql"]
 	no-byte-compile = emacsql-pg.el
 	path = lib/emacsql
@@ -109,6 +112,9 @@
 [submodule "fish-mode"]
 	path = lib/fish-mode
 	url = git@github.com:wwwjfy/emacs-fish.git
+[submodule "flycheck"]
+	path = lib/flycheck
+	url = git@github.com:flycheck/flycheck.git
 [submodule "format-all"]
 	path = lib/format-all
 	url = git@github.com:lassik/emacs-format-all-the-code.git
