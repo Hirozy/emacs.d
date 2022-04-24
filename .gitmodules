@@ -318,8 +318,11 @@
 [submodule "vterm"]
 	path = lib/vterm
 	url = git@github.com:akermu/emacs-libvterm.git
+	build-step = [ $(uname -s) = "Linux" ] && sed -i "s#libvterm.a#libvterm.so#g" CMakeLists.txt
+	build-step = [ $(uname -s) = "Linux" ] && sed -i "s#STATIC#SHARED#g" CMakeLists.txt
 	build-step = mkdir -p build
 	build-step = cd build && cmake .. && make
+	build-step = git restore CMakeLists.txt
 	build-step = borg-compile
 	build-step = borg-update-autoloads
 [submodule "vundo"]

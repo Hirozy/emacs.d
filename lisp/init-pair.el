@@ -51,8 +51,7 @@
                                          (electric-pair-local-mode -1)))))
 
 (use-package paren
-  :config
-  (show-paren-mode))
+  :hook (after-init . show-paren-mode))
 
 (provide 'init-pair)
 

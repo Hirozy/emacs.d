@@ -37,11 +37,10 @@
               (expand-file-name "var/epkgs/" user-emacs-directory)))
 
 (use-package marginalia
-  :defer t
+  :hook (after-init . marginalia-mode)
   :config
   (cl-pushnew 'epkg-marginalia-annotate-package
-		(alist-get 'package marginalia-annotator-registry))
-  (marginalia-mode))
+		(alist-get 'package marginalia-annotator-registry)))
 
 (provide 'init-packages)
 

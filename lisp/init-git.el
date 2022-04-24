@@ -11,6 +11,7 @@
   :defer t
   :commands (magit-add-section-hook)
   :bind ("C-x m" . magit-status)
+
   :config
   (setq magit-module-sections-hook
         '(magit-insert-modules-unpulled-from-upstream

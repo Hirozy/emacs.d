@@ -8,6 +8,7 @@
 ;;; Code:
 
 (defun defined/org-without-confirm-babel-evaluate (lang body)
+  "Org without confirm with LANG BODY."
   (not (or (string= lang "dot")
            (string= lang "gnuplot")
            (string= lang "python"))))

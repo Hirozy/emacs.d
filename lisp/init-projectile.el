@@ -21,7 +21,7 @@
   :config
   (setq projectile-enable-caching t
         projectile-indexing-method 'alien)
-  (projectile-mode 1))
+  (projectile-mode))
 
 (provide 'init-projectile)
 

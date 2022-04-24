@@ -8,9 +8,8 @@
 ;;; Code:
 
 (use-package tree-sitter
-  :diminish tree-sitter-mode
-  :init
-  (global-tree-sitter-mode))
+  :hook (after-init . global-tree-sitter-mode)
+  :diminish tree-sitter-mode)
 
 (provide 'init-tree-sitter)
 

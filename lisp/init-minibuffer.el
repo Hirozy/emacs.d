@@ -39,9 +39,10 @@
          ([remap projectile-ripgrep] . consult-ripgrep)
          ([remap projectile-grep] . consult-grep)
          ([remap projectile-recentf] . consult-projectile-recentf)
-         ([remap projectile-switch-to-buffer] . consult-project-buffer)
-         ;; ([remap projectile-find-file] . consult-projectile-find-file)
-         ;; ([remap projectile-find-dir] . consult-projectile-find-dir)
+         ([remap projectile-switch-to-buffer] . consult-projectile-switch-to-buffer)
+         ([remap projectile-find-file] . consult-projectile-find-file)
+         ([remap projectile-find-dir] . consult-projectile-find-dir)
+         ([remap projectile-switch-project] . consult-projectile-switch-project)
          ;; remap yasnippet
          ([remap yas-insert-snippet] . consult-yasnippet)
          ([remap yas-visit-snippet-file] . consult-yasnippet-visit-snippet-file)
@@ -52,18 +53,9 @@
   (setq consult-project-root-function 'projectile-project-root
         consult-async-refresh-delay 0
         consult-async-input-throttle 0
-        consult-async-input-debounce 0)
-  (consult-customize consult-ripgrep
-                     consult-git-grep
-                     consult-grep
-                     consult-bookmark
-                     consult-recent-file
-                     consult-xref
-                     consult-theme
-                     consult--source-bookmark
-                     consult--source-recent-file
-                     consult--source-project-recent-file
-                     :preview-key nil))
+        consult-async-input-debounce 0
+        ;; disable all preview
+        consult-preview-key (kbd "M-.")))
 
 (use-package orderless
   :custom
