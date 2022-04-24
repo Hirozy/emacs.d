@@ -9,11 +9,6 @@
 
 (setq python-shell-completion-native-enable nil)
 
-(use-package ein
-  :defer t
-  :hook (ein:notebook-multilang-mode . (lambda ()
-                                         (company-mode -1))))
-
 (use-package conda
   :defer t)
 
