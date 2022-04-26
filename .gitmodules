@@ -39,6 +39,12 @@
 [submodule "consult"]
 	path = lib/consult
 	url = git@github.com:minad/consult.git
+[submodule "consult-dir"]
+	path = lib/consult-dir
+	url = git@github.com:karthink/consult-dir.git
+[submodule "consult-flycheck"]
+	path = lib/consult-flycheck
+	url = git@github.com:minad/consult-flycheck.git
 [submodule "consult-projectile"]
 	path = lib/consult-projectile
 	url = git@gitlab.com:OlMon/consult-projectile.git
