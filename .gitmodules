@@ -91,6 +91,9 @@
 [submodule "epkg-marginalia"]
 	path = lib/epkg-marginalia
 	url = git@github.com:emacscollective/epkg-marginalia.git
+[submodule "epl"]
+	path = lib/epl
+	url = git@github.com:cask/epl.git
 [submodule "evil"]
 	path = lib/evil
 	url = git@github.com:emacs-evil/evil.git
@@ -228,6 +231,9 @@
 [submodule "pfuture"]
 	path = lib/pfuture
 	url = git@github.com:Alexander-Miller/pfuture.git
+[submodule "pkg-info"]
+	path = lib/pkg-info
+	url = git@github.com:emacsorphanage/pkg-info.git
 [submodule "plantuml-mode"]
 	path = lib/plantuml-mode
 	url = git@github.com:skuro/plantuml-mode.git
