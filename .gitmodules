@@ -276,6 +276,9 @@
 [submodule "spinner"]
 	path = lib/spinner
 	url = git@github.com:Malabarba/spinner.el.git
+[submodule "svg-lib"]
+	path = lib/svg-lib
+	url = git@github.com:rougier/svg-lib.git
 [submodule "symbol-overlay"]
 	path = lib/symbol-overlay
 	url = git@github.com:wolray/symbol-overlay.git
