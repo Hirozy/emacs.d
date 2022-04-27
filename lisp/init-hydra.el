@@ -26,21 +26,18 @@
   ("D" org-shiftmetadown "shift meta down" :exit nil))
 
 (defhydra hydra-lsp-mode (:foreign-keys nil :exit t)
-  ("d" lsp-find-definition "find defined" :column "LSP")
-  ("r" lsp-find-references "find references")
-  ("i" lsp-find-implementation "find implementation")
-  ("t" lsp-find-type-definition "find type definition")
-  ("o" lsp-describe-thing-at-point "documentation")
-  ("R" lsp-workspace-restart "lsp restart")
-  ("b" lsp-rename "lsp rename")
-  ("f" lsp-format-buffer "lsp format"))
+  ("r" eglot-reconnect "lsp reconnect" :column "lsp")
+  ("b" eglot-rename "lsp rename")
+  ("m" eglot-format "lsp format")
+  ("o" eglot-code-action-organize-imports "organize imports")
+  ("e" eldoc "eldoc"))
 
 (defun cond-keymode-with-modes ()
   "Select the keymap of hydara according to current mode."
   (interactive)
   (when (eq major-mode 'org-mode)
     (hydra-org-mode/body))
-  (when lsp-mode
+  (when eglot--managed-mode
     (hydra-lsp-mode/body)))
 
 (global-set-key

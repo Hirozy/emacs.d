@@ -80,6 +80,9 @@
 	load-path = .
 	load-path = extensions
 	no-byte-compile = extensions/oom-themes-ext-neotree.el
+[submodule "eglot"]
+	path = lib/eglot
+	url = git@github.com:joaotavora/eglot.git
 [submodule "eldoc"]
 	path = lib/eldoc
 	url = git@github.com:emacsmirror/eldoc.git
@@ -178,17 +181,6 @@
 [submodule "language-id"]
 	path = lib/language-id
 	url = git@github.com:lassik/emacs-language-id.git
-[submodule "lsp-haskell"]
-	path = lib/lsp-haskell
-	url = git@github.com:emacs-lsp/lsp-haskell.git
-[submodule "lsp-mode"]
-	path = lib/lsp-mode
-	url = git@github.com:emacs-lsp/lsp-mode.git
-	load-path = .
-	load-path = clients
-[submodule "lsp-pyright"]
-	path = lib/lsp-pyright
-	url = git@github.com:emacs-lsp/lsp-pyright.git
 [submodule "lua-mode"]
 	path = lib/lua-mode
 	url = git@github.com:immerrr/lua-mode.git
@@ -273,9 +265,6 @@
 [submodule "sort-tab"]
 	path = lib/sort-tab
 	url = git@github.com:manateelazycat/sort-tab.git
-[submodule "spinner"]
-	path = lib/spinner
-	url = git@github.com:Malabarba/spinner.el.git
 [submodule "svg-lib"]
 	path = lib/svg-lib
 	url = git@github.com:rougier/svg-lib.git

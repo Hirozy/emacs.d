@@ -7,35 +7,30 @@
 
 ;;; Code:
 
-(use-package lsp-mode
+(use-package eglot
+  :commands (eglot-ensure eglot)
+  :custom
+  (eglot-ignored-server-capabilities
+   '(:documentHighlightProvider
+     :codeLensProvider
+     :documentOnTypeFormattingProvider
+     :documentLinkProvider
+     :colorProvider
+     :foldingRangeProvider
+     :executeCommandProvider))
   :hook (((c-mode
            c++-mode
            objc-mode
            python-mode
            haskell-mode
-           haskell-literate-mode) . lsp-deferred)
-         (lsp-mode . lsp-enable-which-key-integration))
-
-  :bind (("S-<f2>" . lsp-rename))
-
-  :custom
-  ;; Prevent lsp from automatically adding company-capf
-  ;; or use corfu
-  (lsp-completion-provider :none)
-  (lsp-clients-clangd-args
-   '("--header-insertion-decorators=0" "--header-insertion=never" "--clang-tidy"))
+           haskell-literate-mode) . eglot-ensure))
+  :bind (:map eglot-mode-map
+              ("S-<f2>" . eglot-rename))
 
   :config
   (setq gc-cons-threshold (* 100 1024 1024)
         read-process-output-max (* 1024 1024)
-        lsp-idle-delay 0.1
-        lsp-headerline-breadcrumb-enable nil))
-
-(use-package lsp-pyright
-  :after (lsp-mode python-mode))
-
-(use-package lsp-haskell
-  :after (lsp-mode haskell-mode))
+        eglot-stay-out-of '(company)))
 
 (provide 'init-lsp)
 
