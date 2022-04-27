@@ -7,7 +7,9 @@
 
 ;;; Code:
 
-(load-theme 'vscode-dark t)
+(use-package color-theme-sanityinc-tomorrow
+  :config
+  (color-theme-sanityinc-tomorrow-eighties))
 
 (use-package doom-themes
   :defines (doom-themes-treemacs-theme)

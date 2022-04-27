@@ -51,8 +51,8 @@
 
 ;; Highlight the current line
 (use-package hl-line
-  :custom-face
-  (hl-line ((t (:underline "dodger blue"))))
+  ;; :custom-face
+  ;; (hl-line ((t (:underline "dodger blue"))))
   :hook (((eshell-mode shell-mode term-mode vterm-mode) .
           (lambda () (setq-local hl-line-mode nil))))
   :config

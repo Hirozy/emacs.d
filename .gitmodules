@@ -33,6 +33,9 @@
 [submodule "cmake-mode"]
 	path = lib/cmake-mode
 	url = git@github.com:emacsmirror/cmake-mode.git
+[submodule "color-theme-sanityinc-tomorrow"]
+	path = lib/color-theme-sanityinc-tomorrow
+	url = git@github.com:purcell/color-theme-sanityinc-tomorrow.git
 [submodule "conda"]
 	path = lib/conda
 	url = git@github.com:necaris/conda.el.git
