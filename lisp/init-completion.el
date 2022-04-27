@@ -18,7 +18,7 @@
         corfu-quit-no-match t
         corfu-quit-at-boundary t
         corfu-separator ?_)
-  (corfu-global-mode)
+  (global-corfu-mode)
 
   :hook (((eshell-mode) . (lambda ()
                             (setq-local corfu-auto nil))))
