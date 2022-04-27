@@ -58,10 +58,6 @@
   :config
   (global-hl-line-mode))
 
-(use-package sort-tab
-  :config
-  (sort-tab-mode))
-
 (use-package goto-chg :defer t)
 
 (use-package uuidgen :defer t)

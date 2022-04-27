@@ -52,7 +52,8 @@
     :hook (evil-mode . evil-escape-mode)
     :config
     (setq-default evil-escape-key-sequence "jk"
-                  evil-escape-delay 0.2))
+                  evil-escape-delay 0.2
+                  evil-want-fine-undo t))
   (use-package evil-matchit)
   (use-package evil-anzu))
 

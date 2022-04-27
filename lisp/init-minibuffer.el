@@ -45,9 +45,7 @@
          ([remap projectile-switch-project] . consult-projectile-switch-project)
          ;; remap yasnippet
          ([remap yas-insert-snippet] . consult-yasnippet)
-         ([remap yas-visit-snippet-file] . consult-yasnippet-visit-snippet-file)
-         ;; consult keymap
-         ("C-c l" . consult-flycheck))
+         ([remap yas-visit-snippet-file] . consult-yasnippet-visit-snippet-file))
 
   :config
   (setq consult-project-root-function 'projectile-project-root
@@ -63,6 +61,14 @@
          :map minibuffer-local-completion-map
          ("C-x C-d" . consult-dir)
          ("C-x C-j" . consult-dir-jump-file)))
+
+(use-package consult-flycheck
+  :commands consult-flycheck
+  :bind ("C-c l l" . consult-flycheck))
+
+(use-package consult-flymake
+  :commands consult-flymake
+  :bind ("C-c l ;" . consult-flymake))
 
 (use-package orderless
   :custom

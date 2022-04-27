@@ -14,7 +14,7 @@
 (use-package corfu
   :init
   (setq corfu-auto t
-        corfu-auto-prefix 3
+        corfu-auto-prefix 1
         corfu-quit-no-match t
         corfu-quit-at-boundary t
         corfu-separator ?_)
@@ -62,13 +62,13 @@
   :custom
   (yas-use-menu nil)
   :config
-  (yas-global-mode 1)
-  :config
   (setq yas-inhibit-overlay-modification-protection t)
   (advice-add 'yas--on-protection-overlay-modification
-              :override #'ignore))
+              :override #'ignore)
+  (yas-global-mode))
 
 (use-package flycheck
+  :diminish
   :hook ((prog-mode . flycheck-mode)
          (latex-mode . (lambda ()
                          (flycheck-mode -1))))
@@ -80,9 +80,7 @@
 
 (use-package flymake
   :defer t
-  :diminish flymake-mode
-  :config
-  (global-flycheck-mode -1))
+  :diminish flymake-mode)
 
 (provide 'init-completion)
 

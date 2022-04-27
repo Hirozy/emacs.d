@@ -8,6 +8,7 @@
 ;;; Code:
 
 (use-package projectile
+  :demand
   :bind-keymap (("s-p" . projectile-command-map)
                 ("C-c p" . projectile-command-map)
                 ("C-x p" . projectile-command-map))
