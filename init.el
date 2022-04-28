@@ -40,6 +40,7 @@
 (require 'init-c-cpp)
 ;; (require 'init-golang)
 (require 'init-haskell)
+(require 'init-rust)
 
 (require 'init-javascript)
 ;; (require 'init-tex)

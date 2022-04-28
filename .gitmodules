@@ -262,6 +262,16 @@
 [submodule "rainbow-delimiters"]
 	path = lib/rainbow-delimiters
 	url = git@github.com:Fanael/rainbow-delimiters.git
+[submodule "rust-mode"]
+	path = lib/rust-mode
+	url = git@github.com:rust-lang/rust-mode.git
+[submodule "rust-playground"]
+	path = lib/rust-playground
+	url = git@github.com:Hirozy/rust-playground.git
+	branch = fix-save
+[submodule "rustic"]
+	path = lib/rustic
+	url = git@github.com:brotzeit/rustic.git
 [submodule "s"]
 	path = lib/s
 	url = git@github.com:magnars/s.el.git
@@ -271,6 +281,9 @@
 [submodule "sort-tab"]
 	path = lib/sort-tab
 	url = git@github.com:manateelazycat/sort-tab.git
+[submodule "spinner"]
+	path = lib/spinner
+	url = git@github.com:Malabarba/spinner.el.git
 [submodule "svg-lib"]
 	path = lib/svg-lib
 	url = git@github.com:rougier/svg-lib.git
@@ -338,6 +351,9 @@
 [submodule "xref"]
 	path = lib/xref
 	url = git@github.com:emacsmirror/xref.git
+[submodule "xterm-color"]
+	path = lib/xterm-color
+	url = git@github.com:atomontage/xterm-color.git
 [submodule "yaml-mode"]
 	path = lib/yaml-mode
 	url = git@github.com:yoshiki/yaml-mode.git

@@ -76,9 +76,11 @@
           "\\*Apropos\\*"
           "\\*Backtrace\\*"
           "\\*Calendar\\*"
+          "\\*Borg Build\\*$"
           "\\*quickrun\\*$"
           "\\*eldoc for.*\\*$"
           "\\*format-all-errors*$"
+          "\\*rust-.*\\*$"
 
           help-mode
           compilation-mode
