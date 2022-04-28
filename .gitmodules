@@ -244,6 +244,9 @@
 [submodule "popon"]
 	path = lib/popon
 	url = https://codeberg.org/akib/emacs-popon.git
+[submodule "popper"]
+	path = lib/popper
+	url = git@github.com:karthink/popper.git
 [submodule "projectile"]
 	path = lib/projectile
 	url = git@github.com:bbatsov/projectile.git

@@ -58,6 +58,42 @@
   :config
   (global-hl-line-mode))
 
+(use-package popper
+  :hook (after-init . popper-mode)
+  :commands (popper-group-by-projectile)
+  :bind (:map popper-mode-map
+              ("C-'" . popper-toggle-latest)
+              ("M-'" . popper-cycle)
+              ("C-M-'" . popper-toggle-type))
+  :init
+  (setq popper-reference-buffers
+        '("\\*Messages\\*"
+          "Output\\*$"
+          "\\*Async Shell Command\\*"
+          "\\*Completions\\*"
+          "\\*Quail Completions\\*"
+          "\\*Warnings\\*"
+          "\\*Apropos\\*"
+          "\\*Backtrace\\*"
+          "\\*Calendar\\*"
+          "\\*quickrun\\*$"
+          "\\*eldoc for.*\\*$"
+          "\\*format-all-errors*$"
+
+          help-mode
+          compilation-mode
+          "^\\*eshell.*\\*.*$" eshell-mode
+          "^\\*shell.*\\*.*$"  shell-mode
+          "^\\*terminal.*\\*.*$" term-mode
+          "^\\*vterm.*\\*.*$"  vterm-mode))
+  (setq popper-group-funcsytion #'popper-group-by-projectile
+        popper-echo-dispatch-actions t))
+
+(use-package popper-echo
+  :commands popper-mode
+  :config
+  (popper-echo-mode))
+
 (use-package goto-chg :defer t)
 
 (use-package uuidgen :defer t)
