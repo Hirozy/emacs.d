@@ -5,15 +5,16 @@
 ;; golang support
 ;;
 
-;;; Require
-(require 'init-packages)
-
 ;;; Code:
 
-(require-packages '(go-mode
-                    go-rename
-                    go-guru
-                    gotest))
+(use-package go-mode
+  :defer t)
+
+(use-package go-playground
+  :diminish
+  :commands go-playground
+  :custom
+  (go-playground-basedir (substitute-in-file-name "$HOME/.cache/go-platground")))
 
 (provide 'init-golang)
 

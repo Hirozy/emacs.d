@@ -23,7 +23,9 @@
            objc-mode
            python-mode
            haskell-mode
-           haskell-literate-mode) . eglot-ensure))
+           haskell-literate-mode
+           go-mode
+           rust-mode) . eglot-ensure))
   :bind (:map eglot-mode-map
               ("S-<f2>" . eglot-rename))
 
