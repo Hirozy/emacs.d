@@ -24,6 +24,9 @@
 [submodule "cape"]
 	path = lib/cape
 	url = git@github.com:minad/cape.git
+[submodule "cfrs"]
+	path = lib/cfrs
+	url = git@github.com:Alexander-Miller/cfrs.git
 [submodule "citre"]
 	path = lib/citre
 	url = git@github.com:universal-ctags/citre.git
@@ -256,6 +259,9 @@
 [submodule "popper"]
 	path = lib/popper
 	url = git@github.com:karthink/popper.git
+[submodule "posframe"]
+	path = lib/posframe
+	url = git@github.com:tumashu/posframe.git
 [submodule "projectile"]
 	path = lib/projectile
 	url = git@github.com:bbatsov/projectile.git
