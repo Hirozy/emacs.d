@@ -64,8 +64,7 @@
 ;; Handling capitalized subwords in a nomenclature
 (use-package subword
   :diminish
-  :hook ((prog-mode . subword-mode)
-         (minibuffer-setup . subword-mode)))
+  :hook ((minibuffer-setup . subword-mode)))
 
 (use-package vundo)
 
