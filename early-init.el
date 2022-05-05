@@ -10,6 +10,7 @@
 
 (let ((dotfiles-dir (file-name-directory (or load-file-name buffer-file-name))))
   (add-to-list 'load-path (expand-file-name "lib/packed" dotfiles-dir))
+  (add-to-list 'load-path (expand-file-name "lib/compat" dotfiles-dir))
   (add-to-list 'load-path (expand-file-name "lib/auto-compile" dotfiles-dir))
   (add-to-list 'load-path (expand-file-name "lisp" dotfiles-dir)))
 
