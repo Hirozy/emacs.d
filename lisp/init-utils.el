@@ -76,11 +76,12 @@
           "\\*Apropos\\*"
           "\\*Backtrace\\*"
           "\\*Calendar\\*"
-          "\\*Borg Build\\*$"
+          "\\*Borg.*\\*$"
           "\\*quickrun\\*$"
           "\\*eldoc for.*\\*$"
-          "\\*format-all-errors*$"
+          "\\*format-all-errors\\*"
           "\\*rust-.*\\*$"
+          "\\*rustic-.*\\*$"
 
           help-mode
           compilation-mode
@@ -95,6 +96,12 @@
   :commands popper-mode
   :config
   (popper-echo-mode))
+
+(use-package uniquify
+  :config
+  (setq uniquify-buffer-name-style 'reverse
+        uniquify-separator " • "
+        niquify-after-kill-buffer-p t))
 
 (use-package goto-chg :defer t)
 

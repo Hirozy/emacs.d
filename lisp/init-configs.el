@@ -21,6 +21,7 @@
  truncate-lines t
  tramp-default-method "ssh"
  inhibit-startup-screen t
+ frame-resize-pixelwise t
  ;; Increase how much is read from processes in a single chunk
  ;; default is 4kb, now is 64kb
  read-process-output-max #x10000)
