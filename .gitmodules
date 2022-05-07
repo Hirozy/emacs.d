@@ -41,7 +41,7 @@
 	url = git@github.com:purcell/color-theme-sanityinc-tomorrow.git
 [submodule "compat"]
 	path = lib/compat
-	url = git@github.com:emacsmirror/compat.git
+	url = git@github.com:phikal/compat.el.git
 [submodule "conda"]
 	path = lib/conda
 	url = git@github.com:necaris/conda.el.git
@@ -88,13 +88,11 @@
 	url = git@github.com:doomemacs/themes.git
 	load-path = .
 	load-path = extensions
-	no-byte-compile = extensions/oom-themes-ext-neotree.el
+	no-byte-compile = extensions/doom-themes-ext-neotree.el
+	no-byte-compile = extensions/doom-themes-ext-visual-bell.el
 [submodule "eglot"]
 	path = lib/eglot
 	url = git@github.com:joaotavora/eglot.git
-[submodule "eldoc"]
-	path = lib/eldoc
-	url = git@github.com:emacsmirror/eldoc.git
 [submodule "emacsql"]
 	no-byte-compile = emacsql-pg.el
 	path = lib/emacsql
@@ -139,6 +137,7 @@
 [submodule "flycheck"]
 	path = lib/flycheck
 	url = git@github.com:flycheck/flycheck.git
+	no-byte-compile = flycheck-buttercup.el
 [submodule "format-all"]
 	path = lib/format-all
 	url = git@github.com:lassik/emacs-format-all-the-code.git
@@ -184,6 +183,7 @@
 [submodule "hydra"]
 	path = lib/hydra
 	url = git@github.com:abo-abo/hydra.git
+	no-byte-compile = hydra-examples.el
 [submodule "iedit"]
 	path = lib/iedit
 	url = git@github.com:victorhge/iedit.git
@@ -195,7 +195,7 @@
 	url = git@github.com:mooz/js2-mode.git
 [submodule "kind-icon"]
 	path = lib/kind-icon
-	url = https://github.com/jdtsmith/kind-icon
+	url = git@github.com:jdtsmith/kind-icon.git
 [submodule "language-id"]
 	path = lib/language-id
 	url = git@github.com:lassik/emacs-language-id.git
@@ -347,8 +347,6 @@
 [submodule "vterm"]
 	path = lib/vterm
 	url = git@github.com:akermu/emacs-libvterm.git
-	build-step = [ $(uname -s) = "Linux" ] && sed -i "s#libvterm.a#libvterm.so#g" CMakeLists.txt
-	build-step = [ $(uname -s) = "Linux" ] && sed -i "s#STATIC#SHARED#g" CMakeLists.txt
 	build-step = mkdir -p build
 	build-step = cd build && cmake .. && make
 	build-step = git restore CMakeLists.txt
@@ -366,9 +364,6 @@
 [submodule "with-editor"]
 	path = lib/with-editor
 	url = git@github.com:magit/with-editor.git
-[submodule "xref"]
-	path = lib/xref
-	url = git@github.com:emacsmirror/xref.git
 [submodule "xterm-color"]
 	path = lib/xterm-color
 	url = git@github.com:atomontage/xterm-color.git
