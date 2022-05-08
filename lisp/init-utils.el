@@ -103,6 +103,9 @@
         uniquify-separator " • "
         niquify-after-kill-buffer-p t))
 
+(use-package sort-tab
+  :hook (after-init . sort-tab-mode))
+
 (use-package goto-chg :defer t)
 
 (use-package uuidgen :defer t)
