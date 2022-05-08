@@ -42,6 +42,13 @@
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-keyword))
 
+(use-package company-cmake
+  :hook (cmake-mode . (lambda ()
+                        (setq-local completion-at-point-functions
+                                    (list (cape-company-to-capf #'company-cmake)
+                                          #'cape-file
+                                          #'cape-dabbrev)))))
+
 (use-package corfu-popup
   :unless (display-graphic-p)
   :after corfu
