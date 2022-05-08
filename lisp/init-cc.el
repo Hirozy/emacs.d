@@ -1,4 +1,4 @@
-;;; init-c-cpp.el --- c-mode/c++-mode configuratione -*- lexical-binding: t -*-
+;;; init-cc.el --- c-mode/c++-mode configuratione -*- lexical-binding: t -*-
 
 ;;; Commentary:
 ;;
@@ -13,10 +13,10 @@
           (lambda()
             (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 
-(provide 'init-c-cpp)
+(provide 'init-cc)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; indent-tabs-mode: nil
 ;; End:
-;;; init-c-cpp.el ends here
+;;; init-cc.el ends here

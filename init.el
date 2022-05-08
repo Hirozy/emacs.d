@@ -37,7 +37,7 @@
 (require 'init-utils)
 
 (require 'init-python)
-(require 'init-c-cpp)
+(require 'init-cc)
 (require 'init-golang)
 (require 'init-haskell)
 (require 'init-rust)

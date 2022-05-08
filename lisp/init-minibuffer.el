@@ -53,7 +53,9 @@
         consult-async-input-throttle 0
         consult-async-input-debounce 0
         ;; disable all preview
-        consult-preview-key (kbd "M-.")))
+        consult-preview-key (kbd "M-.")
+        xref-show-xrefs-function #'consult-xref
+        xref-show-definitions-function #'consult-xref))
 
 (use-package consult-dir
   :commands consult-dir

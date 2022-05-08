@@ -32,7 +32,9 @@
   :config
   (setq gc-cons-threshold (* 100 1024 1024)
         read-process-output-max (* 1024 1024)
-        eglot-stay-out-of '(company)))
+        eglot-stay-out-of '(company))
+
+  (add-to-list 'eglot-server-programs '((objc-mode) "clangd")))
 
 (provide 'init-lsp)
 
