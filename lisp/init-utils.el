@@ -64,7 +64,7 @@
   :bind (:map popper-mode-map
               ("C-'" . popper-toggle-latest)
               ("M-'" . popper-cycle)
-              ("C-M-'" . popper-toggle-type))
+              ("s-'" . popper-toggle-type))
   :init
   (setq popper-reference-buffers
         '("\\*Messages\\*"
