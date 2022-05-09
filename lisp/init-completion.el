@@ -55,13 +55,12 @@
   :config
   (corfu-popup-mode))
 
-(use-package kind-icon
-  :defines (kind-icon-margin-formatter)
+(use-package kind-all-the-icons
+  :when (display-graphic-p)
   :after corfu
-  :custom
-  (kind-icon-default-face 'corfu-default)
   :config
-  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+  (add-to-list 'corfu-margin-formatters
+               #'kind-all-the-icons-margin-formatter))
 
 (use-package yasnippet
   :diminish yas-minor-mode

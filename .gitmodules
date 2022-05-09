@@ -196,9 +196,9 @@
 [submodule "js2-mode"]
 	path = lib/js2-mode
 	url = git@github.com:mooz/js2-mode.git
-[submodule "kind-icon"]
-	path = lib/kind-icon
-	url = git@github.com:jdtsmith/kind-icon.git
+[submodule "kind-all-the-icons"]
+	path = lib/kind-all-the-icons
+	url = git@github.com:Hirozy/kind-all-the-icons.git
 [submodule "language-id"]
 	path = lib/language-id
 	url = git@github.com:lassik/emacs-language-id.git
@@ -305,9 +305,6 @@
 [submodule "spinner"]
 	path = lib/spinner
 	url = git@github.com:Malabarba/spinner.el.git
-[submodule "svg-lib"]
-	path = lib/svg-lib
-	url = git@github.com:rougier/svg-lib.git
 [submodule "symbol-overlay"]
 	path = lib/symbol-overlay
 	url = git@github.com:wolray/symbol-overlay.git
