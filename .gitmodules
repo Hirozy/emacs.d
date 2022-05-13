@@ -356,6 +356,9 @@
 [submodule "vundo"]
 	path = lib/vundo
 	url = git@github.com:casouri/vundo.git
+[submodule "websocket"]
+	path = lib/websocket
+	url = git@github.com:ahyatt/emacs-websocket.git
 [submodule "which-key"]
 	path = lib/which-key
 	url = git@github.com:justbur/emacs-which-key.git
