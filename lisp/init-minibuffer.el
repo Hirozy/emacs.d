@@ -79,10 +79,9 @@
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package embark
-  :after vertico
-  :bind (:map vertico-map
-              ("C-c C-o" . embark-export)
-              ("C-c C-c" . embark-act)))
+  :bind (("C-." . embark-act)
+         ("M-." . embark-dwim)
+         (("C-h B" . embark-bindings))))
 
 (provide 'init-minibuffer)
 

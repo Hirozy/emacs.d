@@ -15,12 +15,11 @@
          ("U" . evil-redo)
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
-         ("C-." . consult-imenu)
          ("C-k" . grammatical-edit-kill)
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)
-         ("C-\\" . evil-mode)
+         ("C-." . embark-act)
          ("M-y" . consult-yank-pop)
 
          :map evil-insert-state-map
@@ -28,11 +27,9 @@
          ("C-d" . grammatical-edit-forward-delete)
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
-         ("C-." . consult-imenu)
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)
-         ("C-\\" . evil-mode)
          ("C-q" . hydra-high-frequency/body))
 
   :config
@@ -42,21 +39,22 @@
   (modify-syntax-entry ?_ "w")
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
-  (evil-set-initial-state 'fundamental-mode 'normal)
-  (evil-select-search-module 'evil-search-module 'evil-search)
+  (evil-select-search-module 'evil-search-module 'evil-search))
 
-  (use-package evil-escape
-    :diminish evil-escape-mode
-    ;; Bind F16 aka <print> key to `evil-escape',
-    ;; Map Esc key to F16 when use terminal on Windows 10.
-    :bind ("<print>" . evil-escape)
-    :hook (evil-mode . evil-escape-mode)
-    :config
-    (setq-default evil-escape-key-sequence "jk"
-                  evil-escape-delay 0.2
-                  evil-want-fine-undo t))
-  (use-package evil-matchit)
-  (use-package evil-anzu))
+(use-package evil-escape
+  :after evil
+  :diminish evil-escape-mode
+  ;; Bind F16 aka <print> key to `evil-escape',
+  ;; Map Esc key to F16 when use terminal on Windows 10.
+  :bind ("<print>" . evil-escape)
+  :hook (evil-mode . evil-escape-mode)
+  :config
+  (setq-default evil-escape-key-sequence "jk"
+                evil-escape-delay 0.2
+                evil-want-fine-undo t))
+
+(use-package evil-matchit)
+(use-package evil-anzu)
 
 (provide 'init-evil)
 
