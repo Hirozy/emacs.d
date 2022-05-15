@@ -1,4 +1,4 @@
-;;; init-projectile.el --- projectile configuration -*- lexical-binding: t -*-
+;;; init-projectile.el --- projectile configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

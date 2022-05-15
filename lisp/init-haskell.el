@@ -1,4 +1,4 @@
-;;; init-haskell.el --- haskell-mode configuratione -*- lexical-binding: t -*-
+;;; init-haskell.el --- haskell-mode configuratione  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

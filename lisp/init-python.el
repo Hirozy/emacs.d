@@ -1,4 +1,4 @@
-;;; init-python.el --- python-mode configuration -*- lexical-binding: t -*-
+;;; init-python.el --- python-mode configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

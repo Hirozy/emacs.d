@@ -1,4 +1,4 @@
-;;; init-golang.el -- golang support -*- lexical-binding: t -*-
+;;; init-golang.el -- golang support  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

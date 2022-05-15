@@ -1,4 +1,4 @@
-;;; init-evil.el --- evil-mode configuration -*- lexical-binding: t -*-
+;;; init-evil.el --- evil-mode configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

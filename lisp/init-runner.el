@@ -1,4 +1,4 @@
-;;; init-runner.el --- Execute current buffer -*- lexical-binding: t -*-
+;;; init-runner.el --- Execute current buffer  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

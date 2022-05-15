@@ -1,4 +1,4 @@
-;;; init-configs.el --- Misc configuration -*- lexical-binding: t -*-
+;;; init-configs.el --- Misc configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

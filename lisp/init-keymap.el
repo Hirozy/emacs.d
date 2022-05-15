@@ -1,4 +1,4 @@
-;;; init-keymap.el --- keymap for iTerm2
+;;; init-keymap.el --- keymap for iTerm2  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

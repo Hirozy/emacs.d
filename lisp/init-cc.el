@@ -1,4 +1,4 @@
-;;; init-cc.el --- c-mode/c++-mode configuratione -*- lexical-binding: t -*-
+;;; init-cc.el --- c-mode/c++-mode configuratione  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

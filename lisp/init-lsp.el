@@ -1,4 +1,4 @@
-;; init-lsp.el --- lsp mode configuration -*- lexical-binding: t -*-
+;; init-lsp.el --- lsp mode configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

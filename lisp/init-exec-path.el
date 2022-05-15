@@ -1,4 +1,4 @@
-;;; init-exec-path.el --- exec path from shell -*- lexical-binding: t -*-
+;;; init-exec-path.el --- exec path from shell  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

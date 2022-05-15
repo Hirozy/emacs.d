@@ -1,4 +1,4 @@
-;;; init-plot.el --- plot configuration -*- lexical-binding: t -*-
+;;; init-plot.el --- plot configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

@@ -1,4 +1,4 @@
-;;; init-tags.el --- Tags configuration -*- lexical-binding: t -*-
+;;; init-tags.el --- Tags configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

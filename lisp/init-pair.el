@@ -1,4 +1,4 @@
-;;; init-pair.el --- Pair configuration -*- lexical-binding: t -*-
+;;; init-pair.el --- Pair configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

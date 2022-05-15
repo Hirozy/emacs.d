@@ -1,4 +1,4 @@
-;;; early-init.el --- earliest birds -*- lexical-binding: t -*-
+;;; early-init.el --- earliest birds  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

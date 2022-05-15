@@ -1,4 +1,4 @@
-;;; init-git.el --- Git tools configuration -*- lexical-binding: t -*-
+;;; init-git.el --- Git tools configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

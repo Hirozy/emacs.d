@@ -1,4 +1,4 @@
-;;; init-javascript.el --- javascript-mode configuratione -*- lexical-binding: t -*-
+;;; init-javascript.el --- javascript-mode configuratione  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

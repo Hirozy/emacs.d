@@ -1,4 +1,4 @@
-;;; init-hydra.el --- hydra configuration -*- lexical-binding: t -*-
+;;; init-hydra.el --- hydra configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

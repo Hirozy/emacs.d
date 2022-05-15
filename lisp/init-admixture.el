@@ -1,4 +1,4 @@
-;;; init-admixture.el --- Mixed languages -*- lexical-binding: t -*-
+;;; init-admixture.el --- Mixed languages  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

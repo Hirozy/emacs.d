@@ -1,4 +1,4 @@
-;;; init-defun.el --- Defined function by myself -*- lexical-binding: t -*-
+;;; init-defun.el --- Defined function by myself  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

@@ -1,4 +1,4 @@
-;;; init-tex.el --- tex-mode configuration
+;;; init-tex.el --- tex-mode configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -40,4 +40,8 @@
 
 (provide 'init-tex)
 
+;; Local Variables:
+;; no-byte-compile: t
+;; indent-tabs-mode: nil
+;; End:
 ;;; init-tex.el ends here
