@@ -45,7 +45,9 @@
          ([remap projectile-switch-project] . consult-projectile-switch-project)
          ;; remap yasnippet
          ([remap yas-insert-snippet] . consult-yasnippet)
-         ([remap yas-visit-snippet-file] . consult-yasnippet-visit-snippet-file))
+         ([remap yas-visit-snippet-file] . consult-yasnippet-visit-snippet-file)
+         ;; isearch
+         ("C-s" . consult-line))
 
   :config
   (setq consult-project-root-function 'projectile-project-root

@@ -106,6 +106,12 @@
 (use-package sort-tab
   :hook (after-init . sort-tab-mode))
 
+;; repeat `C-x o' `C-x o' to `C-x o o RET'
+(use-package repeat
+  :hook (after-init . repeat-mode)
+  :custom
+  (repeat-exit-key (kbd "RET")))
+
 (use-package goto-chg :defer t)
 
 (use-package uuidgen :defer t)

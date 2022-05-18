@@ -33,8 +33,7 @@
   (anzu-replace-to ((t (:background "orange" :foreground "snow" :weight normal)))))
 
 (use-package ctrlf
-  :bind (("C-s" . ctrlf-forward-default)
-         ("C-M-s" . ctrlf-forward-alternate)
+  :bind (("C-M-s" . ctrlf-forward-alternate)
          ("M-s _" . ctrlf-forward-symbol)
          ("M-s ." . ctrlf-forward-symbol-at-point)))
 
@@ -65,6 +64,10 @@
 (use-package subword
   :diminish
   :hook ((minibuffer-setup . subword-mode)))
+
+;; Delete selection if you insert
+(use-package delsel
+  :hook (after-init . delete-selection-mode))
 
 (use-package vundo)
 
