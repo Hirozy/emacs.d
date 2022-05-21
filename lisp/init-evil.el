@@ -15,7 +15,6 @@
          ("U" . evil-redo)
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
-         ("C-k" . grammatical-edit-kill)
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)
@@ -23,8 +22,6 @@
          ("M-y" . consult-yank-pop)
 
          :map evil-insert-state-map
-         ("C-k" . grammatical-edit-kill)
-         ("C-d" . grammatical-edit-forward-delete)
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
          ("C-a" . move-beginning-of-line)

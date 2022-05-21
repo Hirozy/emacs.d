@@ -166,9 +166,6 @@
 [submodule "goto-chg"]
 	path = lib/goto-chg
 	url = git@github.com:emacs-evil/goto-chg.git
-[submodule "grammatical-edit"]
-	path = lib/grammatical-edit
-	url = git@github.com:manateelazycat/grammatical-edit.git
 [submodule "haskell-mode"]
 	path = lib/haskell-mode
 	url = git@github.com:haskell/haskell-mode.git
@@ -312,15 +309,6 @@
 [submodule "transient"]
 	path = lib/transient
 	url = git@github.com:magit/transient.git
-[submodule "tree-sitter"]
-	path = lib/tree-sitter
-	url = git@github.com:emacs-tree-sitter/elisp-tree-sitter.git
-	load-path = core
-	load-path = lisp
-	no-byte-compile = core/tsc-dyn.dylib
-[submodule "tree-sitter-langs"]
-	path = lib/tree-sitter-langs
-	url = git@github.com:emacs-tree-sitter/tree-sitter-langs.git
 [submodule "treemacs"]
 	path = lib/treemacs
 	url = git@github.com:Alexander-Miller/treemacs.git
