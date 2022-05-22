@@ -67,9 +67,9 @@
 [submodule "corfu"]
 	path = lib/corfu
 	url = git@github.com:minad/corfu.git
-[submodule "corfu-popup"]
-	path = lib/corfu-popup
-	url = https://codeberg.org/akib/emacs-corfu-popup.git
+[submodule "corfu-terminal"]
+	path = lib/corfu-terminal
+	url = https://codeberg.org/akib/emacs-corfu-terminal.git
 [submodule "ctrlf"]
 	path = lib/ctrlf
 	url = git@github.com:raxod502/ctrlf.git

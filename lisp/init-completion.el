@@ -49,11 +49,11 @@
                                           #'cape-file
                                           #'cape-dabbrev)))))
 
-(use-package corfu-popup
+(use-package corfu-terminal
   :unless (display-graphic-p)
   :after corfu
   :config
-  (corfu-popup-mode))
+  (corfu-terminal-mode))
 
 (use-package kind-all-the-icons
   :when (display-graphic-p)
