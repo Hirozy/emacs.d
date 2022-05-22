@@ -85,6 +85,9 @@
          ("M-." . embark-dwim)
          (("C-h B" . embark-bindings))))
 
+(use-package embark-consult
+  :after (embark consult))
+
 (provide 'init-minibuffer)
 
 ;; Local Variables:

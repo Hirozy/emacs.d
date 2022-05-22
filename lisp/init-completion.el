@@ -25,8 +25,8 @@
 
   :bind (:map corfu-map
               ("<backtab>" . corfu-previous)
-              ("RET" . corfu-insert)
-              ("<return>" . corfu-insert)
+              ("RET" . corfu-complete)
+              ("<return>" . corfu-complete)
               ;; ("SPC" . corfu-insert-separator)
               ("C-n" . corfu-next)
               ("C-p" . corfu-previous)
