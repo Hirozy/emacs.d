@@ -126,6 +126,9 @@
 [submodule "evil-matchit"]
 	path = lib/evil-matchit
 	url = git@github.com:redguardtoo/evil-matchit.git
+[submodule "evil-surround"]
+	path = lib/evil-surround
+	url = git@github.com:emacs-evil/evil-surround.git
 [submodule "exec-path-from-shell"]
 	path = lib/exec-path-from-shell
 	url = git@github.com:purcell/exec-path-from-shell.git
@@ -297,6 +300,9 @@
 [submodule "simple-httpd"]
 	path = lib/simple-httpd
 	url = git@github.com:skeeto/emacs-web-server.git
+[submodule "smartparens"]
+	path = lib/smartparens
+	url = git@github.com:Fuco1/smartparens.git
 [submodule "sort-tab"]
 	path = lib/sort-tab
 	url = git@github.com:manateelazycat/sort-tab.git

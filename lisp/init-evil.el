@@ -24,6 +24,7 @@
          :map evil-insert-state-map
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
+         ("C-k" . kill-line)
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)
@@ -51,8 +52,16 @@
                 evil-escape-delay 0.2
                 evil-want-fine-undo t))
 
-(use-package evil-matchit)
-(use-package evil-anzu)
+(use-package evil-surround
+  :after evil
+  :hook (evil-mode . evil-surround-mode))
+
+(use-package evil-matchit
+  :after evil
+  :hook (evil-mode . evil-matchit-mode))
+
+(use-package evil-anzu
+  :after evil)
 
 (provide 'init-evil)
 
