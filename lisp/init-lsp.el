@@ -29,6 +29,12 @@
   :bind (:map eglot-mode-map
               ("S-<f2>" . eglot-rename))
 
+  :init
+  ;; disable lsp server event buffer
+  (setq eglot-events-buffer-size 0)
+  (advice-add 'jsonrpc--log-event :around
+              (lambda (_orig-func &rest _)))
+
   :config
   (setq gc-cons-threshold (* 100 1024 1024)
         read-process-output-max (* 1024 1024)

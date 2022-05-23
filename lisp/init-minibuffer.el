@@ -34,6 +34,7 @@
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 (use-package consult
+  :demand t
   :defines (consult-project-root-function)
   :bind (;; remap projectile
          ([remap projectile-ripgrep] . consult-ripgrep)
