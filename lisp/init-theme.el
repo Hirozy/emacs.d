@@ -8,6 +8,8 @@
 ;;; Code:
 
 (use-package color-theme-sanityinc-tomorrow
+  :custom-face
+  (cursor ((t (:background "#afafaf"))))
   :config
   (color-theme-sanityinc-tomorrow-eighties))
 
