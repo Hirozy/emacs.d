@@ -18,6 +18,9 @@
 [submodule "avy"]
 	path = lib/avy
 	url = git@github.com:abo-abo/avy.git
+[submodule "awesome-pair"]
+	path = lib/awesome-pair
+	url = git@github.com:manateelazycat/awesome-pair.git
 [submodule "borg"]
 	path = lib/borg
 	url = git@github.com:emacscollective/borg.git
@@ -300,9 +303,6 @@
 [submodule "simple-httpd"]
 	path = lib/simple-httpd
 	url = git@github.com:skeeto/emacs-web-server.git
-[submodule "smartparens"]
-	path = lib/smartparens
-	url = git@github.com:Fuco1/smartparens.git
 [submodule "sort-tab"]
 	path = lib/sort-tab
 	url = git@github.com:manateelazycat/sort-tab.git

@@ -10,22 +10,17 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package smartparens-config
-  :diminish smartparens-mode
-  :hook (((lisp-mode
-           lisp-interaction-mode
-           c-mode
-           c++-mode
-           python-mode
-           haskell-mode
-           ruby-mode
-           rust-mode
-           lua-mode
-           shell-script-mode
-           emacs-lisp-mode
-           graphviz-dot-mod) . (lambda ()
-                                 (smartparens-mode)
-                                 (smartparens-strict-mode)))))
+(use-package awesome-pair
+  :hook ((prog-mode) . awesome-pair-mode)
+  :bind (([remap kill-line] . awesome-pair-kill)
+         :map awesome-pair-mode-map
+         ("%" . awesome-pair-match-paren)
+         ;; ("SPC" . awesome-pair-space)
+         ;; ("RET" . awesome-pair-newline)
+         ("M-o" . awesome-pair-backward-delete)
+         ("M-p" . awesome-pair-jump-right)
+         ("M-n" . awesome-pair-jump-left)
+         ("M-;" . awesome-pair-jump-out-pair-and-newline)))
 
 (use-package elec-pair
   :defer t
@@ -39,6 +34,8 @@
                                          (electric-pair-local-mode -1)))))
 
 (use-package paren
+  :custom-face
+  (show-paren-match ((t (:background "gray50" :foreground "gray100"))))
   :hook (after-init . show-paren-mode))
 
 (provide 'init-pair)
