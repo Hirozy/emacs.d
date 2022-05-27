@@ -11,7 +11,7 @@
   :custom-face
   (cursor ((t (:background "#afafaf"))))
   :config
-  (color-theme-sanityinc-tomorrow-eighties))
+  (load-theme 'sanityinc-tomorrow-eighties))
 
 (use-package doom-themes
   :defines (doom-themes-treemacs-theme)
