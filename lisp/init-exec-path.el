@@ -17,7 +17,8 @@
                                          "WORKON_HOME"
                                          "PYTHONPATH"
                                          "GTAGSCONF"
-                                         "GTAGSLABEL"))
+                                         "GTAGSLABEL"
+                                         "GTAGSOBJDIRPREFIX"))
   (exec-path-from-shell-initialize))
 
 (provide 'init-exec-path)

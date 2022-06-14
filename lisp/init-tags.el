@@ -11,14 +11,11 @@
   :defer t
   :functions (projectile-project-root)
   :after projectile
-  :bind (("C-x c j" . citre-jump)
-         ("C-x c J" . citre-jump-back)
-         ("C-x c p" . citre-peek)
-         ("C-x c P" . citre-ace-peek)
-         ("C-x c e" . citre-edit-tags-file-recipe)
-         ("C-x c u" . citre-update-this-tags-file))
+  :bind (("C-," . citre-jump-back))
+
   :init
   (require 'citre-config)
+  (require 'citre-global)
 
   :config
   (setq citre-project-root-function #'projectile-project-root
