@@ -24,7 +24,7 @@
 [submodule "borg"]
 	path = lib/borg
 	url = git@github.com:emacscollective/borg.git
-	branch = native
+	branch = native-async
 [submodule "cape"]
 	path = lib/cape
 	url = git@github.com:minad/cape.git
