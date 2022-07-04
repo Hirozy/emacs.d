@@ -38,6 +38,7 @@
   (evil-set-initial-state 'prog-mode 'normal)
   (evil-set-initial-state 'text-mode 'normal)
   (evil-set-initial-state 'conf-mode 'normal)
+  (evil-set-initial-state 'fundamental-mode 'normal)
   (evil-select-search-module 'evil-search-module 'evil-search))
 
 (use-package evil-escape
