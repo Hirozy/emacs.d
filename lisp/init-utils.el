@@ -103,9 +103,6 @@
         uniquify-separator " • "
         niquify-after-kill-buffer-p t))
 
-(use-package sort-tab
-  :hook (after-init . sort-tab-mode))
-
 ;; repeat `C-x o' `C-x o' to `C-x o o RET'
 (use-package repeat
   :hook (after-init . repeat-mode)
