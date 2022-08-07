@@ -24,7 +24,6 @@
 [submodule "borg"]
 	path = lib/borg
 	url = git@github.com:emacscollective/borg.git
-	branch = native-async
 [submodule "cape"]
 	path = lib/cape
 	url = git@github.com:minad/cape.git
@@ -303,9 +302,6 @@
 [submodule "simple-httpd"]
 	path = lib/simple-httpd
 	url = git@github.com:skeeto/emacs-web-server.git
-[submodule "sort-tab"]
-	path = lib/sort-tab
-	url = git@github.com:manateelazycat/sort-tab.git
 [submodule "spinner"]
 	path = lib/spinner
 	url = git@github.com:Malabarba/spinner.el.git
