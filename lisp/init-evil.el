@@ -10,6 +10,8 @@
 (use-package evil
   :hook (after-init . evil-mode)
   :bind (("C-\\" . evil-force-normal-state)
+         ("C-c +" . evil-numbers/inc-at-pt)
+         ("C-c -" . evil-numbers/dec-at-pt)
 
          :map evil-normal-state-map
          ("U" . evil-redo)

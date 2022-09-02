@@ -129,6 +129,9 @@
 [submodule "evil-matchit"]
 	path = lib/evil-matchit
 	url = git@github.com:redguardtoo/evil-matchit.git
+[submodule "evil-numbers"]
+	path = lib/evil-numbers
+	url = git@github.com:juliapath/evil-numbers.git
 [submodule "evil-surround"]
 	path = lib/evil-surround
 	url = git@github.com:emacs-evil/evil-surround.git
