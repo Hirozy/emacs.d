@@ -7,6 +7,13 @@
 
 ;;; Code:
 
+(defun defined/insert-with-space ()
+  "Evil insert with space."
+  (interactive)
+  (insert-char (char-from-name "SPACE"))
+  (backward-char)
+  (evil-insert-state))
+
 (use-package evil
   :hook (after-init . evil-mode)
   :bind (("C-\\" . evil-force-normal-state)
@@ -30,7 +37,13 @@
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)
-         ("C-q" . hydra-high-frequency/body))
+         ("C-q" . hydra-high-frequency/body)
+         ("(" . awesome-pair-open-round)
+         ("[" . awesome-pair-open-bracket)
+         ("{" . awesome-pair-open-curly)
+         (")" . awesome-pair-close-round)
+         ("]" . awesome-pair-close-bracket)
+         ("}" . awesome-pair-close-curly))
 
   :config
   (evil-set-undo-system 'undo-redo)

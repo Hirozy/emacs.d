@@ -49,6 +49,7 @@
          ([remap yas-visit-snippet-file] . consult-yasnippet-visit-snippet-file)
          ;; isearch
          ("C-s" . consult-line)
+         ("C-S-s" . consult-line-multi)
          ;; buffer
          ("C-x b" . consult-project-buffer)
          ("C-x C-b" . consult-buffer))
