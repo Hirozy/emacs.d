@@ -112,6 +112,7 @@
    ("P" poetry "poetry")
    ("T" projectile-run-vterm "projectile vterm")
    ("v" evil-mode "evil")
+   ("s" dash-at-point "dash")
    ("kt" kill-this-buffer "kill this buffer")
    ("kb" kill-buffer "kill other buffer")
    ("kr" eval-buffer "eval buffer")
