@@ -81,7 +81,7 @@
 
 (use-package orderless
   :custom
-  (completion-styles '(flex))
+  (completion-styles '(partial-completion))
   (completion-category-defaults nil)
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
