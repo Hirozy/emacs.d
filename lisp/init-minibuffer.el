@@ -51,7 +51,11 @@
          ("C-s" . consult-line)
          ("C-S-s" . consult-line-multi)
          ;; buffer
-         ("C-x b" . consult-project-buffer)
+         ("C-x b" . (lambda ()
+                      (interactive)
+                      (if (projectile-project-root)
+                          (consult-project-buffer)
+                        (consult-buffer))))
          ("C-x C-b" . consult-buffer))
 
   :config

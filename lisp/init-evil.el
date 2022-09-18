@@ -29,6 +29,8 @@
          ("C-p" . previous-line)
          ("C-." . embark-act)
          ("M-y" . consult-yank-pop)
+         ("C-v" . evil-scroll-page-down)
+         ("M-v" . evil-scroll-page-up)
 
          :map evil-insert-state-map
          ("C-e" . move-end-of-line)
