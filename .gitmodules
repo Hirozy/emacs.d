@@ -9,6 +9,9 @@
 [submodule "anaphora"]
 	path = lib/anaphora
 	url = git@github.com:rolandwalker/anaphora.git
+[submodule "annalist"]
+	path = lib/annalist
+	url = git@github.com:noctuid/annalist.el.git
 [submodule "anzu"]
 	path = lib/anzu
 	url = git@github.com:emacsorphanage/anzu.git
@@ -126,6 +129,9 @@
 [submodule "evil-anzu"]
 	path = lib/evil-anzu
 	url = git@github.com:emacsorphanage/evil-anzu.git
+[submodule "evil-collection"]
+	path = lib/evil-collection
+	url = git@github.com:emacs-evil/evil-collection.git
 [submodule "evil-escape"]
 	path = lib/evil-escape
 	url = git@github.com:syl20bnr/evil-escape.git

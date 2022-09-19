@@ -47,15 +47,26 @@
          ("]" . awesome-pair-close-bracket)
          ("}" . awesome-pair-close-curly))
 
+  :init
+  (setq evil-want-integration t
+        evil-want-keybinding nil)
+
   :config
   (evil-set-undo-system 'undo-redo)
   (setq evil-default-state 'emacs
         evil-symbol-word-search t)
   (modify-syntax-entry ?_ "w")
-  (evil-set-initial-state 'prog-mode 'normal)
-  (evil-set-initial-state 'text-mode 'normal)
-  (evil-set-initial-state 'conf-mode 'normal)
-  (evil-set-initial-state 'fundamental-mode 'normal)
+
+  (let ((modes '(prog-mode
+                 text-mode
+                 conf-mode
+                 fundamental-mode
+                 vterm-mode
+                 dired-mode
+                 eshell-mode)))
+    (dolist (mode modes)
+      (evil-set-initial-state mode 'normal)))
+
   (evil-select-search-module 'evil-search-module 'evil-search))
 
 (use-package evil-escape
@@ -80,6 +91,16 @@
 
 (use-package evil-anzu
   :after evil)
+
+(use-package evil-collection
+  :config
+  (evil-collection-init '(vterm
+                          dired
+                          magit
+                          eshell
+                          flycheck
+                          flymake
+                          quickrun)))
 
 (provide 'init-evil)
 

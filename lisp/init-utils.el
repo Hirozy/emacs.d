@@ -32,7 +32,10 @@
   :bind ("s-t" . treemacs-select-window)
   :config
   (use-package treemacs-projectile
-    :after treemacs projectile)
+    :after (treemacs projectile))
+
+  (use-package treemacs-evil
+    :after (treemacs evil))
 
   (use-package treemacs-icons-dired
     :if (memq window-system '(mac ns x))
@@ -40,7 +43,7 @@
     (treemacs-icons-dired-mode))
 
   (use-package treemacs-magit
-    :after treemacs magit))
+    :after (treemacs magit)))
 
 (use-package highlight-indent-guides
   :diminish highlight-indent-guides-mode
@@ -54,7 +57,7 @@
   ;; :custom-face
   ;; (hl-line ((t (:underline "dodger blue"))))
   :hook (((eshell-mode shell-mode term-mode vterm-mode) .
-          (lambda () (setq-local hl-line-mode nil))))
+          (lambda () (setq-local global-hl-line-mode nil))))
   :config
   (global-hl-line-mode))
 
