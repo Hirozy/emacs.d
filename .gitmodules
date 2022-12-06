@@ -237,6 +237,9 @@
 [submodule "mwim"]
 	path = lib/mwim
 	url = git@github.com:alezost/mwim.el.git
+[submodule "nftables-mode"]
+	path = lib/nftables-mode
+	url = git@github.com:emacsmirror/nftables-mode.git
 [submodule "ob-ipython"]
 	path = lib/ob-ipython
 	url = git@github.com:gregsexton/ob-ipython.git
