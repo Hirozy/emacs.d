@@ -15,7 +15,9 @@
   (evil-insert-state))
 
 (use-package evil
-  :hook (after-init . evil-mode)
+  :hook ((after-init . evil-mode)
+         ((yaml-mode) . (lambda ()
+                          (setq-local evil-shift-width 2))))
   :bind (("C-\\" . evil-force-normal-state)
          ("C-c +" . evil-numbers/inc-at-pt)
          ("C-c -" . evil-numbers/dec-at-pt)
@@ -55,7 +57,7 @@
   (evil-set-undo-system 'undo-redo)
   (setq evil-default-state 'emacs
         evil-symbol-word-search t)
-  (modify-syntax-entry ?_ "w")
+  ;; (modify-syntax-entry ?_ "w")
 
   (let ((modes '(prog-mode
                  text-mode
