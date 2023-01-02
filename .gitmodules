@@ -215,6 +215,9 @@
 [submodule "language-id"]
 	path = lib/language-id
 	url = git@github.com:lassik/emacs-language-id.git
+[submodule "llama"]
+	path = lib/llama
+	url = git@github.com:emacsmirror/llama.git
 [submodule "lua-mode"]
 	path = lib/lua-mode
 	url = git@github.com:immerrr/lua-mode.git
