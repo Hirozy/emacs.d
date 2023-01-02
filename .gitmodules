@@ -21,9 +21,6 @@
 [submodule "avy"]
 	path = lib/avy
 	url = git@github.com:abo-abo/avy.git
-[submodule "awesome-pair"]
-	path = lib/awesome-pair
-	url = git@github.com:manateelazycat/awesome-pair.git
 [submodule "borg"]
 	path = lib/borg
 	url = git@github.com:emacscollective/borg.git

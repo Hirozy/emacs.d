@@ -10,18 +10,6 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package awesome-pair
-  :hook ((prog-mode) . awesome-pair-mode)
-  :bind (([remap kill-line] . awesome-pair-kill)
-         :map awesome-pair-mode-map
-         ("%" . awesome-pair-match-paren)
-         ;; ("SPC" . awesome-pair-space)
-         ;; ("RET" . awesome-pair-newline)
-         ("M-o" . awesome-pair-backward-delete)
-         ("M-p" . awesome-pair-jump-right)
-         ("M-n" . awesome-pair-jump-left)
-         ("M-;" . awesome-pair-jump-out-pair-and-newline)))
-
 (use-package elec-pair
   :defer t
   :hook (((org-mode

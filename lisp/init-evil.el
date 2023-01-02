@@ -41,13 +41,7 @@
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)
-         ("C-q" . hydra-high-frequency/body)
-         ("(" . awesome-pair-open-round)
-         ("[" . awesome-pair-open-bracket)
-         ("{" . awesome-pair-open-curly)
-         (")" . awesome-pair-close-round)
-         ("]" . awesome-pair-close-bracket)
-         ("}" . awesome-pair-close-curly))
+         ("C-q" . hydra-high-frequency/body))
 
   :init
   (setq evil-want-integration t
