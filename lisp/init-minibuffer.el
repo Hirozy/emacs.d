@@ -7,13 +7,8 @@
 
 ;;; Code:
 
-(defun defined/use-orderless-in-minibuffer ()
-  "Use `orderless' in minibuffer."
-  (setq-local completion-styles '(orderless)))
-
 (use-package vertico
-  :hook ((after-init . vertico-mode)
-         (minibuffer-setup . defined/use-orderless-in-minibuffer))
+  :hook ((after-init . vertico-mode))
   :bind (:map vertico-map
               ("?" . minibuffer-completion-help)
               ("C-v" . vertico-scroll-up)
@@ -41,7 +36,7 @@
          ([remap projectile-grep] . consult-grep)
          ([remap projectile-recentf] . consult-projectile-recentf)
          ([remap projectile-switch-to-buffer] . consult-projectile-switch-to-buffer)
-         ([remap projectile-find-file] . consult-projectile-find-file)
+         ([remap projectile-find-file] . consult-projectile)
          ([remap projectile-find-dir] . consult-projectile-find-dir)
          ([remap projectile-switch-project] . consult-projectile-switch-project)
          ;; remap yasnippet
@@ -85,7 +80,7 @@
 
 (use-package orderless
   :custom
-  (completion-styles '(partial-completion))
+  (completion-styles '(orderless))
   (completion-category-defaults nil)
   (completion-category-overrides '((file (styles basic partial-completion)))))
 

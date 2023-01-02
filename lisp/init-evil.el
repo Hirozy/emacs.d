@@ -92,7 +92,6 @@
   :config
   (evil-collection-init '(vterm
                           dired
-                          magit
                           eshell
                           flycheck
                           flymake
