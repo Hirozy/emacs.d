@@ -42,7 +42,6 @@
 (require 'init-rust)
 
 (require 'init-javascript)
-;; (require 'init-tex)
 (require 'init-markdown)
 (require 'init-plot)
 
