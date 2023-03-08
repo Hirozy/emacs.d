@@ -26,6 +26,13 @@
   (show-paren-match ((t (:background "gray50" :foreground "gray100"))))
   :hook (after-init . show-paren-mode))
 
+(use-package puni
+  :defer t
+  :hook ((prog-mode
+          text-mode
+          conf-mode
+          fundamental-mode) . puni-mode))
+
 (provide 'init-pair)
 
 ;; Local Variables:

@@ -37,7 +37,6 @@
          :map evil-insert-state-map
          ("C-e" . move-end-of-line)
          ("C-r" . hydra-edit/body)
-         ("C-k" . kill-line)
          ("C-a" . move-beginning-of-line)
          ("C-n" . next-line)
          ("C-p" . previous-line)

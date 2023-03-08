@@ -281,6 +281,9 @@
 [submodule "projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile.git
+[submodule "puni"]
+	path = lib/puni
+	url = https://github.com/AmaiKinono/puni.git
 [submodule "pythonic"]
 	path = lib/pythonic
 	url = https://github.com/pythonic-emacs/pythonic.git
