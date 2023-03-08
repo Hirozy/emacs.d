@@ -99,9 +99,6 @@
 	load-path = extensions
 	no-byte-compile = extensions/doom-themes-ext-neotree.el
 	no-byte-compile = extensions/doom-themes-ext-visual-bell.el
-[submodule "eglot"]
-	path = lib/eglot
-	url = https://github.com/joaotavora/eglot.git
 [submodule "emacsql"]
 	no-byte-compile = emacsql-pg.el
 	path = lib/emacsql
@@ -249,12 +246,6 @@
 [submodule "orderless"]
 	path = lib/orderless
 	url = https://github.com/oantolin/orderless.git
-[submodule "org"]
-	path = lib/org
-	url = https://github.com/emacsmirror/org.git
-[submodule "org-contrib"]
-	path = lib/org-contrib
-	url = https://github.com/emacsmirror/org-contrib.git
 [submodule "org-roam"]
 	path = lib/org-roam
 	url = https://github.com/org-roam/org-roam.git
@@ -337,9 +328,6 @@
 [submodule "treepy"]
 	path = lib/treepy
 	url = https://github.com/volrath/treepy.el.git
-[submodule "use-package"]
-	path = lib/use-package
-	url = https://github.com/jwiegley/use-package.git
 [submodule "uuidgen"]
 	path = lib/uuidgen
 	url = https://github.com/kanru/uuidgen-el.git
