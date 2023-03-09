@@ -71,7 +71,7 @@
 	url = https://github.com/minad/corfu.git
 [submodule "corfu-terminal"]
 	path = lib/corfu-terminal
-	url = https://codeberg.org/akib/emacs-corfu-terminal.git
+	url = https://github.com/cimisc/emacs-corfu-terminal.git
 [submodule "ctrlf"]
 	path = lib/ctrlf
 	url = https://github.com/raxod502/ctrlf.git
@@ -271,7 +271,7 @@
 	url = https://github.com/galaunay/poetry.el.git
 [submodule "popon"]
 	path = lib/popon
-	url = https://codeberg.org/akib/emacs-popon.git
+	url = https://github.com/cimisc/emacs-popon.git
 [submodule "popper"]
 	path = lib/popper
 	url = https://github.com/karthink/popper.git

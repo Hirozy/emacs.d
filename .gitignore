@@ -73,3 +73,5 @@ eln-*
 /custom.el
 /eln-cache
 /var
+org-roam.db
+tree-sitter
