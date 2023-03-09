@@ -27,11 +27,7 @@
   :hook (after-init . show-paren-mode))
 
 (use-package puni
-  :defer t
-  :hook ((prog-mode
-          text-mode
-          conf-mode
-          fundamental-mode) . puni-mode))
+  :defer t)
 
 (provide 'init-pair)
 
