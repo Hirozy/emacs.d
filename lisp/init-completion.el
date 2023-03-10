@@ -12,26 +12,30 @@
               tab-always-indent 'complete)
 
 (use-package corfu
+  :custom
+  (corfu-cycle t)
+  (corfu-auto t)
+  (corfu-separator ?\s)
+  (corfu-auto-delay 0.05)
+  (corfu-auto-prefix 2)
+  (corfu-preselect 'first)
+  (corfu-quit-no-match t)
   :init
-  (setq corfu-auto t
-        corfu-auto-prefix 1
-        corfu-quit-no-match t
-        corfu-quit-at-boundary t
-        corfu-separator ?_)
   (global-corfu-mode)
 
   :hook (((eshell-mode) . (lambda ()
                             (setq-local corfu-auto nil))))
 
   :bind (:map corfu-map
-              ("<backtab>" . corfu-previous)
+              ("TAB" . corfu-next)
+              ([tab] . corfu-next)
+              ("S-TAB" . corfu-previous)
+              ([backtab] . corfu-previous)
               ("RET" . corfu-complete)
               ("<return>" . corfu-complete)
-              ;; ("SPC" . corfu-insert-separator)
+              ("SPC" . corfu-insert-separator)
               ("C-n" . corfu-next)
-              ("C-p" . corfu-previous)
-              ("M-g" . corfu-show-location)
-              ("M-h" . corfu-show-documentation)))
+              ("C-p" . corfu-previous)))
 
 (use-package cape
   :bind (("M-<tab> f" . cape-file)

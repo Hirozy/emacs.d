@@ -69,6 +69,8 @@
 [submodule "corfu"]
 	path = lib/corfu
 	url = https://github.com/minad/corfu.git
+	load-path = .
+	load-path = extensions
 [submodule "corfu-terminal"]
 	path = lib/corfu-terminal
 	url = https://github.com/cimisc/emacs-corfu-terminal.git
