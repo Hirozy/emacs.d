@@ -21,7 +21,18 @@
                                          (electric-pair-local-mode -1)))
          ((minibuffer-inactive-mode
            org-mode) . (lambda ()
-           (electric-indent-mode -1)))))
+           (electric-indent-mode -1)))
+         (org-mode . (lambda ()
+                       (add-function :before-until (local 'electric-pair-inhibit-predicate)
+                                     (lambda (c) (eq c ?<)))
+                       (let ((org-elec-pairs '((?/ . ?/)
+                                               (?_ . ?_)
+                                               (?$ . ?$)
+                                               (?~ . ?~))))
+                         (setq-local electric-pair-pairs
+                                     (append electric-pair-pairs org-elec-pairs))
+                         (setq-local electric-pair-text-pairs
+                                     (append electric-pair-text-pairs org-elec-pairs)))))))
 
 (use-package paren
   :custom-face
