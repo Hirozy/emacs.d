@@ -18,7 +18,10 @@
            (electric-pair-mode)
            (electric-indent-mode)))
          ((minibuffer-inactive-mode) . (lambda ()
-                                         (electric-pair-local-mode -1)))))
+                                         (electric-pair-local-mode -1)))
+         ((minibuffer-inactive-mode
+           org-mode) . (lambda ()
+           (electric-indent-mode -1)))))
 
 (use-package paren
   :custom-face

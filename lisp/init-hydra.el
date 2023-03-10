@@ -7,38 +7,22 @@
 
 ;;; Code:
 
-(defhydra hydra-org-mode (:foreign-keys nil :exit t)
-  ("s" org-insert-structure-template "org template" :column "Edit")
-  ("h" org-html-export-to-html "export to html")
-  ("t" org-table-create "create table")
-  ("i" org-indent-mode "indent mode")
-  ("RET" org-meta-return "meta return")
+(defhydra org-keys (:foreign-keys nil :exit t)
+  "Keymap for org mode and org roam."
+  ("f" org-roam-node-find "find node" :column "Org Roam")
+  ("c" org-roam-capture "capture")
+  ("o" org-roam-node-open "open node")
+  ("i" org-roam-node-insert "insert node")
+  ("t" org-roam-buffer-toggle "buffer toggle")
+  ("n" org-roam-dailies-capture-today "capture today")
+  ("p" org-roam-graph "graph")
+  ("u" org-roam-ui-open "open ui")
+  ("r" org-roam-db-sync "db sync")
+
+  ("RET" org-return "return" :column "Org mode")
+  ("s" org-insert-structure-template "org template")
   ("'" org-insert-subheading "insert subheading")
-  ("<" org-metaleft "meta left" :column "Meta" :exit nil)
-  (">" org-metaright "meta right" :exit nil)
-  ("l" org-metaleft "meta left" :exit nil)
-  ("r" org-metaright "meta right" :exit nil)
-  ("u" org-metaup "meta up" :exit nil)
-  ("d" org-metadown "meta down" :exit nil)
-  ("L" org-shiftmetaleft "shift meta left" :exit nil)
-  ("R" org-shiftmetaright "shift meta right" :exit nil)
-  ("U" org-shiftmetaup "shift meta up" :exit nil)
-  ("D" org-shiftmetadown "shift meta down" :exit nil))
-
-(defhydra hydra-lsp-mode (:foreign-keys nil :exit t)
-  ("r" eglot-reconnect "eglot reconnect" :column "eglot")
-  ("b" eglot-rename "eglot rename")
-  ("m" eglot-format "eglot format")
-  ("o" eglot-code-action-organize-imports "organize imports")
-  ("e" eldoc "eldoc"))
-
-(defun cond-keymode-with-modes ()
-  "Select the keymap of hydara according to current mode."
-  (interactive)
-  (when (eq major-mode 'org-mode)
-    (hydra-org-mode/body))
-  (when (bound-and-true-p eglot--managed-mode)
-    (hydra-lsp-mode/body)))
+  ("e" org-table-create "create table"))
 
 (global-set-key
  (kbd "C-r")
@@ -90,19 +74,19 @@
    ("l" citre-jump-to-reference "citre jump reference")
    ("p" citre-peek "citre peek")
    ("t" citre-peek-through "citre through")
+
    ("v" vterm "vterm" :column "Tools")
    ("V" projectile-run-vterm "projectile vterm")
    ("s" dash-at-point "dash")
    ("kt" kill-this-buffer "kill this buffer")
    ("kb" kill-buffer "kill other buffer")
    ("kr" eval-buffer "eval buffer")
-   ("C-q" cond-keymode-with-modes "conds")
-
    ("ee" consult-register-store "save register")
    ("er" consult-register-load "load register")
    ("el" consult-register "consult register")
    ("ey" consult-yank-pop "yank pop")
-   ("m" consult-kmacro "macros")))
+   ("m" consult-kmacro "macros")
+   ("," org-keys/body :exit t)))
 
 (provide 'init-hydra)
 

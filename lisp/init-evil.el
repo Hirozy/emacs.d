@@ -26,20 +26,22 @@
     (kbd "<leader>q") 'hydra-freq/body
     (kbd "<leader>r") 'hydra-edit/body
     (kbd "<leader>SPC") 'keyboard-escape-quit
-    (kbd "<leader>d") 'xref-find-definitions
-    (kbd "<leader>R") 'xref-find-references
-    (kbd "<leader>w") 'xref-find-definitions-other-window
     (kbd "<leader>f") 'consult-projectile
     (kbd "<leader>i") 'consult-imenu
     (kbd "<leader>c") 'consult-recent-file
     (kbd "<leader>C") 'consult-bookmark)
+
+  (evil-define-key '(normal motion) prog-mode-map
+    (kbd "<leader>d") 'xref-find-definitions
+    (kbd "<leader>R") 'xref-find-references
+    (kbd "<leader>w") 'xref-find-definitions-other-window)
 
   (evil-define-key '(normal insert) 'global
     (kbd "C-q") 'hydra-freq/body
     (kbd "C-r") 'hydra-edit/body
     (kbd "M-y") 'consult-yank-pop)
 
-  (evil-define-key '(normal motion) 'org-mode-map
+  (evil-define-key '(normal motion) org-mode-map
     (kbd "TAB") 'org-cycle
     (kbd "S-TAB") 'org-shifttab)
 
@@ -49,7 +51,18 @@
 
   (if (require 'puni nil t)
       (evil-define-key 'normal 'global
-        (kbd "C-k") 'puni-kill-line)))
+        (kbd "C-k") 'puni-kill-line))
+
+  (if (require 'org-roam nil t)
+      (progn
+        (evil-define-key 'normal 'global
+          (kbd "<leader>n") 'org-roam-node-find
+          (kbd "<leader>m") 'org-roam-capture
+          (kbd "<leader>,") 'org-keys/body)
+        (evil-define-key 'normal org-mode-map
+          "," 'org-keys/body
+          "<" 'org-metaleft
+          ">" 'org-metaright))))
 
 (defun defined/insert-with-space ()
   "Evil insert with space."
@@ -112,6 +125,7 @@
   :after evil)
 
 (use-package evil-collection
+  :diminish evil-collection-unimpaired-mode
   :config
   (evil-collection-init '(dired
                           quickrun)))

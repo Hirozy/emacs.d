@@ -72,6 +72,21 @@
     :config
     (setq org-html-htmlize-output-type 'css)))
 
+(use-package org-roam
+  :defer t
+  :config
+  (setq org-roam-node-display-template
+        (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (org-roam-db-autosync-mode))
+
+(use-package org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
+
 (use-package ox-latex
   :after org-mode
   :config
