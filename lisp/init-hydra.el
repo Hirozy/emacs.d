@@ -76,7 +76,7 @@
 
 (global-set-key
  (kbd "C-q")
- (defhydra hydra-high-frequency (:foreign-keys nil :exit t)
+ (defhydra hydra-freq (:foreign-keys nil :exit t)
    ("c" consult-recent-file "recent file" :column "Navigate")
    ("C" consult-bookmark "bookmark")
    ("q" treemacs "treemacs")

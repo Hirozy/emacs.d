@@ -22,19 +22,20 @@
     "U" 'evil-redo
     "+" 'evil-numbers/inc-at-pt
     "-" 'evil-numbers/dec-at-pt
-    (kbd "<leader>0") 'delete-window
-    (kbd "<leader>q") 'hydra-high-frequency/body
+    (kbd "<leader>x") 'delete-window
+    (kbd "<leader>q") 'hydra-freq/body
     (kbd "<leader>r") 'hydra-edit/body
     (kbd "<leader>SPC") 'keyboard-escape-quit
     (kbd "<leader>d") 'xref-find-definitions
-    (kbd "<leader>f") 'xref-find-references
+    (kbd "<leader>R") 'xref-find-references
     (kbd "<leader>w") 'xref-find-definitions-other-window
+    (kbd "<leader>f") 'consult-projectile
     (kbd "<leader>i") 'consult-imenu
     (kbd "<leader>c") 'consult-recent-file
     (kbd "<leader>C") 'consult-bookmark)
 
   (evil-define-key '(normal insert) 'global
-    (kbd "C-q") 'hydra-high-frequency/body
+    (kbd "C-q") 'hydra-freq/body
     (kbd "C-r") 'hydra-edit/body
     (kbd "M-y") 'consult-yank-pop)
 
@@ -74,12 +75,15 @@
   (evil-set-leader '(normal motion) (kbd "SPC"))
   ;; (modify-syntax-entry ?_ "w")
 
-  (let ((modes '(prog-mode
-                 text-mode
-                 conf-mode
-                 messages-buffer-mode)))
-    (dolist (mode modes)
-      (evil-set-initial-state mode 'normal)))
+  (dolist (mode '(prog-mode
+                  text-mode
+                  conf-mode))
+    (evil-set-initial-state mode 'normal))
+
+  (dolist (mode '(help-mode
+                  special-mode
+                  messages-buffer-mode))
+    (evil-set-initial-state mode 'motion))
 
   (evil-select-search-module 'evil-search-module 'evil-search)
   (setup-evil-keys))
@@ -109,11 +113,7 @@
 
 (use-package evil-collection
   :config
-  (evil-collection-init '(vterm
-                          dired
-                          eshell
-                          flycheck
-                          flymake
+  (evil-collection-init '(dired
                           quickrun)))
 
 (provide 'init-evil)

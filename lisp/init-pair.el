@@ -12,9 +12,8 @@
 
 (use-package elec-pair
   :defer t
-  :hook (((org-mode
-           markdown-mode
-           LaTeX-mode
+  :hook (((text-mode
+           conf-mode
            prog-mode) . (lambda ()
            (electric-pair-mode)
            (electric-indent-mode)))
