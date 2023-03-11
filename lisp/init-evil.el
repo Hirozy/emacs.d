@@ -38,16 +38,18 @@
     (kbd "<leader>h") 'xref-find-references
     (kbd "<leader>w") 'xref-find-definitions-other-window
     (kbd "<leader>,") 'xref-go-back
-    (kbd "<leader>.") 'xref-go-forward)
+    (kbd "<leader>.") 'xref-go-forward
+    (kbd "<leader>j") 'tags-keys/body)
 
   (evil-define-key '(normal insert) 'global
     (kbd "C-q") 'hydra-freq/body
     (kbd "C-r") 'hydra-edit/body
     (kbd "M-y") 'consult-yank-pop)
 
-  (evil-define-key '(normal motion) org-mode-map
+  (evil-define-key '(normal motion insert) org-mode-map
     (kbd "TAB") 'org-cycle
-    (kbd "S-TAB") 'org-shifttab)
+    (kbd "S-TAB") 'org-shifttab
+    (kbd "C-,") 'org-mark-ring-goto)
 
   (if (require 'embark nil t)
       (evil-define-key 'normal 'global

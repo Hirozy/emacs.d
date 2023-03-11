@@ -7,8 +7,18 @@
 
 ;;; Code:
 
+(defhydra tags-keys (:foreign-keys nil :exit t)
+  "Heymap for tags"
+  ("j" citre-jump "citre jump" :column "Citre")
+  ("l" citre-jump-to-reference "citre jump to reference")
+  ("p" citre-peek "citre peek")
+  ("t" citre-peek-through "citre through")
+  ("u" citre-update-this-tags-file "update ctags")
+  ("U" citre-global-update-database "update gtags")
+  ("SPC" nil "quit"))
+
 (defhydra org-keys (:foreign-keys nil :exit t)
-  "Keymap for org mode and org roam."
+  "Keymap for org mode and org roam"
   ("f" org-roam-node-find "find node" :column "Org Roam")
   ("c" org-roam-capture "capture")
   ("o" org-roam-node-open "open node")
@@ -22,7 +32,8 @@
   ("RET" org-return "return" :column "Org mode")
   ("s" org-insert-structure-template "org template")
   ("'" org-insert-subheading "insert subheading")
-  ("e" org-table-create "create table"))
+  ("e" org-table-create "create table")
+  ("SPC" nil "quit"))
 
 (global-set-key
  (kbd "C-r")
@@ -41,6 +52,7 @@
    ("(" puni-wrap-round "wrap ()")
    (")" puni-raise "raise")
    ("i" defined/insert-with-space "insert with space")
+   ("SPC" nil "quit")
 
    ("gg" goto-line "goto line" :column "Navigate")
    ("gw" avy-goto-word-1 "goto word")
@@ -69,11 +81,9 @@
    ("w" xref-find-definitions-other-window "references other window")
    ("i" consult-imenu "semantic imenu")
    ("I" consult-imenu-multi "semantic imenu multi")
-   ("j" citre-jump "citre jump")
-   (";" citre-jump-back "citre jump back")
-   ("l" citre-jump-to-reference "citre jump reference")
-   ("p" citre-peek "citre peek")
-   ("t" citre-peek-through "citre through")
+   ("j" tags-keys/body "tags keymap" :exit t)
+   ("m" consult-kmacro "macros")
+   ("SPC" nil "quit")
 
    ("v" vterm "vterm" :column "Tools")
    ("V" projectile-run-vterm "projectile vterm")
@@ -85,7 +95,6 @@
    ("er" consult-register-load "load register")
    ("el" consult-register "consult register")
    ("ey" consult-yank-pop "yank pop")
-   ("m" consult-kmacro "macros")
    ("," org-keys/body "org keymap" :exit t)))
 
 (provide 'init-hydra)
