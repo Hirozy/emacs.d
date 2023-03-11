@@ -15,7 +15,9 @@
     (kbd "C-n") 'next-line
     (kbd "C-p") 'previous-line
     (kbd "C-v") 'View-scroll-half-page-forward
-    (kbd "M-v") 'View-scroll-half-page-backward)
+    (kbd "M-v") 'View-scroll-half-page-backward
+    (kbd "M-,") 'xref-go-back
+    (kbd "M-.") 'xref-go-forward)
 
   (evil-define-key '(normal motion) 'global
     "\\" 'evil-motion-state
@@ -31,10 +33,12 @@
     (kbd "<leader>c") 'consult-recent-file
     (kbd "<leader>C") 'consult-bookmark)
 
-  (evil-define-key '(normal motion) prog-mode-map
+  (evil-define-key '(normal motion insert) prog-mode-map
     (kbd "<leader>d") 'xref-find-definitions
-    (kbd "<leader>R") 'xref-find-references
-    (kbd "<leader>w") 'xref-find-definitions-other-window)
+    (kbd "<leader>h") 'xref-find-references
+    (kbd "<leader>w") 'xref-find-definitions-other-window
+    (kbd "<leader>,") 'xref-go-back
+    (kbd "<leader>.") 'xref-go-forward)
 
   (evil-define-key '(normal insert) 'global
     (kbd "C-q") 'hydra-freq/body

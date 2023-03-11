@@ -21,7 +21,7 @@
                                          (electric-pair-local-mode -1)))
          ((minibuffer-inactive-mode
            org-mode) . (lambda ()
-           (electric-indent-mode -1)))
+           (electric-indent-local-mode -1)))
          (org-mode . (lambda ()
                        (add-function :before-until (local 'electric-pair-inhibit-predicate)
                                      (lambda (c) (eq c ?<)))

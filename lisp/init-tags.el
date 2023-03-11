@@ -11,7 +11,6 @@
   :defer t
   :functions (projectile-project-root)
   :after projectile
-  :bind (("C-," . citre-jump-back))
 
   :init
   (require 'citre-config)
@@ -27,7 +26,23 @@
 (use-package xref
   :defer t
   :bind (("<f12>" . xref-find-definitions)
-         ("S-<f12>" . xref-find-references)))
+         ("S-<f12>" . xref-find-references))
+
+  :config
+  ;; Make `xref-go-back' everywhere
+  (defun defined/push-point-to-xref-marker-stack (&rest r)
+    (xref-push-marker-stack (point-marker)))
+  (dolist (func '(find-function consult-imenu
+                                consult-ripgrep
+                                consult-grep
+                                consult-file
+                                consult-recent-file
+                                consult-projectile
+                                consult-bookmark
+                                consult-projectile-recentf
+                                consult-projectile-find-file
+                                citre-jump))
+    (advice-add func :before 'defined/push-point-to-xref-marker-stack)))
 
 (use-package semantic
   :defer t

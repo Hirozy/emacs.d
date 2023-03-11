@@ -86,7 +86,7 @@
    ("el" consult-register "consult register")
    ("ey" consult-yank-pop "yank pop")
    ("m" consult-kmacro "macros")
-   ("," org-keys/body :exit t)))
+   ("," org-keys/body "org keymap" :exit t)))
 
 (provide 'init-hydra)
 
