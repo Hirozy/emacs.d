@@ -78,6 +78,16 @@
   :commands consult-flymake
   :bind ("C-c l ;" . consult-flymake))
 
+(use-package consult-org-roam
+  :defer t
+  :custom
+  (consult-org-roam-grep-func #'consult-ripgrep)
+  (consult-org-roam-buffer-after-buffers t)
+  :bind (("C-c n e" . consult-org-roam-file-find)
+         ("C-c n b" . consult-org-roam-backlinks)
+         ("C-c n n" . consult-org-roam-forward-links)
+         ("C-c n r" . consult-org-roam-search)))
+
 (use-package orderless
   :custom
   (completion-styles '(orderless))

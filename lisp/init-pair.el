@@ -24,15 +24,7 @@
            (electric-indent-local-mode -1)))
          (org-mode . (lambda ()
                        (add-function :before-until (local 'electric-pair-inhibit-predicate)
-                                     (lambda (c) (eq c ?<)))
-                       (let ((org-elec-pairs '((?/ . ?/)
-                                               (?_ . ?_)
-                                               (?$ . ?$)
-                                               (?~ . ?~))))
-                         (setq-local electric-pair-pairs
-                                     (append electric-pair-pairs org-elec-pairs))
-                         (setq-local electric-pair-text-pairs
-                                     (append electric-pair-text-pairs org-elec-pairs)))))))
+                                     (lambda (c) (eq c ?<)))))))
 
 (use-package paren
   :custom-face

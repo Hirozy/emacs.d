@@ -66,6 +66,8 @@
           (kbd "<leader>m") 'org-roam-capture
           (kbd "<leader>,") 'org-keys/body)
         (evil-define-key 'normal org-mode-map
+          (kbd "RET") 'org-open-at-point
+          (kbd "<return>") 'org-open-at-point
           "," 'org-keys/body
           "<" 'org-metaleft
           ">" 'org-metaright))))
