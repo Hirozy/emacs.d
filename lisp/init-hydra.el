@@ -33,6 +33,7 @@
   ("S" org-insert-structure-template "org template")
   ("'" org-insert-subheading "insert subheading")
   ("c" org-copy-to-shell-cat "copy shell cat")
+  ("C" org-babel-insert-tee-file-mark "insert tee mark")
   ("T" org-table-create "create table")
   ("I" org-id-get-create "create ID")
   ("aa" org-roam-alias-add "alias add")
