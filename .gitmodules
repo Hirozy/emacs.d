@@ -259,6 +259,9 @@
 [submodule "org-roam-ui"]
 	path = lib/org-roam-ui
 	url = https://github.com/org-roam/org-roam-ui.git
+[submodule "org-shell-cat"]
+	path = lib/org-shell-cat
+	url = git@github.com:Hirozy/org-shell-cat.git
 [submodule "packed"]
 	path = lib/packed
 	url = https://github.com/emacscollective/packed.git

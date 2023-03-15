@@ -60,6 +60,11 @@
   (use-package ob-core
     :hook (org-babel-after-execute . org-redisplay-inline-images))
 
+  (use-package org-shell-cat
+    :commands org-copy-to-shell-cat
+    :bind(:map org-mode-map
+               ("C-c c" . org-copy-to-shell-cat)))
+
   (use-package org-tempo)
 
   (use-package ob-python

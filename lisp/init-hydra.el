@@ -20,7 +20,7 @@
 (defhydra org-keys (:foreign-keys nil :exit t)
   "Keymap for org mode and org roam"
   ("f" org-roam-node-find "find node" :column "Org Roam")
-  ("c" org-roam-capture "capture")
+  ("p" org-roam-capture "capture")
   ("o" org-roam-node-open "open node")
   ("i" org-roam-node-insert "insert node")
   ("l" org-roam-buffer-toggle "buffer toggle")
@@ -32,6 +32,7 @@
   ("RET" org-return "return" :column "Org mode")
   ("S" org-insert-structure-template "org template")
   ("'" org-insert-subheading "insert subheading")
+  ("c" org-copy-to-shell-cat "copy shell cat")
   ("T" org-table-create "create table")
   ("I" org-id-get-create "create ID")
   ("aa" org-roam-alias-add "alias add")
