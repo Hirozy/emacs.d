@@ -62,6 +62,7 @@
 
   (use-package org-shell-cat
     :commands org-copy-to-shell-cat
+    :hook ((org-mode . org-babel-header-expand-shell-cat))
     :bind(:map org-mode-map
                ("C-c c" . org-copy-to-shell-cat)))
 
