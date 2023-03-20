@@ -128,6 +128,11 @@
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
 
+(use-package org-download
+  :hook ((org-mode
+          dired-mode) . org-download-enable)
+  :config
+  (setq org-download-method 'attach))
 
 (use-package valign
   :after org-mode

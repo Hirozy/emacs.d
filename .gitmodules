@@ -15,6 +15,9 @@
 [submodule "anzu"]
 	path = lib/anzu
 	url = https://github.com/emacsorphanage/anzu.git
+[submodule "async"]
+	path = lib/async
+	url = https://github.com/jwiegley/emacs-async.git
 [submodule "auto-compile"]
 	path = lib/auto-compile
 	url = https://github.com/emacscollective/auto-compile.git
@@ -257,6 +260,9 @@
 [submodule "orderless"]
 	path = lib/orderless
 	url = https://github.com/oantolin/orderless.git
+[submodule "org-download"]
+	path = lib/org-download
+	url = https://github.com/abo-abo/org-download.git
 [submodule "org-roam"]
 	path = lib/org-roam
 	url = https://github.com/org-roam/org-roam.git
