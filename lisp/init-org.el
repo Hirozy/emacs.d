@@ -134,11 +134,6 @@
   :config
   (setq org-download-method 'attach))
 
-(use-package valign
-  :after org-mode
-  :if (display-graphic-p)
-  :hook (org-mode . valign-mode))
-
 (provide 'init-org)
 
 ;; Local Variables:
