@@ -100,13 +100,6 @@
 [submodule "dockerfile-mode"]
 	path = lib/dockerfile-mode
 	url = https://github.com/spotify/dockerfile-mode.git
-[submodule "doom-themes"]
-	path = lib/doom-themes
-	url = https://github.com/doomemacs/themes.git
-	load-path = .
-	load-path = extensions
-	no-byte-compile = extensions/doom-themes-ext-neotree.el
-	no-byte-compile = extensions/doom-themes-ext-visual-bell.el
 [submodule "elisp-refs"]
 	path = lib/elisp-refs
 	url = https://github.com/Wilfred/elisp-refs.git

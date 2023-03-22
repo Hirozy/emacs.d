@@ -13,16 +13,6 @@
   :config
   (load-theme 'sanityinc-tomorrow-eighties))
 
-(use-package doom-themes
-  :defines (doom-themes-treemacs-theme)
-  :if (memq window-system '(mac ns x))
-  :after treemacs
-  :config
-  (setq doom-themes-treemacs-theme "doom-colors")
-
-  (doom-themes-treemacs-config)
-  (doom-themes-org-config))
-
 (provide 'init-theme)
 
 ;; Local Variables:
