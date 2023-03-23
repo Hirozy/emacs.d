@@ -25,6 +25,9 @@
                             '(("gnu" . "https://elpa.gnu.org/packages/")
                               ("nongnu" . "https://elpa.nongnu.org/nongnu/"))))
 
+(when (native-comp-available-p)
+  (setq inhibit-automatic-native-compilation t))
+
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; indent-tabs-mode: nil

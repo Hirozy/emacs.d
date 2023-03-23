@@ -107,6 +107,7 @@
    ("er" consult-register-load "load register")
    ("el" consult-register "consult register")
    ("ey" consult-yank-pop "yank pop")
+   ("/" swap-theme "swap theme")
    ("," org-keys/body "org keymap" :exit t)))
 
 (provide 'init-hydra)

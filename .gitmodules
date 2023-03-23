@@ -219,6 +219,9 @@
 [submodule "language-id"]
 	path = lib/language-id
 	url = https://github.com/lassik/emacs-language-id.git
+[submodule "leuven-theme"]
+	path = lib/leuven-theme
+	url = https://github.com/fniessen/emacs-leuven-theme.git
 [submodule "llama"]
 	path = lib/llama
 	url = https://github.com/emacsmirror/llama.git
