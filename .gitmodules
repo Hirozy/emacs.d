@@ -79,7 +79,7 @@
 	load-path = extensions
 [submodule "corfu-terminal"]
 	path = lib/corfu-terminal
-	url = https://github.com/cimisc/emacs-corfu-terminal.git
+	url = https://codeberg.org/akib/emacs-corfu-terminal.git
 [submodule "ctrlf"]
 	path = lib/ctrlf
 	url = https://github.com/raxod502/ctrlf.git
@@ -188,9 +188,9 @@
 [submodule "helpful"]
 	path = lib/helpful
 	url = https://github.com/Wilfred/helpful.git
-[submodule "highlight-indent-guides"]
-	path = lib/highlight-indent-guides
-	url = https://github.com/DarthFennec/highlight-indent-guides.git
+[submodule "hl-indent-scope"]
+	path = lib/hl-indent-scope
+	url = https://codeberg.org/ideasman42/emacs-hl-indent-scope.git
 [submodule "ht"]
 	path = lib/ht
 	url = https://github.com/Wilfred/ht.el.git
@@ -287,7 +287,7 @@
 	url = https://github.com/galaunay/poetry.el.git
 [submodule "popon"]
 	path = lib/popon
-	url = https://github.com/cimisc/emacs-popon.git
+	url = https://codeberg.org/akib/emacs-popon.git
 [submodule "popper"]
 	path = lib/popper
 	url = https://github.com/karthink/popper.git

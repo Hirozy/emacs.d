@@ -45,12 +45,17 @@
   (use-package treemacs-magit
     :after (treemacs magit)))
 
-(use-package highlight-indent-guides
-  :diminish highlight-indent-guides-mode
-  :hook (prog-mode . highlight-indent-guides-mode)
-  :config
-  (setq highlight-indent-guides-method 'character
-        highlight-indent-guides-responsive 'top))
+(use-package hl-indent-scope
+  :hook (((c-mode
+           c++-mode
+           cmake-mode
+           python-mode
+           emacs-lisp-mode
+           rust-mode
+           go-mode
+           haskell-mode) . hl-indent-scope-mode)
+         (after-load-theme . (lambda (&rest args)
+                               (hl-indent-scope--auto-color-calc)))))
 
 ;; Highlight the current line
 (use-package hl-line
