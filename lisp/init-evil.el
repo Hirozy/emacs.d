@@ -109,17 +109,13 @@
   (evil-select-search-module 'evil-search-module 'evil-search)
   (setup-evil-keys))
 
-(use-package evil-escape
+(use-package key-chord
+  :hook (after-init . key-chord-mode)
   :after evil
-  :diminish evil-escape-mode
-  ;; Bind F16 aka <print> key to `evil-escape',
-  ;; Map Esc key to F16 when use terminal on Windows 10.
-  :bind ("<print>" . evil-escape)
-  :hook (evil-mode . evil-escape-mode)
   :config
-  (setq-default evil-escape-key-sequence "jk"
-                evil-escape-delay 0.2
-                evil-want-fine-undo t))
+  (setq key-chord-two-keys-delay 0.2)
+  (key-chord-define evil-insert-state-map "Jk" 'evil-normal-state)
+  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state))
 
 (use-package evil-surround
   :after evil
