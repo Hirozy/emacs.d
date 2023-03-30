@@ -212,7 +212,7 @@
 	url = https://github.com/mooz/js2-mode.git
 [submodule "key-chord"]
 	path = lib/key-chord
-	url = https://github.com/emacsorphanage/key-chord
+	url = https://github.com/emacsorphanage/key-chord.git
 [submodule "kind-all-the-icons"]
 	path = lib/kind-all-the-icons
 	url = https://github.com/Hirozy/kind-all-the-icons.git
@@ -241,12 +241,18 @@
 [submodule "markdown-mode"]
 	path = lib/markdown-mode
 	url = https://github.com/jrblevin/markdown-mode.git
+[submodule "mmm-mode"]
+	path = lib/mmm-mode
+	url = https://github.com/dgutov/mmm-mode.git
 [submodule "mwim"]
 	path = lib/mwim
 	url = https://github.com/alezost/mwim.el.git
 [submodule "nftables-mode"]
 	path = lib/nftables-mode
 	url = https://github.com/emacsmirror/nftables-mode.git
+[submodule "nix-mode"]
+	path = lib/nix-mode
+	url = https://github.com/NixOS/nix-mode.git
 [submodule "ob-ipython"]
 	path = lib/ob-ipython
 	url = https://github.com/gregsexton/ob-ipython.git

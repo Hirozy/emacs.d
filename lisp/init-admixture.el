@@ -8,8 +8,10 @@
 ;;; Code:
 
 (use-package lua-mode
-  :defer t
   :mode "\\.lua\\'")
+
+(use-package nix-mode
+  :mode "\\.nix\\'")
 
 (use-package fish-mode :defer t)
 
