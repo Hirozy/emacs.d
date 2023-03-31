@@ -7,40 +7,17 @@
 
 ;;; Code:
 
-(use-package eglot
-  :commands (eglot-ensure eglot)
-  :custom
-  (eglot-ignored-server-capabilities
-   '(:documentHighlightProvider
-     :codeLensProvider
-     :documentOnTypeFormattingProvider
-     :documentLinkProvider
-     :colorProvider
-     :foldingRangeProvider
-     :executeCommandProvider))
-  :hook (((c-mode
-           c++-mode
-           objc-mode
-           python-mode
-           haskell-mode
-           haskell-literate-mode
-           go-mode
-           rust-mode) . eglot-ensure))
-  :bind (:map eglot-mode-map
-              ("S-<f2>" . eglot-rename))
-
-  :init
-  ;; disable lsp server event buffer
-  (setq eglot-events-buffer-size 0)
-  (advice-add 'jsonrpc--log-event :around
-              (lambda (_orig-func &rest _)))
-
-  :config
-  (setq gc-cons-threshold (* 100 1024 1024)
-        read-process-output-max (* 1024 1024)
-        eglot-stay-out-of '(company))
-
-  (add-to-list 'eglot-server-programs '((objc-mode) "clangd")))
+(use-package lsp-bridge
+  :hook ((c-mode
+          c++-mode
+          objc-mode
+          python-mode
+          haskell-mode
+          haskell-literate
+          go-mode
+          rust-mode) . (lambda ()
+                         (corfu-mode -1)
+                         (lsp-bridge-mode 1))))
 
 (provide 'init-lsp)
 
