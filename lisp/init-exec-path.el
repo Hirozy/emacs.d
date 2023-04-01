@@ -14,6 +14,9 @@
   ;; or `shell-file-name' (if set).
   (setq exec-path-from-shell-warn-duration-millis 1000)
   (setq exec-path-from-shell-variables '("PATH"
+                                         "GOPATH"
+                                         "GOROOT"
+                                         "GO111MODULE"
                                          "WORKON_HOME"
                                          "PYTHONPATH"
                                          "GTAGSCONF"

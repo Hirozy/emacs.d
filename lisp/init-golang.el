@@ -12,9 +12,7 @@
 
 (use-package go-playground
   :diminish
-  :commands go-playground
-  :custom
-  (go-playground-basedir (substitute-in-file-name "$HOME/.cache/go-platground")))
+  :commands go-playground)
 
 (provide 'init-golang)
 

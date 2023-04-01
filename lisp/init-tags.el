@@ -14,7 +14,6 @@
 
   :init
   (require 'citre-config)
-  (require 'citre-global)
 
   :config
   (setq citre-project-root-function #'projectile-project-root
@@ -29,6 +28,7 @@
          ("S-<f12>" . xref-find-references))
 
   :config
+  (setq xref-history-storage 'xref-window-local-history)
   ;; Make `xref-go-back' everywhere
   (defun defined/push-point-to-xref-marker-stack (&rest r)
     (xref-push-marker-stack (point-marker)))
