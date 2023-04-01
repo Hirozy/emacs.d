@@ -114,8 +114,8 @@
   :after evil
   :config
   (setq key-chord-two-keys-delay 0.2)
-  (key-chord-define evil-insert-state-map "Jk" 'evil-normal-state)
-  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state))
+  (key-chord-define-global "jk" 'evil-normal-state)
+  (key-chord-define-global "Jk" 'evil-normal-state))
 
 (use-package evil-surround
   :after evil
