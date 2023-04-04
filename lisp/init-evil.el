@@ -125,9 +125,6 @@
   :after evil
   :hook (evil-mode . evil-matchit-mode))
 
-(use-package evil-anzu
-  :after evil)
-
 (use-package evil-collection
   :diminish evil-collection-unimpaired-mode
   :config

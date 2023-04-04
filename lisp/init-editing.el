@@ -22,16 +22,6 @@
   :diminish whitespace-cleanup-mode
   :hook (prog-mode . whitespace-cleanup-mode))
 
-(use-package anzu
-  :bind (("M-%" . anzu-query-replace)
-         ("C-M-%" . anzu-query-replace-regexp))
-  :custom
-  (anzu-mode-lighter "")
-  (anzu-replace-to-string-separator " -> ")
-  :custom-face
-  (anzu-replace-highlight ((t (:background "deepskyblue2" :foreground "snow" :strike-through nil :weight normal))))
-  (anzu-replace-to ((t (:background "orange" :foreground "snow" :weight normal)))))
-
 (use-package ctrlf
   :bind (("C-M-s" . ctrlf-forward-alternate)
          ("M-s _" . ctrlf-forward-symbol)

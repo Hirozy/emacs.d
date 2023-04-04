@@ -12,9 +12,6 @@
 [submodule "annalist"]
 	path = lib/annalist
 	url = https://github.com/noctuid/annalist.el.git
-[submodule "anzu"]
-	path = lib/anzu
-	url = https://github.com/emacsorphanage/anzu.git
 [submodule "async"]
 	path = lib/async
 	url = https://github.com/jwiegley/emacs-async.git
@@ -124,9 +121,6 @@
 [submodule "evil"]
 	path = lib/evil
 	url = https://github.com/emacs-evil/evil.git
-[submodule "evil-anzu"]
-	path = lib/evil-anzu
-	url = https://github.com/emacsorphanage/evil-anzu.git
 [submodule "evil-collection"]
 	path = lib/evil-collection
 	url = https://github.com/emacs-evil/evil-collection.git
