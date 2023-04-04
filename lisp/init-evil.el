@@ -114,8 +114,12 @@
   :after evil
   :config
   (setq key-chord-two-keys-delay 0.2)
-  (key-chord-define-global "jk" 'evil-normal-state)
-  (key-chord-define-global "Jk" 'evil-normal-state))
+  ;; https://emacs.stackexchange.com/questions/28162/define-key-inside-dolist
+  (dolist (mode (list
+                 evil-insert-state-map
+                 evil-emacs-state-map))
+    (dolist (key-seq '("jk" "jK" "Jk" "JK"))
+      (key-chord-define mode key-seq 'evil-normal-state))))
 
 (use-package evil-surround
   :after evil
