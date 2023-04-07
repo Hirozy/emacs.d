@@ -90,9 +90,11 @@
         evil-want-keybinding nil)
 
   :config
-  (evil-set-undo-system 'undo-redo)
+  (evil-set-undo-system 'undo-fu)
   (setq evil-default-state 'emacs
-        evil-symbol-word-search t)
+        evil-symbol-word-search t
+        ;; don't aggregate changes
+        evil-want-fine-undo t)
   (evil-set-leader '(normal motion) (kbd "SPC"))
   ;; (modify-syntax-entry ?_ "w")
 

@@ -50,8 +50,10 @@
 (global-set-key
  (kbd "C-r")
  (defhydra hydra-edit (:foreign-keys nil :exit t)
-   ("u" undo "undo" :column "Edit" :exit nil)
-   ("U" undo-redo "redo" :exit nil)
+   ("u" undo-fu-only-undo "undo" :column "Edit" :exit nil)
+   ("U" undo-fu-only-redo "redo" :exit nil)
+   ("C-u" undo-fu-only-redo-all "redo all")
+   ("M-u" vundo "vision undo")
    ("h" replace-string "replace")
    ("H" query-replace-regexp "replace regexp")
    (";" comment-line "comment line")

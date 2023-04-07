@@ -14,6 +14,7 @@
   ;; or `shell-file-name' (if set).
   (setq exec-path-from-shell-warn-duration-millis 1000)
   (setq exec-path-from-shell-variables '("PATH"
+                                         "KUBECONFIG"
                                          "GOPATH"
                                          "GOROOT"
                                          "GO111MODULE"
