@@ -140,7 +140,8 @@
   :diminish evil-collection-unimpaired-mode
   :config
   (evil-collection-init '(dired
-                          quickrun)))
+                          quickrun
+                          magit)))
 
 (provide 'init-evil)
 
