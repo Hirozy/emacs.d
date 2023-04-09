@@ -62,15 +62,20 @@
   (if (require 'org-roam nil t)
       (progn
         (evil-define-key 'normal 'global
-          (kbd "<leader>n") 'org-roam-node-find
-          (kbd "<leader>m") 'org-roam-capture
-          (kbd "<leader>,") 'org-keys/body)
+          (kbd "<leader>n") 'org-keys/body)
         (evil-define-key 'normal org-mode-map
           (kbd "RET") 'org-open-at-point
           (kbd "<return>") 'org-open-at-point
-          "," 'org-keys/body
-          "<" 'org-metaleft
-          ">" 'org-metaright))))
+          "<" (lambda (&rest args)
+                (interactive)
+                (if (org-in-src-block-p)
+                    (call-interactively 'evil-shift-left t (vector args))
+                  (org-metaleft)))
+          ">" (lambda (&rest args)
+                (interactive)
+                (if (org-in-src-block-p)
+                    (call-interactively 'evil-shift-right t (vector args))
+                  (org-metaright)))))))
 
 (defun defined/insert-with-space ()
   "Evil insert with space."

@@ -19,7 +19,7 @@
 
 (defhydra org-keys (:foreign-keys nil :exit t)
   "Keymap for org mode and org roam"
-  ("f" org-roam-node-find "find node" :column "Org Roam")
+  ("n" org-roam-node-find "find node" :column "Org Roam")
   ("p" org-roam-capture "capture")
   ("o" org-roam-node-open "open node")
   ("i" org-roam-node-insert "insert node")
@@ -27,10 +27,9 @@
   ("j" org-roam-dailies-capture-today "capture today")
   ("g" org-roam-graph "graph")
   ("u" org-roam-ui-open "open ui")
-  ("r" org-roam-db-sync "db sync")
+  ("s" org-roam-db-sync "db sync")
 
-  ("RET" org-return "return" :column "Org mode")
-  ("S" org-insert-structure-template "org template")
+  ("S" org-insert-structure-template "org template" :column "Org mode")
   ("'" org-insert-subheading "insert subheading")
   ("c" org-copy-to-shell-cat "copy shell cat")
   ("C" org-babel-insert-tee-file-mark "insert tee mark")
@@ -41,9 +40,9 @@
   ("tt" org-roam-tag-add "tag add")
   ("tr" org-roam-tag-remove "tag remove")
 
-  ("e" consult-org-roam-file-find "find file" :column "Fun")
+  ("e" consult-org-roam-file-find "find file" :column "Func")
   ("b" consult-org-roam-backlinks "org backlinks")
-  ("n" consult-org-roam-forward-links "org forward links")
+  ("f" consult-org-roam-forward-links "org forward links")
   ("r" consult-org-roam-search "org roam search")
   ("SPC" nil "quit"))
 
@@ -110,7 +109,7 @@
    ("el" consult-register "consult register")
    ("ey" consult-yank-pop "yank pop")
    ("/" swap-theme "swap theme")
-   ("," org-keys/body "org keymap" :exit t)))
+   ("n" org-keys/body "org keymap" :exit t)))
 
 (provide 'init-hydra)
 
