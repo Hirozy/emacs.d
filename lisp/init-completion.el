@@ -66,16 +66,9 @@
   (add-to-list 'corfu-margin-formatters
                #'kind-all-the-icons-margin-formatter))
 
-(use-package yasnippet
-  :diminish yas-minor-mode
-  :defer t
+(use-package tempel
   :custom
-  (yas-use-menu nil)
-  :config
-  (setq yas-inhibit-overlay-modification-protection t)
-  (advice-add 'yas--on-protection-overlay-modification
-              :override #'ignore)
-  (yas-global-mode))
+  (tempel-trigger-prefix "<"))
 
 (use-package flycheck
   :diminish

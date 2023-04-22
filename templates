@@ -1,0 +1,9 @@
+;; ~/.emacs.d/templates
+
+go-mode go-ts-mode
+
+(fm "func main() {" n> q n "}")
+(iferr "if err != nil {" n> "return err" n> "}")
+(pf "fmt.Printf(\"" p "\", " q ")")
+(pn "fmt.Println(\"" p "\")")
+

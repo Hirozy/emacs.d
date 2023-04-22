@@ -39,9 +39,6 @@
          ([remap projectile-find-file] . consult-projectile)
          ([remap projectile-find-dir] . consult-projectile-find-dir)
          ([remap projectile-switch-project] . consult-projectile-switch-project)
-         ;; remap yasnippet
-         ([remap yas-insert-snippet] . consult-yasnippet)
-         ([remap yas-visit-snippet-file] . consult-yasnippet-visit-snippet-file)
          ;; isearch
          ("C-s" . consult-line)
          ("C-S-s" . consult-line-multi)
