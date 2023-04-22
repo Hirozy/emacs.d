@@ -37,14 +37,13 @@
               ("C-n" . corfu-next)
               ("C-p" . corfu-previous)))
 
+
 (use-package cape
-  :bind (("M-<tab> f" . cape-file)
-         ("M-<tab> d" . cape-dabbrev))
-  :init
-  (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-tex)
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-  (add-to-list 'completion-at-point-functions #'cape-keyword))
+  :hook (corfu-mode . (lambda ()
+                        (dolist (backend '(tempel-expand
+                                           cape-file
+                                           cape-dabbrev))
+                          (add-to-list 'completion-at-point-functions backend)))))
 
 (use-package company-cmake
   :hook (cmake-mode . (lambda ()

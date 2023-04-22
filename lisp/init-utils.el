@@ -125,11 +125,11 @@
 
 (use-package helpful
   :defer t
-  :bind (("C-h f" . helpful-callable)
-         ("C-h v" . helpful-variable)
-         ("C-h x" . helpful-command)
+  :bind (("C-h F" . helpful-callable)
+         ("C-h V" . helpful-variable)
+         ("C-h X" . helpful-command)
          ("C-h C-d" . helpful-at-point)
-         ("C-h F" . helpful-function)))
+         ("C-h C-f" . helpful-function)))
 
 (provide 'init-utils)
 

@@ -89,7 +89,8 @@
   :custom
   (completion-styles '(orderless))
   (completion-category-defaults nil)
-  (completion-category-overrides '((file (styles basic partial-completion)))))
+  (completion-category-overrides '((file (styles basic partial-completion))
+                                   (eglot (styles orderless)))))
 
 (use-package embark
   :bind (("C-." . embark-act)

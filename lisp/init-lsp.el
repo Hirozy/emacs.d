@@ -7,6 +7,14 @@
 
 ;;; Code:
 
+(defun cape-capf-at-eglot ()
+  (setq-local completion-at-point-functions
+              (list (cape-super-capf
+                     #'eglot-completion-at-point
+                     #'tempel-expand
+                     #'cape-dabbrev
+                     #'cape-file))))
+
 (use-package eglot
   :commands (eglot-ensure eglot)
   :custom
@@ -40,7 +48,12 @@
         read-process-output-max (* 1024 1024)
         eglot-stay-out-of '(company))
 
-  (add-to-list 'eglot-server-programs '((objc-mode) "clangd")))
+  (add-to-list 'eglot-server-programs '((objc-mode) "clangd"))
+
+  (with-eval-after-load 'eglot
+    (setq completion-category-defaults nil))
+
+  (add-hook 'eglot-managed-mode-hook #'cape-capf-at-eglot))
 
 (provide 'init-lsp)
 
