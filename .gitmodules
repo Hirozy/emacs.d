@@ -366,6 +366,9 @@
 	build-step = git restore CMakeLists.txt
 	build-step = borg-compile
 	build-step = borg-update-autoloads
+[submodule "vulpea"]
+	path = lib/vulpea
+	url = https://github.com/d12frosted/vulpea
 [submodule "vundo"]
 	path = lib/vundo
 	url = https://github.com/casouri/vundo.git

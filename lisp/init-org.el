@@ -20,6 +20,7 @@
          (org-mode . (lambda ()
                        (setq-local lsp-diagnostics-provider :none))))
   :bind (:map org-mode-map
+              ("C-," . org-mark-ring-goto)
               ("M-N" . org-next-visible-heading)
               ("M-P" . org-previous-visible-heading)
               ("M-U" . org-up-element)
@@ -138,6 +139,13 @@
   :after org
   :commands org-preview-html-mode
   :bind (("<f6>" . org-preview-html-mode)))
+
+(use-package vulpea
+  :hook ((org-roam-db-autosync-mode . vulpea-db-autosync-enable))
+  :config
+  (setq vulpea-find-default-filter
+        (lambda (note)
+          (<= (vulpea-note-level note) 2))))
 
 (provide 'init-org)
 

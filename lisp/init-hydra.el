@@ -27,10 +27,10 @@
 
 (defhydra org-keys (:foreign-keys nil :exit t)
   "Keymap for org mode and org roam"
-  ("n" org-roam-node-find "find node" :column "Org Roam")
+  ("n" vulpea-find "find node" :column "Org Roam")
   ("p" org-roam-capture "capture")
   ("o" org-roam-node-open "open node")
-  ("i" org-roam-node-insert "insert node")
+  ("i" vulpea-insert "insert node")
   ("l" org-roam-buffer-toggle "buffer toggle")
   ("j" org-roam-dailies-capture-today "capture today")
   ("g" org-roam-graph "graph")

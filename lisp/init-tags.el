@@ -38,6 +38,8 @@
                                 consult-bookmark
                                 consult-projectile-recentf
                                 consult-projectile-find-file
+                                org-roam-node-find
+                                vulpea-find
                                 citre-jump))
     (advice-add func :before 'defined/push-point-to-xref-marker-stack)))
 
