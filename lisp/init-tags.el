@@ -17,10 +17,11 @@
 
   :config
   (setq citre-project-root-function #'projectile-project-root
+        ;; citre-mode will be exclusive to capf, so disable it now
+        ;; citre-auto-enable-citre-mode-modes '(prog-mode)
         citre-default-create-tags-file-location 'global-cache
         citre-use-project-root-when-creating-tags t
-        citre-prompt-language-for-ctags-command t
-        citre-auto-enable-citre-mode-modes '(prog-mode)))
+        citre-prompt-language-for-ctags-command t))
 
 (use-package xref
   :defer t

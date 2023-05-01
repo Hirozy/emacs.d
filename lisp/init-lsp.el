@@ -9,11 +9,10 @@
 
 (defun cape-capf-at-eglot ()
   (setq-local completion-at-point-functions
-              (list (cape-super-capf
-                     #'eglot-completion-at-point
-                     #'tempel-expand
-                     #'cape-dabbrev
-                     #'cape-file))))
+              '(tempel-expand
+                cape-file
+                cape-dabbrev
+                eglot-completion-at-point)))
 
 (use-package eglot
   :commands (eglot-ensure eglot)
@@ -35,7 +34,7 @@
            go-mode
            rust-mode) . eglot-ensure))
   :bind (:map eglot-mode-map
-              ("S-<f2>" . eglot-rename))
+              ("S-<f6>" . eglot-rename))
 
   :init
   ;; disable lsp server event buffer

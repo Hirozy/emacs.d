@@ -17,6 +17,14 @@
   ("U" citre-global-update-database "update gtags")
   ("SPC" nil "quit"))
 
+(defhydra capf-keys (:foreign-keys nil :exit t)
+  "Keymap for capf"
+  ("1" tempel-expand "tempel expand" :column "capf")
+  ("2" cape-dabbrev "cape dabbrev")
+  ("3" cape-dict "cape dict")
+  ("4" cape-tex "cape tex")
+  ("SPC" nil "quit"))
+
 (defhydra org-keys (:foreign-keys nil :exit t)
   "Keymap for org mode and org roam"
   ("n" org-roam-node-find "find node" :column "Org Roam")
@@ -65,7 +73,7 @@
    ("(" puni-wrap-round "wrap ()")
    (")" puni-raise "raise")
    ("i" defined/insert-with-space "insert with space")
-   ("SPC" nil "quit")
+   ("TAB" capf-keys/body "capf")
 
    ("gg" goto-line "goto line" :column "Navigate")
    ("gw" avy-goto-word-1 "goto word")
@@ -81,7 +89,8 @@
    ("b" symbol-overlay-rename "symbol rename")
    ("_" ctrlf-forward-symbol "search symbol")
    ("." ctrlf-forward-symbol-at-point "search symbol as point")
-   ("=" er/expand-region "expand region")))
+   ("=" er/expand-region "expand region")
+   ("SPC" nil "quit")))
 
 (global-set-key
  (kbd "C-q")

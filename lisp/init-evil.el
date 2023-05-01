@@ -14,8 +14,8 @@
     (kbd "C-e") 'move-end-of-line
     (kbd "C-n") 'next-line
     (kbd "C-p") 'previous-line
-    (kbd "C-v") 'View-scroll-half-page-forward
-    (kbd "M-v") 'View-scroll-half-page-backward
+    (kbd "C-v") 'scroll-up-command
+    (kbd "M-v") 'scroll-down-command
     (kbd "M-,") 'xref-go-back
     (kbd "M-.") 'xref-go-forward)
 
