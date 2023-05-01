@@ -261,9 +261,6 @@
 	url = https://github.com/org-roam/org-roam.git
 	load-path = .
 	load-path = extensions
-[submodule "org-roam-ui"]
-	path = lib/org-roam-ui
-	url = https://github.com/org-roam/org-roam-ui.git
 [submodule "org-shell-cat"]
 	path = lib/org-shell-cat
 	url = git@github.com:Hirozy/org-shell-cat.git
@@ -322,9 +319,6 @@
 [submodule "s"]
 	path = lib/s
 	url = https://github.com/magnars/s.el.git
-[submodule "simple-httpd"]
-	path = lib/simple-httpd
-	url = https://github.com/skeeto/emacs-web-server.git
 [submodule "spinner"]
 	path = lib/spinner
 	url = https://github.com/Malabarba/spinner.el.git
@@ -372,9 +366,6 @@
 [submodule "vundo"]
 	path = lib/vundo
 	url = https://github.com/casouri/vundo.git
-[submodule "websocket"]
-	path = lib/websocket
-	url = https://github.com/ahyatt/emacs-websocket.git
 [submodule "which-key"]
 	path = lib/which-key
 	url = https://github.com/justbur/emacs-which-key.git

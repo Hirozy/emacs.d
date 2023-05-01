@@ -128,15 +128,6 @@
         (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
   (org-roam-db-autosync-mode))
 
-(use-package org-roam-ui
-  :after org-roam
-  :diminish
-  :config
-  (setq org-roam-ui-sync-theme t
-        org-roam-ui-follow t
-        org-roam-ui-update-on-save t
-        org-roam-ui-open-on-start t))
-
 (use-package org-download
   :hook ((org-mode
           dired-mode) . org-download-enable)

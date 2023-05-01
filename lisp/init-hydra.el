@@ -34,7 +34,6 @@
   ("l" org-roam-buffer-toggle "buffer toggle")
   ("j" org-roam-dailies-capture-today "capture today")
   ("g" org-roam-graph "graph")
-  ("u" org-roam-ui-open "open ui")
   ("s" org-roam-db-sync "db sync")
 
   ("S" org-insert-structure-template "org template" :column "Org mode")
