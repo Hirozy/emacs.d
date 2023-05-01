@@ -15,7 +15,7 @@
   (require 'borg)
   (borg-initialize))
 
-(progn
+(eval-and-compile
   (require 'use-package)
   (setq use-package-verbose t))
 
@@ -33,14 +33,17 @@
 (use-package epkg
   :defines (epkg-repository)
   :defer t
-  :init (setq epkg-repository
-              (expand-file-name "var/epkgs/" user-emacs-directory)))
+  :init
+  (setq epkg-repository
+        (expand-file-name "var/epkgs/" user-emacs-directory))
+  (setq epkg-database-connector
+        (if (>= emacs-major-version 29) 'sqlite-builtin 'sqlite-module)))
 
 (use-package marginalia
   :hook (after-init . marginalia-mode)
   :config
   (cl-pushnew 'epkg-marginalia-annotate-package
-		(alist-get 'package marginalia-annotator-registry)))
+		      (alist-get 'package marginalia-annotator-registry)))
 
 (provide 'init-packages)
 

@@ -116,9 +116,14 @@
   (evil-select-search-module 'evil-search-module 'evil-search)
   (setup-evil-keys))
 
+(use-package evil-surround
+  :hook (evil-mode . global-evil-surround-mode))
+
+(use-package evil-matchit
+  :hook (evil-mode . global-evil-matchit-mode))
+
 (use-package key-chord
-  :hook (after-init . key-chord-mode)
-  :after evil
+  :hook (evil-mode . key-chord-mode)
   :config
   (setq key-chord-two-keys-delay 0.2)
   ;; https://emacs.stackexchange.com/questions/28162/define-key-inside-dolist
@@ -128,16 +133,9 @@
     (dolist (key-seq '("jk" "jK" "Jk" "JK"))
       (key-chord-define mode key-seq 'evil-normal-state))))
 
-(use-package evil-surround
-  :after evil
-  :hook (evil-mode . evil-surround-mode))
-
-(use-package evil-matchit
-  :after evil
-  :hook (evil-mode . evil-matchit-mode))
-
 (use-package evil-collection
   :diminish evil-collection-unimpaired-mode
+  :after (:all evil (:any dired quickrun magit))
   :config
   (evil-collection-init '(dired
                           quickrun

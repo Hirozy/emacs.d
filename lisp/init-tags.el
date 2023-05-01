@@ -10,12 +10,8 @@
 (use-package citre
   :defer t
   :functions (projectile-project-root)
-  :after projectile
-
-  :init
-  (require 'citre-config)
-
   :config
+  (require 'citre-config)
   (setq citre-project-root-function #'projectile-project-root
         ;; citre-mode will be exclusive to capf, so disable it now
         ;; citre-auto-enable-citre-mode-modes '(prog-mode)
