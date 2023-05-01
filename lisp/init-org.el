@@ -134,6 +134,11 @@
   :config
   (setq org-download-method 'attach))
 
+(use-package org-preview-html
+  :after org
+  :commands org-preview-html-mode
+  :bind (("<f6>" . org-preview-html-mode)))
+
 (provide 'init-org)
 
 ;; Local Variables:

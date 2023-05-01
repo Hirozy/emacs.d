@@ -256,6 +256,9 @@
 [submodule "org-download"]
 	path = lib/org-download
 	url = https://github.com/abo-abo/org-download.git
+[submodule "org-preview-html"]
+	path = lib/org-preview-html
+	url = https://github.com/jakebox/org-preview-html
 [submodule "org-roam"]
 	path = lib/org-roam
 	url = https://github.com/org-roam/org-roam.git
