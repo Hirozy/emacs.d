@@ -7,3 +7,6 @@ go-mode go-ts-mode
 (pf "fmt.Printf(\"" p "\", " q ")")
 (pn "fmt.Println(\"" p "\")")
 
+emacs-lisp-mode
+(message "(message)")
+
