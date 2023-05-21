@@ -61,9 +61,6 @@
 
 (use-package undo-fu)
 
-(use-package undo-fu-session
-  :hook ((org-mode) . undo-fu-session-mode))
-
 (use-package vundo)
 
 (provide 'init-editing)

@@ -350,9 +350,6 @@
 [submodule "undo-fu"]
 	path = lib/undo-fu
 	url = https://codeberg.org/ideasman42/emacs-undo-fu.git
-[submodule "undo-fu-session"]
-	path = lib/undo-fu-session
-	url = https://codeberg.org/ideasman42/emacs-undo-fu-session.git
 [submodule "uuidgen"]
 	path = lib/uuidgen
 	url = https://github.com/kanru/uuidgen-el.git
