@@ -25,6 +25,23 @@
   ("4" cape-tex "cape tex")
   ("SPC" nil "quit"))
 
+(defhydra bookmark-keys (:foreign-keys nil :exit t)
+  "Bookmarks"
+  ("b" consult-bookmark "list bookmarks")
+  ("m" bookmark-set "add bookmark")
+  ("e" edit-bookmarks "edit bookmarks")
+  ("SPC" nil))
+
+(defhydra register-keys (:foreign-keys nil :exit t)
+  "Register"
+  ("s" consult-register-store "save register")
+  ("l" consult-register-load "load register")
+  ("q" consult-register "consult register")
+  ("e" consult-register "consult register")
+  ("y" consult-yank-pop "yank pop")
+  ("k" consult-yank-from-kill-ring "yank")
+  ("SPC" nil))
+
 (defhydra org-keys (:foreign-keys nil :exit t)
   "Keymap for org mode and org roam"
   ("n" vulpea-find "find node" :column "Org Roam")
@@ -95,16 +112,18 @@
  (kbd "C-q")
  (defhydra hydra-freq (:foreign-keys nil :exit t)
    ("c" consult-recent-file "recent file" :column "Navigate")
-   ("C" consult-bookmark "bookmark")
-   ("q" treemacs "treemacs")
+   ("m" bookmark-keys/body "bookmark")
    ("d" xref-find-definitions "find definitions")
    ("f" xref-find-references "find references")
-   ("w" xref-find-definitions-other-window "references other window")
+   ("w" xref-find-definitions-other-window "definitions other window")
+   ("o" eglot-find-implementation "find implementation")
+   ("p" eglot-find-typeDefinition "find type definition")
    ("i" consult-imenu "semantic imenu")
    ("I" consult-imenu-multi "semantic imenu multi")
    ("j" tags-keys/body "tags keymap" :exit t)
-   ("m" consult-kmacro "macros")
-   ("SPC" nil "quit")
+   ("q" consult-kmacro "macros")
+   ("e" register-keys/body "register")
+   ("TAB" treemacs "treemacs")
 
    ("v" vterm "vterm" :column "Tools")
    ("V" projectile-run-vterm "projectile vterm")
@@ -112,12 +131,9 @@
    ("kt" kill-this-buffer "kill this buffer")
    ("kb" kill-buffer "kill other buffer")
    ("kr" eval-buffer "eval buffer")
-   ("ee" consult-register-store "save register")
-   ("er" consult-register-load "load register")
-   ("el" consult-register "consult register")
-   ("ey" consult-yank-pop "yank pop")
    ("/" swap-theme "swap theme")
-   ("n" org-keys/body "org keymap" :exit t)))
+   ("n" org-keys/body "org keymap" :exit t)
+   ("SPC" nil "quit")))
 
 (provide 'init-hydra)
 

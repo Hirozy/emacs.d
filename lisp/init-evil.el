@@ -16,8 +16,8 @@
     (kbd "C-p") 'previous-line
     (kbd "C-v") 'scroll-up-command
     (kbd "M-v") 'scroll-down-command
-    (kbd "M-,") 'xref-go-back
-    (kbd "M-.") 'xref-go-forward)
+    (kbd "C-M-,") 'xref-go-back
+    (kbd "C-M-.") 'xref-go-forward)
 
   (evil-define-key '(normal motion) 'global
     "\\" 'evil-motion-state
@@ -66,6 +66,7 @@
         (evil-define-key 'normal org-mode-map
           (kbd "RET") 'org-open-at-point
           (kbd "<return>") 'org-open-at-point
+          (kbd ",") 'org-keys/body
           "<" (lambda (&rest args)
                 (interactive)
                 (if (org-in-src-block-p)

@@ -22,8 +22,9 @@
 (use-package xref
   :defer t
   :bind (("<f12>" . xref-find-definitions)
-         ("S-<f12>" . xref-find-references))
-
+         ("S-<f12>" . xref-find-references)
+         ("M-." . xref-find-definitions)
+         ("M-?" . xref-find-references))
   :config
   (setq xref-history-storage 'xref-window-local-history)
   ;; Make `xref-go-back' everywhere
@@ -38,6 +39,7 @@
                                 consult-bookmark
                                 consult-projectile-recentf
                                 consult-projectile-find-file
+                                bookmark-jump
                                 org-roam-node-find
                                 vulpea-find
                                 citre-jump))
