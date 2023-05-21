@@ -11,7 +11,6 @@
   (setq-local completion-at-point-functions
               '(tempel-expand
                 cape-file
-                cape-dabbrev
                 eglot-completion-at-point)))
 
 (use-package eglot

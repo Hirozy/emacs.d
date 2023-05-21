@@ -20,7 +20,7 @@
 
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode
-  :hook (prog-mode . whitespace-cleanup-mode))
+  :hook ((prog-mode text-mode) . whitespace-cleanup-mode))
 
 (use-package ctrlf
   :bind (("C-M-s" . ctrlf-forward-alternate)
