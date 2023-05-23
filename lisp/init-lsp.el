@@ -8,10 +8,16 @@
 ;;; Code:
 
 (defun cape-capf-at-eglot ()
-  (setq-local completion-at-point-functions
-              '(tempel-expand
-                cape-file
-                eglot-completion-at-point)))
+  (if (member major-mode '(c-mode c++-mode objc-mode))
+      (setq-local completion-at-point-functions
+               `(tempel-expand
+                 cape-file
+                 ,(cape-super-capf
+                   #'eglot-completion-at-point #'citre-completion-at-point)))
+    (setq-local completion-at-point-functions
+                '(tempel-expand
+                  cape-file
+                  eglot-completion-at-point))))
 
 (use-package eglot
   :commands (eglot-ensure eglot)
