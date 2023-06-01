@@ -66,13 +66,6 @@
   :config
   (corfu-terminal-mode))
 
-(use-package kind-all-the-icons
-  :when (display-graphic-p)
-  :after corfu
-  :config
-  (add-to-list 'corfu-margin-formatters
-               #'kind-all-the-icons-margin-formatter))
-
 (use-package tempel
   :custom
   (tempel-trigger-prefix "<"))

@@ -1,11 +1,6 @@
 [borg]
 	pushDefault = Hirozy
 	collective = emacsd
-[submodule "all-the-icons"]
-	path = lib/all-the-icons
-	url = https://github.com/domtronn/all-the-icons.el.git
-	load-path = .
-	load-path = data
 [submodule "anaphora"]
 	path = lib/anaphora
 	url = https://github.com/rolandwalker/anaphora.git
@@ -204,9 +199,6 @@
 [submodule "key-chord"]
 	path = lib/key-chord
 	url = https://github.com/emacsorphanage/key-chord.git
-[submodule "kind-all-the-icons"]
-	path = lib/kind-all-the-icons
-	url = https://github.com/Hirozy/kind-all-the-icons.git
 [submodule "language-id"]
 	path = lib/language-id
 	url = https://github.com/lassik/emacs-language-id.git
@@ -238,6 +230,12 @@
 [submodule "mwim"]
 	path = lib/mwim
 	url = https://github.com/alezost/mwim.el.git
+[submodule "nerd-icons"]
+	path = lib/nerd-icons
+	url = https://github.com/rainstormstudio/nerd-icons.el.git
+[submodule "nerd-icons-dired"]
+	path = lib/nerd-icons-dired
+	url = https://github.com/rainstormstudio/nerd-icons-dired.git
 [submodule "nftables-mode"]
 	path = lib/nftables-mode
 	url = https://github.com/emacsmirror/nftables-mode.git
@@ -344,6 +342,9 @@
 	load-path = src/extra
 	no-byte-compile = src/extra/treemacs-persp.el
 	no-byte-compile = src/extra/treemacs-perspective.el
+[submodule "treemacs-nerd-icons"]
+	path = lib/treemacs-nerd-icons
+	url = https://github.com/rainstormstudio/treemacs-nerd-icons.git
 [submodule "treepy"]
 	path = lib/treepy
 	url = https://github.com/volrath/treepy.el.git
@@ -390,3 +391,6 @@
 [submodule "ztree"]
 	path = lib/ztree
 	url = https://github.com/fourier/ztree.git
+[submodule "kind-icon"]
+	path = lib/kind-icon
+	url = https://github.com/jdtsmith/kind-icon
