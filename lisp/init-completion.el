@@ -11,6 +11,9 @@
               tab-width 4
               tab-always-indent 'complete)
 
+(defvar capf-based-list  '(tempel-expand
+                           cape-file))
+
 (use-package corfu
   :custom
   (corfu-cycle t)
@@ -33,18 +36,29 @@
               ("M-h" . corfu-info-documentation)))
 
 (use-package cape
-  :hook (corfu-mode . (lambda ()
-                        (dolist (backend '(tempel-expand
-                                           cape-file
-                                           cape-dabbrev))
-                          (add-to-list 'completion-at-point-functions backend))))
+  :hook ((prog-mode . (lambda ()
+                        (setq-local completion-at-point-functions
+                                    `(,@capf-based-list
+                                      cape-dabbrev))))
+         (text-mode . (lambda ()
+                        (setq-local completion-at-point-functions
+                                    `(,@capf-based-list
+                                      cape-dabbrev
+                                      cape-tex
+                                      cape-dict))))
+         ((org-mode markdown-mode) . (lambda ()
+                                       (add-to-list 'completion-at-point-functions #'cape-elisp-block)))
+         (cmake-mode . (lambda ()
+                         (setq-local completion-at-point-functions
+                                     `(,@capf-based-list
+                                       ,(cape-company-to-capf #'company-cmake)))))
+         (emacs-lisp-mode . (lambda ()
+                              (setq-local completion-at-point-functions
+                                          `(,@capf-based-list
+                                            ,(cape-capf-nonexclusive #'elisp-completion-at-point)
+                                            cape-dabbrev)))))
   :config
   (setq cape-dabbrev-min-length 6))
-
-(use-package company-cmake
-  :hook (cmake-mode . (lambda ()
-                        (add-to-list 'completion-at-point-functions
-                                     (cape-company-to-capf #'company-cmake)))))
 
 (use-package corfu-terminal
   :unless (display-graphic-p)

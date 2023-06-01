@@ -26,10 +26,10 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
+(require 'init-completion)
 (require 'init-lsp)
 (require 'init-org)
 (require 'init-projectile)
-(require 'init-completion)
 (require 'init-editing)
 (require 'init-tags)
 (require 'init-pair)

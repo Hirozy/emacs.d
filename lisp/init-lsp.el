@@ -10,13 +10,11 @@
 (defun cape-capf-at-eglot ()
   (if (member major-mode '(c-mode c++-mode objc-mode))
       (setq-local completion-at-point-functions
-               `(tempel-expand
-                 cape-file
-                 ,(cape-super-capf
-                   #'eglot-completion-at-point #'citre-completion-at-point)))
+                  `(,@capf-based-list
+                    ,(cape-super-capf
+                      #'eglot-completion-at-point #'citre-completion-at-point)))
     (setq-local completion-at-point-functions
-                '(tempel-expand
-                  cape-file
+                `(,@capf-based-list
                   eglot-completion-at-point))))
 
 (use-package eglot
