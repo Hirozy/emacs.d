@@ -123,16 +123,13 @@
 (use-package evil-matchit
   :hook (evil-mode . global-evil-matchit-mode))
 
-(use-package key-chord
-  :hook (evil-mode . key-chord-mode)
+(use-package evil-escape
+  :diminish evil-escape-mode
+  :hook (evil-mode . evil-escape-mode)
   :config
-  (setq key-chord-two-keys-delay 0.2)
-  ;; https://emacs.stackexchange.com/questions/28162/define-key-inside-dolist
-  (dolist (mode (list
-                 evil-insert-state-map
-                 evil-emacs-state-map))
-    (dolist (key-seq '("jk" "jK" "Jk" "JK"))
-      (key-chord-define mode key-seq 'evil-normal-state))))
+  (setq-default evil-escape-key-sequence "jk"
+                evil-escape-delay 0.2
+                evil-want-fine-undo t))
 
 (use-package evil-collection
   :diminish evil-collection-unimpaired-mode

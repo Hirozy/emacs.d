@@ -116,6 +116,9 @@
 [submodule "evil-collection"]
 	path = lib/evil-collection
 	url = https://github.com/emacs-evil/evil-collection.git
+[submodule "evil-escape"]
+	path = lib/evil-escape
+	url = https://github.com/emacsorphanage/evil-escape.git
 [submodule "evil-matchit"]
 	path = lib/evil-matchit
 	url = https://github.com/redguardtoo/evil-matchit.git
@@ -196,9 +199,9 @@
 [submodule "js2-mode"]
 	path = lib/js2-mode
 	url = https://github.com/mooz/js2-mode.git
-[submodule "key-chord"]
-	path = lib/key-chord
-	url = https://github.com/emacsorphanage/key-chord.git
+[submodule "kind-icon"]
+	path = lib/kind-icon
+	url = https://github.com/jdtsmith/kind-icon.git
 [submodule "language-id"]
 	path = lib/language-id
 	url = https://github.com/lassik/emacs-language-id.git
@@ -391,6 +394,3 @@
 [submodule "ztree"]
 	path = lib/ztree
 	url = https://github.com/fourier/ztree.git
-[submodule "kind-icon"]
-	path = lib/kind-icon
-	url = https://github.com/jdtsmith/kind-icon
