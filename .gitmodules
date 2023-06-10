@@ -239,6 +239,12 @@
 [submodule "nerd-icons-dired"]
 	path = lib/nerd-icons-dired
 	url = https://github.com/rainstormstudio/nerd-icons-dired.git
+[submodule "nerd-icons-ibuffer"]
+	path = lib/nerd-icons-ibuffer
+	url = https://github.com/seagle0128/nerd-icons-ibuffer.git
+[submodule "nerd-icons-treemacs"]
+	path = lib/nerd-icons-treemacs
+	url = https://github.com/rainstormstudio/treemacs-nerd-icons.git
 [submodule "nftables-mode"]
 	path = lib/nftables-mode
 	url = https://github.com/emacsmirror/nftables-mode.git
@@ -345,9 +351,6 @@
 	load-path = src/extra
 	no-byte-compile = src/extra/treemacs-persp.el
 	no-byte-compile = src/extra/treemacs-perspective.el
-[submodule "treemacs-nerd-icons"]
-	path = lib/treemacs-nerd-icons
-	url = https://github.com/rainstormstudio/treemacs-nerd-icons.git
 [submodule "treepy"]
 	path = lib/treepy
 	url = https://github.com/volrath/treepy.el.git
