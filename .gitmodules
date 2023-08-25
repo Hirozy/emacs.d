@@ -273,7 +273,7 @@
 	load-path = extensions
 [submodule "org-shell-cat"]
 	path = lib/org-shell-cat
-	url = git@github.com:Hirozy/org-shell-cat.git
+	url = https://github.com/Hirozy/org-shell-cat.git
 [submodule "ox-gfm"]
 	path = lib/ox-gfm
 	url = https://github.com/larstvei/ox-gfm
