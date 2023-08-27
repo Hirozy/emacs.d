@@ -113,9 +113,6 @@
 [submodule "evil"]
 	path = lib/evil
 	url = https://github.com/emacs-evil/evil.git
-[submodule "evil-collection"]
-	path = lib/evil-collection
-	url = https://github.com/emacs-evil/evil-collection.git
 [submodule "evil-escape"]
 	path = lib/evil-escape
 	url = https://github.com/emacsorphanage/evil-escape.git

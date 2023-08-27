@@ -131,14 +131,6 @@
                 evil-escape-delay 0.2
                 evil-want-fine-undo t))
 
-(use-package evil-collection
-  :diminish evil-collection-unimpaired-mode
-  :after (:all evil (:any dired quickrun magit))
-  :config
-  (evil-collection-init '(dired
-                          quickrun
-                          magit)))
-
 (provide 'init-evil)
 
 ;; Local Variables:
