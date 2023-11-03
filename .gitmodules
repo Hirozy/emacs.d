@@ -66,9 +66,6 @@
 [submodule "corfu-terminal"]
 	path = lib/corfu-terminal
 	url = https://codeberg.org/akib/emacs-corfu-terminal.git
-[submodule "ctrlf"]
-	path = lib/ctrlf
-	url = https://github.com/raxod502/ctrlf.git
 [submodule "dash"]
 	no-byte-compile = dash-functional.el
 	no-makeinfo = dash-template.texi
@@ -181,9 +178,6 @@
 	path = lib/hydra
 	url = https://github.com/abo-abo/hydra.git
 	no-byte-compile = hydra-examples.el
-[submodule "iedit"]
-	path = lib/iedit
-	url = https://github.com/victorhge/iedit.git
 [submodule "inheritenv"]
 	path = lib/inheritenv
 	url = https://github.com/purcell/inheritenv.git

@@ -34,9 +34,6 @@
   (use-package treemacs-projectile
     :after (treemacs projectile))
 
-  (use-package treemacs-evil
-    :after (treemacs evil))
-
   (use-package treemacs-magit
     :after (treemacs magit)))
 

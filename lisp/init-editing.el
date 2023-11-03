@@ -12,20 +12,9 @@
   :diminish
   :hook (after-init . global-auto-revert-mode))
 
-(use-package iedit
-  :defer t
-  :bind ("S-<f2>" . iedit-mode)
-  :custom-face
-  (iedit-occurrence ((t (:background "#CDB48B" :foreground "black" :inverse-video nil)))))
-
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode
   :hook ((prog-mode text-mode) . whitespace-cleanup-mode))
-
-(use-package ctrlf
-  :bind (("C-M-s" . ctrlf-forward-alternate)
-         ("M-s _" . ctrlf-forward-symbol)
-         ("M-s ." . ctrlf-forward-symbol-at-point)))
 
 (use-package expand-region
   :bind (("C-=" . er/expand-region)))
