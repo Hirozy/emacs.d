@@ -55,9 +55,6 @@
 [submodule "consult-flycheck"]
 	path = lib/consult-flycheck
 	url = https://github.com/minad/consult-flycheck.git
-[submodule "consult-org-roam"]
-	path = lib/consult-org-roam
-	url = https://github.com/jgru/consult-org-roam
 [submodule "consult-projectile"]
 	path = lib/consult-projectile
 	url = https://gitlab.com/OlMon/consult-projectile.git
@@ -177,9 +174,6 @@
 [submodule "ht"]
 	path = lib/ht
 	url = https://github.com/Wilfred/ht.el.git
-[submodule "htmlize"]
-	path = lib/htmlize
-	url = https://github.com/hniksic/emacs-htmlize.git
 [submodule "hungry-delete"]
 	path = lib/hungry-delete
 	url = https://github.com/nflath/hungry-delete.git
@@ -257,17 +251,9 @@
 [submodule "orderless"]
 	path = lib/orderless
 	url = https://github.com/oantolin/orderless.git
-[submodule "org-download"]
-	path = lib/org-download
-	url = https://github.com/abo-abo/org-download.git
 [submodule "org-preview-html"]
 	path = lib/org-preview-html
 	url = https://github.com/jakebox/org-preview-html
-[submodule "org-roam"]
-	path = lib/org-roam
-	url = https://github.com/org-roam/org-roam.git
-	load-path = .
-	load-path = extensions
 [submodule "org-shell-cat"]
 	path = lib/org-shell-cat
 	url = https://github.com/Hirozy/org-shell-cat.git
@@ -370,9 +356,6 @@
 	build-step = git restore CMakeLists.txt
 	build-step = borg-compile
 	build-step = borg-update-autoloads
-[submodule "vulpea"]
-	path = lib/vulpea
-	url = https://github.com/d12frosted/vulpea
 [submodule "vundo"]
 	path = lib/vundo
 	url = https://github.com/casouri/vundo.git

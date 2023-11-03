@@ -86,66 +86,12 @@
   (use-package ox-html
     :defer t
     :config
-    (setq org-html-htmlize-output-type 'css))
-
-  (use-package ox-latex
-    :defer t
-    :config
-    (add-to-list 'org-latex-classes
-                 '("article"
-                   "\\documentclass[11pt]{article}
-\\usepackage{xltxtra,xunicode}
-\\usepackage{tikz}
-\\usetikzlibrary{arrows,shapes,chains}
-\\usepackage{amsmath}
-\\usepackage{listings}
-\\usepackage[slantfont,boldfont]{xeCJK}
-\\setCJKmainfont{Kai}
-\\setCJKmonofont{Hei}
-\\setsansfont{Trebuchet MS}
-\\usepackage{indentfirst}
-\\setlength{\\parindent}{2em}"
-                   ("\\section{%s}" . "\\section*{%s}")
-                   ("\\subsection{%s}" . "\\subsection*{%s}")
-                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                   ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-    (setq org-export-in-background t)
-    (setq org-latex-pdf-process
-          '("xelatex -interaction nonstopmode -output-directory %o %f"
-            "xelatex -interaction nonstopmode -output-directory %o %f"
-            "xelatex -interaction nonstopmode -output-directory %o %f"))))
-
-(use-package org-roam
-  :defer t
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-         ("C-c n f" . org-roam-node-find)
-         ("C-c n g" . org-roam-graph)
-         ("C-c n i" . org-roam-node-insert)
-         ("C-c n c" . org-roam-capture)
-         ("C-c n j" . org-roam-dailies-capture-today))
-  :config
-  (setq org-roam-node-display-template
-        (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
-  (org-roam-db-autosync-mode))
-
-(use-package org-download
-  :hook ((org-mode
-          dired-mode) . org-download-enable)
-  :config
-  (setq org-download-method 'attach))
+    (setq org-html-htmlize-output-type 'css)))
 
 (use-package org-preview-html
   :after org
   :commands org-preview-html-mode
   :bind (("<f6>" . org-preview-html-mode)))
-
-(use-package vulpea
-  :hook ((org-roam-db-autosync-mode . vulpea-db-autosync-enable))
-  :config
-  (setq vulpea-find-default-filter
-        (lambda (note)
-          (<= (vulpea-note-level note) 2))))
 
 (provide 'init-org)
 

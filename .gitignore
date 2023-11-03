@@ -75,3 +75,4 @@ eln-*
 /var
 org-roam.db
 tree-sitter
+/py
