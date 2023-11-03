@@ -27,11 +27,8 @@
     (kbd "<leader>x") 'delete-window
     (kbd "<leader>q") 'hydra-freq/body
     (kbd "<leader>r") 'hydra-edit/body
-    (kbd "<leader>SPC") 'keyboard-escape-quit
-    (kbd "<leader>f") 'consult-projectile
-    (kbd "<leader>i") 'consult-imenu
-    (kbd "<leader>c") 'consult-recent-file
-    (kbd "<leader>C") 'consult-bookmark)
+    (kbd "<leader>z") 'avy-goto-char
+    (kbd "<leader>SPC") 'keyboard-escape-quit)
 
   (evil-define-key '(normal motion insert) prog-mode-map
     (kbd "<leader>d") 'xref-find-definitions
