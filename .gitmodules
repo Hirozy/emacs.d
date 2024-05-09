@@ -135,6 +135,9 @@
 	path = lib/flycheck
 	url = https://github.com/flycheck/flycheck.git
 	no-byte-compile = flycheck-buttercup.el
+[submodule "flycheck-eglot"]
+	path = lib/flycheck-eglot
+	url = https://github.com/flycheck/flycheck-eglot
 [submodule "format-all"]
 	path = lib/format-all
 	url = https://github.com/lassik/emacs-format-all-the-code.git

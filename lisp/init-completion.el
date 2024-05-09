@@ -79,6 +79,17 @@
   (setq flycheck-keymap-prefix (kbd "C-c C-l"))
   (define-key flycheck-mode-map flycheck-keymap-prefix flycheck-command-map))
 
+(use-package flycheck-eglot
+  :after (flycheck eglot)
+  :hook ((c-mode
+          c++-mode
+          objc-mode
+          python-mode
+          haskell-mode
+          haskell-literate-mode
+          go-mode
+          rustic-mode) . flycheck-eglot-mode))
+
 (use-package flymake
   :defer t
   :diminish flymake-mode)

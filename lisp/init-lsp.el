@@ -34,8 +34,7 @@
            python-mode
            haskell-mode
            haskell-literate-mode
-           go-mode
-           rust-mode) . eglot-ensure))
+           go-mode) . eglot-ensure))
   :bind (:map eglot-mode-map
               ("S-<f6>" . eglot-rename))
 
