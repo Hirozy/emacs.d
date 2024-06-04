@@ -201,7 +201,7 @@
 	url = https://github.com/fniessen/emacs-leuven-theme.git
 [submodule "llama"]
 	path = lib/llama
-	url = https://github.com/emacsmirror/llama.git
+	url = https://git.sr.ht/~tarsius/llama
 [submodule "lua-mode"]
 	path = lib/lua-mode
 	url = https://github.com/immerrr/lua-mode.git
