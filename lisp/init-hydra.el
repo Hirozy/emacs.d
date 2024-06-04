@@ -44,14 +44,12 @@
 
 (defhydra org-keys (:foreign-keys nil :exit t)
   "Keymap for org mode and org roam"
-  ("n" vulpea-find "find node" :column "Org Roam")
-  ("p" org-roam-capture "capture")
-  ("o" org-roam-node-open "open node")
-  ("i" vulpea-insert "insert node")
-  ("l" org-roam-buffer-toggle "buffer toggle")
-  ("j" org-roam-dailies-capture-today "capture today")
-  ("g" org-roam-graph "graph")
-  ("s" org-roam-db-sync "db sync")
+  ("o" denote-open-or-create "find node" :column "Denote")
+  ("n" denote "new node")
+  ("r" denote-rename-file-using-front-matter "rename file")
+  ("m" denote-add-front-matter "add face matter")
+  ("tt" denote-keywords-add "tag add")
+  ("tr" denote-keywords-remove "tag remove")
 
   ("S" org-insert-structure-template "org template" :column "Org mode")
   ("'" org-insert-subheading "insert subheading")
@@ -59,15 +57,7 @@
   ("C" org-babel-insert-tee-file-mark "insert tee mark")
   ("T" org-table-create "create table")
   ("I" org-id-get-create "create ID")
-  ("aa" org-roam-alias-add "alias add")
-  ("ar" org-roam-alias-remove "alias remove")
-  ("tt" org-roam-tag-add "tag add")
-  ("tr" org-roam-tag-remove "tag remove")
 
-  ("e" consult-org-roam-file-find "find file" :column "Func")
-  ("b" consult-org-roam-backlinks "org backlinks")
-  ("f" consult-org-roam-forward-links "org forward links")
-  ("r" consult-org-roam-search "org roam search")
   ("SPC" nil "quit"))
 
 (global-set-key

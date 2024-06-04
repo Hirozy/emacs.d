@@ -74,6 +74,9 @@
 [submodule "dash-at-point"]
 	path = lib/dash-at-point
 	url = https://github.com/stanaka/dash-at-point.git
+[submodule "denote"]
+	path = lib/denote
+	url = https://git.sr.ht/~protesilaos/denote
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = https://github.com/dgutov/diff-hl.git

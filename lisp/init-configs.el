@@ -50,7 +50,7 @@
 (global-unset-key (kbd "C-<wheel-down>"))
 
 ;; Change all prompts to y or n
-(fset 'yes-or-no-p 'y-or-n-p)
+(setopt use-short-answers t)
 
 (put 'scroll-left 'disabled nil)
 

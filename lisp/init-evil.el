@@ -56,7 +56,7 @@
       (evil-define-key 'normal 'global
         (kbd "C-k") 'puni-kill-line))
 
-  (if (require 'org-roam nil t)
+  (if (require 'denote nil t)
       (progn
         (evil-define-key 'normal 'global
           (kbd "<leader>n") 'org-keys/body)

@@ -93,6 +93,10 @@
   :commands org-preview-html-mode
   :bind (("<f6>" . org-preview-html-mode)))
 
+(use-package denote
+  :config
+  (setq denote-prompts '(title)))
+
 (provide 'init-org)
 
 ;; Local Variables:
