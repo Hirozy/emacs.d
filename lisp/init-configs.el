@@ -54,6 +54,8 @@
 
 (put 'scroll-left 'disabled nil)
 
+(setq-default major-mode 'text-mode)
+
 (setq url-proxy-services
       '(("no_proxy" . "^\\(localhost\\|127\\.*\\)")
         ("http" . "127.0.0.1:6152")

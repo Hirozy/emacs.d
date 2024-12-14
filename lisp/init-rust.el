@@ -7,17 +7,14 @@
 
 ;;; Code:
 
-(use-package rustic
-  :commands rust-mode
-  :hook ((eglot--managed-mode-hook) . (lambda ()
-                                        (flymake-mode -1)))
-  :init
-  (setq rustic-lsp-client 'eglot))
+(use-package rust-mode)
 
 (use-package rust-playground
   :commands rust-playground
   :custom
   (rust-playground-basedir (substitute-in-file-name "$HOME/.cache/rust-platground")))
+
+(advice-add 'rust-playground :after #'(lambda() rust-ts-mode))
 
 (provide 'init-rust)
 
