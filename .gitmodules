@@ -318,9 +318,6 @@
 	path = lib/rust-playground
 	url = https://github.com/Hirozy/rust-playground.git
 	branch = fix-save
-[submodule "rustic"]
-	path = lib/rustic
-	url = https://github.com/brotzeit/rustic.git
 [submodule "s"]
 	path = lib/s
 	url = https://github.com/magnars/s.el.git
