@@ -360,9 +360,6 @@
 [submodule "vundo"]
 	path = lib/vundo
 	url = https://github.com/casouri/vundo.git
-[submodule "which-key"]
-	path = lib/which-key
-	url = https://github.com/justbur/emacs-which-key.git
 [submodule "whitespace-cleanup-mode"]
 	path = lib/whitespace-cleanup-mode
 	url = https://github.com/purcell/whitespace-cleanup-mode.git
