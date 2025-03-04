@@ -255,11 +255,6 @@
 [submodule "orderless"]
 	path = lib/orderless
 	url = https://github.com/oantolin/orderless.git
-[submodule "org"]
-	path = lib/org
-	url = https://git.savannah.gnu.org/git/emacs/org-mode.git
-	branch = bugfix
-	load-path = lisp
 [submodule "org-preview-html"]
 	path = lib/org-preview-html
 	url = git@github.com:Hirozy/org-preview-html.git
