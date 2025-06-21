@@ -118,7 +118,7 @@
    ("v" vterm "vterm" :column "Tools")
    ("V" projectile-run-vterm "projectile vterm")
    ("s" dash-at-point "dash")
-   ("kt" kill-this-buffer "kill this buffer")
+   ("kt" kill-current-buffer "kill this buffer")
    ("kb" kill-buffer "kill other buffer")
    ("kr" eval-buffer "eval buffer")
    ("/" swap-theme "swap theme")
