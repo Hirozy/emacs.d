@@ -46,7 +46,7 @@
 (require 'init-plot)
 
 (require 'init-git)
-(require 'init-admixture)
+(require 'init-langs)
 (require 'init-runner)
 (require 'init-evil)
 

@@ -20,7 +20,7 @@
   (projectile-show-menu nil)
 
   :config
-  (setq projectile-enable-caching t
+  (setq projectile-enable-caching 'persistent
         projectile-indexing-method 'alien)
   (projectile-mode))
 

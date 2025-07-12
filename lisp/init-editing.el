@@ -42,7 +42,7 @@
 ;; Handling capitalized subwords in a nomenclature
 (use-package subword
   :diminish
-  :hook ((minibuffer-setup . subword-mode)))
+  :hook (minibuffer-setup . subword-mode))
 
 ;; Delete selection if you insert
 (use-package delsel

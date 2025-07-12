@@ -1,4 +1,4 @@
-;;; init-admixture.el --- Mixed languages  -*- lexical-binding: t; -*-
+;;; init-langs.el --- Various languages  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -21,10 +21,10 @@
 
 (use-package yaml-mode :defer t)
 
-(provide 'init-admixture)
+(provide 'init-langs)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; indent-tabs-mode: nil
 ;; End:
-;;; init-admixture.el ends here
+;;; init-langs.el ends here

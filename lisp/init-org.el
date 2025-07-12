@@ -63,7 +63,6 @@
      (python . t)
      (ruby . t)
      (sed . t)
-     (shell . t)
      (sql . t)
      (table . t)))
 
@@ -72,9 +71,9 @@
 
   (use-package org-shell-cat
     :commands org-copy-to-shell-cat
-    :hook ((org-mode . org-babel-header-expand-shell-cat))
-    :bind(:map org-mode-map
-               ("C-c c" . org-copy-to-shell-cat)))
+    :hook (org-mode . org-babel-header-expand-shell-cat)
+    :bind (:map org-mode-map
+                ("C-c c" . org-copy-to-shell-cat)))
 
   (use-package org-tempo)
 
@@ -94,8 +93,21 @@
   :bind (("<f6>" . org-preview-html-mode)))
 
 (use-package denote
+  :hook (dired-mode . denote-dired-mode)
+  :bind
+  (("C-c n n" . denote)
+   ("C-c n o" . denote-open-or-create)
+   ("C-c n l" . denote-link)
+   ("C-c n b" . denote-backlinks))
   :config
-  (setq denote-prompts '(title)))
+  (denote-rename-buffer-mode))
+
+(use-package consult-denote
+  :after denote
+  :bind
+  (("C-c n s" . consult-denote-grep))
+  :config
+  (consult-denote-mode))
 
 (provide 'init-org)
 

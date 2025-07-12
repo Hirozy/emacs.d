@@ -8,7 +8,7 @@
 ;;; Code:
 
 (use-package vertico
-  :hook ((after-init . vertico-mode))
+  :hook (after-init . vertico-mode)
   :bind (:map vertico-map
               ("?" . minibuffer-completion-help)
               ("C-v" . vertico-scroll-up)
