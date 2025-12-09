@@ -10,7 +10,6 @@
 (use-package vertico
   :hook (after-init . vertico-mode)
   :bind (:map vertico-map
-              ("?" . minibuffer-completion-help)
               ("C-v" . vertico-scroll-up)
               ("M-v" . vertico-scroll-down)
               ("<tab>" . vertico-insert)
@@ -52,7 +51,7 @@
 
   :config
   (setq consult-project-root-function 'projectile-project-root
-        consult-async-refresh-delay 0
+        consult-async-refresh-delay 0.15
         consult-async-input-throttle 0
         consult-async-input-debounce 0
         ;; disable all preview

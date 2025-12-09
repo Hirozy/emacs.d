@@ -67,6 +67,7 @@
   (corfu-terminal-mode))
 
 (use-package tempel
+  :defer t
   :custom
   (tempel-trigger-prefix "<"))
 

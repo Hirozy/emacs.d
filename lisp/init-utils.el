@@ -29,6 +29,7 @@
   (diminish 'auto-revert-mode))
 
 (use-package treemacs
+  :defer t
   :bind ("s-t" . treemacs-select-window)
   :config
   (use-package treemacs-projectile
@@ -42,6 +43,7 @@
   )
 
 (use-package treemacs-nerd-icons
+  :after treemacs
   :config
   (treemacs-load-theme "nerd-icons"))
 

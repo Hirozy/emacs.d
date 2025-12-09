@@ -7,7 +7,7 @@
 
 ;;; Code:
 
-(defun defined/set-current-path-to-pythonpath (prompt)
+(defun defined/set-current-path-to-python-path (prompt)
   "Add current path to PYTHONPATH, if PROMPT is non-nil, reset current path to PYTHONPATH."
   (interactive "P")
   (let ((current-path (expand-file-name default-directory)))

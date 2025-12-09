@@ -7,7 +7,8 @@
 
 ;;; Code:
 
-(use-package rust-mode)
+(use-package rust-mode
+  :defer t)
 
 (use-package rust-playground
   :commands rust-playground

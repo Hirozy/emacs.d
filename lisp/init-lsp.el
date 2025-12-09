@@ -28,13 +28,14 @@
      :colorProvider
      :foldingRangeProvider
      :executeCommandProvider))
-  :hook (((c-mode
-           c++-mode
-           objc-mode
-           python-mode
-           haskell-mode
-           haskell-literate-mode
-           go-mode) . eglot-ensure))
+  :hook ((c-mode
+          c-ts-mode
+          c++-mode c++-ts-mode objc-mode
+          python-mode python-ts-mode
+          haskell-mode
+          haskell-literate-mode
+          go-mode go-ts-mode)
+         . eglot-ensure)
   :bind (:map eglot-mode-map
               ("S-<f6>" . eglot-rename))
 
