@@ -113,7 +113,6 @@
    ("j" tags-keys/body "tags keymap" :exit t)
    ("q" consult-kmacro "macros")
    ("e" register-keys/body "register")
-   ("TAB" treemacs "treemacs")
 
    ("v" vterm "vterm" :column "Tools")
    ("V" projectile-run-vterm "projectile vterm")

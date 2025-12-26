@@ -28,24 +28,9 @@
   (diminish 'abbrev-mode)
   (diminish 'auto-revert-mode))
 
-(use-package treemacs
-  :defer t
-  :bind ("s-t" . treemacs-select-window)
-  :config
-  (use-package treemacs-projectile
-    :after (treemacs projectile))
-
-  (use-package treemacs-magit
-    :after (treemacs magit)))
-
 (use-package nerd-icons
   ;; Install "Symbols Nerd Font Mono" font manual
   )
-
-(use-package treemacs-nerd-icons
-  :after treemacs
-  :config
-  (treemacs-load-theme "nerd-icons"))
 
 (use-package nerd-icons-dired
   :hook (dired-mode . nerd-icons-dired-mode))

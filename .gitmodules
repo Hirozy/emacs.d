@@ -240,9 +240,6 @@
 [submodule "nerd-icons-ibuffer"]
 	path = lib/nerd-icons-ibuffer
 	url = https://github.com/seagle0128/nerd-icons-ibuffer.git
-[submodule "nerd-icons-treemacs"]
-	path = lib/nerd-icons-treemacs
-	url = https://github.com/rainstormstudio/treemacs-nerd-icons.git
 [submodule "nftables-mode"]
 	path = lib/nftables-mode
 	url = https://github.com/emacsmirror/nftables-mode.git
@@ -331,13 +328,6 @@
 [submodule "transient"]
 	path = lib/transient
 	url = https://github.com/magit/transient.git
-[submodule "treemacs"]
-	path = lib/treemacs
-	url = https://github.com/Alexander-Miller/treemacs.git
-	load-path = src/elisp
-	load-path = src/extra
-	no-byte-compile = src/extra/treemacs-persp.el
-	no-byte-compile = src/extra/treemacs-perspective.el
 [submodule "treepy"]
 	path = lib/treepy
 	url = https://github.com/volrath/treepy.el.git
