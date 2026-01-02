@@ -22,9 +22,6 @@
 [submodule "cape"]
 	path = lib/cape
 	url = https://github.com/minad/cape.git
-[submodule "cfrs"]
-	path = lib/cfrs
-	url = https://github.com/Alexander-Miller/cfrs.git
 [submodule "citre"]
 	path = lib/citre
 	url = https://github.com/universal-ctags/citre.git
@@ -285,9 +282,6 @@
 [submodule "popper"]
 	path = lib/popper
 	url = https://github.com/karthink/popper.git
-[submodule "posframe"]
-	path = lib/posframe
-	url = https://github.com/tumashu/posframe.git
 [submodule "projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile.git
@@ -316,9 +310,6 @@
 [submodule "s"]
 	path = lib/s
 	url = https://github.com/magnars/s.el.git
-[submodule "spinner"]
-	path = lib/spinner
-	url = https://github.com/Malabarba/spinner.el.git
 [submodule "symbol-overlay"]
 	path = lib/symbol-overlay
 	url = https://github.com/wolray/symbol-overlay.git
