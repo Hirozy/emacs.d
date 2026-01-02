@@ -358,4 +358,4 @@
 	url = https://github.com/yoshiki/yaml-mode.git
 [submodule "ztree"]
 	path = lib/ztree
-	url = https://github.com/fourier/ztree.git
+	url = https://codeberg.org/fourier/ztree.git
