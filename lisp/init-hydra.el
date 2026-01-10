@@ -108,6 +108,7 @@
    ("w" xref-find-definitions-other-window "definitions other window")
    ("o" eglot-find-implementation "find implementation")
    ("p" eglot-find-typeDefinition "find type definition")
+   ("l" dired-jump "dired jump to file")
    ("i" consult-imenu "semantic imenu")
    ("I" consult-imenu-multi "semantic imenu multi")
    ("j" tags-keys/body "tags keymap" :exit t)

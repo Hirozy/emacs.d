@@ -95,7 +95,8 @@
 (use-package denote
   :hook (dired-mode . denote-dired-mode)
   :bind
-  (("C-c n n" . denote)
+  (("C-c d" . denote-open-or-create-with-command)
+   ("C-c n n" . denote)
    ("C-c n o" . denote-open-or-create)
    ("C-c n l" . denote-link)
    ("C-c n b" . denote-backlinks))

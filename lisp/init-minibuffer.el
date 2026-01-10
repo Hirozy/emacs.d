@@ -42,20 +42,14 @@
          ("C-s" . consult-line)
          ("C-S-s" . consult-line-multi)
          ;; buffer
-         ("C-x b" . (lambda ()
-                      (interactive)
-                      (if (projectile-project-root)
-                          (consult-project-buffer)
-                        (consult-buffer))))
+         ("C-x b" . consult-project-buffer)
          ("C-x C-b" . consult-buffer))
 
   :config
-  (setq consult-project-root-function 'projectile-project-root
+  (setq consult-project-root-function (lambda (-) (projectile-project-root))
         consult-async-refresh-delay 0.15
         consult-async-input-throttle 0
         consult-async-input-debounce 0
-        ;; disable all preview
-        consult-preview-key "M-."
         xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref))
 
