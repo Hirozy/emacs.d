@@ -76,3 +76,4 @@ eln-*
 org-roam.db
 tree-sitter
 /py
+/transient
