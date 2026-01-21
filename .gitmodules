@@ -168,6 +168,9 @@
 [submodule "gptel"]
 	path = lib/gptel
 	url = https://github.com/karthink/gptel
+[submodule "gptel-magit"]
+	path = lib/gptel-magit
+	url = https://github.com/ragnard/gptel-magit
 [submodule "haskell-mode"]
 	path = lib/haskell-mode
 	url = https://github.com/haskell/haskell-mode.git
@@ -216,9 +219,6 @@
 	no-byte-compile = lisp/magit-libgit.el
 	path = lib/magit
 	url = https://github.com/magit/magit.git
-[submodule "magit-lfs"]
-	path = lib/magit-lfs
-	url = https://github.com/Ailrun/magit-lfs.git
 [submodule "marginalia"]
 	path = lib/marginalia
 	url = https://github.com/minad/marginalia.git

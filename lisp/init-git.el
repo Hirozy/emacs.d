@@ -10,7 +10,7 @@
 (use-package magit
   :defer t
   :commands (magit-add-section-hook)
-  :bind ("C-x m" . magit-status)
+  :bind ("C-x m" . magit)
 
   :config
   (setq magit-module-sections-hook
@@ -23,8 +23,8 @@
                           'magit-insert-stashes
                           'append))
 
-(use-package magit-lfs
-  :after magit)
+(use-package gptel-magit
+  :hook (magit-mode . gptel-magit-install))
 
 (provide 'init-git)
 
