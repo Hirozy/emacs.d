@@ -6,6 +6,8 @@
 ;;
 
 ;;; Code:
+(require 'transient)
+(require 'consult)
 
 (defun defined/org-without-confirm-babel-evaluate (lang body)
   "Org without confirm with LANG BODY."
@@ -90,23 +92,33 @@
 (use-package org-preview-html
   :after org
   :commands org-preview-html-mode
-  :bind (("<f6>" . org-preview-html-mode)))
+  :bind (:map org-mode-map
+              ("<f6>" . org-preview-html-mode)))
+
+(transient-define-prefix denote-transient ()
+  "Denote Commands"
+  [["Denote"
+    ("n" "New Note" denote)
+    ("o" "Open or Create" denote-open-or-create)
+    ("l" "Denote Links" denote-link)
+    ("b" "Denote Backlinks" denote-backlinks)
+    ("/" "Search Notes" (lambda ()
+                          (interactive)
+                          (consult-fd (denote-directories))))
+    ("s" "Search Content" (lambda ()
+                            (interactive)
+                            (consult-ripgrep (denote-directories))))]])
 
 (use-package denote
   :hook (dired-mode . denote-dired-mode)
   :bind
   (("C-c d" . denote-open-or-create-with-command)
-   ("C-c n n" . denote)
-   ("C-c n o" . denote-open-or-create)
-   ("C-c n l" . denote-link)
-   ("C-c n b" . denote-backlinks))
+   ("C-c n" . denote-transient))
   :config
   (denote-rename-buffer-mode))
 
 (use-package consult-denote
   :after denote
-  :bind
-  (("C-c n s" . consult-denote-grep))
   :config
   (consult-denote-mode))
 
