@@ -75,13 +75,6 @@
                     (call-interactively 'evil-shift-right t (vector args))
                   (org-metaright)))))))
 
-(defun defined/insert-with-space ()
-  "Evil insert with space."
-  (interactive)
-  (insert-char (char-from-name "SPACE"))
-  (backward-char)
-  (evil-insert-state))
-
 (use-package evil
   :hook ((after-init . evil-mode)
          ((yaml-mode) . (lambda ()

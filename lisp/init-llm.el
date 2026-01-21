@@ -12,19 +12,22 @@
 (transient-define-prefix gptel-transient ()
   "GPTel Commands"
   [["Commands"
-    ("g" "Send"           gptel-send)
-    ("G" "Send"           (lambda () (interactive) (let ((current-prefix-arg '(4))) (call-interactively 'gptel-send))))
-    ("a" "Add"            gptel-add)
-    ("r" "Rewrite"        gptel-rewrite)
-    ("a" "Abort"          gptel-abort)
+    ("/" "Send" gptel-send)
+    ("s" "Send with prompt" (lambda ()
+                              (interactive)
+                              (let ((current-prefix-arg '(4))) (call-interactively 'gptel-send))))
+    ("a" "Add" gptel-add)
+    ("r" "Rewrite" gptel-rewrite)
+    ("k" "Abort" gptel-abort)
     ("p" "System Promote" gptel-system-prompt)]
 
    ["Sessions"
-    ("m" "Menu"           gptel-menu)
-    ("n" "New Session"    gptel)]])
+    ("m" "GPTel Menu" gptel-menu)
+    ("g" "New Session" gptel)]])
 
 (use-package gptel
-  :bind ("C-c C-g" . gptel-transient)
+  :bind (("C-c g" . gptel-transient)
+         ("C-C C-g" . gptel-menu))
   :config
   (defvar gptel--openrouter
     (gptel-make-openai "OpenRouter"

@@ -51,7 +51,7 @@
 (require 'init-evil)
 (require 'init-llm)
 
-(require 'init-hydra)
+(require 'init-sequence)
 
 ;; Local Variables:
 ;; no-byte-compile: t
