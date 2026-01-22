@@ -24,7 +24,9 @@
                           'append))
 
 (use-package gptel-magit
-  :hook (magit-mode . gptel-magit-install))
+  :after magit
+  :bind(:map git-commit-mode-map
+             ("C-c m" . gptel-magit-generate-message)))
 
 (provide 'init-git)
 
