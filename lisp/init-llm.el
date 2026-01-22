@@ -27,7 +27,8 @@
 
 (use-package gptel
   :bind (("C-c g" . gptel-transient)
-         ("C-C C-g" . gptel-menu))
+         :map gptel-mode-map
+         ("C-c m" . gptel-menu))
   :config
   (defvar gptel--openrouter
     (gptel-make-openai "OpenRouter"
