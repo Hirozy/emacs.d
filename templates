@@ -2,11 +2,15 @@
 
 go-mode go-ts-mode
 
-(fm "func main() {" n> q n "}")
-(iferr "if err != nil {" n> "return err" n> "}")
+(fm "func main() {" n> q n "}">)
+(iferr "if err != nil {" n> "return err" n "}">)
 (pf "fmt.Printf(\"" p "\", " q ")")
 (pn "fmt.Println(\"" p "\")")
 
 emacs-lisp-mode
-(message "(message)")
+(message "(message \"" p "\")")
 
+;; Local Variables:
+;; mode: lisp-data
+;; outline-regexp: "[a-z]"
+;; End:

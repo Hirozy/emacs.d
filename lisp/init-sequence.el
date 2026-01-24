@@ -40,8 +40,8 @@
    ("TAB" capf-mapping/body "capf TAB")
 
    ("gg" goto-line "goto line" :column "Navigate")
-   ("1" avy-goto-word-1 "goto word")
-   ("2" avy-goto-char-2 "goto char2")
+   ("z" avy-goto-word-1 "goto word")
+   ("x" avy-goto-char-2 "goto char2")
    ("v" View-scroll-half-page-forward "page down" :exit nil)
    ("V" View-scroll-half-page-backward "page up" :exit nil)
    ("," goto-last-change "goto last change")

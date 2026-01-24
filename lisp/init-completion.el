@@ -11,9 +11,6 @@
               tab-width 4
               tab-always-indent 'complete)
 
-(defvar capf-based-list  '(tempel-expand
-                           cape-file))
-
 (use-package corfu
   :custom
   (corfu-cycle t)
@@ -38,27 +35,32 @@
 (use-package cape
   :hook ((prog-mode . (lambda ()
                         (setq-local completion-at-point-functions
-                                    `(,@capf-based-list
-                                      cape-dabbrev))))
+                                    (list #'tempel-expand
+                                          #'cape-dabbrev))))
          (text-mode . (lambda ()
                         (setq-local completion-at-point-functions
-                                    `(,@capf-based-list
-                                      cape-dabbrev
-                                      cape-tex
-                                      cape-dict))))
+                                    (list #'tempel-expand
+                                          #'cape-dabbrev
+                                          #'cape-tex
+                                          #'cape-dict))))
          ((org-mode markdown-mode) . (lambda ()
-                                       (add-to-list 'completion-at-point-functions #'cape-elisp-block)))
+                                       (setq-local completion-at-point-functions
+                                                   (list #'tempel-expand
+                                                         #'cape-file
+                                                         #'cape-elisp-block
+                                                         #'cape-dabbrev))))
          (cmake-mode . (lambda ()
                          (setq-local completion-at-point-functions
-                                     `(,@capf-based-list
-                                       ,(cape-company-to-capf #'company-cmake)))))
+                                     (list
+                                      (cape-company-to-capf #'company-cmake)))))
          (emacs-lisp-mode . (lambda ()
                               (setq-local completion-at-point-functions
-                                          `(,@capf-based-list
-                                            ,(cape-capf-nonexclusive #'elisp-completion-at-point)
-                                            cape-dabbrev)))))
+                                          (list #'tempel-expand
+                                                #'cape-file
+                                                #'elisp-completion-at-point
+                                                #'cape-dabbrev)))))
   :config
-  (setq cape-dabbrev-min-length 6))
+  (setq cape-dabbrev-min-length 3))
 
 (use-package corfu-terminal
   :unless (display-graphic-p)
@@ -69,7 +71,7 @@
 (use-package tempel
   :defer t
   :custom
-  (tempel-trigger-prefix "<"))
+  (tempel-trigger-prefix "/"))
 
 (use-package flycheck
   :diminish
