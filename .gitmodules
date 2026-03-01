@@ -40,6 +40,9 @@
 [submodule "compat"]
 	path = lib/compat
 	url = https://github.com/phikal/compat.el.git
+[submodule "cond-let"]
+	path = lib/cond-let
+	url = https://github.com/tarsius/cond-let
 [submodule "conda"]
 	path = lib/conda
 	url = https://github.com/necaris/conda.el.git
