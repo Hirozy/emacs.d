@@ -41,7 +41,6 @@
 (require 'init-haskell)
 (require 'init-rust)
 
-(require 'init-javascript)
 (require 'init-markdown)
 (require 'init-plot)
 
