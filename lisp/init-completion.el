@@ -70,6 +70,9 @@
 
 (use-package tempel
   :defer t
+  :bind (:map tempel-map
+              ("M-n" . tempel-next)
+              ("M-p" . tempel-previous))
   :custom
   (tempel-trigger-prefix ";"))
 
