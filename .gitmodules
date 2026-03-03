@@ -1,12 +1,6 @@
 [borg]
 	pushDefault = Hirozy
 	collective = emacsd
-[submodule "anaphora"]
-	path = lib/anaphora
-	url = https://github.com/rolandwalker/anaphora.git
-[submodule "annalist"]
-	path = lib/annalist
-	url = https://github.com/noctuid/annalist.el.git
 [submodule "async"]
 	path = lib/async
 	url = https://github.com/jwiegley/emacs-async.git
@@ -104,9 +98,6 @@
 [submodule "epkg-marginalia"]
 	path = lib/epkg-marginalia
 	url = https://github.com/emacscollective/epkg-marginalia.git
-[submodule "epl"]
-	path = lib/epl
-	url = https://github.com/cask/epl.git
 [submodule "evil"]
 	path = lib/evil
 	url = https://github.com/emacs-evil/evil.git
@@ -156,12 +147,6 @@
 [submodule "go-mode"]
 	path = lib/go-mode
 	url = https://github.com/dominikh/go-mode.el.git
-[submodule "go-playground"]
-	path = lib/go-playground
-	url = https://github.com/grafov/go-playground.git
-[submodule "gotest"]
-	path = lib/gotest
-	url = https://github.com/nlamirault/gotest.el.git
 [submodule "goto-chg"]
 	path = lib/goto-chg
 	url = https://github.com/emacs-evil/goto-chg.git
@@ -183,9 +168,6 @@
 [submodule "ht"]
 	path = lib/ht
 	url = https://github.com/Wilfred/ht.el.git
-[submodule "htmlize"]
-	path = lib/htmlize
-	url = https://github.com/hniksic/emacs-htmlize
 [submodule "hungry-delete"]
 	path = lib/hungry-delete
 	url = https://github.com/nflath/hungry-delete.git
@@ -243,9 +225,6 @@
 [submodule "nix-mode"]
 	path = lib/nix-mode
 	url = https://github.com/NixOS/nix-mode.git
-[submodule "ob-ipython"]
-	path = lib/ob-ipython
-	url = https://github.com/gregsexton/ob-ipython.git
 [submodule "open-newline"]
 	path = lib/open-newline
 	url = https://github.com/manateelazycat/open-newline.git
@@ -264,18 +243,9 @@
 [submodule "packed"]
 	path = lib/packed
 	url = https://github.com/emacscollective/packed.git
-[submodule "pfuture"]
-	path = lib/pfuture
-	url = https://github.com/Alexander-Miller/pfuture.git
-[submodule "pkg-info"]
-	path = lib/pkg-info
-	url = https://github.com/emacsorphanage/pkg-info.git
 [submodule "plantuml-mode"]
 	path = lib/plantuml-mode
 	url = https://github.com/skuro/plantuml-mode.git
-[submodule "poetry"]
-	path = lib/poetry
-	url = https://github.com/galaunay/poetry.el.git
 [submodule "popon"]
 	path = lib/popon
 	url = https://codeberg.org/akib/emacs-popon.git
@@ -291,9 +261,6 @@
 [submodule "pythonic"]
 	path = lib/pythonic
 	url = https://github.com/pythonic-emacs/pythonic.git
-[submodule "pyvenv"]
-	path = lib/pyvenv
-	url = https://github.com/jorgenschaefer/pyvenv.git
 [submodule "quickrun"]
 	path = lib/quickrun
 	url = https://github.com/emacsorphanage/quickrun.git
@@ -350,9 +317,6 @@
 [submodule "with-editor"]
 	path = lib/with-editor
 	url = https://github.com/magit/with-editor.git
-[submodule "xterm-color"]
-	path = lib/xterm-color
-	url = https://github.com/atomontage/xterm-color.git
 [submodule "yaml-mode"]
 	path = lib/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode.git

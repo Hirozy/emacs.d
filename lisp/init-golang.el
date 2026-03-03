@@ -10,10 +10,6 @@
 (use-package go-mode
   :defer t)
 
-(use-package go-playground
-  :diminish
-  :commands go-playground)
-
 (provide 'init-golang)
 
 ;; Local Variables:

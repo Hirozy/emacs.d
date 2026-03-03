@@ -79,11 +79,6 @@
 
   (use-package org-tempo)
 
-  (use-package ob-python
-    :defer t
-    :config
-    (setq org-babel-python-command "python3"))
-
   (use-package ox-html
     :defer t
     :config
