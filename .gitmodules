@@ -132,9 +132,6 @@
 [submodule "flycheck-eglot"]
 	path = lib/flycheck-eglot
 	url = https://github.com/flycheck/flycheck-eglot
-[submodule "format-all"]
-	path = lib/format-all
-	url = https://github.com/lassik/emacs-format-all-the-code.git
 [submodule "gcmh"]
 	path = lib/gcmh
 	url = https://gitlab.com/koral/gcmh.git
@@ -161,7 +158,7 @@
 	url = https://github.com/haskell/haskell-mode.git
 [submodule "helpful"]
 	path = lib/helpful
-	url = https://github.com/Wilfred/helpful.git
+	url = https://github.com/Wilfred/helpful
 [submodule "hl-indent-scope"]
 	path = lib/hl-indent-scope
 	url = https://codeberg.org/ideasman42/emacs-hl-indent-scope.git
@@ -175,15 +172,9 @@
 	path = lib/hydra
 	url = https://github.com/abo-abo/hydra.git
 	no-byte-compile = hydra-examples.el
-[submodule "inheritenv"]
-	path = lib/inheritenv
-	url = https://github.com/purcell/inheritenv.git
 [submodule "kind-icon"]
 	path = lib/kind-icon
 	url = https://github.com/jdtsmith/kind-icon.git
-[submodule "language-id"]
-	path = lib/language-id
-	url = https://github.com/lassik/emacs-language-id.git
 [submodule "leuven-theme"]
 	path = lib/leuven-theme
 	url = https://github.com/fniessen/emacs-leuven-theme.git

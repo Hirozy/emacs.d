@@ -123,7 +123,6 @@
           "\\*Borg.*\\*$"
           "\\*quickrun\\*$"
           "\\*eldoc for.*\\*$"
-          "\\*format-all-errors\\*"
           "\\*rust-.*\\*$"
           "\\*rustic-.*\\*$"
 

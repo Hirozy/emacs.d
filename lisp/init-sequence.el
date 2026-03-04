@@ -25,7 +25,6 @@
    ("H" query-replace-regexp "replace regexp")
    (";" comment-line "comment line")
    ("C-;" comment-region "comment region")
-   ("m" format-all-buffer "format buffer")
    ("~" revert-buffer "revert buffer")
    (":" iedit-mode "iedit")
    ("[" puni-wrap-square "warp []")
