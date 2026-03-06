@@ -48,6 +48,14 @@
 (use-package delsel
   :hook (after-init . delete-selection-mode))
 
+(use-package apheleia
+  :config
+  (dolist (mode-format-pair '((python-mode . ruff)
+                              (python-ts-mode . ruff)
+                              (js-json-mode . denofmt-json)
+                              (json-ts-mode . denofmt-json)))
+    (setf (alist-get (car mode-format-pair) apheleia-mode-alist) (cdr mode-format-pair))))
+
 (use-package undo-fu)
 
 (use-package vundo)
