@@ -49,6 +49,7 @@
 (require 'init-runner)
 (require 'init-evil)
 (require 'init-llm)
+(require 'init-treesitter)
 
 (require 'init-sequence)
 

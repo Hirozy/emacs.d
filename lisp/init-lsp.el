@@ -16,7 +16,7 @@ For other modes, use eglot completion only.
 Includes template expansion and file path completion in all cases.
 The function is described at
 https://github.com/minad/corfu/wiki#making-a-cape-super-capf-for-eglot"
-  (if (member major-mode '(c-mode c++-mode objc-mode))
+  (if (member major-mode '(c-mode c++-mode objc-mode c-ts-mode c++-ts-mode))
       (setq-local completion-at-point-functions
                   (list #'tempel-expand
                         #'cape-file
@@ -37,13 +37,13 @@ https://github.com/minad/corfu/wiki#making-a-cape-super-capf-for-eglot"
      :colorProvider
      :foldingRangeProvider
      :executeCommandProvider))
-  :hook ((c-mode
-          c-ts-mode
-          c++-mode c++-ts-mode objc-mode
+  :hook ((
+          c-mode c-ts-mode c++-mode c++-ts-mode objc-mode
           python-mode python-ts-mode
-          haskell-mode
-          haskell-literate-mode
-          go-mode go-ts-mode)
+          haskell-mode haskell-literate-mode
+          go-mode go-ts-mode
+          rust-mode rust-ts-mode
+          )
          . eglot-ensure)
   :bind (:map eglot-mode-map
               ("S-<f6>" . eglot-rename))

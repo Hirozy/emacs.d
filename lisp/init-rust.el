@@ -8,14 +8,14 @@
 ;;; Code:
 
 (use-package rust-mode
-  :defer t)
+  :defer t
+  :init
+  (setq rust-mode-treesitter-derive t))
 
 (use-package rust-playground
   :commands rust-playground
   :custom
   (rust-playground-basedir (substitute-in-file-name "$HOME/.cache/rust-platground")))
-
-(advice-add 'rust-playground :after #'(lambda() rust-ts-mode))
 
 (provide 'init-rust)
 
