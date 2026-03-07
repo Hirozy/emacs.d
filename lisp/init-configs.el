@@ -32,16 +32,15 @@
 ;; Disabled tool bar
 (tool-bar-mode -1)
 
-(if (version< emacs-version "29.0")
-    (progn (global-set-key (kbd "<mouse-4>") (lambda ()
-                                               (interactive)
-                                               (scroll-down 3)))
-           (global-set-key (kbd "<mouse-5>") (lambda ()
-                                               (interactive)
-                                               (scroll-up 3))))
-  (progn (pixel-scroll-precision-mode 1)
-         (setq-default display-line-numbers-width 3)))
+(pixel-scroll-precision-mode t)
 
+;; Set scrolling step to 1 line to avoid jump at end of buffer.
+(setq scroll-step 1)
+;; Setting this > 100 prevents Emacs from automatically centering the cursor
+;; when it moves off-screen, ensuring smooth scrolling at buffer boundaries.
+(setq scroll-conservatively 101)
+;; Explicitly set scroll-margin to 0 to prevent content rubber-banding.
+(setq scroll-margin 0)
 
 (require 'view)
 (global-set-key (kbd "C-v") 'View-scroll-half-page-forward)
