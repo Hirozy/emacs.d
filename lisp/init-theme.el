@@ -7,6 +7,17 @@
 
 ;;; Code:
 
+;; Fix the inline height of emoji
+(let ((emoji-font
+       (cond
+        ((eq system-type 'darwin) "Apple Color Emoji")
+        ((eq system-type 'windows-nt) "Segoe UI Emoji")
+        ((eq system-type 'gnu/linux) "Noto Color Emoji"))))
+
+  (when (and emoji-font (find-font (font-spec :family emoji-font)))
+    (set-fontset-font t 'emoji (font-spec :family emoji-font) nil 'prepend)
+    (add-to-list 'face-font-rescale-alist `(,emoji-font . 0.8))))
+
 (defcustom before-load-theme-hook nil
   "Functions to run before load theme."
   :type 'hook)
