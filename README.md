@@ -13,10 +13,10 @@ easy to add packages that are not in `elpa` and `mepla`.
 To install, clone this repo first, then install all drones (aka packages) with borg.
 
 ``` Bash
-git clone https://github.com/Hirozy/emacs.d.git ~/.emacs.d
+git clone --recursive https://github.com/Hirozy/emacs.d.git ~/.emacs.d
 cd ~/.emacs.d
-make bootstrap-borg   # bootstrap borg itself
 make bootstrap        # bootstrap all drones
+make native           # Optional, native build support
 ```
 
 ## TrueColor Support
