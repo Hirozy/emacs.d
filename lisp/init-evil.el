@@ -9,6 +9,10 @@
 
 (defun setup-evil-keys ()
   "Setup evil keys."
+  (with-eval-after-load 'evil-maps
+    (define-key evil-motion-state-map (kbd "TAB") nil)
+    (define-key evil-motion-state-map (kbd "<tab>") nil))
+
   (evil-define-key '(normal visual insert motion) 'global
     (kbd "C-a") 'move-beginning-of-line
     (kbd "C-e") 'move-end-of-line
@@ -25,8 +29,6 @@
     "+" 'evil-numbers/inc-at-pt
     "-" 'evil-numbers/dec-at-pt
     (kbd "<leader>x") 'delete-window
-    (kbd "<leader>q") 'hydra-freq/body
-    (kbd "<leader>r") 'hydra-edit/body
     (kbd "<leader>z") 'avy-goto-char
     (kbd "<leader>SPC") 'keyboard-escape-quit)
 
@@ -43,11 +45,6 @@
     (kbd "C-r") 'hydra-edit/body
     (kbd "M-y") 'consult-yank-pop)
 
-  (evil-define-key '(normal motion insert) org-mode-map
-    (kbd "TAB") 'org-cycle
-    (kbd "S-TAB") 'org-shifttab
-    (kbd "C-,") 'org-mark-ring-goto)
-
   (if (require 'embark nil t)
       (evil-define-key 'normal 'global
         (kbd "C-.") 'embark-act))
@@ -56,14 +53,12 @@
       (evil-define-key 'normal 'global
         (kbd "C-k") 'puni-kill-line))
 
-  (if (require 'denote nil t)
+  (if (require 'org nil t)
       (progn
         (evil-define-key 'normal 'global
-          (kbd "<leader>n") 'org-keys/body)
+          (kbd "<leader>n") 'org-mapping/body)
         (evil-define-key 'normal org-mode-map
-          (kbd "RET") 'org-open-at-point
-          (kbd "<return>") 'org-open-at-point
-          (kbd ",") 'org-keys/body
+          (kbd ",") 'org-mapping/body
           "<" (lambda (&rest args)
                 (interactive)
                 (if (org-in-src-block-p)

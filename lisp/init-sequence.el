@@ -75,13 +75,15 @@
   ("y" consult-yank-from-kill-ring "yank")
   ("SPC" nil "quit"))
 
+(autoload 'denote-directories "denote")
 (defhydra org-mapping (:foreign-keys nil :exit t)
-  "Keymap for org mode and org roam"
-  ("o" denote-open-or-create "find node" :column "Denote")
-  ("n" denote "new node")
+  ("n" denote-open-or-create "open or new" :column "Denote")
+  ("o" denote "open node")
   ("r" denote-rename-file-using-front-matter "rename file")
-  ("tt" denote-keywords-add "tag add")
-  ("tr" denote-keywords-remove "tag remove")
+  ("l" denote-link "denote link")
+  ("b" denote-backlinks "denote backlinks")
+  ("/" (lambda () (interactive) (consult-fd (denote-directories))) "search notes")
+  ("s" (lambda () (interactive) (consult-ripgrep (denote-directories))) "search content")
 
   ("S" org-insert-structure-template "org template" :column "Org mode")
   ("'" org-insert-subheading "insert subheading")
