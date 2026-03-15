@@ -107,8 +107,8 @@
    ("i" consult-imenu "semantic imenu")
    ("I" consult-imenu-multi "semantic imenu multi")
    ("j" tags-mapping/body "tags keymap" :exit t)
+   ("e" register-yank-mapping/body "registers and yanks")
    ("q" consult-kmacro "macros")
-   ("e" register-mapping/body "register")
 
    ("v" vterm "vterm" :column "Tools")
    ("V" projectile-run-vterm "projectile vterm")

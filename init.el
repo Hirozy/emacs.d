@@ -47,9 +47,9 @@
 (require 'init-git)
 (require 'init-langs)
 (require 'init-runner)
-(require 'init-evil)
 (require 'init-llm)
 (require 'init-treesitter)
+(require 'init-evil)
 
 (require 'init-sequence)
 
