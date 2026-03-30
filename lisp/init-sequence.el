@@ -66,7 +66,7 @@
   ("e" edit-bookmarks "edit bookmarks")
   ("SPC" nil "quit"))
 
-(defhydra register-mapping (:foreign-keys nil :exit t)
+(defhydra register-yank-mapping (:foreign-keys nil :exit t)
   ("s" consult-register-store "save register" :column "Registers")
   ("l" consult-register-load "load register")
   ("/" consult-register "consult register")
@@ -78,7 +78,7 @@
 (autoload 'denote-directories "denote")
 (defhydra org-mapping (:foreign-keys nil :exit t)
   ("n" denote-open-or-create "open or new" :column "Denote")
-  ("o" denote "open node")
+  ("o" denote "open note")
   ("r" denote-rename-file-using-front-matter "rename file")
   ("l" denote-link "denote link")
   ("b" denote-backlinks "denote backlinks")
