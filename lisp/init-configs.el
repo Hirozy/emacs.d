@@ -55,11 +55,12 @@
 
 (setq-default major-mode 'text-mode)
 
-(setq url-proxy-services
-      '(("no_proxy" . "^\\(localhost\\|127\\.*\\)")
-        ("http" . "127.0.0.1:6152")
-        ("https" . "127.0.0.1:6152")
-        ("ftp" . "127.0.0.1:6152")))
+(when (eq system-type 'darwin)
+  (setq url-proxy-services
+        '(("no_proxy" . "^\\(localhost\\|127\\.*\\)")
+          ("http" . "127.0.0.1:6152")
+          ("https" . "127.0.0.1:6152")
+          ("ftp" . "127.0.0.1:6152"))))
 
 (provide 'init-configs)
 
