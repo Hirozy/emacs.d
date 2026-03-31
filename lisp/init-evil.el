@@ -74,7 +74,6 @@
   :hook ((after-init . evil-mode)
          ((yaml-mode) . (lambda ()
                           (setq-local evil-shift-width 2))))
-  :bind (("C-\\" . evil-force-normal-state))
 
   :init
   (setq evil-want-integration t

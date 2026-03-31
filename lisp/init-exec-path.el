@@ -8,7 +8,7 @@
 ;;; Code:
 
 (use-package exec-path-from-shell
-  :if (memq window-system '(mac ns x))
+  :if (memq window-system '(ns x pgtk))
   :config
   ;; The shell name is defined by `exec-path-from-shell-shell-name'
   ;; or `shell-file-name' (if set).
