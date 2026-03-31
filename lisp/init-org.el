@@ -63,6 +63,7 @@
      (org . t)
      (perl . t)
      (python . t)
+     (plantuml . t)
      (ruby . t)
      (sed . t)
      (sql . t)
