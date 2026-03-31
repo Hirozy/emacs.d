@@ -84,14 +84,18 @@
   ("b" denote-backlinks "denote backlinks")
   ("/" (lambda () (interactive) (consult-fd (denote-directories))) "search notes")
   ("s" (lambda () (interactive) (consult-ripgrep (denote-directories))) "search content")
+  ("SPC" nil "quit")
 
   ("S" org-insert-structure-template "org template" :column "Org mode")
+  ("e" org-export-dispatch "org export")
   ("'" org-insert-subheading "insert subheading")
   ("c" org-copy-to-shell-cat "copy shell cat")
   ("C" org-babel-insert-tee-file-mark "insert tee mark")
   ("T" org-table-create "create table")
   ("I" org-id-get-create "create ID")
-  ("SPC" nil "quit"))
+  ("mm" org-download-clipboard "insert image from clipboard")
+  ("ma" org-download-image "insert image from URL")
+  ("md" org-download-delete "delete image"))
 
 (global-set-key
  (kbd "C-q")
@@ -113,6 +117,7 @@
    ("v" vterm "vterm" :column "Tools")
    ("V" projectile-run-vterm "projectile vterm")
    ("s" dash-at-point "dash")
+   ("g" gptel-menu "GPTel")
    ("kt" kill-current-buffer "kill this buffer")
    ("kb" kill-buffer "kill other buffer")
    ("kr" eval-buffer "eval buffer")
