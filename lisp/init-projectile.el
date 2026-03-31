@@ -10,6 +10,7 @@
 (use-package projectile
   :demand
   :bind-keymap (("s-p" . projectile-command-map)
+                ("M-p" . projectile-command-map)
                 ("C-c p" . projectile-command-map))
   :bind (:map projectile-command-map
               ("s" . projectile-ripgrep))
