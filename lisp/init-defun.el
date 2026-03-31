@@ -22,6 +22,19 @@
   (interactive)
   (message buffer-file-name))
 
+(defun defined/toggle-cape-dict-local ()
+  "Toggle `cape-dict' completion in the current buffer.
+
+If `cape-dict' is currently active in `completion-at-point-functions'
+for this buffer, it will be removed. Otherwise, it will be added."
+  (interactive)
+  (if (memq #'cape-dict completion-at-point-functions)
+      (progn
+        (remove-hook 'completion-at-point-functions #'cape-dict t)
+        (message "Disable `cape-dict' completion in this buffer"))
+    (add-hook 'completion-at-point-functions #'cape-dict)
+    (message "Enable `cape-dict' completion in this buffer")))
+
 (provide 'init-defun)
 
 ;; Local Variables:

@@ -40,26 +40,25 @@
          (text-mode . (lambda ()
                         (setq-local completion-at-point-functions
                                     (list #'tempel-expand
-                                          #'cape-dabbrev
-                                          #'cape-tex
-                                          #'cape-dict))))
+                                          #'cape-file
+                                          #'cape-dabbrev))))
          ((org-mode markdown-mode) . (lambda ()
                                        (setq-local completion-at-point-functions
                                                    (list #'tempel-expand
                                                          #'cape-file
-                                                         #'cape-dict
-                                                         #'cape-elisp-block
-                                                         #'cape-dabbrev))))
+                                                         #'cape-tex
+                                                         #'cape-dabbrev
+                                                         #'cape-elisp-block))))
          (cmake-mode . (lambda ()
                          (setq-local completion-at-point-functions
                                      (list
                                       (cape-company-to-capf #'company-cmake)))))
-         (emacs-lisp-mode . (lambda ()
-                              (setq-local completion-at-point-functions
-                                          (list #'tempel-expand
-                                                #'cape-file
-                                                #'elisp-completion-at-point
-                                                #'cape-dabbrev)))))
+         ((emacs-lisp-mode lisp-data-mode) . (lambda ()
+                                               (setq-local completion-at-point-functions
+                                                           (list #'tempel-expand
+                                                                 #'cape-file
+                                                                 #'elisp-completion-at-point
+                                                                 #'cape-dabbrev)))))
   :config
   (setq cape-dabbrev-min-length 3))
 
