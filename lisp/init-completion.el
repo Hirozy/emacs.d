@@ -47,6 +47,7 @@
                                        (setq-local completion-at-point-functions
                                                    (list #'tempel-expand
                                                          #'cape-file
+                                                         #'cape-dict
                                                          #'cape-elisp-block
                                                          #'cape-dabbrev))))
          (cmake-mode . (lambda ()
