@@ -11,6 +11,17 @@
               tab-width 4
               tab-always-indent 'complete)
 
+(defun defined/corfu-smart-space ()
+  "`defined/corfu-smart-space` is a command that
+inserts a separator if the input does not end with
+a space, otherwise it quits `corfu`. It can be used
+as fuzzy completion for capf + orderless."
+  (interactive)
+  (let ((input (car corfu--input)))
+    (if (string-suffix-p " " input)
+        (corfu-quit)
+      (corfu-insert-separator))))
+
 (use-package corfu
   :custom
   (corfu-cycle t)
@@ -28,7 +39,7 @@
               ([backtab] . corfu-previous)
               ("RET" . corfu-insert)
               ([return] . corfu-insert)
-              ("," . corfu-insert-separator)
+              ("SPC" . defined/corfu-smart-space)
               ("M-g" . corfu-info-location)
               ("M-h" . corfu-info-documentation)))
 
@@ -60,7 +71,11 @@
                                                                  #'elisp-completion-at-point
                                                                  #'cape-dabbrev)))))
   :config
-  (setq cape-dabbrev-min-length 3))
+  (setq cape-dabbrev-min-length 3
+        ;; Never set the `corfu-quit-no-match' to `t' as this will cause
+        ;; completion to exit automatically when an error character is entered.
+        corfu-quit-no-match 'separator
+        corfu-quit-at-boundary 'separator))
 
 (use-package corfu-terminal
   :unless (display-graphic-p)
