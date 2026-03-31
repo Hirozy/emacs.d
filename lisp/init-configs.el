@@ -41,6 +41,8 @@
 (setq scroll-conservatively 101)
 ;; Explicitly set scroll-margin to 0 to prevent content rubber-banding.
 (setq scroll-margin 0)
+;; Disable beep sound and visual flash (e.g., on C-g)
+(setq ring-bell-function 'ignore)
 
 (require 'view)
 (global-set-key (kbd "C-v") 'View-scroll-half-page-forward)
@@ -61,6 +63,10 @@
           ("http" . "127.0.0.1:6152")
           ("https" . "127.0.0.1:6152")
           ("ftp" . "127.0.0.1:6152"))))
+
+(when (eq system-type 'gnu/linux)
+  ;; Disable cursor blinking to avoid fcitx candidate box jumping
+  (blink-cursor-mode -1))
 
 (provide 'init-configs)
 
