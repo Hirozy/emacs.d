@@ -11,17 +11,6 @@
               tab-width 4
               tab-always-indent 'complete)
 
-(defun defined/corfu-smart-space ()
-  "`defined/corfu-smart-space` is a command that
-inserts a separator if the input does not end with
-a space, otherwise it quits `corfu`. It can be used
-as fuzzy completion for capf + orderless."
-  (interactive)
-  (let ((input (car corfu--input)))
-    (if (string-suffix-p " " input)
-        (corfu-quit)
-      (corfu-insert-separator))))
-
 (use-package corfu
   :custom
   (corfu-cycle t)
@@ -39,7 +28,7 @@ as fuzzy completion for capf + orderless."
               ([backtab] . corfu-previous)
               ("RET" . corfu-insert)
               ([return] . corfu-insert)
-              ("SPC" . defined/corfu-smart-space)
+              ("&" . corfu-insert-separator)
               ("M-g" . corfu-info-location)
               ("M-h" . corfu-info-documentation)))
 
