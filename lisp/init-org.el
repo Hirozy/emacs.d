@@ -9,11 +9,13 @@
 (require 'transient)
 (require 'consult)
 
-(defun defined/org-without-confirm-babel-evaluate (lang body)
-  "Org without confirm with LANG BODY."
-  (not (or (string= lang "dot")
-           (string= lang "gnuplot")
-           (string= lang "python"))))
+(defvar defined/org-without-confirm-babel
+  '("dot"
+    "gnuplot"
+    "python"
+    "plantuml"
+    )
+  "List of languages that should not prompt for confirmation when evaluating.")
 
 (use-package org
   :defer t
@@ -41,7 +43,8 @@
         ;; code is aligned with the leftmost column
         org-src-preserve-indentation t
         org-export-with-sub-superscripts nil
-        org-confirm-babel-evaluate #'defined/org-without-confirm-babel-evaluate)
+        org-confirm-babel-evaluate (lambda (lang body)
+                                     (not (member lang defined/org-without-confirm-babel))))
 
   ;; https://orgmode.org/worg/org-contrib/babel/languages.html
   ;; https://orgmode.org/manual/Languages.html#Languages
