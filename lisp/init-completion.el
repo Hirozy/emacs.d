@@ -32,24 +32,24 @@
               ("M-g" . corfu-info-location)
               ("M-h" . corfu-info-documentation)))
 
-(defalias 'cape-dabbrev-min (cape-capf-prefix-length #'cape-dabbrev 3))
+(defalias 'defined/cape-dabbrev-min (cape-capf-prefix-length #'cape-dabbrev 3))
 
 (use-package cape
   :hook ((prog-mode . (lambda ()
                         (setq-local completion-at-point-functions
                                     (list #'tempel-expand
-                                          #'cape-dabbrev-min))))
+                                          #'defined/cape-dabbrev-min))))
          (text-mode . (lambda ()
                         (setq-local completion-at-point-functions
                                     (list #'tempel-expand
                                           #'cape-file
-                                          #'cape-dabbrev-min))))
+                                          #'defined/cape-dabbrev-min))))
          ((org-mode markdown-mode) . (lambda ()
                                        (setq-local completion-at-point-functions
                                                    (list #'tempel-expand
                                                          #'cape-file
                                                          #'cape-tex
-                                                         #'cape-dabbrev-min
+                                                         #'defined/cape-dabbrev-min
                                                          #'cape-elisp-block))))
          (cmake-mode . (lambda ()
                          (setq-local completion-at-point-functions
@@ -60,7 +60,7 @@
                                                            (list #'tempel-expand
                                                                  #'cape-file
                                                                  #'elisp-completion-at-point
-                                                                 #'cape-dabbrev-min)))))
+                                                                 #'defined/cape-dabbrev-min)))))
   :custom
   ;; Never set the `corfu-quit-no-match' to `t' as this will cause
   ;; completion to exit automatically when an error character is entered.

@@ -22,17 +22,19 @@
   (interactive)
   (message buffer-file-name))
 
+(defalias 'defined/cape-dict-min (cape-capf-prefix-length #'cape-dict 4))
+
 (defun defined/toggle-cape-dict-local ()
   "Toggle `cape-dict' completion in the current buffer.
 
 If `cape-dict' is currently active in `completion-at-point-functions'
 for this buffer, it will be removed. Otherwise, it will be added."
   (interactive)
-  (if (memq #'cape-dict completion-at-point-functions)
+  (if (memq #'defined/cape-dict-min completion-at-point-functions)
       (progn
-        (remove-hook 'completion-at-point-functions #'cape-dict t)
+        (remove-hook 'completion-at-point-functions #'defined/cape-dict-min t)
         (message "Disable `cape-dict' completion in this buffer"))
-    (add-hook 'completion-at-point-functions #'cape-dict)
+    (add-hook 'completion-at-point-functions #'defined/cape-dict-min nil t)
     (message "Enable `cape-dict' completion in this buffer")))
 
 (provide 'init-defun)
