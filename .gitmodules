@@ -71,6 +71,9 @@
 [submodule "dash-at-point"]
 	path = lib/dash-at-point
 	url = https://github.com/stanaka/dash-at-point.git
+[submodule "deflate"]
+	path = lib/deflate
+	url = https://github.com/skuro/deflate
 [submodule "denote"]
 	path = lib/denote
 	url = https://github.com/protesilaos/denote
