@@ -84,11 +84,9 @@
 (use-package flycheck
   :diminish
   :defer t
-  :config
-  (setq flycheck-emacs-lisp-load-path 'inherit)
-  (define-key flycheck-mode-map flycheck-keymap-prefix nil)
-  (setq flycheck-keymap-prefix (kbd "C-c C-l"))
-  (define-key flycheck-mode-map flycheck-keymap-prefix flycheck-command-map))
+  :custom
+  (flycheck-emacs-lisp-load-path 'inherit)
+  (flycheck-keymap-prefix (kbd "C-c C-l")))
 
 (use-package flycheck-eglot
   :after (flycheck eglot)
