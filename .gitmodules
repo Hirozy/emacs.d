@@ -275,6 +275,9 @@
 [submodule "s"]
 	path = lib/s
 	url = https://github.com/magnars/s.el.git
+[submodule "shift-number"]
+	path = lib/shift-number
+	url = https://codeberg.org/ideasman42/emacs-shift-number
 [submodule "symbol-overlay"]
 	path = lib/symbol-overlay
 	url = https://github.com/wolray/symbol-overlay.git
