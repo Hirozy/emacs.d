@@ -10,3 +10,18 @@ go-mode go-ts-mode
 emacs-lisp-mode
 (message "(message \"" p "\")")
 
+org-mode
+(begin "#+begin_" (s name) n> r> n "#+end_" name)
+(src "#+begin_src " q n r n "#+end_src")
+(quote "#+begin_quote" n> r> n "#+end_quote")
+(srcplant "#+begin_src plantuml :file " p ".png" n>
+          "@startuml" n>
+          q n>
+          "@enduml" n>
+          "#+end_src")
+(platex "<latex>"p"</latex>")
+
+;; Local Variables:
+;; mode: lisp-data
+;; outline-regexp: "[a-z]"
+;; End:

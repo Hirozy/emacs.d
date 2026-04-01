@@ -78,7 +78,7 @@
 (autoload 'denote-directories "denote")
 (defhydra org-mapping (:foreign-keys nil :exit t)
   ("n" denote-open-or-create "open or new" :column "Denote")
-  ("o" denote "open note")
+  ("o" denote "new note")
   ("r" denote-rename-file-using-front-matter "rename file")
   ("l" denote-link "denote link")
   ("b" denote-backlinks "denote backlinks")
