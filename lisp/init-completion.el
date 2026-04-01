@@ -59,12 +59,13 @@
                                                                  #'cape-file
                                                                  #'elisp-completion-at-point
                                                                  #'cape-dabbrev)))))
+  :custom
+  ;; Never set the `corfu-quit-no-match' to `t' as this will cause
+  ;; completion to exit automatically when an error character is entered.
+  (corfu-quit-no-match 'separator)
+  (corfu-quit-at-boundary 'separator)
   :config
-  (setq cape-dabbrev-min-length 3
-        ;; Never set the `corfu-quit-no-match' to `t' as this will cause
-        ;; completion to exit automatically when an error character is entered.
-        corfu-quit-no-match 'separator
-        corfu-quit-at-boundary 'separator))
+  (setq cape-dabbrev-min-length 3))
 
 (use-package corfu-terminal
   :unless (display-graphic-p)
