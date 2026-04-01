@@ -9,20 +9,25 @@
 
 (use-package exec-path-from-shell
   :if (memq window-system '(ns x pgtk))
-  :config
+  :custom
   ;; The shell name is defined by `exec-path-from-shell-shell-name'
   ;; or `shell-file-name' (if set).
-  (setq exec-path-from-shell-warn-duration-millis 1000)
-  (setq exec-path-from-shell-variables '("PATH"
-                                         "KUBECONFIG"
-                                         "GOPATH"
-                                         "GOROOT"
-                                         "GO111MODULE"
-                                         "WORKON_HOME"
-                                         "PYTHONPATH"
-                                         "GTAGSCONF"
-                                         "GTAGSLABEL"
-                                         "GTAGSOBJDIRPREFIX"))
+  (exec-path-from-shell-warn-duration-millis 1000)
+  (exec-path-from-shell-variables '("PATH"
+                                    "KUBECONFIG"
+                                    "GOPATH"
+                                    "GOROOT"
+                                    "GO111MODULE"
+                                    "WORKON_HOME"
+                                    "PYTHONPATH"
+                                    "GTAGSCONF"
+                                    "GTAGSLABEL"
+                                    "GTAGSOBJDIRPREFIX"))
+  :config
+  (when (eq system-type 'gnu/linux)
+    (nconc exec-path-from-shell-variables '("HTTP_PROXY"
+                                            "HTTPS_PROXY"
+                                            "NO_PROXY")))
   (exec-path-from-shell-initialize))
 
 (provide 'init-exec-path)
