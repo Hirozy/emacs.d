@@ -229,9 +229,6 @@
 [submodule "org-download"]
 	path = lib/org-download
 	url = https://github.com/abo-abo/org-download
-[submodule "org-preview-html"]
-	path = lib/org-preview-html
-	url = https://github.com/Hirozy/org-preview-html.git
 [submodule "org-shell-cat"]
 	path = lib/org-shell-cat
 	url = https://github.com/Hirozy/org-shell-cat.git
