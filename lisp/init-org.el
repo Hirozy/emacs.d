@@ -24,15 +24,8 @@
          (org-mode . (lambda ()
                        (setq-local lsp-diagnostics-provider :none))))
   :bind (:map org-mode-map
-              ("C-," . org-mark-ring-goto)
-              ("M-N" . org-next-visible-heading)
-              ("M-P" . org-previous-visible-heading)
-              ("M-U" . org-up-element)
-              ("M-D" . org-down-element)
-              ("M-H" . org-previous-link)
-              ("M-J" . org-next-link)
-              ("M-K" . org-previous-block)
-              ("M-L" . org-next-block))
+              ("C-," . org-mark-ring-goto))
+
   :config
   (setq org-support-shift-select t
         ;; always display inline images
