@@ -89,6 +89,9 @@
 
   ("S" org-insert-structure-template "org template" :column "Org mode")
   ("e" org-export-dispatch "org export")
+  ("yy" yank-media "yank media")
+  ("yd" org-attach-delete-all "delete attach")
+  ("ys" org-attach-sync "sync attach")
   ("'" org-insert-subheading "insert subheading")
   ("c" org-copy-to-shell-cat "copy shell cat")
   ("T" org-table-create "create table")
