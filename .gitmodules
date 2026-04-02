@@ -226,9 +226,6 @@
 [submodule "orderless"]
 	path = lib/orderless
 	url = https://github.com/oantolin/orderless.git
-[submodule "org-download"]
-	path = lib/org-download
-	url = https://github.com/abo-abo/org-download
 [submodule "org-shell-cat"]
 	path = lib/org-shell-cat
 	url = https://github.com/Hirozy/org-shell-cat.git

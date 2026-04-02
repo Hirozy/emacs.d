@@ -81,15 +81,6 @@
     :config
     (setq org-html-htmlize-output-type 'css)))
 
-(use-package org-download
-  :after org)
-
-(use-package org-preview-html
-  :after org
-  :commands org-preview-html-mode
-  :bind (:map org-mode-map
-              ("<f6>" . org-preview-html-mode)))
-
 (use-package denote
   :hook (dired-mode . denote-dired-mode)
   :bind

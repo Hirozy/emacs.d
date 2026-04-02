@@ -92,10 +92,7 @@
   ("'" org-insert-subheading "insert subheading")
   ("c" org-copy-to-shell-cat "copy shell cat")
   ("T" org-table-create "create table")
-  ("I" org-id-get-create "create ID")
-  ("mm" org-download-clipboard "insert image from clipboard")
-  ("ma" org-download-image "insert image from URL")
-  ("md" org-download-delete "delete image"))
+  ("I" org-id-get-create "create ID"))
 
 (global-set-key
  (kbd "C-q")
