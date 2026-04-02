@@ -169,6 +169,9 @@
 [submodule "ht"]
 	path = lib/ht
 	url = https://github.com/Wilfred/ht.el.git
+[submodule "htmlize"]
+	path = lib/htmlize
+	url = https://github.com/emacsorphanage/htmlize
 [submodule "hungry-delete"]
 	path = lib/hungry-delete
 	url = https://github.com/nflath/hungry-delete.git

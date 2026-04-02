@@ -26,19 +26,16 @@
   :bind (:map org-mode-map
               ("C-," . org-mark-ring-goto))
 
-  :config
-  (setq org-support-shift-select t
-        ;; always display inline images
-        org-startup-with-inline-images t
-        ;; fontify code in code blocks
-        org-src-fontify-natively t
-        ;; default is nil, when non-nil, source
-        ;; code is aligned with the leftmost column
-        org-src-preserve-indentation t
-        org-export-with-sub-superscripts nil
-        org-confirm-babel-evaluate (lambda (lang body)
-                                     (not (member lang defined/org-without-confirm-babel))))
+  :custom
+  (org-support-shift-select t)
+  (org-startup-with-inline-images t) ;; always display inline images
+  (org-src-fontify-natively t)  ;; fontify code in code blocks
+  (org-src-preserve-indentation t)  ;;  source code is aligned with the leftmost column
+  (org-export-with-sub-superscripts nil)
+  (org-confirm-babel-evaluate (lambda (lang body)
+                                (not (member lang defined/org-without-confirm-babel))))
 
+  :config
   ;; https://orgmode.org/worg/org-contrib/babel/languages.html
   ;; https://orgmode.org/manual/Languages.html#Languages
   (org-babel-do-load-languages
@@ -63,23 +60,18 @@
      (ruby . t)
      (sed . t)
      (sql . t)
-     (table . t)))
+     (table . t))))
 
-  (use-package ob-core
-    :hook (org-babel-after-execute . org-redisplay-inline-images))
+(use-package ob-core
+  :after org
+  :hook (org-babel-after-execute . org-redisplay-inline-images))
 
-  (use-package org-shell-cat
-    :commands org-copy-to-shell-cat
-    :hook (org-mode . org-babel-header-expand-shell-cat)
-    :bind (:map org-mode-map
-                ("C-c c" . org-copy-to-shell-cat)))
-
-  (use-package org-tempo)
-
-  (use-package ox-html
-    :defer t
-    :config
-    (setq org-html-htmlize-output-type 'css)))
+(use-package org-shell-cat
+  :after org
+  :commands org-copy-to-shell-cat
+  :hook (org-mode . org-babel-header-expand-shell-cat)
+  :bind (:map org-mode-map
+              ("C-c c" . org-copy-to-shell-cat)))
 
 (use-package denote
   :hook (dired-mode . denote-dired-mode)
