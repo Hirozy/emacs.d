@@ -158,6 +158,32 @@ Supported window systems:
   :config
   (consult-denote-mode))
 
+(use-package ox-publish
+  :after org
+  :init
+  (require 'denote)
+  :config
+  (setq org-publish-project-alist
+        `(("denote-notes"
+           :base-directory ,(expand-file-name denote-directory)
+           :base-extension "org"
+           :publishing-directory ,(expand-file-name "../exports/" denote-directory)
+           :recursive t
+           :publishing-function org-html-publish-to-html
+           :headline-levels 4
+           :auto-preamble t
+           :with-toc t
+           :section-numbers nil)
+
+          ("denote-static"
+           :base-directory ,(expand-file-name denote-directory)
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|webp\\|tiff\\|svg"
+           :publishing-directory ,(expand-file-name "../exports/" denote-directory)
+           :recursive t
+           :publishing-function org-publish-attachment)
+
+          ("denote" :components ("denote-notes" "denote-static")))))
+
 (provide 'init-org)
 
 ;; Local Variables:

@@ -37,6 +37,30 @@ for this buffer, it will be removed. Otherwise, it will be added."
     (add-hook 'completion-at-point-functions #'defined/cape-dict-min nil t)
     (message "Enable `cape-dict' completion in this buffer")))
 
+(defun defined/guess-which-org-publish-project ()
+  "Display and return the org-publish project name for the current Org file.
+Returns the project name if found, nil otherwise."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (cond
+     ((not filename)
+      (message "Buffer is not visiting a file.")
+      nil)
+
+     ((not (string-match-p "\\.org\\'" filename))
+      (message "This function only works with Org files.")
+      nil)
+
+     (t
+      (let ((project (org-publish-get-project-from-filename filename)))
+        (if project
+            (let ((project-name (car project)))
+              (message "Current Org file belongs to project: \"%s\"" project-name)
+              project-name)
+          (message "Current Org file does not belong to any org-publish project.")
+          nil))))))
+
+
 (provide 'init-defun)
 
 ;; Local Variables:
