@@ -8,10 +8,7 @@
 ;;; Code:
 
 (use-package magit
-  :defer t
-  :commands (magit-add-section-hook)
   :bind ("C-x m" . magit)
-
   :config
   (setq magit-module-sections-hook
         '(magit-insert-modules-unpulled-from-upstream
@@ -22,6 +19,11 @@
                           'magit-insert-modules
                           'magit-insert-stashes
                           'append))
+
+(use-package git-commit
+  :after magit
+  :config
+  (remove-hook 'git-commit-setup-hook #'git-commit-setup-capf))
 
 (use-package gptel-magit
   :after magit

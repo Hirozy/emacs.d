@@ -65,7 +65,9 @@
   ;; Never set the `corfu-quit-no-match' to `t' as this will cause
   ;; completion to exit automatically when an error character is entered.
   (corfu-quit-no-match 'separator)
-  (corfu-quit-at-boundary 'separator))
+  (corfu-quit-at-boundary 'separator)
+  :config
+  (advice-add 'dabbrev-capf :around #'cape-wrap-silent))
 
 (use-package corfu-terminal
   :unless (display-graphic-p)
