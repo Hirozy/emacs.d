@@ -131,6 +131,11 @@ Supported window systems:
   :after org
   :hook (org-babel-after-execute . org-redisplay-inline-images))
 
+(use-package ob-plantuml
+  :after org
+  :custom
+  (org-plantuml-exec-mode 'plantuml))
+
 (use-package org-shell-cat
   :after org
   :commands org-copy-to-shell-cat
@@ -147,6 +152,9 @@ Supported window systems:
 
 (use-package consult-denote
   :after denote
+  :custom
+  (consult-denote-grep-command #'consult-ripgrep)
+  (consult-denote-find-command #'consult-fd)
   :config
   (consult-denote-mode))
 

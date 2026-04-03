@@ -14,6 +14,8 @@
 
 (use-package plantuml-mode
   :defer t
+  :custom
+  (plantuml-default-exec-mode 'executable)
   :mode (("\\.puml\\'" . plantuml-mode)
          ("\\.plantuml\\'" . plantuml-mode)))
 
