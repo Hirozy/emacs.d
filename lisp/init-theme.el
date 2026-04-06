@@ -28,7 +28,8 @@
 
 (defun load-theme-hook-wrapper (origin-func theme &rest args)
   "A wrapper of hooks around `load-theme'."
-  (mapc #'disable-theme custom-enabled-themes)
+  (dolist (theme custom-enabled-themes)
+    (disable-theme theme))
   (run-hook-with-args 'before-load-theme-hook theme)
   (apply origin-func theme args)
   (run-hook-with-args 'after-load-theme-hook theme))
