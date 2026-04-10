@@ -138,10 +138,10 @@ Supported window systems:
 
 (use-package org-shell-cat
   :after org
-  :commands org-copy-to-shell-cat
   :hook (org-mode . org-babel-header-expand-shell-cat)
   :bind (:map org-mode-map
-              ("C-c c" . org-copy-to-shell-cat)))
+              ("C-c c" . org-copy-to-shell-cat)
+              ("C-c C" . org-copy-src-block)))
 
 (use-package denote
   :hook (dired-mode . denote-dired-mode)
