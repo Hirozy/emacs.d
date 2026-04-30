@@ -247,6 +247,9 @@
 [submodule "popper"]
 	path = lib/popper
 	url = https://github.com/karthink/popper.git
+[submodule "posframe"]
+	path = lib/posframe
+	url = https://github.com/tumashu/posframe
 [submodule "projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile.git
@@ -262,6 +265,9 @@
 [submodule "rainbow-delimiters"]
 	path = lib/rainbow-delimiters
 	url = https://github.com/Fanael/rainbow-delimiters.git
+[submodule "rime"]
+	path = lib/rime
+	url = https://github.com/DogLooksGood/emacs-rime
 [submodule "rust-mode"]
 	path = lib/rust-mode
 	url = https://github.com/rust-lang/rust-mode.git

@@ -77,3 +77,4 @@ org-roam.db
 tree-sitter
 /py
 /transient
+/rime

@@ -166,6 +166,45 @@
          ("C-h C-d" . helpful-at-point)
          ("C-h C-f" . helpful-function)))
 
+;; https://github.com/DogLooksGood/emacs-rime#%E7%BB%93%E5%90%88-evil-escape-%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8
+(defun rime-evil-escape-advice (orig-fun key)
+  "advice for `rime-input-method' to make it work together with `evil-escape'.
+        Mainly modified from `evil-escape-pre-command-hook'"
+  (if rime--preedit-overlay
+      ;; if `rime--preedit-overlay' is non-nil, then we are editing something, do not abort
+      (apply orig-fun (list key))
+    (when (featurep 'evil-escape)
+      (let (
+            (fkey (elt evil-escape-key-sequence 0))
+            (skey (elt evil-escape-key-sequence 1))
+            )
+        (if (or (char-equal key fkey)
+                (and evil-escape-unordered-key-sequence
+                     (char-equal key skey)))
+            (let ((evt (read-event nil nil evil-escape-delay)))
+              (cond
+               ((and (characterp evt)
+                     (or (and (char-equal key fkey) (char-equal evt skey))
+                         (and evil-escape-unordered-key-sequence
+                              (char-equal key skey) (char-equal evt fkey))))
+                (evil-repeat-stop)
+                (evil-normal-state))
+               ((null evt) (apply orig-fun (list key)))
+               (t
+                (apply orig-fun (list key))
+                (if (numberp evt)
+                    (apply orig-fun (list evt))
+                  (setq unread-command-events (append unread-command-events (list evt))))))
+              )
+          (apply orig-fun (list key)))))))
+
+(use-package rime
+  :custom
+  (default-input-method "rime")
+  (rime-show-candidate 'posframe)
+  :config
+  (advice-add 'rime-input-method :around #'rime-evil-escape-advice))
+
 (provide 'init-utils)
 
 ;; Local Variables:
