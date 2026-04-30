@@ -14,9 +14,9 @@
 (when (and (eq system-type 'darwin)
            (native-comp-available-p))
   (setenv "LIBRARY_PATH" (string-join
-                          '("/opt/ports/lib/gcc15"
-                            "/opt/ports/lib/libgcc"
-                            "/opt/ports/lib/gcc15/gcc/aarch64-apple-darwin25/15.2.0")
+                          '("/opt/local/lib/gcc15"
+                            "/opt/local/lib/libgcc"
+                            "/opt/local/lib/gcc15/gcc/aarch64-apple-darwin25/15.2.0")
                           ":")))
 
 (let ((dotfiles-dir (file-name-directory (or load-file-name buffer-file-name))))
