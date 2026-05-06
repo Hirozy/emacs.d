@@ -58,6 +58,8 @@
   ("t" citre-peek-through "citre through")
   ("u" citre-update-this-tags-file "update ctags" :column "Update")
   ("U" citre-global-update-database "update gtags")
+  ("c" citre-create-tags-file "create ctags")
+  ("C" citre-global-create-database "create gtags")
   ("SPC" nil "quit"))
 
 (defhydra bookmark-mapping (:foreign-keys nil :exit t)

@@ -13,6 +13,7 @@
   (citre-enable-capf-integration nil)
   (citre-enable-xref-integration nil)
   (citre-enable-imenu-integration nil)
+  (citre-gtags-args '("--sqlite3" "--compact" "--objdir"))
   :hook ((prog-mode . citre-mode))
   :config
   (require 'citre-config)
