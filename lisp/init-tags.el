@@ -11,16 +11,12 @@
   :functions (projectile-project-root)
   :custom
   (citre-enable-capf-integration nil)
-  (citre-enable-xref-integration nil)
-  (citre-enable-imenu-integration nil)
   (citre-gtags-args '("--sqlite3" "--compact" "--objdir"))
-  :hook ((prog-mode . citre-mode))
+  :hook (prog-mode . citre-mode)
   :config
   (require 'citre-config)
   (setq citre-project-root-function #'projectile-project-root
-        citre-default-create-tags-file-location 'global-cache
-        citre-use-project-root-when-creating-tags t
-        citre-prompt-language-for-ctags-command t))
+        citre-default-create-tags-file-location 'global-cache))
 
 (use-package xref
   :defer t
