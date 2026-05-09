@@ -41,8 +41,8 @@
     (kbd "<leader>j") 'tags-keys/body)
 
   (evil-define-key '(normal insert) 'global
-    (kbd "C-q") 'hydra-freq/body
-    (kbd "C-r") 'hydra-edit/body
+    (kbd "C-q") 'transient-frequently
+    (kbd "C-r") 'transient-editing
     (kbd "M-y") 'consult-yank-pop)
 
   (if (require 'embark nil t)

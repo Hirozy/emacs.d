@@ -27,8 +27,8 @@
 
 (use-package hungry-delete
   :defer t
-  :config
-  (setq hungry-delete-join-reluctantly nil))
+  :custom
+  (hungry-delete-join-reluctantly nil))
 
 ;; Move to the beginning/end of line or code
 (use-package mwim
