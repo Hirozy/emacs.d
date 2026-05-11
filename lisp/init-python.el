@@ -11,7 +11,7 @@
   "Add current path to PYTHONPATH, if PROMPT is non-nil, reset current path to PYTHONPATH."
   (interactive "P")
   (let ((current-path (expand-file-name default-directory)))
-    (if current-prefix-arg
+    (if prompt
         (progn
           (message "Reset %S to PYTHONPATH" current-path)
           (setenv "PYTHONPATH" current-path))

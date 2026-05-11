@@ -77,7 +77,7 @@
 (use-package embark
   :bind (("C-." . embark-act)
          ("M-." . embark-dwim)
-         (("C-h B" . embark-bindings))))
+         ("C-h B" . embark-bindings)))
 
 (use-package embark-consult
   :after (embark consult))

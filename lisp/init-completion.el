@@ -17,6 +17,10 @@
   (corfu-auto t)
   (corfu-auto-delay 0.05)
   (corfu-auto-prefix 2)
+  ;; Never set `corfu-quit-no-match' to `t' as this will cause
+  ;; completion to exit automatically when an error character is entered.
+  (corfu-quit-no-match 'separator)
+  (corfu-quit-at-boundary 'separator)
   :init
   (global-corfu-mode)
   :hook (((eshell-mode) . (lambda ()
@@ -61,11 +65,6 @@
                                                                  #'cape-file
                                                                  #'elisp-completion-at-point
                                                                  #'defined/cape-dabbrev-min)))))
-  :custom
-  ;; Never set the `corfu-quit-no-match' to `t' as this will cause
-  ;; completion to exit automatically when an error character is entered.
-  (corfu-quit-no-match 'separator)
-  (corfu-quit-at-boundary 'separator)
   :config
   (advice-add 'dabbrev-capf :around #'cape-wrap-silent))
 

@@ -47,7 +47,7 @@
   :config
   (setq semantic-default-submodes
         '(global-semantic-idle-scheduler-mode
-          global-sementic-minor-mode))
+          global-semantic-minor-mode))
   (semantic-mode 1))
 
 (provide 'init-tags)

@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 ;;
-;; Enable tree-sitter suppoet
+;; Enable tree-sitter support
 ;;
 
 ;;; Code:

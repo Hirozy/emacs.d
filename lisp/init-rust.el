@@ -1,4 +1,4 @@
-;;; init-rust.el --- rust-mode configuratione  -*- lexical-binding: t; -*-
+;;; init-rust.el --- rust-mode configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
@@ -15,7 +15,7 @@
 (use-package rust-playground
   :commands rust-playground
   :custom
-  (rust-playground-basedir (substitute-in-file-name "$HOME/.cache/rust-platground")))
+  (rust-playground-basedir (substitute-in-file-name "$HOME/.cache/rust-playground")))
 
 (provide 'init-rust)
 

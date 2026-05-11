@@ -1,4 +1,4 @@
-;;; init-configs.el --- editing tools configuration  -*- lexical-binding: t; -*-
+;;; init-editing.el --- editing tools configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

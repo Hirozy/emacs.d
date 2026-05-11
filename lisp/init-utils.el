@@ -132,7 +132,7 @@
           "^\\*shell.*\\*.*$"  shell-mode
           "^\\*terminal.*\\*.*$" term-mode
           "^\\*vterm.*\\*.*$"  vterm-mode))
-  (setq popper-group-funcsytion #'popper-group-by-projectile
+  (setq popper-group-function #'popper-group-by-projectile
         popper-echo-dispatch-actions t))
 
 (use-package popper-echo
@@ -144,7 +144,7 @@
   :config
   (setq uniquify-buffer-name-style 'reverse
         uniquify-separator " • "
-        niquify-after-kill-buffer-p t))
+        uniquify-after-kill-buffer-p t))
 
 ;; repeat `C-x o' `C-x o' to `C-x o o RET'
 (use-package repeat

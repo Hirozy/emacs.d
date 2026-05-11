@@ -38,7 +38,7 @@
     (kbd "<leader>w") 'xref-find-definitions-other-window
     (kbd "<leader>,") 'xref-go-back
     (kbd "<leader>.") 'xref-go-forward
-    (kbd "<leader>j") 'tags-keys/body)
+    (kbd "<leader>j") 'transient-tags)
 
   (evil-define-key '(normal insert) 'global
     (kbd "C-q") 'transient-frequently
@@ -56,9 +56,9 @@
   (if (require 'org nil t)
       (progn
         (evil-define-key 'normal 'global
-          (kbd "<leader>n") 'org-mapping/body)
+          (kbd "<leader>n") 'transient-org)
         (evil-define-key 'normal org-mode-map
-          (kbd ",") 'org-mapping/body
+          (kbd ",") 'transient-org
           "<" (lambda (&rest args)
                 (interactive)
                 (if (org-in-src-block-p)

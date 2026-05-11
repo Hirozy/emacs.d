@@ -1,4 +1,4 @@
-;;; init-mark.el --- markdown mode configuration  -*- lexical-binding: t; -*-
+;;; init-markdown.el --- markdown mode configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

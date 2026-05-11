@@ -27,7 +27,7 @@
 
 (use-package gptel-magit
   :after magit
-  :bind(:map git-commit-mode-map
+  :bind (:map git-commit-mode-map
              ("C-c C-m" . gptel-magit-generate-message)))
 
 (provide 'init-git)

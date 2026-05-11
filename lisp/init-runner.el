@@ -17,7 +17,7 @@
     '((:command . "g++")
       (:cmdopt . "-std=c++17 -g")
       (:exec . ("%c -x c++ %o -o %e %s" "%e %a"))
-      (:compile-only . "%c -Wall -Werror -x c++ %o %o -o %e %s")
+      (:compile-only . "%c -Wall -Werror -x c++ %o -o %e %s")
       (:remove . ("%e" "%e.dSYM"))
       (:description . "Compile C++ file with g++ and execute")))
 
@@ -25,7 +25,7 @@
     '((:command . "g++")
       (:cmdopt . "-std=c++20 -g")
       (:exec . ("%c -x c++ %o -o %e %s" "%e %a"))
-      (:compile-only . "%c -Wall -Werror -x c++ %o %o -o %e %s")
+      (:compile-only . "%c -Wall -Werror -x c++ %o -o %e %s")
       (:remove . ("%e" "%e.dSYM"))
       (:description . "Compile C++ file with g++ and execute")))
 
