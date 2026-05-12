@@ -8,6 +8,7 @@
 ;;; Code:
 
 (require 'transient)
+(require 'hydra)
 
 (transient-define-prefix transient-capf ()
   "Completion At Point Functions.
@@ -19,43 +20,40 @@ Select a completion backend to trigger at the current point."
    ("r" "Cape tex" cape-tex)]
   [("SPC" "Quit" transient-quit-all)])
 
-(transient-define-prefix transient-editing ()
-  "Editing Commands.
-Undo/redo, search and replace, commenting, formatting, and structural editing."
-  [["Edit"
-    ("u" "Undo" undo-fu-only-undo :transient t)
-    ("U" "Redo" undo-fu-only-redo :transient t)
-    ("C-u" "Redo all" undo-fu-only-redo-all)
-    ("M-u" "Visual undo tree" vundo)
-    ("h" "Replace string" replace-string)
-    ("H" "Replace regexp" query-replace-regexp)
-    (";" "Comment line" comment-line)
-    ("C-;" "Comment region" comment-region)
-    ("m" "Format buffer" apheleia-format-buffer)
-    ("~" "Revert buffer" revert-buffer)
-    ("[" "Wrap []" puni-wrap-square)
-    ("{" "Wrap {}" puni-wrap-curly)
-    ("(" "Wrap ()" puni-wrap-round)
-    (")" "Raise sexp" puni-raise)
-    ("i" "Insert with space" (lambda ()
-                               (interactive)
-                               (insert-char (char-from-name "SPACE"))
-                               (backward-char)
-                               (evil-insert-state)))
-    ("TAB" "Capf TAB" transient-capf)]
-   ["Navigate"
-    ("gg" "Goto line" goto-line)
-    ("z" "Goto word" avy-goto-word-1)
-    ("x" "Goto char2" avy-goto-char-2)
-    ("v" "Page down" View-scroll-half-page-forward :transient t)
-    ("V" "Page up" View-scroll-half-page-backward :transient t)
-    ("," "Goto last change" goto-last-change)
-    ("DEL" "Hungry delete backward" hungry-delete-backward)
-    ("r" "Symbol rename" symbol-overlay-rename)
-    ("=" "Expand region" er/expand-region)]]
-  [("SPC" "Quit" transient-quit-all)])
+(global-set-key
+ (kbd "C-r")
+ (defhydra hydra-editing (:foreign-keys warn :exit t)
+   ("u" undo-fu-only-undo "undo" :column "Edit" :exit nil)
+   ("U" undo-fu-only-redo "redo" :exit nil)
+   ("C-u" undo-fu-only-redo-all "redo all")
+   ("M-u" vundo "vision undo")
+   ("h" replace-string "replace")
+   ("H" query-replace-regexp "replace regexp")
+   (";" comment-line "comment line")
+   ("C-;" comment-region "comment region")
+   ("m" apheleia-format-buffer "format buffer")
+   ("~" revert-buffer "revert buffer")
+   ("[" puni-wrap-square "warp []")
+   ("{" puni-wrap-curly "wrap {}")
+   ("(" puni-wrap-round "wrap ()")
+   (")" puni-raise "raise")
+   ("i" (lambda ()
+          (interactive)
+          (insert-char (char-from-name "SPACE"))
+          (backward-char)
+          (evil-insert-state)) "insert with space")
+   ("TAB" transient-capf "capf TAB")
 
-(global-set-key (kbd "C-r") #'transient-editing)
+   ("gg" goto-line "goto line" :column "Navigate")
+   ("z" avy-goto-word-1 "goto word")
+   ("x" avy-goto-char-2 "goto char2")
+   ("v" View-scroll-half-page-forward "page down" :exit nil)
+   ("V" View-scroll-half-page-backward "page up" :exit nil)
+   ("," goto-last-change "goto last change")
+   ("DEL" hungry-delete-backward "hungry delete")
+   ("r" symbol-overlay-rename "symbol rename")
+   ("=" er/expand-region "expand region")
+   ("SPC" nil "quit")))
 
 (transient-define-prefix transient-tags ()
   "Tags Navigation and Management.
@@ -121,37 +119,32 @@ Manage notes with Denote, export and edit Org documents, handle attachments."
     ("I" "Create ID" org-id-get-create)]]
   [("SPC" "Quit" transient-quit-all)])
 
-(autoload 'eglot-find-implementation "eglot")
-(autoload 'eglot-find-typeDefinition "eglot")
-(transient-define-prefix transient-frequently ()
-  "Frequently Used Commands.
-Navigation, code intelligence, project tools, and utilities."
-  [["Navigate"
-    ("c" "Recent file" consult-recent-file)
-    ("m" "Bookmarks" transient-bookmark)
-    ("d" "Find definitions" xref-find-definitions)
-    ("f" "Find references" xref-find-references)
-    ("w" "Definitions other window" xref-find-definitions-other-window)
-    ("o" "Find implementation" eglot-find-implementation)
-    ("p" "Find type definition" eglot-find-typeDefinition)
-    ("l" "Dired jump to file" dired-jump)
-    ("i" "Semantic imenu" consult-imenu)
-    ("I" "Semantic multiple imenu" consult-imenu-multi)
-    ("j" "Tags keymap" transient-tags)
-    ("e" "Registers and yanks" transient-register-yank-macros)]
-   ["Tools"
-    ("v" "Vterm" vterm)
-    ("V" "Projectile vterm" projectile-run-vterm)
-    ("s" "Dash documentation" dash-at-point)
-    ("g" "GPTel menu" gptel-menu)
-    ("kt" "Kill this buffer" kill-current-buffer)
-    ("kb" "Kill other buffer" kill-buffer)
-    ("kr" "Eval buffer" eval-buffer)
-    ("\\" "Swap theme" swap-theme)
-    ("n" "Org keymap" transient-org)]]
-  [("SPC" "Quit" transient-quit-all)])
+(global-set-key
+ (kbd "C-q")
+ (defhydra hydra-frequently (:foreign-keys warn :exit t)
+   ("c" consult-recent-file "recent file" :column "Navigate")
+   ("m" transient-bookmark  "bookmark")
+   ("d" xref-find-definitions "find definitions")
+   ("f" xref-find-references "find references")
+   ("w" xref-find-definitions-other-window "definitions other window")
+   ("o" eglot-find-implementation "find implementation")
+   ("p" eglot-find-typeDefinition "find type definition")
+   ("l" dired-jump "dired jump to file")
+   ("i" consult-imenu "semantic imenu")
+   ("I" consult-imenu-multi "semantic multiple imenu")
+   ("j" transient-tags "tags keymap" :exit t)
+   ("e" transient-register-yank-macros "register, yank and macros")
 
-(global-set-key (kbd "C-q") #'transient-frequently)
+   ("v" vterm "vterm" :column "Tools")
+   ("V" projectile-run-vterm "projectile vterm")
+   ("s" dash-at-point "dash")
+   ("g" gptel-menu "GPTel")
+   ("kt" kill-current-buffer "kill this buffer")
+   ("kb" kill-buffer "kill other buffer")
+   ("kr" eval-buffer "eval buffer")
+   ("\\" swap-theme "swap theme")
+   ("n" transient-org "org keymap" :exit t)
+   ("SPC" nil "quit")))
 
 (provide 'init-sequence)
 

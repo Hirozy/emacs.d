@@ -175,6 +175,9 @@
 [submodule "hungry-delete"]
 	path = lib/hungry-delete
 	url = https://github.com/nflath/hungry-delete.git
+[submodule "hydra"]
+	path = lib/hydra
+	url = https://github.com/abo-abo/hydra
 [submodule "kind-icon"]
 	path = lib/kind-icon
 	url = https://github.com/jdtsmith/kind-icon.git
