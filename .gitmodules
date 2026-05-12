@@ -139,6 +139,11 @@
 [submodule "gcmh"]
 	path = lib/gcmh
 	url = https://gitlab.com/koral/gcmh.git
+[submodule "ghostel"]
+	path = lib/ghostel
+	url = https://github.com/dakra/ghostel
+	load-path = lisp
+	load-path = extensions/evil-ghostel
 [submodule "git-modes"]
 	path = lib/git-modes
 	url = https://github.com/magit/git-modes.git

@@ -205,6 +205,10 @@
   :config
   (advice-add 'rime-input-method :around #'rime-evil-escape-advice))
 
+(use-package ghostel
+  :custom
+  (ghostel-tramp-shell-integration '(fish bash zsh)))
+
 (provide 'init-utils)
 
 ;; Local Variables:

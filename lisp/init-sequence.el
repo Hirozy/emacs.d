@@ -135,8 +135,8 @@ Manage notes with Denote, export and edit Org documents, handle attachments."
    ("j" transient-tags "tags keymap" :exit t)
    ("e" transient-register-yank-macros "register, yank and macros")
 
-   ("v" vterm "vterm" :column "Tools")
-   ("V" projectile-run-vterm "projectile vterm")
+   ("v" ghostel "ghostel" :column "Tools")
+   ("V" ghostel-project "project ghostel")
    ("s" dash-at-point "dash")
    ("kt" kill-current-buffer "kill this buffer")
    ("kb" kill-buffer "kill other buffer")
