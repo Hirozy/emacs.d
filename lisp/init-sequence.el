@@ -138,7 +138,6 @@ Manage notes with Denote, export and edit Org documents, handle attachments."
    ("v" vterm "vterm" :column "Tools")
    ("V" projectile-run-vterm "projectile vterm")
    ("s" dash-at-point "dash")
-   ("g" gptel-menu "GPTel")
    ("kt" kill-current-buffer "kill this buffer")
    ("kb" kill-buffer "kill other buffer")
    ("kr" eval-buffer "eval buffer")
