@@ -32,7 +32,7 @@
   :hook (after-init . show-paren-mode))
 
 (use-package puni
-  :defer t)
+  :hook (after-init . puni-mode))
 
 (provide 'init-pair)
 
