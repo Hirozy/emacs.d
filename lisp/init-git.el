@@ -18,7 +18,10 @@
   (magit-add-section-hook 'magit-status-sections-hook
                           'magit-insert-modules
                           'magit-insert-stashes
-                          'append))
+                          'append)
+  ;; Cannot use ':hook (magit-post-refresh . diff-hl-magit-post-refresh)' to add hook,
+  ;; otherwise it will override the default value of `magit-post-refresh-hook'.
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 (use-package git-commit
   :after magit
@@ -29,6 +32,10 @@
   :after magit
   :bind (:map git-commit-mode-map
              ("C-c C-m" . gptel-magit-generate-message)))
+
+(use-package diff-hl
+  :hook (((prog-mode markdown-mode org-mode text-mode) . diff-hl-mode)
+         (dired-mode . diff-hl-dired-mode)))
 
 (provide 'init-git)
 
