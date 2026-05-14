@@ -52,8 +52,9 @@ Select a completion backend to trigger at the current point."
    ("," goto-last-change "goto last change")
    ("DEL" hungry-delete-backward "hungry delete")
    ("r" symbol-overlay-rename "symbol rename")
-   ("=" er/expand-region "expand region")
-   ("SPC" nil "quit")))
+   ("=" er/expand-region "expand region")))
+
+(define-key hydra-editing/keymap (kbd "SPC") 'hydra-keyboard-quit)
 
 (transient-define-prefix transient-tags ()
   "Tags Navigation and Management.
@@ -142,8 +143,9 @@ Manage notes with Denote, export and edit Org documents, handle attachments."
    ("kb" kill-buffer "kill other buffer")
    ("kr" eval-buffer "eval buffer")
    ("\\" swap-theme "swap theme")
-   ("n" transient-org "org keymap" :exit t)
-   ("SPC" nil "quit")))
+   ("n" transient-org "org keymap" :exit t)))
+
+(define-key hydra-frequently/keymap (kbd "SPC") 'hydra-keyboard-quit)
 
 (provide 'init-sequence)
 
