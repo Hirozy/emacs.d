@@ -8,11 +8,16 @@
 ;;; Code:
 
 (setq-default
- ;; http://ergoemacs.org/emacs/emacs_set_backup_into_a_directory.html
- ;; Stop creating backup~ files
- make-backup-files nil
- ;; Stop creating #autosave# files
- auto-save-default nil
+ ;; http://xahlee.info/emacs/emacs/emacs_set_backup_into_a_directory.html
+ ;; Store backup files in a dedicated directory
+ backup-by-copying t
+ backup-directory-alist '(("." . "~/.emacs.d/backup-files/"))
+ ;; Enable backup version control
+ version-control t
+ delete-old-versions t
+ ;; Enable auto save and store auto sace files in a dedicated directory
+ auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save-files/" t))
+ auto-save-default t
  ;; Don’t compact font caches during GC
  inhibit-compacting-font-caches t
  create-lockfiles nil
