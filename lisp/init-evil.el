@@ -7,7 +7,7 @@
 
 ;;; Code:
 
-(defun setup-evil-keys ()
+(defun defined/setup-evil-keys ()
   "Setup evil keys."
   (with-eval-after-load 'evil-maps
     (define-key evil-motion-state-map (kbd "TAB") nil)
@@ -99,7 +99,7 @@
     (evil-set-initial-state mode 'motion))
 
   (evil-select-search-module 'evil-search-module 'evil-search)
-  (setup-evil-keys))
+  (defined/setup-evil-keys))
 
 (use-package evil-surround
   :hook (evil-mode . global-evil-surround-mode))

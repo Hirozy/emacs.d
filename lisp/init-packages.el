@@ -17,7 +17,9 @@
 
 (eval-and-compile
   (require 'use-package)
-  (setq use-package-verbose t))
+  ;; Since we use borg, prevent use-package from trying to install from ELPA
+  (setq use-package-always-ensure nil
+        use-package-verbose t))
 
 (use-package dash)
 (use-package eieio)

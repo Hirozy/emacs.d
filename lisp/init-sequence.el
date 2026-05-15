@@ -55,7 +55,7 @@ Select a completion backend to trigger at the current point."
    ("(" puni-wrap-round "wrap ()")
    ("<" puni-wrap-angle "wrap <>")
    (")" puni-raise "raise")
-   ("a" puni-beginning-of-sexp "beninning of sexp" :exit nil)
+   ("a" puni-beginning-of-sexp "beginning of sexp" :exit nil)
    ("e" puni-end-of-sexp "end of sexp" :exit nil)
    ("b" puni-backward-sexp "backward sexp" :exit nil)
    ("f" puni-forward-sexp "forward sexp" :exit nil)

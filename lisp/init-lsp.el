@@ -9,7 +9,7 @@
 
 (require 'cape)
 
-(defun cape-capf-at-eglot ()
+(defun defined/cape-capf-at-eglot ()
   "Configure completion-at-point functions based on major mode.
 For C/C++/Objective-C modes, combine eglot and citre completions.
 For other modes, use eglot completion only.
@@ -51,12 +51,11 @@ https://github.com/minad/corfu/wiki#making-a-cape-super-capf-for-eglot"
   :init
   ;; disable lsp server event buffer
   (setq eglot-events-buffer-size 0)
-  (advice-add 'jsonrpc--log-event :around
-              (lambda (_orig-func &rest _)))
+  (advice-add 'jsonrpc--log-event :override #'ignore)
 
   :config
-  (setq gc-cons-threshold (* 100 1024 1024)
-        read-process-output-max (* 1024 1024)
+  ;; Let gcmh-mode manage GC thresholds dynamically
+  (setq read-process-output-max (* 1024 1024)
         eglot-stay-out-of '(company))
 
   (add-to-list 'eglot-server-programs '((objc-mode) "clangd"))
@@ -64,7 +63,7 @@ https://github.com/minad/corfu/wiki#making-a-cape-super-capf-for-eglot"
   (with-eval-after-load 'eglot
     (setq completion-category-defaults nil))
 
-  (add-hook 'eglot-managed-mode-hook #'cape-capf-at-eglot))
+  (add-hook 'eglot-managed-mode-hook #'defined/cape-capf-at-eglot))
 
 (provide 'init-lsp)
 
