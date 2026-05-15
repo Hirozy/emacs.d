@@ -8,9 +8,8 @@
 
 ;;; Early birds
 ;;----------------------------------------------------------------------------
-;; Bootstrap config
+;; Bootstrap config (early-init.el is automatically loaded in Emacs 27+)
 ;;----------------------------------------------------------------------------
-(load-file (expand-file-name "early-init.el" user-emacs-directory))
 ;; Keep emacs custom in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
