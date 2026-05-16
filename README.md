@@ -51,3 +51,8 @@ If you are using a fish shell
 ``` Bash
 env TERM=xterm-24bits emacs -nw
 ```
+
+## Local Configuration
+
+Machine-specific settings (such as proxy) can be placed in `~/.emacs.d/local-config.el`, which is not tracked by git. This is useful when the same configuration is used across different machines.
+

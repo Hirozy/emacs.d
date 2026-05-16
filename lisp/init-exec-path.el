@@ -14,6 +14,9 @@
   ;; or `shell-file-name' (if set).
   (exec-path-from-shell-warn-duration-millis 1000)
   (exec-path-from-shell-variables '("PATH"
+                                    "HTTP_PROXY"
+                                    "HTTPS_PROXY"
+                                    "NO_PROXY"
                                     "KUBECONFIG"
                                     "GOPATH"
                                     "GOROOT"
@@ -24,10 +27,6 @@
                                     "GTAGSLABEL"
                                     "GTAGSOBJDIRPREFIX"))
   :config
-  (when (eq system-type 'gnu/linux)
-    (nconc exec-path-from-shell-variables '("HTTP_PROXY"
-                                            "HTTPS_PROXY"
-                                            "NO_PROXY")))
   (exec-path-from-shell-initialize))
 
 (provide 'init-exec-path)

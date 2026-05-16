@@ -79,3 +79,4 @@ tree-sitter
 /transient
 /rime
 /eca
+/local-config.el

@@ -8,16 +8,11 @@
 ;;; Code:
 (setq load-prefer-newer t)
 
-;; WORKAROUND: Add library paths to LIBRARY_PATH to ensure gccemacs can execute properly.
-;; NOTE: These paths should be updated whenever gcc in MacPorts is upgraded.
-;; LAST VALIDATED: 2026-04-06 with GCC 15.2.0 on macOS 26.4
-(when (and (eq system-type 'darwin)
-           (native-comp-available-p))
-  (setenv "LIBRARY_PATH" (string-join
-                          '("/opt/local/lib/gcc15"
-                            "/opt/local/lib/libgcc"
-                            "/opt/local/lib/gcc15/gcc/aarch64-apple-darwin25/15.2.0")
-                          ":")))
+
+;; Load local configs
+(let ((local-config-el (expand-file-name "local-config.el" user-emacs-directory)))
+  (when (file-exists-p local-config-el)
+    (load local-config-el)))
 
 (let ((dotfiles-dir (file-name-directory (or load-file-name buffer-file-name))))
   (add-to-list 'load-path (expand-file-name "lib/packed" dotfiles-dir))

@@ -62,13 +62,6 @@
 
 (setq-default major-mode 'text-mode)
 
-(when (eq system-type 'darwin)
-  (setq url-proxy-services
-        '(("no_proxy" . "^\\(localhost\\|127\\.*\\)")
-          ("http" . "127.0.0.1:6152")
-          ("https" . "127.0.0.1:6152")
-          ("ftp" . "127.0.0.1:6152"))))
-
 (when (eq system-type 'gnu/linux)
   ;; Disable cursor blinking to avoid fcitx candidate box jumping
   (blink-cursor-mode -1))
