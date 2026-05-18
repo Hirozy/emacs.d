@@ -41,6 +41,10 @@ Select a completion backend to trigger at the current point."
    ("TAB" transient-capf "capf TAB")
 
    ("gg" goto-line "goto line" :column "Navigate")
+   ("h" backward-char "left" :exit nil)
+   ("j" next-line "down" :exit nil)
+   ("k" previous-line "up" :exit nil)
+   ("l" forward-char "right" :exit nil)
    ("z" avy-goto-word-1 "goto word")
    ("x" avy-goto-char-2 "goto char2")
    ("v" View-scroll-half-page-forward "page down" :exit nil)
