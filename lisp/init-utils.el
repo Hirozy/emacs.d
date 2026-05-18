@@ -199,9 +199,29 @@
           (apply orig-fun (list key)))))))
 
 (use-package rime
+  :bind (:map rime-mode-map
+              ("M-j" . rime-force-enable))
   :custom
   (default-input-method "rime")
   (rime-show-candidate 'posframe)
+  (rime-disable-predicates
+   '(
+     rime-predicate-after-alphabet-char-p ;; 在英文字母开头的字符串之后
+     rime-predicate-after-ascii-char-p ;; 在任意 ASCII 字符之后
+     ;; rime-predicate-prog-in-code-p ;; 在 prog-mode/conf-mode 的代码区域（注释和字符串除外）
+     ;; rime-predicate-in-code-string-p ;; 在代码字符串中（不含注释）
+     rime-predicate-evil-mode-p ;; 在 evil-mode 非 insert state 时
+     rime-predicate-ace-window-p ;; 激活 ace-window 时
+     rime-predicate-hydra-p ;; 激活 hydra keymap 时
+     rime-predicate-current-input-punctuation-p ;; 输入符号时
+     rime-predicate-punctuation-after-space-cc-p ;; 在中文字符后有空格时输入符号
+     rime-predicate-punctuation-after-ascii-p ;; 在英文字符后输入符号时
+     rime-predicate-punctuation-line-begin-p ;; 在行首输入符号时
+     ;; rime-predicate-space-after-ascii-p ;; 在英文字符后有空格时
+     rime-predicate-space-after-cc-p ;; 在中文字符后有空格时
+     rime-predicate-current-uppercase-letter-p ;; 输入大写字母时
+     rime-predicate-tex-math-or-command-p ;; 在 TeX 数学环境或命令中
+     ))
   :config
   (advice-add 'rime-input-method :around #'rime-evil-escape-advice))
 
