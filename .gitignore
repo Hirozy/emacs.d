@@ -80,3 +80,6 @@ tree-sitter
 /rime
 /eca
 /local-config.el
+/.agent-shell/
+/llm-config.el
+/agent

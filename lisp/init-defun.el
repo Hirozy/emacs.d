@@ -35,6 +35,11 @@ for this buffer, it will be removed. Otherwise, it will be added."
     (message "%s `cape-dict' completion in this buffer"
              (if enabled "Enable" "Disable"))))
 
+(defun defined/get-auth-password (host)
+  "Get password from auth-source for HOST.
+Returns the password string if found, nil otherwise."
+  (auth-info-password (car (auth-source-search :host host :max 1))))
+
 (defun defined/guess-which-org-publish-project ()
   "Display and return the org-publish project name for the current Org file.
 Returns the project name if found, nil otherwise."

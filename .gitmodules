@@ -1,6 +1,12 @@
 [borg]
 	pushDefault = Hirozy
 	collective = emacsd
+[submodule "acp"]
+	path = lib/acp
+	url = https://github.com/xenodium/acp.el
+[submodule "agent-shell"]
+	path = lib/agent-shell
+	url = https://github.com/xenodium/agent-shell
 [submodule "apheleia"]
 	path = lib/apheleia
 	url = https://github.com/radian-software/apheleia
@@ -285,6 +291,9 @@
 [submodule "s"]
 	path = lib/s
 	url = https://github.com/magnars/s.el.git
+[submodule "shell-maker"]
+	path = lib/shell-maker
+	url = https://github.com/xenodium/shell-maker
 [submodule "shift-number"]
 	path = lib/shift-number
 	url = https://codeberg.org/ideasman42/emacs-shift-number
