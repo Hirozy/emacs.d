@@ -51,6 +51,7 @@
   (agent-shell-display-action
    '(display-buffer-in-side-window (side . right) (window-width . 0.4)))
   :config
+  (evil-make-intercept-map agent-shell-mode-map 'normal)
   (evil-define-key 'insert agent-shell-mode-map (kbd "RET") #'newline)
   (evil-define-key 'normal agent-shell-mode-map (kbd "RET") #'comint-send-input)
   (add-hook 'diff-mode-hook
