@@ -72,6 +72,27 @@ These wrappers switch to agent-shell buffer before executing the command.")
   (evil-make-intercept-map agent-shell-mode-map 'normal)
   (evil-define-key 'insert agent-shell-mode-map (kbd "RET") #'newline)
   (evil-define-key 'normal agent-shell-mode-map (kbd "RET") #'comint-send-input)
+
+  ;; Fix UTF-8 encoding for history read
+  ;; `shell-maker--write-input-ring-history' has no issue
+  (advice-add 'shell-maker--read-input-ring-history :around
+    (lambda (orig-fun config)
+      "Read history with UTF-8 encoding."
+      (let ((path (shell-maker-history-file-path config))
+            (ring))
+        (make-directory (file-name-directory path) t)
+        (setq-local comint-input-ring-file-name nil)
+        (setq-local comint-input-ignoredups t)
+        (setq ring (ignore-errors
+                     (with-temp-buffer
+                       (setq-local coding-system-for-read 'utf-8)
+                       (insert-file-contents path)
+                       (read (current-buffer)))))
+        (unless (ring-p ring)
+          (setq ring (make-ring (min 1500 comint-input-ring-size))))
+        (setq comint-input-ring ring)))
+    '((name . .utf8-read-fix)))
+
   (add-hook 'diff-mode-hook
             (lambda ()
               (when (string-match-p "\\*agent-shell-diff\\*" (buffer-name))
