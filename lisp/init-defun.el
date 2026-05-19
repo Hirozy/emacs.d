@@ -64,12 +64,17 @@ Returns the project name if found, nil otherwise."
           nil))))))
 
 
-(defun defined/new-buffer (name)
-  "Create and switch to a new empty buffer named NAME.
+(defun defined/new-buffer (name mode)
+  "Create and switch to a new empty buffer named NAME with major mode MODE.
 
-If NAME is empty or nil, auto-generate a unique name starting with `*new*'."
+If NAME is empty or nil, auto-generate a unique name starting with `*new*'.
+MODE is the major mode to set for the new buffer."
   (interactive
-   (list (read-string "Buffer name (empty for *new*): ")))
+   (let* ((name (read-string "Buffer name (empty for *new*): "))
+          (modes (mapcar #'symbol-name (apropos-internal "-mode$" 'commandp)))
+          (mode (completing-read "Major mode: "
+                                 modes nil nil nil nil "fundamental-mode")))
+     (list name (if (string-empty-p mode) 'fundamental-mode (intern mode)))))
   (let ((buffer-name (if (string-empty-p name)
                          (generate-new-buffer-name "*new*")
                        name)))
@@ -77,9 +82,12 @@ If NAME is empty or nil, auto-generate a unique name starting with `*new*'."
       (switch-to-buffer buf)
       (setq buffer-read-only nil)
       (erase-buffer)
-      (message "Created new buffer: %s" buffer-name))))
+      (funcall mode)
+      (message "Created new buffer: %s (%s)" buffer-name mode))))
 
-(global-set-key (kbd "C-x C-n") 'defined/new-buffer)
+(with-eval-after-load 'evil-maps
+  (evil-define-key '(normal insert motion emacs) 'global
+    (kbd "C-x C-n") 'defined/new-buffer))
 
 (provide 'init-defun)
 
