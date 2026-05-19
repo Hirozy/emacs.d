@@ -226,6 +226,7 @@
   (advice-add 'rime-input-method :around #'rime-evil-escape-advice))
 
 (use-package ghostel
+  :defer t
   :custom
   (ghostel-tramp-shell-integration '(fish bash zsh)))
 

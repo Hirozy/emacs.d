@@ -49,6 +49,7 @@
   :hook (after-init . delete-selection-mode))
 
 (use-package apheleia
+  :defer t
   :config
   (dolist (mode-format-pair '((python-mode . ruff)
                               (python-ts-mode . ruff)
@@ -56,9 +57,9 @@
                               (json-ts-mode . denofmt-json)))
     (setf (alist-get (car mode-format-pair) apheleia-mode-alist) (cdr mode-format-pair))))
 
-(use-package undo-fu)
+(use-package undo-fu :defer t)
 
-(use-package vundo)
+(use-package vundo :defer t)
 
 (provide 'init-editing)
 
