@@ -85,6 +85,15 @@ MODE is the major mode to set for the new buffer."
       (funcall mode)
       (message "Created new buffer: %s (%s)" buffer-name mode))))
 
+(defmacro defined/agent-shell-commands-with-judge-wrapper (cmd)
+  "Create a wrapper function that switches to agent-shell buffer before calling CMD."
+  `(defun ,(intern (format "%s-with-judge" cmd)) ()
+     ,(format "Switch to agent-shell if needed, then call `%s'." cmd)
+     (interactive)
+     (unless (derived-mode-p 'agent-shell-mode)
+       (agent-shell))
+     (call-interactively #',cmd)))
+
 (with-eval-after-load 'evil-maps
   (evil-define-key '(normal insert motion emacs) 'global
     (kbd "C-x C-n") 'defined/new-buffer))

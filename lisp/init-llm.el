@@ -43,6 +43,24 @@
         "You are a large language model and a good comment writer. Please rewrite the comments, keep the final line break, and output without any additional text or note.")
   )
 
+(defvar defined/agent-shell--wrapped-commands
+  '(agent-shell-next-item
+    agent-shell-previous-item
+    agent-shell-previous-input
+    agent-shell-next-input
+    agent-shell-cycle-session-mode
+    agent-shell-set-session-mode
+    agent-shell-set-session-model
+    agent-shell-interrupt
+    agent-shell-clear-buffer
+    agent-shell-fork
+    agent-shell-insert-shell-command-output)
+  "List of agent-shell commands that have wrapper functions.
+These wrappers switch to agent-shell buffer before executing the command.")
+
+(dolist (cmd defined/agent-shell--wrapped-commands)
+  (eval `(defined/agent-shell-commands-with-judge-wrapper ,cmd)))
+
 (use-package agent-shell
   :defer t
   :custom
