@@ -9,6 +9,7 @@
 
 (require 'transient)
 (require 'hydra)
+(require 'init-defun)
 
 (transient-define-prefix transient-capf ()
   "Completion At Point Functions.
@@ -32,6 +33,7 @@ Select a completion backend to trigger at the current point."
    (";" comment-line "comment line")
    ("C-;" comment-or-uncomment-region "un/comment region")
    ("m" apheleia-format-buffer "format buffer")
+   ("n" defined/new-buffer "new buffer")
    ("~" revert-buffer "revert buffer")
    ("i" (lambda ()
           (interactive)

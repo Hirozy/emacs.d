@@ -64,6 +64,23 @@ Returns the project name if found, nil otherwise."
           nil))))))
 
 
+(defun defined/new-buffer (name)
+  "Create and switch to a new empty buffer named NAME.
+
+If NAME is empty or nil, auto-generate a unique name starting with `*new*'."
+  (interactive
+   (list (read-string "Buffer name (empty for *new*): ")))
+  (let ((buffer-name (if (string-empty-p name)
+                         (generate-new-buffer-name "*new*")
+                       name)))
+    (let ((buf (get-buffer-create buffer-name)))
+      (switch-to-buffer buf)
+      (setq buffer-read-only nil)
+      (erase-buffer)
+      (message "Created new buffer: %s" buffer-name))))
+
+(global-set-key (kbd "C-x C-n") 'defined/new-buffer)
+
 (provide 'init-defun)
 
 ;; Local Variables:
