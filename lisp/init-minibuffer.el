@@ -43,7 +43,9 @@
          ("C-S-s" . consult-line-multi)
          ;; buffer
          ("C-x b" . consult-project-buffer)
-         ("C-x C-b" . consult-buffer))
+         ("C-x C-b" . consult-buffer)
+         ;; yank
+         ("M-y" . consult-yank-pop))
 
   :config
   (setq consult-project-root-function (lambda (-) (projectile-project-root))
@@ -51,7 +53,10 @@
         consult-async-input-throttle 0
         consult-async-input-debounce 0
         xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref))
+        xref-show-definitions-function #'consult-xref)
+  (with-eval-after-load 'evil-maps
+    (evil-define-key '(normal insert) 'global
+      (kbd "M-y") 'consult-yank-pop)))
 
 (use-package consult-dir
   :commands consult-dir

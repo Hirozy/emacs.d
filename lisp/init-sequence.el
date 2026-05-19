@@ -163,6 +163,11 @@ Manage notes with Denote, export and edit Org documents, handle attachments."
 
 (define-key hydra-frequently/keymap (kbd "SPC") 'hydra-keyboard-quit)
 
+(with-eval-after-load 'evil-maps
+  (evil-define-key '(normal insert) 'global
+    (kbd "C-q") 'hydra-frequently/body
+    (kbd "C-r") 'hydra-editing/body))
+
 (provide 'init-sequence)
 
 ;; Local Variables:

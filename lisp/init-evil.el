@@ -40,11 +40,6 @@
     (kbd "<leader>.") 'xref-go-forward
     (kbd "<leader>j") 'transient-tags)
 
-  (evil-define-key '(normal insert) 'global
-    (kbd "C-q") 'hydra-frequently/body
-    (kbd "C-r") 'hydra-editing/body
-    (kbd "M-y") 'consult-yank-pop)
-
   (if (require 'embark nil t)
       (evil-define-key 'normal 'global
         (kbd "C-.") 'embark-act))
