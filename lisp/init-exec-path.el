@@ -17,6 +17,9 @@
                                     "HTTP_PROXY"
                                     "HTTPS_PROXY"
                                     "NO_PROXY"
+                                    "http_proxy"
+                                    "https_proxy"
+                                    "no_proxy"
                                     "KUBECONFIG"
                                     "GOPATH"
                                     "GOROOT"
@@ -27,7 +30,18 @@
                                     "GTAGSLABEL"
                                     "GTAGSOBJDIRPREFIX"))
   :config
-  (exec-path-from-shell-initialize))
+  (exec-path-from-shell-initialize)
+  ;; Sync case-insensitive proxy environment variables
+  (dolist (var '("http_proxy" "https_proxy" "no_proxy"))
+    (let ((upper (upcase var))
+          (lower var))
+      (let ((lower-val (getenv lower))
+            (upper-val (getenv upper)))
+        (cond
+         ((and lower-val (not upper-val))
+          (setenv upper lower-val))
+         ((and upper-val (not lower-val))
+          (setenv lower upper-val)))))))
 
 (provide 'init-exec-path)
 
