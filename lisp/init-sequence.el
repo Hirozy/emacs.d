@@ -183,7 +183,10 @@ Manage notes with Denote, export and edit Org documents, handle attachments."
 
    ("v" ghostel "ghostel" :column "Tools")
    ("V" ghostel-project "project ghostel")
-   ("?" agent-shell "agent shell")
+   ("?" (lambda ()
+          (interactive)
+          (let ((agent-shell-context-sources nil))
+            (agent-shell))) "agent shell")
    ("." transient-agent-shell "agent shell menu")
    ("s" dash-at-point "dash")
    ("kt" kill-current-buffer "kill this buffer")

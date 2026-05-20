@@ -91,7 +91,8 @@ MODE is the major mode to set for the new buffer."
      ,(format "Switch to agent-shell if needed, then call `%s'." cmd)
      (interactive)
      (unless (derived-mode-p 'agent-shell-mode)
-       (agent-shell))
+       (let ((agent-shell-context-sources nil))
+         (agent-shell)))
      (call-interactively #',cmd)))
 
 (with-eval-after-load 'evil-maps
