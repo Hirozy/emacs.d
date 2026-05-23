@@ -85,6 +85,9 @@ MODE is the major mode to set for the new buffer."
       (funcall mode)
       (message "Created new buffer: %s (%s)" buffer-name mode))))
 
+(declare-function agent-shell "agent-shell")
+(defvar agent-shell-context-sources)
+
 (defmacro defined/agent-shell-commands-with-judge-wrapper (cmd)
   "Create a wrapper function that switches to agent-shell buffer before calling CMD."
   `(defun ,(intern (format "%s-with-judge" cmd)) ()

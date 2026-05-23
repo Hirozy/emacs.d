@@ -11,6 +11,9 @@
 (require 'hydra)
 (require 'init-defun)
 
+(declare-function agent-shell "agent-shell")
+(defvar agent-shell-context-sources)
+
 (transient-define-prefix transient-capf ()
   "Completion At Point Functions.
 Select a completion backend to trigger at the current point."
