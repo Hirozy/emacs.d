@@ -13,6 +13,9 @@
 [submodule "async"]
 	path = lib/async
 	url = https://github.com/jwiegley/emacs-async.git
+[submodule "atomic-chrome"]
+	path = lib/atomic-chrome
+	url = https://github.com/alpha22jp/atomic-chrome
 [submodule "auto-compile"]
 	path = lib/auto-compile
 	url = https://github.com/emacscollective/auto-compile.git
@@ -331,6 +334,9 @@
 [submodule "vundo"]
 	path = lib/vundo
 	url = https://github.com/casouri/vundo.git
+[submodule "websocket"]
+	path = lib/websocket
+	url = https://github.com/ahyatt/emacs-websocket
 [submodule "whitespace-cleanup-mode"]
 	path = lib/whitespace-cleanup-mode
 	url = https://github.com/purcell/whitespace-cleanup-mode.git
