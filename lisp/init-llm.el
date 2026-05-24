@@ -7,6 +7,7 @@
 
 ;;; Code:
 
+(require 'transient)
 (require 'init-defun)
 
 (let ((llm-secret-el (expand-file-name "llm-config.el" user-emacs-directory)))
@@ -43,6 +44,36 @@
         "You are a large language model and a good comment writer. Please rewrite the comments, keep the final line break, and output without any additional text or note.")
   )
 
+(transient-define-prefix transient-agent-shell ()
+  "Transient menu for `agent-shell' commands."
+  [["Navigation"
+    ("<tab>" "Next item" agent-shell-next-item-with-judge :transient t)
+    ("<backtab>" "Previous item" agent-shell-previous-item-with-judge :transient t)
+    ("p" "Preview input" agent-shell-previous-input-with-judge :transient t)
+    ("n" "Next input" agent-shell-next-input-with-judge :transient t)
+    ("q" "Quit" transient-quit-all)
+    ("SPC" "Quit" transient-quit-all)]
+   ["Insert"
+    ("!" "Shell command" agent-shell-insert-shell-command-output-with-judge)
+    ("@" "File" agent-shell-insert-file)
+    ("d" "Dwim" agent-shell-send-dwim)
+    ("i" "Clipboard Image" agent-shell-send-clipboard-image)
+    ("s" "Screenshot" agent-shell-clear-buffer)
+    ("y" "Yank" agent-shell-yank-dwim)
+    ]]
+  [["Session"
+    ("m" "Cycle modes" agent-shell-cycle-session-mode-with-judge :transient t)
+    ("M" "Set mode" agent-shell-set-session-mode-with-judge)
+    ("v" "Set model" agent-shell-set-session-model-with-judge)
+    ("C" "Interrupt" agent-shell-interrupt-with-judge)
+    ("c" "Clear" agent-shell-clear-buffer-with-judge)
+    ("f" "Fork" agent-shell-fork-with-judge)]
+   ["Shell"
+    ("." "Agent shell" agent-shell)
+    ("b" "Toggle" agent-shell-toggle)
+    ("N" "New shell" agent-shell-new-shell)
+    ("T" "Temp shell" agent-shell-new-temp-shell)]])
+
 (defvar defined/agent-shell--wrapped-commands
   '(agent-shell-next-item
     agent-shell-previous-item
@@ -62,7 +93,8 @@ These wrappers switch to agent-shell buffer before executing the command.")
   (eval `(defined/agent-shell-commands-with-judge-wrapper ,cmd)))
 
 (use-package agent-shell
-  :defer t
+  :bind (("s-." . transient-agent-shell)
+         ("C-c C-q ." . transient-agent-shell))
   :custom
   (agent-shell-header-style 'text)
   (agent-shell-show-config-icons nil)

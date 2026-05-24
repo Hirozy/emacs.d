@@ -7,8 +7,26 @@
 
 ;;; Code:
 
+(transient-define-prefix transient-tags ()
+  "Tags Navigation and Management.
+Jump to definitions and references using Citre, and manage ctags/gtags databases."
+  [["Citre"
+    ("j" "Citre jump" citre-jump)
+    ("l" "Citre jump to reference" citre-jump-to-reference)
+    ("b" "Citre jump back" citre-jump-back)
+    ("p" "Citre peek" citre-peek)
+    ("t" "Citre peek through" citre-peek-through)]
+   ["Update"
+    ("c" "Create ctags file" citre-create-tags-file)
+    ("C" "Create gtags database" citre-global-create-database)
+    ("u" "Update ctags file" citre-update-this-tags-file)
+    ("U" "Update gtags database" citre-global-update-database)]]
+  [("SPC" "Quit" transient-quit-all)])
+
 (use-package citre
   :functions (projectile-project-root)
+  :bind (("s-j" . transient-tags)
+         ("C-c C-q j" . transient-tags))
   :custom
   (citre-enable-capf-integration nil)
   (citre-gtags-args '("--sqlite3" "--compact" "--objdir"))

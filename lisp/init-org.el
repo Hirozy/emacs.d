@@ -10,6 +10,30 @@
 (require 'transient)
 (require 'consult)
 
+(transient-define-prefix transient-org ()
+  "Org Mode and Denote.
+Manage notes with Denote, export and edit Org documents, handle attachments."
+  [["Denote"
+    ("n" "Open or create note" denote-open-or-create)
+    ("o" "New note" denote)
+    ("r" "Rename file using front matter" denote-rename-file-using-front-matter)
+    ("l" "Denote link" denote-link)
+    ("b" "Denote backlinks" denote-backlinks)
+    ("/" "Search notes" consult-denote-find)
+    ("s" "Search content" consult-denote-grep)
+    ("h" "Search heading" consult-org-heading)]
+   ["Org Mode"
+    ("S" "Org structure template" org-insert-structure-template)
+    ("e" "Org export" org-export-dispatch)
+    ("yy" "Yank media" yank-media)
+    ("yd" "Delete attachment" org-attach-delete-one)
+    ("ys" "Sync attachments" org-attach-sync)
+    ("'" "Insert subheading" org-insert-subheading)
+    ("c" "Copy to shell cat" org-copy-to-shell-cat)
+    ("T" "Create table" org-table-create)
+    ("I" "Create ID" org-id-get-create)]]
+  [("SPC" "Quit" transient-quit-all)])
+
 (defvar defined/yank-media-image-from-formats
   '(image/bmp
     image/jpeg
@@ -85,8 +109,9 @@ Supported window systems:
          (org-mode . eldoc-mode)
          (org-mode . (lambda ()
                        (setq-local lsp-diagnostics-provider :none))))
-  :bind (:map org-mode-map
-              ("C-," . org-mark-ring-goto))
+  :bind (("s-n". transient-org)
+         :map org-mode-map
+         ("C-," . org-mark-ring-goto))
 
   :custom
   (org-support-shift-select t)

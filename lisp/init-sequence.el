@@ -73,22 +73,6 @@ Select a completion backend to trigger at the current point."
 
 (define-key hydra-editing/keymap (kbd "SPC") 'hydra-keyboard-quit)
 
-(transient-define-prefix transient-tags ()
-  "Tags Navigation and Management.
-Jump to definitions and references using Citre, and manage ctags/gtags databases."
-  [["Citre"
-    ("j" "Citre jump" citre-jump)
-    ("l" "Citre jump to reference" citre-jump-to-reference)
-    ("b" "Citre jump back" citre-jump-back)
-    ("p" "Citre peek" citre-peek)
-    ("t" "Citre peek through" citre-peek-through)]
-   ["Update"
-    ("u" "Update ctags file" citre-update-this-tags-file)
-    ("U" "Update gtags database" citre-global-update-database)
-    ("c" "Create ctags file" citre-create-tags-file)
-    ("C" "Create gtags database" citre-global-create-database)]]
-  [("SPC" "Quit" transient-quit-all)])
-
 (transient-define-prefix transient-bookmark ()
   "Bookmark Management.
 List, add, and edit bookmarks for quick file navigation."
@@ -113,60 +97,6 @@ and access defined Keyboard macros"
     ("m" "List macros" consult-kmacro)]]
   [("SPC" "Quit" transient-quit-all)])
 
-(transient-define-prefix transient-org ()
-  "Org Mode and Denote.
-Manage notes with Denote, export and edit Org documents, handle attachments."
-  [["Denote"
-    ("n" "Open or create note" denote-open-or-create)
-    ("o" "New note" denote)
-    ("r" "Rename file using front matter" denote-rename-file-using-front-matter)
-    ("l" "Denote link" denote-link)
-    ("b" "Denote backlinks" denote-backlinks)
-    ("/" "Search notes" consult-denote-find)
-    ("s" "Search content" consult-denote-grep)
-    ("h" "Search heading" consult-org-heading)]
-   ["Org Mode"
-    ("S" "Org structure template" org-insert-structure-template)
-    ("e" "Org export" org-export-dispatch)
-    ("yy" "Yank media" yank-media)
-    ("yd" "Delete attachment" org-attach-delete-one)
-    ("ys" "Sync attachments" org-attach-sync)
-    ("'" "Insert subheading" org-insert-subheading)
-    ("c" "Copy to shell cat" org-copy-to-shell-cat)
-    ("T" "Create table" org-table-create)
-    ("I" "Create ID" org-id-get-create)]]
-  [("SPC" "Quit" transient-quit-all)])
-
-(transient-define-prefix transient-agent-shell ()
-  "Transient menu for `agent-shell' commands."
-  [["Navigation"
-    ("<tab>" "Next item" agent-shell-next-item-with-judge :transient t)
-    ("<backtab>" "Previous item" agent-shell-previous-item-with-judge :transient t)
-    ("p" "Preview input" agent-shell-previous-input-with-judge :transient t)
-    ("n" "Next input" agent-shell-next-input-with-judge :transient t)
-    ("q" "Quit" transient-quit-all)
-    ("SPC" "Quit" transient-quit-all)]
-   ["Insert"
-    ("!" "Shell command" agent-shell-insert-shell-command-output-with-judge)
-    ("@" "File" agent-shell-insert-file)
-    ("d" "Dwim" agent-shell-send-dwim)
-    ("i" "Clipboard Image" agent-shell-send-clipboard-image)
-    ("s" "Screenshot" agent-shell-clear-buffer)
-    ("y" "Yank" agent-shell-yank-dwim)
-    ]]
-  [["Session"
-    ("m" "Cycle modes" agent-shell-cycle-session-mode-with-judge :transient t)
-    ("M" "Set mode" agent-shell-set-session-mode-with-judge)
-    ("v" "Set model" agent-shell-set-session-model-with-judge)
-    ("C" "Interrupt" agent-shell-interrupt-with-judge)
-    ("c" "Clear" agent-shell-clear-buffer-with-judge)
-    ("f" "Fork" agent-shell-fork-with-judge)]
-   ["Shell"
-    ("." "Agent shell" agent-shell)
-    ("b" "Toggle" agent-shell-toggle)
-    ("N" "New shell" agent-shell-new-shell)
-    ("T" "Temp shell" agent-shell-new-temp-shell)]])
-
 (global-set-key
  (kbd "C-q")
  (defhydra hydra-frequently (:foreign-keys warn :exit t)
@@ -190,7 +120,6 @@ Manage notes with Denote, export and edit Org documents, handle attachments."
           (interactive)
           (let ((agent-shell-context-sources nil))
             (agent-shell))) "agent shell")
-   ("." transient-agent-shell "agent shell menu")
    ("s" dash-at-point "dash")
    ("kt" kill-current-buffer "kill this buffer")
    ("kb" kill-buffer "kill other buffer")
