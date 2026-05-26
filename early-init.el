@@ -32,16 +32,15 @@
           ("nongnu" . "https://elpa.nongnu.org/nongnu/"))))
 
 (when (native-comp-available-p)
-  ;; Do not compile .elc files asynchronously.
-  ;; `inhibit-automatic-native-compilation' and `inhibit-native-compilation'
-  ;; appear to be reverted from the Emacs source code
-  (setq native-comp-jit-compilation nil)
+  ;; compile .elc files asynchronously
+  (setq native-comp-jit-compilation t)
 
-  ;; WORKAROUND: On MacPorts with nativecomp enabled, tramp-loaddefs.el.gz is recompiled
-  ;; at every startup. This package is blacklisted to avoid the overhead.
+  ;; https://lists.gnu.org/r/bug-gnu-emacs/2023-07/msg01135.html
+  ;; `tramp-loaddefs.el' has no-byte-compile: t , so the async compilation does nothing.
+  ;; Add `*-loaddefs.el' to the deny list
   (setq native-comp-jit-compilation-deny-list
         (append native-comp-jit-compilation-deny-list
-                '("tramp-loaddefs.el.gz"))))
+                '("-loaddefs.el"))))
 
 ;; Local Variables:
 ;; no-byte-compile: t
