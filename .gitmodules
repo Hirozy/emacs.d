@@ -49,9 +49,6 @@
 [submodule "cond-let"]
 	path = lib/cond-let
 	url = https://github.com/tarsius/cond-let
-[submodule "conda"]
-	path = lib/conda
-	url = https://github.com/necaris/conda.el.git
 [submodule "consult"]
 	path = lib/consult
 	url = https://github.com/minad/consult.git

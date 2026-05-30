@@ -21,9 +21,6 @@
 
 (setq python-shell-completion-native-enable nil)
 
-(use-package conda
-  :defer t)
-
 (provide 'init-python)
 
 ;; Local Variables:
