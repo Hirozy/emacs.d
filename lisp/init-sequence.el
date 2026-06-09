@@ -97,6 +97,19 @@ and access defined Keyboard macros"
     ("m" "List macros" consult-kmacro)]]
   [("SPC" "Quit" transient-quit-all)])
 
+(transient-define-prefix transient-hideshow ()
+  "Transient menu for `hideshow' mode."
+  ["Hideshow"
+   [("TAB" "Toggle block" hs-toggle-hiding)
+    ("/" "Toggle block" hs-toggle-hiding)
+    ("h" "Hide block" hs-hide-block)
+    ("s" "Show block" hs-show-block)]
+   [("H" "Hide all" hs-hide-all)
+    ("S" "Show all" hs-show-all)
+    ("l" "Hide level" hs-hide-level)
+    ("c" "Hide comment" hs-hide-initial-comment-block)]]
+  [("SPC" "Quit" transient-quit-all)])
+
 (global-set-key
  (kbd "C-q")
  (defhydra hydra-frequently (:foreign-keys warn :exit t)
@@ -125,6 +138,7 @@ and access defined Keyboard macros"
    ("kb" kill-buffer "kill other buffer")
    ("kr" eval-buffer "eval buffer")
    ("\\" swap-theme "swap theme")
+   ("/" transient-hideshow "hide show" :exit t)
    ("n" transient-org "org keymap" :exit t)))
 
 (define-key hydra-frequently/keymap (kbd "SPC") 'hydra-keyboard-quit)

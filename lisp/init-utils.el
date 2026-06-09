@@ -237,6 +237,16 @@ switch to normal state. Modified from `evil-escape-pre-command-hook'."
   :custom
   (ghostel-tramp-shell-integration '(fish bash zsh)))
 
+;; A built-in Emacs library designed to prevent performance lag
+;; and system freezes when opening files with extremely long lines.
+(use-package so-long
+  :diminish
+  :hook (after-init . global-so-long-mode))
+
+(use-package hideshow
+  :diminish hs-minor-mode
+  :hook (prog-mode . hs-minor-mode))
+
 (provide 'init-utils)
 
 ;; Local Variables:
