@@ -26,15 +26,17 @@
   "Functions to run after load theme."
   :type 'hook)
 
-(defun load-theme-hook-wrapper (origin-func theme &rest args)
-  "A wrapper of hooks around `load-theme'."
+(defun defined/load-theme-hook-wrapper (origin-func theme &rest args)
+  "Run theme hooks around `load-theme'.
+Disables currently active themes, runs `before-load-theme-hook',
+calls ORIGIN-FUNC with THEME and ARGS, then runs `after-load-theme-hook'."
   (dolist (theme custom-enabled-themes)
     (disable-theme theme))
   (run-hook-with-args 'before-load-theme-hook theme)
   (apply origin-func theme args)
   (run-hook-with-args 'after-load-theme-hook theme))
 
-(advice-add 'load-theme :around #'load-theme-hook-wrapper)
+(advice-add 'load-theme :around #'defined/load-theme-hook-wrapper)
 
 (add-hook 'after-load-theme-hook
           (lambda (theme)
@@ -51,7 +53,7 @@
   "Current default theme.")
 
 (defun swap-theme ()
-  "Swap theme between `leuven' and `current-default-theme'"
+  "Swap theme between `leuven' and `current-default-theme'."
   (interactive)
   (if current-default-theme
       (progn

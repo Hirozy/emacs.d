@@ -1,4 +1,4 @@
-;;; init-llm.el --- LLM clients configuration  -*- lexical-binding: t; -*-
+;;; init-llm.el --- LLM clients  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;

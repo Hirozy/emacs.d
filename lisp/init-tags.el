@@ -45,7 +45,7 @@ Jump to definitions and references using Citre, and manage ctags/gtags databases
   :config
   (setq xref-history-storage 'xref-window-local-history)
   ;; Make `xref-go-back' everywhere
-  (defun defined/push-point-to-xref-marker-stack (&rest r)
+  (defun defined/push-point-to-xref-marker-stack (&rest _)
     (xref-push-marker-stack (point-marker)))
   (dolist (func '(find-function consult-imenu
                                 consult-ripgrep

@@ -13,7 +13,7 @@
   (message "Major mode is %s."
            (cond ((derived-mode-p 'prog-mode) "prog-mode")
                  ((derived-mode-p 'text-mode) "text-mode")
-                 (t "neither prog-mode or text-mode"))))
+                 (t "neither prog-mode nor text-mode"))))
 
 (defun defined/guess-buffer-file-path ()
   "Echo current buffer file full path."

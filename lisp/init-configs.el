@@ -15,14 +15,14 @@
  ;; Enable backup version control
  version-control t
  delete-old-versions t
- ;; Enable auto save and store auto sace files in a dedicated directory
+ ;; Enable auto save and store auto save files in a dedicated directory
  auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save-files/" t))
  auto-save-default t
  ;; Don’t compact font caches during GC
  inhibit-compacting-font-caches t
  create-lockfiles nil
  visible-bell t
- ;; Enabled word wrap
+ ;; Truncate long lines (disable word wrap)
  truncate-lines t
  tramp-default-method "ssh"
  inhibit-startup-screen t
@@ -34,7 +34,7 @@
 ;; Show cursor position within line
 (column-number-mode)
 
-;; Disabled tool bar
+;; Disable tool bar
 (tool-bar-mode -1)
 
 (pixel-scroll-precision-mode t)

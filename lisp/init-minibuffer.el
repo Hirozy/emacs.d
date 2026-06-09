@@ -48,7 +48,7 @@
          ("M-y" . consult-yank-pop))
 
   :config
-  (setq consult-project-root-function (lambda (-) (projectile-project-root))
+  (setq consult-project-root-function (lambda (_) (projectile-project-root))
         consult-async-refresh-delay 0.15
         consult-async-input-throttle 0
         consult-async-input-debounce 0

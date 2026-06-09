@@ -59,7 +59,7 @@ Select a completion backend to trigger at the current point."
    ("r" symbol-overlay-rename "symbol rename")
    ("=" er/expand-region "expand region")
 
-   ("[" puni-wrap-square "warp []" :column "Pairs")
+   ("[" puni-wrap-square "wrap []" :column "Pairs")
    ("{" puni-wrap-curly "wrap {}")
    ("(" puni-wrap-round "wrap ()")
    ("<" puni-wrap-angle "wrap <>")

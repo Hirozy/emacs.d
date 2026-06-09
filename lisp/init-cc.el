@@ -10,7 +10,7 @@
 (setq-default c-basic-offset 4)
 
 (add-hook 'c-mode-common-hook
-          (lambda()
+          (lambda ()
             (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 
 (provide 'init-cc)

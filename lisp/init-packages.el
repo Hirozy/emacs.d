@@ -1,14 +1,13 @@
-;;; init-packages.el --- Packages manager configuration  -*- lexical-binding: t; -*-
+;;; init-packages.el --- Package management  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;;
-;; Packages manager configuration
+;; Package management via borg and use-package.
 ;;
 
-;;; Require
-(require 'package)
-
 ;;; Code:
+
+(require 'package)
 
 (eval-and-compile
   (add-to-list 'load-path (expand-file-name "lib/borg" user-emacs-directory))

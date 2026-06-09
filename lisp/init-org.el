@@ -82,16 +82,16 @@ Supported window systems:
           (message "Clipboard already contains image/png"))
          (t
           (let ((converted nil))
-            (cl-dolist (type defined/yank-media-image-from-formats)
-              (when (memq type (append targets nil))
-                (let* ((typestr (symbol-name type))
-                       (command (format command-template typestr)))
-                  (if (zerop (call-process-shell-command command nil nil nil))
-                      (progn
-                        (message "Converted image from `%s' to `image/png'." typestr)
-                        (setq converted t))
-                    (message "Failed to convert image from `%s'." typestr)))
-                (cl-return nil)))
+            (cl-loop for type in defined/yank-media-image-from-formats
+                     when (memq type (append targets nil))
+                     do (let* ((typestr (symbol-name type))
+                               (command (format command-template typestr)))
+                          (if (zerop (call-process-shell-command command nil nil nil))
+                              (progn
+                                (message "Converted image from `%s' to `image/png'." typestr)
+                                (setq converted t))
+                            (message "Failed to convert image from `%s'." typestr)))
+                     and return nil)
             (unless converted
               (message "No convertible image format found in clipboard"))))))))))
 
