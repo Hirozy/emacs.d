@@ -28,10 +28,14 @@
   :config
   (remove-hook 'git-commit-setup-hook #'git-commit-setup-capf))
 
-(use-package gptel-magit
+(use-package magit-llm-commit
+  :hook (magit-mode . magit-llm-commit-install)
+  :custom
+  (magit-llm-commit-api-url "https://openrouter.ai/api/v1/chat/completions")
+  (magit-llm-commit-model "anthropic/claude-haiku-4.5")
   :after magit
-  :bind (:map git-commit-mode-map
-             ("C-c C-m" . gptel-magit-generate-message)))
+  :config
+  (setq magit-llm-commit-api-key (defined/get-auth-password "openrouter.ai")))
 
 (use-package diff-hl
   :hook (((prog-mode markdown-mode org-mode text-mode) . diff-hl-mode)

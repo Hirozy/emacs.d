@@ -165,12 +165,6 @@
 [submodule "goto-chg"]
 	path = lib/goto-chg
 	url = https://github.com/emacs-evil/goto-chg.git
-[submodule "gptel"]
-	path = lib/gptel
-	url = https://github.com/karthink/gptel
-[submodule "gptel-magit"]
-	path = lib/gptel-magit
-	url = https://github.com/ragnard/gptel-magit
 [submodule "haskell-mode"]
 	path = lib/haskell-mode
 	url = https://github.com/haskell/haskell-mode.git
@@ -209,6 +203,9 @@
 	no-byte-compile = lisp/magit-libgit.el
 	path = lib/magit
 	url = https://github.com/magit/magit.git
+[submodule "magit-llm-commit"]
+	path = lib/magit-llm-commit
+	url = https://github.com/Hirozy/magit-llm-commit
 [submodule "marginalia"]
 	path = lib/marginalia
 	url = https://github.com/minad/marginalia.git
