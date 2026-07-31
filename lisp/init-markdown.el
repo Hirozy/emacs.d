@@ -9,7 +9,8 @@
 
 (use-package markdown-mode
   :defer t
-  :hook ((markdown-mode gfm-mode) . valign-mode)
+  :hook (((markdown-mode gfm-mode) . valign-mode)
+         ((markdown-mode gfm-mode) . visual-line-mode))
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)

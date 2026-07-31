@@ -9,9 +9,12 @@
 
 (setq-default c-basic-offset 4)
 
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
+(defun defined/cc-mode-setup ()
+  "Configure shared C and C++ key bindings."
+  (local-set-key (kbd "C-c o") #'ff-find-other-file))
+
+(dolist (hook '(c-mode-common-hook c-ts-mode-hook c++-ts-mode-hook))
+  (add-hook hook #'defined/cc-mode-setup))
 
 (provide 'init-cc)
 

@@ -29,6 +29,7 @@ https://github.com/minad/corfu/wiki#making-a-cape-super-capf-for-eglot"
 (use-package eglot
   :commands (eglot-ensure eglot)
   :custom
+  (eglot-events-buffer-config '(:size 0 :format full))
   (eglot-ignored-server-capabilities
    '(:documentHighlightProvider
      :codeLensProvider
@@ -47,11 +48,6 @@ https://github.com/minad/corfu/wiki#making-a-cape-super-capf-for-eglot"
          . eglot-ensure)
   :bind (:map eglot-mode-map
               ("S-<f6>" . eglot-rename))
-
-  :init
-  ;; disable lsp server event buffer
-  (setq eglot-events-buffer-size 0)
-  (advice-add 'jsonrpc--log-event :override #'ignore)
 
   :config
   ;; Let gcmh-mode manage GC thresholds dynamically

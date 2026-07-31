@@ -28,7 +28,7 @@
     ("@" "File" agent-shell-insert-file)
     ("d" "Dwim" agent-shell-send-dwim)
     ("i" "Clipboard Image" agent-shell-send-clipboard-image)
-    ("s" "Screenshot" agent-shell-clear-buffer)
+    ("s" "Screenshot" agent-shell-send-screenshot)
     ("y" "Yank" agent-shell-yank-dwim)
     ]]
   [["Session"
@@ -80,19 +80,8 @@ These wrappers switch to agent-shell buffer before executing the command.")
   (advice-add 'shell-maker--read-input-ring-history :around
     (lambda (orig-fun config)
       "Read history with UTF-8 encoding."
-      (let ((path (shell-maker-history-file-path config))
-            (ring))
-        (make-directory (file-name-directory path) t)
-        (setq-local comint-input-ring-file-name nil)
-        (setq-local comint-input-ignoredups t)
-        (setq ring (ignore-errors
-                     (with-temp-buffer
-                       (setq-local coding-system-for-read 'utf-8)
-                       (insert-file-contents path)
-                       (read (current-buffer)))))
-        (unless (ring-p ring)
-          (setq ring (make-ring (min 1500 comint-input-ring-size))))
-        (setq comint-input-ring ring)))
+      (let ((coding-system-for-read 'utf-8))
+        (funcall orig-fun config)))
     '((name . .utf8-read-fix)))
 
   (add-hook 'diff-mode-hook

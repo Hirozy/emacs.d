@@ -31,7 +31,7 @@ Select a completion backend to trigger at the current point."
    ("U" undo-fu-only-redo "redo" :exit nil)
    ("C-u" undo-fu-only-redo-all "redo all")
    ("M-u" vundo "vision undo")
-   ("h" replace-string "replace")
+   ("R" replace-string "replace")
    ("H" query-replace-regexp "replace regexp")
    (";" comment-line "comment line")
    ("C-;" comment-or-uncomment-region "un/comment region")

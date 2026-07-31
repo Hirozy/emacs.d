@@ -82,15 +82,21 @@
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (use-package hl-indent-scope
+  :demand t
   :hook (((c-mode
            c++-mode
+           c-ts-mode
+           c++-ts-mode
            cmake-mode
            python-mode
+           python-ts-mode
            emacs-lisp-mode
            rust-mode
+           rust-ts-mode
            go-mode
+           go-ts-mode
            haskell-mode) . hl-indent-scope-mode)
-         (after-load-theme . (lambda (&rest args)
+         (after-load-theme . (lambda (&rest _)
                                (hl-indent-scope--auto-color-calc)))))
 
 ;; Highlight the current line
@@ -136,9 +142,9 @@
         popper-echo-dispatch-actions t))
 
 (use-package popper-echo
-  :commands popper-mode
+  :after popper
   :config
-  (popper-echo-mode))
+  (popper-echo-mode 1))
 
 (use-package uniquify
   :config
