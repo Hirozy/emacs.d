@@ -153,6 +153,7 @@
 	url = https://github.com/dakra/ghostel
 	load-path = lisp
 	load-path = extensions/evil-ghostel
+	load-path = extensions/consult-ghostel
 [submodule "git-modes"]
 	path = lib/git-modes
 	url = https://github.com/magit/git-modes.git
