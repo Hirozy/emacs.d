@@ -185,9 +185,13 @@ Supported window systems:
   (consult-denote-mode))
 
 (use-package ox-publish
-  :after org
   :init
   (require 'denote)
+  :commands (org-publish
+             org-publish-all
+             org-publish-project
+             org-publish-current-project
+             org-publish-current-file)
   :config
   (setq org-publish-project-alist
         `(("denote-notes"
