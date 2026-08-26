@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (setq url-proxy-services
       '(("no_proxy" . "^\\(localhost\\|127\\.*\\)")
         ("http" . "127.0.0.1:6152")

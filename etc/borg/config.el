@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (when (native-comp-available-p)
   (setq package-native-compile t))
 
