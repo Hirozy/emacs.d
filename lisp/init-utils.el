@@ -103,8 +103,8 @@
 (use-package hl-line
   ;; :custom-face
   ;; (hl-line ((t (:underline "dodger blue"))))
-  :hook (((eshell-mode shell-mode term-mode vterm-mode) .
-          (lambda () (setq-local global-hl-line-mode nil))))
+  :hook (((eshell-mode shell-mode term-mode ghostel-mode) . (lambda ()
+                                                              (setq-local global-hl-line-mode nil))))
   :config
   (global-hl-line-mode))
 
@@ -136,8 +136,7 @@
           compilation-mode
           "^\\*eshell.*\\*.*$" eshell-mode
           "^\\*shell.*\\*.*$"  shell-mode
-          "^\\*terminal.*\\*.*$" term-mode
-          "^\\*vterm.*\\*.*$"  vterm-mode))
+          "^\\*terminal.*\\*.*$" term-mode))
   (setq popper-group-function #'popper-group-by-projectile
         popper-echo-dispatch-actions t))
 

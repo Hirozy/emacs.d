@@ -321,14 +321,6 @@
 	url = https://github.com/minad/vertico.git
 	load-path = .
 	load-path = extensions
-[submodule "vterm"]
-	path = lib/vterm
-	url = https://github.com/akermu/emacs-libvterm.git
-	build-step = mkdir -p build
-	build-step = cd build && cmake .. && make
-	build-step = git restore CMakeLists.txt
-	build-step = borg-compile
-	build-step = borg-update-autoloads
 [submodule "vundo"]
 	path = lib/vundo
 	url = https://github.com/casouri/vundo.git
