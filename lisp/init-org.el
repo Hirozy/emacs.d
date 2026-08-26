@@ -69,7 +69,7 @@ Supported window systems:
      ((null cmd-info)
       (message "Unsupported window system: %s (only pgtk and x are supported)"
                window-system))
-     ((when-let ((missing (defined/yank-media--check-executables (cdr cmd-info))))
+     ((when-let* ((missing (defined/yank-media--check-executables (cdr cmd-info))))
         (message "Required executable not found: %s" missing)
         t))
      (t

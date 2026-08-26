@@ -241,7 +241,25 @@ switch to normal state. Modified from `evil-escape-pre-command-hook'."
 (use-package ghostel
   :defer t
   :custom
-  (ghostel-tramp-shell-integration '(fish bash zsh)))
+  (ghostel-tramp-shell-integration '(fish bash zsh))
+  :hook (ghostel-mode . ghostel-ime-mode))
+
+(use-package evil-ghostel
+  :after (evil ghostel)
+  :hook (ghostel-mode . evil-ghostel-mode)
+  :config
+  (evil-define-key* 'insert evil-ghostel-mode-map
+    (kbd "C-q") #'hydra-frequently/body))
+
+(use-package consult-ghostel
+  :after (ghostel consult)
+  :bind (:map projectile-command-map
+              ("M" . consult-ghostel-project)
+              :map ghostel-semi-char-mode-map
+              ("C-c h" . consult-ghostel-history)))
+
+(use-package ghostel-compile
+  :hook (after-init . ghostel-compile-global-mode))
 
 ;; A built-in Emacs library designed to prevent performance lag
 ;; and system freezes when opening files with extremely long lines.
