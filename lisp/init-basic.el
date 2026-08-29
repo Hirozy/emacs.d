@@ -39,7 +39,6 @@
   (global-display-line-numbers-mode))
 
 (use-package gcmh
-  :diminish
   :init
   (setq gcmh-idle-delay 5
         gcmh-high-cons-threshold #x1000000) ; 16MB

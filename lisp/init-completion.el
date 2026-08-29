@@ -83,7 +83,6 @@
   (tempel-trigger-prefix ";"))
 
 (use-package flycheck
-  :diminish
   :defer t
   :custom
   (flycheck-emacs-lisp-load-path 'inherit)
@@ -100,8 +99,7 @@
           ) . flycheck-eglot-mode))
 
 (use-package flymake
-  :defer t
-  :diminish flymake-mode)
+  :defer t)
 
 (provide 'init-completion)
 

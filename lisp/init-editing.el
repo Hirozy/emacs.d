@@ -9,18 +9,15 @@
 
 ;; Automatically reload files was modified by external program
 (use-package autorevert
-  :diminish
   :hook (after-init . global-auto-revert-mode))
 
 (use-package whitespace-cleanup-mode
-  :diminish whitespace-cleanup-mode
   :hook ((prog-mode text-mode) . whitespace-cleanup-mode))
 
 (use-package expand-region
   :bind (("C-=" . er/expand-region)))
 
 (use-package symbol-overlay
-  :diminish symbol-overlay-mode
   :bind-keymap
   ("C-c i" . symbol-overlay-map)
   :hook (prog-mode . symbol-overlay-mode))
@@ -41,7 +38,6 @@
 
 ;; Handling capitalized subwords in a nomenclature
 (use-package subword
-  :diminish
   :hook (minibuffer-setup . subword-mode))
 
 ;; Delete selection if you insert

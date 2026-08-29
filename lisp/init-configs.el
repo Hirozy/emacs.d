@@ -31,6 +31,21 @@
  ;; default is 4kb, now is 64kb
  read-process-output-max #x10000)
 
+(setq mode-line-collapse-minor-modes
+      '(abbrev-mode
+        auto-revert-mode
+        eldoc-mode
+        evil-escape-mode
+        flycheck-mode
+        flymake-mode
+        gcmh-mode
+        hs-minor-mode
+        so-long-mode
+        subword-mode
+        symbol-overlay-mode
+        which-key-mode
+        whitespace-cleanup-mode))
+
 ;; Show cursor position within line
 (column-number-mode)
 

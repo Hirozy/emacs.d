@@ -89,9 +89,6 @@
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = https://github.com/dgutov/diff-hl.git
-[submodule "diminish"]
-	path = lib/diminish
-	url = https://github.com/myrjola/diminish.el.git
 [submodule "dockerfile-mode"]
 	path = lib/dockerfile-mode
 	url = https://github.com/spotify/dockerfile-mode.git

@@ -9,7 +9,6 @@
 
 (use-package which-key
   :hook (after-init . which-key-mode)
-  :diminish which-key-mode
   :init
   (setq which-key-idle-delay 1
         which-key-popup-type 'minibuffer))
@@ -21,12 +20,6 @@
 
 (use-package winner
   :hook (after-init . winner-mode))
-
-(use-package diminish
-  :config
-  (diminish 'eldoc-mode)
-  (diminish 'abbrev-mode)
-  (diminish 'auto-revert-mode))
 
 (use-package nerd-icons
   ;; Install "Symbols Nerd Font Mono" font manual
@@ -263,11 +256,9 @@ switch to normal state. Modified from `evil-escape-pre-command-hook'."
 ;; A built-in Emacs library designed to prevent performance lag
 ;; and system freezes when opening files with extremely long lines.
 (use-package so-long
-  :diminish
   :hook (after-init . global-so-long-mode))
 
 (use-package hideshow
-  :diminish hs-minor-mode
   :hook (prog-mode . hs-minor-mode))
 
 (provide 'init-utils)

@@ -103,7 +103,6 @@
   :hook (evil-mode . global-evil-matchit-mode))
 
 (use-package evil-escape
-  :diminish evil-escape-mode
   :hook (evil-mode . evil-escape-mode)
   :config
   (setq-default evil-escape-key-sequence "jk"
