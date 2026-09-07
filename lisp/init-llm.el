@@ -78,11 +78,11 @@ These wrappers switch to agent-shell buffer before executing the command.")
   ;; Fix UTF-8 encoding for history read
   ;; `shell-maker--write-input-ring-history' has no issue
   (advice-add 'shell-maker--read-input-ring-history :around
-    (lambda (orig-fun config)
-      "Read history with UTF-8 encoding."
-      (let ((coding-system-for-read 'utf-8))
-        (funcall orig-fun config)))
-    '((name . .utf8-read-fix)))
+              (lambda (orig-fun config)
+                "Read history with UTF-8 encoding."
+                (let ((coding-system-for-read 'utf-8))
+                  (funcall orig-fun config)))
+              '((name . .utf8-read-fix)))
 
   (add-hook 'diff-mode-hook
             (lambda ()
