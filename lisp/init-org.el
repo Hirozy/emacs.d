@@ -107,7 +107,8 @@ Supported window systems:
   :defer t
   :hook ((org-mode . visual-line-mode)
          (org-mode . eldoc-mode)
-         (org-mode . valign-mode)
+         ;; Disable valign-mode when using monospace fonts
+         ;; (org-mode . valign-mode)
          (org-mode . (lambda ()
                        (setq-local lsp-diagnostics-provider :none))))
   :bind (("s-n". transient-org)
