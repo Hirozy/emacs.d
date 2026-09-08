@@ -4,6 +4,9 @@
 [submodule "acp"]
 	path = lib/acp
 	url = https://github.com/xenodium/acp.el
+[submodule "agent-fleet"]
+	path = lib/agent-fleet
+	url = https://github.com/Hirozy/agent-fleet.git
 [submodule "agent-shell"]
 	path = lib/agent-shell
 	url = https://github.com/xenodium/agent-shell

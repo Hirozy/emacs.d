@@ -89,6 +89,33 @@ These wrappers switch to agent-shell buffer before executing the command.")
               (when (string-match-p "\\*agent-shell-diff\\*" (buffer-name))
                 (evil-emacs-state)))))
 
+(use-package agent-fleet
+  :commands (agent-fleet)
+  :bind-keymap ("C-c a" . agent-fleet-command-map)
+  :bind (("s-d" . agent-fleet)
+         :map projectile-command-map
+         ("/" . agent-fleet-start-for-project))
+  :custom
+  (agent-fleet-default-session-name "agent-fleet")
+  (agent-fleet-dashboard-display 'child-frame)
+  (agent-fleet-project-backend 'projectile))
+
+(use-package agent-fleet-attach
+  :after agent-fleet
+  :bind  (:map agent-fleet-attach-mode-map
+               ("C-c a" . agent-fleet-attach-command-map)))
+
+(use-package consult-agent-fleet
+  :after (consult agent-fleet)
+  :config
+  (consult-agent-fleet-mode t))
+
+(use-package agent-fleet-editor
+  :load-path "~/Projects/agent-fleet/"
+  :after agent-fleet
+  :config
+  (agent-fleet-editor-bridge-mode 1))
+
 (provide 'init-llm)
 
 ;; Local Variables:
