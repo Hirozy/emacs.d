@@ -6,6 +6,11 @@
 ;;
 
 ;;; Code:
+;; Cache load-path directory contents to speed up library lookup (Emacs 31+).
+(when (and (boundp 'load-path-filter-function)
+           (fboundp 'load-path-filter-cache-directory-files))
+  (setq load-path-filter-function #'load-path-filter-cache-directory-files))
+
 (setq load-prefer-newer t)
 
 

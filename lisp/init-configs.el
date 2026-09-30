@@ -44,7 +44,11 @@
         subword-mode
         symbol-overlay-mode
         which-key-mode
-        whitespace-cleanup-mode))
+        whitespace-cleanup-mode
+        agent-fleet-mode
+        agent-fleet-editor-bridge-mode
+        consult-agent-fleet-mode
+        citre-mode))
 
 ;; Show cursor position within line
 (column-number-mode)

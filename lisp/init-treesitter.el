@@ -7,16 +7,11 @@
 
 ;;; Code:
 
-(dolist (mapping '((python python-mode python-ts-mode)
-                   (json js-json-mode json-ts-mode)
-                   (c c-mode c-ts-mode)
-                   (cpp c++-mode c++-ts-mode)
-                   (go go-mode go-ts-mode)
-                   (rust rust-mode rust-ts-mode)))
-  (pcase-let ((`(,language ,legacy-mode ,treesit-mode) mapping))
-    (when (and (fboundp 'treesit-language-available-p)
-               (treesit-language-available-p language))
-      (setf (alist-get legacy-mode major-mode-remap-alist) treesit-mode))))
+(require 'treesit)
+
+(setopt treesit-enabled-modes
+        '(python-ts-mode json-ts-mode c-ts-mode c++-ts-mode
+          go-ts-mode rust-ts-mode))
 
 (provide 'init-treesitter)
 
