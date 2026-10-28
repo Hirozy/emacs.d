@@ -174,7 +174,10 @@ switch to normal state. Modified from `evil-escape-pre-command-hook'."
    (rime--preedit-overlay
     (funcall orig-fun key))
    ;; Check for evil-escape sequence
-   ((not (featurep 'evil-escape))
+   ((or (not (featurep 'evil-escape))
+        (not (bound-and-true-p evil-escape-mode))
+        (not (eq evil-state 'insert))
+        (null evil-escape-key-sequence))
     (funcall orig-fun key))
    (t
     (let ((fkey (elt evil-escape-key-sequence 0))
@@ -195,13 +198,11 @@ switch to normal state. Modified from `evil-escape-pre-command-hook'."
            ;; Timeout - process first key only
            ((null evt)
             (funcall orig-fun key))
-           ;; Mismatch - process both keys
+           ;; Mismatch - return the first key's translation and let the
+           ;; command loop process the next event after inserting it.
            (t
-            (funcall orig-fun key)
-            (if (characterp evt)
-                (funcall orig-fun evt)
-              (setq unread-command-events
-                    (nconc unread-command-events (list evt))))))))))))
+            (setq unread-command-events (cons evt unread-command-events))
+            (funcall orig-fun key)))))))))
 
 (use-package rime
   :bind (:map rime-mode-map
