@@ -133,7 +133,6 @@ and access defined Keyboard macros"
           (interactive)
           (let ((agent-shell-context-sources nil))
             (agent-shell))) "agent shell")
-   ("s" dash-at-point "dash")
    ("kt" kill-current-buffer "kill this buffer")
    ("kb" kill-buffer "kill other buffer")
    ("kr" eval-buffer "eval buffer")

@@ -14,12 +14,6 @@
 [submodule "apheleia"]
 	path = lib/apheleia
 	url = https://github.com/radian-software/apheleia
-[submodule "async"]
-	path = lib/async
-	url = https://github.com/jwiegley/emacs-async.git
-[submodule "atomic-chrome"]
-	path = lib/atomic-chrome
-	url = https://github.com/alpha22jp/atomic-chrome
 [submodule "auto-compile"]
 	path = lib/auto-compile
 	url = https://github.com/emacscollective/auto-compile.git
@@ -73,17 +67,11 @@
 	url = https://github.com/minad/corfu.git
 	load-path = .
 	load-path = extensions
-[submodule "corfu-terminal"]
-	path = lib/corfu-terminal
-	url = https://codeberg.org/akib/emacs-corfu-terminal.git
 [submodule "dash"]
 	no-byte-compile = dash-functional.el
 	no-makeinfo = dash-template.texi
 	path = lib/dash
 	url = https://github.com/magnars/dash.el.git
-[submodule "dash-at-point"]
-	path = lib/dash-at-point
-	url = https://github.com/stanaka/dash-at-point.git
 [submodule "deflate"]
 	path = lib/deflate
 	url = https://github.com/skuro/deflate
@@ -244,18 +232,9 @@
 [submodule "org-shell-cat"]
 	path = lib/org-shell-cat
 	url = https://github.com/Hirozy/org-shell-cat.git
-[submodule "ox-gfm"]
-	path = lib/ox-gfm
-	url = https://github.com/larstvei/ox-gfm
-[submodule "packed"]
-	path = lib/packed
-	url = https://github.com/emacscollective/packed.git
 [submodule "plantuml-mode"]
 	path = lib/plantuml-mode
 	url = https://github.com/skuro/plantuml-mode.git
-[submodule "popon"]
-	path = lib/popon
-	url = https://codeberg.org/akib/emacs-popon.git
 [submodule "popper"]
 	path = lib/popper
 	url = https://github.com/karthink/popper.git
@@ -268,9 +247,6 @@
 [submodule "puni"]
 	path = lib/puni
 	url = https://github.com/AmaiKinono/puni.git
-[submodule "pythonic"]
-	path = lib/pythonic
-	url = https://github.com/pythonic-emacs/pythonic.git
 [submodule "quickrun"]
 	path = lib/quickrun
 	url = https://github.com/emacsorphanage/quickrun.git
@@ -305,9 +281,6 @@
 [submodule "transient"]
 	path = lib/transient
 	url = https://github.com/magit/transient.git
-[submodule "treepy"]
-	path = lib/treepy
-	url = https://github.com/volrath/treepy.el.git
 [submodule "undo-fu"]
 	path = lib/undo-fu
 	url = https://codeberg.org/ideasman42/emacs-undo-fu.git
@@ -325,9 +298,6 @@
 [submodule "vundo"]
 	path = lib/vundo
 	url = https://github.com/casouri/vundo.git
-[submodule "websocket"]
-	path = lib/websocket
-	url = https://github.com/ahyatt/emacs-websocket
 [submodule "whitespace-cleanup-mode"]
 	path = lib/whitespace-cleanup-mode
 	url = https://github.com/purcell/whitespace-cleanup-mode.git

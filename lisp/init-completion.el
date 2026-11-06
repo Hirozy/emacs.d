@@ -68,12 +68,6 @@
   :config
   (advice-add 'dabbrev-capf :around #'cape-wrap-silent))
 
-(use-package corfu-terminal
-  :unless (display-graphic-p)
-  :after corfu
-  :config
-  (corfu-terminal-mode))
-
 (use-package tempel
   :defer t
   :bind (:map tempel-map
