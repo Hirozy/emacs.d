@@ -16,8 +16,10 @@
                  (t "neither prog-mode nor text-mode"))))
 
 (defun defined/guess-buffer-file-path ()
-  "Echo current buffer file full path."
+  "Echo the current buffer's full file path and copy it when non-nil."
   (interactive)
+  (when buffer-file-name
+    (kill-new buffer-file-name))
   (message "%s" buffer-file-name))
 
 (defalias 'defined/cape-dict-min (cape-capf-prefix-length #'cape-dict 4))
