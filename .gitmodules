@@ -75,9 +75,6 @@
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = https://github.com/dgutov/diff-hl.git
-[submodule "elisp-refs"]
-	path = lib/elisp-refs
-	url = https://github.com/Wilfred/elisp-refs.git
 [submodule "emacsql"]
 	path = lib/emacsql
 	url = https://github.com/magit/emacsql.git
@@ -112,9 +109,6 @@
 [submodule "expand-region"]
 	path = lib/expand-region
 	url = https://github.com/magnars/expand-region.el.git
-[submodule "f"]
-	path = lib/f
-	url = https://github.com/rejeep/f.el.git
 [submodule "fish-mode"]
 	path = lib/fish-mode
 	url = https://github.com/wwwjfy/emacs-fish.git
@@ -146,9 +140,6 @@
 [submodule "haskell-mode"]
 	path = lib/haskell-mode
 	url = https://github.com/haskell/haskell-mode.git
-[submodule "helpful"]
-	path = lib/helpful
-	url = https://github.com/Wilfred/helpful
 [submodule "hl-indent-scope"]
 	path = lib/hl-indent-scope
 	url = https://codeberg.org/ideasman42/emacs-hl-indent-scope.git
@@ -251,9 +242,6 @@
 	path = lib/rust-playground
 	url = https://github.com/Hirozy/rust-playground.git
 	branch = fix-save
-[submodule "s"]
-	path = lib/s
-	url = https://github.com/magnars/s.el.git
 [submodule "shell-maker"]
 	path = lib/shell-maker
 	url = https://github.com/xenodium/shell-maker

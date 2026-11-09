@@ -155,14 +155,6 @@
 
 (use-package open-newline :defer t)
 
-(use-package helpful
-  :defer t
-  :bind (("C-h F" . helpful-callable)
-         ("C-h V" . helpful-variable)
-         ("C-h X" . helpful-command)
-         ("C-h C-d" . helpful-at-point)
-         ("C-h C-f" . helpful-function)))
-
 ;; https://github.com/DogLooksGood/emacs-rime#%E7%BB%93%E5%90%88-evil-escape-%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8
 (defun rime-evil-escape-advice (orig-fun key)
   "Advice for `rime-input-method' to integrate with `evil-escape'.
