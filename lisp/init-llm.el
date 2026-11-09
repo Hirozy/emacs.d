@@ -90,7 +90,6 @@ These wrappers switch to agent-shell buffer before executing the command.")
                 (evil-emacs-state)))))
 
 (use-package agent-fleet
-  :load-path "~/Projects/agent-fleet"
   :bind-keymap ("C-c a" . agent-fleet-command-map)
   :bind (("s-d" . agent-fleet)
          :map projectile-command-map
@@ -100,7 +99,6 @@ These wrappers switch to agent-shell buffer before executing the command.")
   (agent-fleet-project-backend 'projectile))
 
 (use-package consult-agent-fleet
-  :load-path "~/Projects/agent-fleet"
   :commands (consult-agent-fleet))
 
 (provide 'init-llm)
