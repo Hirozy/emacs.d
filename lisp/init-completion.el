@@ -55,10 +55,6 @@
                                                          #'cape-tex
                                                          #'defined/cape-dabbrev-min
                                                          #'cape-elisp-block))))
-         (cmake-mode . (lambda ()
-                         (setq-local completion-at-point-functions
-                                     (list
-                                      (cape-company-to-capf #'company-cmake)))))
          ((emacs-lisp-mode lisp-data-mode) . (lambda ()
                                                (setq-local completion-at-point-functions
                                                            (list #'tempel-expand

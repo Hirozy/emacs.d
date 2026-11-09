@@ -80,7 +80,7 @@
            c++-mode
            c-ts-mode
            c++-ts-mode
-           cmake-mode
+           cmake-ts-mode
            python-mode
            python-ts-mode
            emacs-lisp-mode

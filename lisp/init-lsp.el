@@ -51,8 +51,7 @@ https://github.com/minad/corfu/wiki#making-a-cape-super-capf-for-eglot"
 
   :config
   ;; Let gcmh-mode manage GC thresholds dynamically
-  (setq read-process-output-max (* 1024 1024)
-        eglot-stay-out-of '(company))
+  (setq read-process-output-max (* 1024 1024))
 
   (add-to-list 'eglot-server-programs '((objc-mode) "clangd"))
 

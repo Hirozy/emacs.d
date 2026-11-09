@@ -15,10 +15,6 @@
 
 (use-package fish-mode :defer t)
 
-(use-package dockerfile-mode :defer t)
-
-(use-package cmake-mode :defer t)
-
 (use-package yaml-mode :defer t)
 
 (provide 'init-langs)

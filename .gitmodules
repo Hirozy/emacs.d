@@ -32,15 +32,9 @@
 [submodule "closql"]
 	path = lib/closql
 	url = https://github.com/emacscollective/closql.git
-[submodule "cmake-mode"]
-	path = lib/cmake-mode
-	url = https://github.com/emacsmirror/cmake-mode.git
 [submodule "color-theme-sanityinc-tomorrow"]
 	path = lib/color-theme-sanityinc-tomorrow
 	url = https://github.com/purcell/color-theme-sanityinc-tomorrow.git
-[submodule "company"]
-	path = lib/company
-	url = https://github.com/company-mode/company-mode.git
 [submodule "compat"]
 	path = lib/compat
 	url = https://github.com/emacs-compat/compat
@@ -81,9 +75,6 @@
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = https://github.com/dgutov/diff-hl.git
-[submodule "dockerfile-mode"]
-	path = lib/dockerfile-mode
-	url = https://github.com/spotify/dockerfile-mode.git
 [submodule "elisp-refs"]
 	path = lib/elisp-refs
 	url = https://github.com/Wilfred/elisp-refs.git
