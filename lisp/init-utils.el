@@ -226,21 +226,37 @@ switch to normal state. Modified from `evil-escape-pre-command-hook'."
   :defer t
   :custom
   (ghostel-tramp-shell-integration '(fish bash zsh))
-  :hook (ghostel-mode . ghostel-ime-mode))
+  :hook (ghostel-mode . ghostel-ime-mode)
+  :config
+  (dolist (map (list ghostel-mode-map
+                     ghostel-char-mode-map
+                     ghostel-readonly-fast-exit-mode-map))
+    (keymap-set map "C-g" #'keyboard-quit))
+  (keymap-set ghostel-mode-map "C-c C-g" #'ghostel-send-C-g)
+  (keymap-set ghostel-char-mode-map "C-c"
+              (keymap-lookup ghostel-mode-map "C-c")))
 
 (use-package evil-ghostel
   :after (evil ghostel)
   :hook (ghostel-mode . evil-ghostel-mode)
   :config
   (evil-define-key* 'insert evil-ghostel-mode-map
-    (kbd "C-q") #'hydra-frequently/body))
+    (kbd "C-q") #'hydra-frequently/body
+    (kbd "<backtab>") #'ghostel--send-event
+    (kbd "S-<tab>") #'ghostel--send-event
+    (kbd "S-<left>") #'ghostel--send-event
+    (kbd "S-<right>") #'ghostel--send-event
+    (kbd "S-<up>") #'ghostel--send-event
+    (kbd "S-<down>") #'ghostel--send-event))
 
 (use-package consult-ghostel
   :after (ghostel consult)
   :bind (:map projectile-command-map
               ("M" . consult-ghostel-project)
               :map ghostel-semi-char-mode-map
-              ("C-c h" . consult-ghostel-history)))
+              ("C-c h" . consult-ghostel-history))
+  :config
+  (consult-ghostel-mode 1))
 
 (use-package ghostel-compile
   :hook (after-init . ghostel-compile-global-mode))
