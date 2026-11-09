@@ -40,30 +40,27 @@
     (kbd "<leader>.") 'xref-go-forward
     (kbd "<leader>j") 'transient-tags)
 
-  (if (require 'embark nil t)
-      (evil-define-key 'normal 'global
-        (kbd "C-.") 'embark-act))
+  (evil-define-key 'normal 'global
+    (kbd "C-.") 'embark-act
+    (kbd "<leader>n") 'transient-org)
 
   (if (require 'puni nil t)
       (evil-define-key 'normal 'global
         (kbd "C-k") 'puni-kill-line))
 
-  (if (require 'org nil t)
-      (progn
-        (evil-define-key 'normal 'global
-          (kbd "<leader>n") 'transient-org)
-        (evil-define-key 'normal org-mode-map
-          (kbd ",") 'transient-org
-          "<" (lambda (&rest args)
-                (interactive)
-                (if (org-in-src-block-p)
-                    (call-interactively 'evil-shift-left t (vector args))
-                  (org-metaleft)))
-          ">" (lambda (&rest args)
-                (interactive)
-                (if (org-in-src-block-p)
-                    (call-interactively 'evil-shift-right t (vector args))
-                  (org-metaright)))))))
+  (with-eval-after-load 'org
+    (evil-define-key 'normal org-mode-map
+      (kbd ",") 'transient-org
+      "<" (lambda (&rest args)
+            (interactive)
+            (if (org-in-src-block-p)
+                (call-interactively 'evil-shift-left t (vector args))
+              (org-metaleft)))
+      ">" (lambda (&rest args)
+            (interactive)
+            (if (org-in-src-block-p)
+                (call-interactively 'evil-shift-right t (vector args))
+              (org-metaright))))))
 
 (use-package evil
   :hook ((after-init . evil-mode)
