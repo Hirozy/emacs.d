@@ -42,7 +42,7 @@ https://github.com/minad/corfu/wiki#making-a-cape-super-capf-for-eglot"
           c-mode c-ts-mode c++-mode c++-ts-mode objc-mode
           python-mode python-ts-mode
           haskell-mode haskell-literate-mode
-          go-mode go-ts-mode
+          go-ts-mode
           rust-mode rust-ts-mode
           )
          . eglot-ensure)

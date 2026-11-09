@@ -84,7 +84,7 @@
           c-mode c++-mode objc-mode c-ts-mode c++-ts-mode
           python-mode python-ts-mode
           haskell-mode haskell-literate-mode
-          go-mode go-ts-mode
+          go-ts-mode
           rust-mode rust-ts-mode
           ) . flycheck-eglot-mode))
 

@@ -86,7 +86,6 @@
            emacs-lisp-mode
            rust-mode
            rust-ts-mode
-           go-mode
            go-ts-mode
            haskell-mode) . hl-indent-scope-mode)
          (after-load-theme . (lambda (&rest _)

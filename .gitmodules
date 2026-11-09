@@ -140,9 +140,6 @@
 [submodule "gnuplot"]
 	path = lib/gnuplot
 	url = https://github.com/emacs-gnuplot/gnuplot.git
-[submodule "go-mode"]
-	path = lib/go-mode
-	url = https://github.com/dominikh/go-mode.el.git
 [submodule "goto-chg"]
 	path = lib/goto-chg
 	url = https://github.com/emacs-evil/goto-chg.git
@@ -295,9 +292,6 @@
 [submodule "with-editor"]
 	path = lib/with-editor
 	url = https://github.com/magit/with-editor.git
-[submodule "yaml-mode"]
-	path = lib/yaml-mode
-	url = https://github.com/yoshiki/yaml-mode.git
 [submodule "ztree"]
 	path = lib/ztree
 	url = https://codeberg.org/fourier/ztree.git

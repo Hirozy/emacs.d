@@ -67,7 +67,7 @@
 
 (use-package evil
   :hook ((after-init . evil-mode)
-         ((yaml-mode) . (lambda ()
+         ((yaml-ts-mode) . (lambda ()
                           (setq-local evil-shift-width 2))))
 
   :init
