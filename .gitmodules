@@ -7,7 +7,6 @@
 [submodule "agent-fleet"]
 	path = lib/agent-fleet
 	url = https://github.com/Hirozy/agent-fleet.git
-	disabled = true
 [submodule "agent-shell"]
 	path = lib/agent-shell
 	url = https://github.com/xenodium/agent-shell

@@ -46,8 +46,6 @@
         which-key-mode
         whitespace-cleanup-mode
         agent-fleet-mode
-        agent-fleet-editor-bridge-mode
-        consult-agent-fleet-mode
         citre-mode))
 
 ;; Show cursor position within line
