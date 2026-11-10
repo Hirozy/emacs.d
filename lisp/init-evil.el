@@ -64,6 +64,7 @@
 
 (use-package evil
   :hook ((after-init . evil-mode)
+         (ghostel-mode . turn-off-evil-mode)
          ((yaml-ts-mode) . (lambda ()
                           (setq-local evil-shift-width 2))))
 

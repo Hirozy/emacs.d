@@ -236,19 +236,6 @@ switch to normal state. Modified from `evil-escape-pre-command-hook'."
   (keymap-set ghostel-char-mode-map "C-c"
               (keymap-lookup ghostel-mode-map "C-c")))
 
-(use-package evil-ghostel
-  :after (evil ghostel)
-  :hook (ghostel-mode . evil-ghostel-mode)
-  :config
-  (evil-define-key* 'insert evil-ghostel-mode-map
-    (kbd "C-q") #'hydra-frequently/body
-    (kbd "<backtab>") #'ghostel--send-event
-    (kbd "S-<tab>") #'ghostel--send-event
-    (kbd "S-<left>") #'ghostel--send-event
-    (kbd "S-<right>") #'ghostel--send-event
-    (kbd "S-<up>") #'ghostel--send-event
-    (kbd "S-<down>") #'ghostel--send-event))
-
 (use-package consult-ghostel
   :after (ghostel consult)
   :demand t
