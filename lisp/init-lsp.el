@@ -55,8 +55,7 @@ https://github.com/minad/corfu/wiki#making-a-cape-super-capf-for-eglot"
 
   (add-to-list 'eglot-server-programs '((objc-mode) "clangd"))
 
-  (with-eval-after-load 'eglot
-    (setq completion-category-defaults nil))
+  (setq completion-category-defaults nil)
 
   (add-hook 'eglot-managed-mode-hook #'defined/cape-capf-at-eglot))
 

@@ -79,14 +79,7 @@
   (flycheck-keymap-prefix (kbd "C-c C-l")))
 
 (use-package flycheck-eglot
-  :after (flycheck eglot)
-  :hook ((
-          c-mode c++-mode objc-mode c-ts-mode c++-ts-mode
-          python-mode python-ts-mode
-          haskell-mode haskell-literate-mode
-          go-ts-mode
-          rust-mode rust-ts-mode
-          ) . flycheck-eglot-mode))
+  :hook (eglot-managed-mode . flycheck-eglot-mode))
 
 (use-package flymake
   :defer t)

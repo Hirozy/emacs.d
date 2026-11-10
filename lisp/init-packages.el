@@ -44,9 +44,8 @@
   :hook (after-init . marginalia-mode)
   :config
   ;; https://github.com/emacscollective/epkg-marginalia
-  (with-eval-after-load 'marginalia
-    (setcar (alist-get 'package marginalia-annotators)
-            #'epkg-marginalia-annotate-package)))
+  (setcar (alist-get 'package marginalia-annotators)
+          #'epkg-marginalia-annotate-package))
 
 (provide 'init-packages)
 

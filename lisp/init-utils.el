@@ -251,6 +251,7 @@ switch to normal state. Modified from `evil-escape-pre-command-hook'."
 
 (use-package consult-ghostel
   :after (ghostel consult)
+  :demand t
   :bind (:map projectile-command-map
               ("M" . consult-ghostel-project)
               :map ghostel-semi-char-mode-map
