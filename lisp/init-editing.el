@@ -7,9 +7,10 @@
 
 ;;; Code:
 
-;; Automatically reload files was modified by external program
+;; Automatically refresh files and Dired buffers after external changes.
 (use-package autorevert
-  :hook (after-init . global-auto-revert-mode))
+  :hook ((after-init . global-auto-revert-mode)
+         (dired-mode . auto-revert-mode)))
 
 (use-package whitespace-cleanup-mode
   :hook ((prog-mode text-mode) . whitespace-cleanup-mode))

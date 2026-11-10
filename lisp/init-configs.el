@@ -48,6 +48,8 @@
         agent-fleet-mode
         citre-mode))
 
+(setq dired-kill-when-opening-new-dired-buffer t)
+
 ;; Show cursor position within line
 (column-number-mode)
 
