@@ -222,12 +222,34 @@ switch to normal state. Modified from `evil-escape-pre-command-hook'."
   :config
   (advice-add 'rime-input-method :around #'rime-evil-escape-advice))
 
+(defun defined/rime-composing-p (&optional buffer)
+  "Return non-nil while Rime has a preedit overlay in BUFFER."
+  (let ((buffer (or buffer (current-buffer))))
+    (when (buffer-live-p buffer)
+      (with-current-buffer buffer
+        (let ((overlay (bound-and-true-p rime--preedit-overlay)))
+          (and (overlayp overlay)
+               (eq (overlay-buffer overlay) buffer)))))))
+
+(defun defined/setup-ghostel-rime ()
+  "Protect Rime composition from terminal redraws and input forwarding."
+  (add-hook 'ghostel-inhibit-redraw-functions
+            #'defined/rime-composing-p nil t)
+  (add-hook 'ghostel-inhibit-input-forwarding-functions
+            #'defined/rime-composing-p nil t))
+
 (use-package ghostel
   :defer t
   :custom
   (ghostel-tramp-shell-integration '(fish bash zsh))
-  :hook (ghostel-mode . ghostel-ime-mode)
+  :hook ((ghostel-mode . ghostel-ime-mode)
+         (ghostel-mode . defined/setup-ghostel-rime))
   :config
+  ;; Also apply when reloading configuration with terminals already open.
+  (dolist (buffer (buffer-list))
+    (with-current-buffer buffer
+      (when (derived-mode-p 'ghostel-mode)
+        (defined/setup-ghostel-rime))))
   (dolist (map (list ghostel-mode-map
                      ghostel-char-mode-map
                      ghostel-readonly-fast-exit-mode-map))
